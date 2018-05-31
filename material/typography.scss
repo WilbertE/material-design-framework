@@ -1,0 +1,163 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Roboto:300,600');
+
+@function strip-unit($value) {
+    @return $value / ($value * 0 + 1);
+}
+
+@mixin text($name, $sizeScale) {
+    @if ($name == 'default') {
+        font-weight: 300;
+        @include fluid-property(font-size, map-get($breakpoints, mobile-max), map-get($breakpoints, laptop-max), $font-default-min-size, $font-default-max-size * $sizeScale);
+        @include fluid-property(line-height, map-get($breakpoints, mobile-max), map-get($breakpoints, laptop-max), $font-default-min-line-height, $font-default-max-line-height * $sizeScale);
+        letter-spacing: 0px;
+    }
+
+    @if ($name == 'display-2') {
+        @include fluid-property(font-size, map-get($breakpoints, mobile-max), map-get($breakpoints, laptop-max), $font-display-2-min-size, $font-display-2-max-size * $sizeScale);
+        @include fluid-property(line-height, map-get($breakpoints, mobile-max), map-get($breakpoints, laptop-max), $font-display-2-min-line-height, $font-display-2-max-line-height * $sizeScale);
+        font-weight: 300;
+        letter-spacing: -2px;
+    }
+
+    @if ($name == 'display-1') {
+        @include fluid-property(font-size, map-get($breakpoints, mobile-max), map-get($breakpoints, laptop-max), $font-display-1-min-size, $font-display-1-max-size * $sizeScale);
+        @include fluid-property(line-height, map-get($breakpoints, mobile-max), map-get($breakpoints, laptop-max), $font-display-1-min-line-height, $font-display-1-max-line-height * $sizeScale);
+        font-weight: 300;
+        letter-spacing: -1.5px;
+    }
+
+    @if ($name == 'headline') {
+        @include fluid-property(font-size, map-get($breakpoints, mobile-max), map-get($breakpoints, laptop-max), $font-headline-min-size, $font-headline-max-size * $sizeScale);
+        @include fluid-property(line-height, map-get($breakpoints, mobile-max), map-get($breakpoints, laptop-max), $font-headline-min-line-height, $font-headline-max-line-height * $sizeScale);
+        font-weight: 300;
+        letter-spacing: -1.5px;
+    }
+
+    @if ($name == 'title') {
+        @include fluid-property(font-size, map-get($breakpoints, mobile-max), map-get($breakpoints, laptop-max), $font-title-min-size, $font-title-max-size * $sizeScale);
+        @include fluid-property(line-height, map-get($breakpoints, mobile-max), map-get($breakpoints, laptop-max), $font-title-min-line-height, $font-title-max-line-height * $sizeScale);
+        margin-top: 4rem;
+        font-weight: 500;
+        letter-spacing: -0.5px;
+    }
+
+    @if ($name == 'subheading-1') {
+        @include fluid-property(font-size, map-get($breakpoints, mobile-max), map-get($breakpoints, laptop-max), 16px, 24px * $sizeScale);
+        @include fluid-property(line-height, map-get($breakpoints, mobile-max), map-get($breakpoints, laptop-max), 24px, 38px * $sizeScale);
+        font-weight: 300;
+        letter-spacing: -0.5px;
+        margin-top: 2rem;
+    }
+
+    @if ($name == 'subheading-2') {
+        @include fluid-property(font-size, map-get($breakpoints, mobile-max), map-get($breakpoints, laptop-max), $font-subheading-2-min-size, $font-subheading-2-max-size * $sizeScale);
+        @include fluid-property(line-height, map-get($breakpoints, mobile-max), map-get($breakpoints, laptop-max), $font-subheading-2-min-line-height, $font-subheading-2-max-line-height * $sizeScale);
+        font-weight: 300;
+        letter-spacing: -0.5px;
+        margin-top: 2rem;
+    }
+
+    @if ($name == 'body-1') {
+        @include fluid-property(font-size, map-get($breakpoints, mobile-max), map-get($breakpoints, laptop-max), $font-body-1-min-size, $font-body-2-max-size * $sizeScale);
+        @include fluid-property(line-height, map-get($breakpoints, mobile-max), map-get($breakpoints, laptop-max), $font-body-1-min-line-height, $font-body-1-max-line-height * $sizeScale);
+        font-weight: 300;
+    }
+
+    @if ($name == 'body-2') {
+        font-weight: 600;
+        @include fluid-property(font-size, map-get($breakpoints, mobile-max), map-get($breakpoints, laptop-max), $font-body-2-min-size, $font-body-2-max-size * $sizeScale);
+        @include fluid-property(line-height, map-get($breakpoints, mobile-max), map-get($breakpoints, laptop-max),$font-body-2-min-line-height, $font-body-2-max-line-height * $sizeScale);
+    }
+
+    @if ($name == 'caption') {
+        @include fluid-property(font-size, map-get($breakpoints, mobile-max), map-get($breakpoints, laptop-max), $font-caption-min-size, $font-caption-max-size * $sizeScale);
+        @include fluid-property(line-height, map-get($breakpoints, mobile-max), map-get($breakpoints, laptop-max), $font-caption-min-line-height, $font-caption-max-line-height * $sizeScale);
+        font-weight: 300;
+        letter-spacing: 0.5px;
+        margin-top: 0.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    @if ($name == 'button') {
+        @include fluid-property(font-size, map-get($breakpoints, mobile-max), map-get($breakpoints, laptop-max), $font-button-min-size, $font-button-max-size * $sizeScale);
+        @include fluid-property(line-height, map-get($breakpoints, mobile-max), map-get($breakpoints, laptop-max), $font-button-min-line-height, $font-button-max-line-height * $sizeScale);
+        text-transform: uppercase;
+        font-weight: 300;
+    }
+}
+
+$sizes: ( ".tiny": 0.75, ".small": 0.85, "": 1, );
+
+
+
+@each $name, $value in $sizes {
+    html, body#{$name} {
+        font-family: 'Roboto', sans-serif;
+        @include text(default, $value);
+
+        .text-display-2 {
+            @include text(display-2, $value);
+        }
+
+        .text-display-1 {
+            @include text(display-1, $value);
+        }
+
+        .text-headline {
+            @include text(headline, $value);
+        }
+
+        .text-title {
+            @include text(title, $value);
+        }
+
+        .text-subheading-1 {
+            @include text(subheading-1, $value);
+        }
+
+        .text-subheading-2 {
+            @include text(subheading-2, $value);
+        }
+
+        .text-body-1 {
+            @include text(body-1, $value);
+        }
+
+        .text-body-2 {
+            @include text(body-2, $value);
+        }
+
+        .text-caption {
+            @include text(caption, $value);
+        }
+
+        .text-button {
+            @include text(button, $value);
+        }
+    }
+}
+
+.readability {
+    @include fluid-property(max-width, map-get($breakpoints, mobile-max), map-get($breakpoints, laptop-max), 500px, 800px);
+}
+
+p {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.text-title + p {
+    margin-top: 1.25rem;
+}
+
+.text-title + .text-subheading-1 {
+    margin-top: 0.25rem;
+}
+
+.text-subheading-1 + p, .text-subheading-2 + p {
+    margin-top: 0.25rem;
+}
+
+a {
+    text-decoration: none;
+}

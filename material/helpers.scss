@@ -1,0 +1,98 @@
+﻿.container {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include responsive(laptop-up) {
+        width: 70%;
+    }
+
+    @include responsive(tablet) {
+        width: 85%;
+    }
+
+    @include responsive(mobile) {
+        width: 90%;
+    }
+}
+
+$types: margin padding;
+
+@each $type in $types {
+    @each $grid-gutter-size in $grid-gutter-sizes {
+        $grid-gutter-name: -#{$grid-gutter-size};
+
+        @if ($grid-gutter-size == 8) {
+            $grid-gutter-name: '';
+        }
+
+        .#{$type}s#{$grid-gutter-name} {
+            #{$type}: #{$grid-gutter-size}px !important;
+        }
+
+        .#{$type}s-horizontal#{$grid-gutter-name} {
+            #{$type}-left: #{$grid-gutter-size}px !important;
+            #{$type}-right: #{$grid-gutter-size}px !important;
+        }
+
+        .#{$type}s-vertical#{$grid-gutter-name} {
+            #{$type}-top: #{$grid-gutter-size}px !important;
+            #{$type}-bottom: #{$grid-gutter-size}px !important;
+        }
+
+        .#{$type}-top#{$grid-gutter-name} {
+            #{$type}-top: #{$grid-gutter-size}px !important;
+        }
+
+        .#{$type}-right#{$grid-gutter-name} {
+            #{$type}-right: #{$grid-gutter-size}px !important;
+        }
+
+        .#{$type}-bottom#{$grid-gutter-name} {
+            #{$type}-bottom: #{$grid-gutter-size}px !important;
+        }
+
+        .#{$type}-left#{$grid-gutter-name} {
+            #{$type}-left: #{$grid-gutter-size}px !important;
+        }
+    }
+}
+
+
+.hidden {
+    display: none !important;
+}
+
+.visible {
+    display: block !important;
+}
+
+.visible-inline {
+    display: inline-block !important;
+}
+
+$prefixes: mobile tablet laptop pc;
+
+@each $prefix in $prefixes {
+    $directions: '' -up -down;
+
+    @each $direction in $directions {
+        @if(($prefix == 'mobile' and ($direction == '-down' or $direction == '-up')) or ($prefix == 'pc' and ($direction == '-up' or $direction == '-down'))) {
+        }
+        @else {
+            @include responsive(#{$prefix}#{$direction}) {
+                .hidden-#{$prefix}#{$direction} {
+                    display: none !important;
+                }
+
+                .visible-#{$prefix}#{$direction} {
+                    display: block !important;
+                }
+
+                .visible-inline-#{$prefix}#{$direction} {
+                    display: inline-block !important;
+                }
+            }
+        }
+    }
+}

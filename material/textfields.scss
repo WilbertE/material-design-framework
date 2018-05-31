@@ -1,0 +1,485 @@
+﻿
+//Border colors also set in dropdown.scss;
+
+fieldset {
+    position: relative;
+    margin-bottom: 0.6rem;
+    margin-top: 0.6rem;
+
+    &.fieldset--helper {
+        margin-bottom: 1.75rem;
+    }
+
+    input, textarea {
+        position: relative;
+        border: none;
+        font: inherit;
+        font-size: inherit;
+        line-height: inherit;
+        color: inherit;
+        background: transparent;
+        outline: none;
+        width: 100%;
+        padding: 0.775rem 0 0.30rem 0;
+
+        &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+            color: $placeholder-color;
+        }
+
+        &::-moz-placeholder { /* Firefox 19+ */
+            color: $placeholder-color;
+        }
+
+        &:-ms-input-placeholder { /* IE 10+ */
+            color: $placeholder-color;
+        }
+
+        &:-moz-placeholder { /* Firefox 18- */
+            color: $placeholder-color;
+        }
+    }
+
+    &:not(.input-filled):not(.input-bordered).fieldset--textarea {
+        border: solid 1px $textarea-border-color;
+        border-bottom: none;
+    }
+
+    textarea {
+        z-index: 2;
+        position: relative;
+        display: block;
+        width: calc(100% - 0.5rem);
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0.775rem 0.25rem 0.30rem 0.25rem;
+    }
+
+    &.fieldset--no-label textarea {
+        margin-top: 0.3rem;
+    }
+
+    &.fieldset--no-label {
+
+        input {
+            padding: 0.30rem 0 0.30rem 0;
+        }
+    }
+
+
+
+    &:before, &:after {
+        content: '';
+        display: block;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        position: absolute;
+        z-index: 2;
+        height: 1px;
+        background-color: $dropdown-border-color;
+        transition: opacity 100ms, height 100ms, transform 450ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    &.fieldset--dropdown {
+        &:before, &:after {
+            display: none;
+        }
+    }
+
+    &:after {
+        height: 2px;
+        background-color: $dropdown-select-active-border-color;
+        transform: scaleX(0);
+    }
+
+    &.fieldset--error:not(.fieldset--active):after {
+        background-color: $error-color;
+        transform: scaleX(1);
+    }
+
+    &.fieldset--active:after {
+        transform: scaleX(1);
+    }
+
+    .no-touchevents & {
+        &:hover:before {
+            height: 2px;
+            opacity: 1;
+        }
+    }
+
+    label {
+        color: $input-label-color;
+        position: absolute;
+        top: 0.78rem;
+        transition: transform 178ms ease-out, color 100ms ease-out;
+        pointer-events: none;
+        transform-origin: top left;
+    }
+
+    &.fieldset--textarea label {
+        left: 0.25rem;
+        top: 1rem;
+    }
+
+    &.fieldset--active, &.fieldset--filled {
+        label {
+            transform: scale(0.65) translateY(-1.5rem) !important;
+        }
+
+        .prefix, .suffix {
+            opacity: 1;
+        }
+    }
+
+    &.fieldset--error label {
+        color: $error-color;
+    }
+
+    &.fieldset--shake label {
+        animation: shake 0.64s cubic-bezier(.36,.07,.19,.97) both;
+    }
+
+    &.fieldset--active label {
+        color: $label-focus-color;
+    }
+
+    .input-helper {
+        position: absolute;
+        transform: scale(0.65);
+        transform-origin: top left;
+        margin-top: 0.25rem;
+        color: $helper-color;
+        width: 154%;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        transition: color 100ms ease-out;
+    }
+
+    &.fieldset--error:not(.fieldset--active) .input-helper {
+        color: $error-color;
+    }
+
+    &.fieldset--disabled {
+        &:after {
+            display: none;
+        }
+
+        &:before {
+            background-color: transparent;
+            border-bottom: dotted 1px $disabled-border-color;
+        }
+
+        label, input {
+            color: $disabled-text-color;
+        }
+    }
+
+    .prefix {
+        position: absolute;
+        top: 0.78rem;
+        opacity: 0;
+        transition: opacity 0.172s ease-out;
+        z-index: 2;
+    }
+
+    .suffix {
+        position: absolute;
+        top: 0.78rem;
+        right: 0;
+        opacity: 0;
+        transition: opacity 0.172s ease-out;
+    }
+
+
+
+    &.input-bordered {
+        margin-top: 0.25rem;
+        margin-bottom: 0.25rem;
+    }
+
+    &.input-filled {
+        margin-top: 0.75rem;
+        margin-bottom: 0.75rem;
+    }
+
+    &.fieldset--helper.input-filled, &.fieldset--helper.input-bordered {
+        margin-bottom: 1.75rem;
+    }
+
+    &.input-filled .input-filled__inner,
+    &.input-bordered .input-bordered__inner {
+        border: solid 1px transparent;
+
+        label {
+            left: 0rem;
+        }
+
+        textarea {
+            margin-left: 0;
+            margin-right: 0;
+            width: 100%;
+        }
+    }
+
+    &.input-filled .input-filled__inner, &.input-bordered .input-bordered__inner {
+        position: relative;
+        margin: 0.25rem 0.75rem 0 0.75rem;
+
+
+        label {
+            transform: translateY(-0.35rem);
+        }
+
+        &:after, &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: -0.25rem;
+            left: -0.75rem;
+            right: -0.75rem;
+            bottom: 0;
+            background: $filled-background-color;
+            border-top-right-radius: 0.25rem;
+            border-top-left-radius: 0.25rem;
+            z-index: 0;
+        }
+
+        > input, label {
+            z-index: 2;
+        }
+    }
+
+
+
+    &.input-filled .input-filled__inner:before {
+        background-color: $filled-background-color-hover;
+        z-index: 1;
+        opacity: 0;
+        transition: opacity 0.172s ease-out;
+    }
+
+    .no-touchevents & {
+        &:not(.fieldset--disabled).input-filled:hover .input-filled__inner:before {
+            opacity: 1;
+        }
+    }
+
+    &:not(.fieldset--disabled).fieldset--active.input-filled .input-filled__inner:before {
+        opacity: 1;
+    }
+
+    &.fieldset--disabled.input-filled .input-filled__inner:after {
+        opacity: 0.5;
+    }
+
+    &.input-bordered {
+        &:before, &:after {
+            display: none;
+        }
+
+        .input-bordered__inner label {
+            transform: translateY(-0.075rem);
+        }
+
+        label:after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: -0.5rem;
+            right: -0.5rem;
+            height: 0.6rem;
+            transform: scaleX(0);
+            transition: transform 149ms ease-out;
+            transition-delay: 0.07s;
+            top: calc(50% - 0.115rem);
+            z-index: -1;
+            background: $input-bordered-label-active-background-color;
+        }
+
+
+
+        &.fieldset--active label:after, &.fieldset--filled label:after {
+            transform: scale(1);
+        }
+
+        .input-bordered__inner:before, .input-bordered__inner:after {
+            top: 0.35rem;
+            border-radius: 0.25rem;
+            background: none;
+            border: solid 1px $input-bordered-border-color;
+            transition: opacity 149ms ease-out;
+        }
+
+        &.fieldset--textarea .input-bordered__inner:before, &.fieldset--textarea .input-bordered__inner:after {
+            top: 0.55rem;
+        }
+
+        &.fieldset--disabled .input-bordered__inner:before {
+            border-color: $input-bordered-border-color-disabled;
+        }
+
+        .input-bordered__inner:after {
+            border: solid 0.1rem $input-bordered-border-color-active;
+            opacity: 0;
+        }
+
+        &.fieldset--active .input-bordered__inner:after {
+            opacity: 1;
+        }
+
+        &.fieldset--active .input-bordered__inner:before {
+            opacity: 0;
+        }
+    }
+
+
+
+    &.fieldset--icon, &.input-filled.fieldset--icon, &.input-bordered.fieldset--icon {
+        .input-icon {
+            z-index: 2;
+            position: absolute;
+            font-size: 1rem;
+            top: 50%;
+            margin-top: -0.3rem;
+            line-height: inherit;
+            transition: color 100ms ease-out;
+            color: inherit;
+        }
+
+        label {
+            left: 1.5rem;
+        }
+
+        input, textarea {
+            box-sizing: border-box;
+            left: 1.5rem;
+            width: calc(100% - 1.5rem);
+        }
+    }
+
+    &.fieldset--icon.fieldset--prefix {
+        .prefix {
+            left: 1.5rem;
+        }
+    }
+
+    &.fieldset--icon.fieldset--textarea:not(.input-filled):not(.input-bordered) {
+        .input-icon {
+            left: 0.75rem;
+            top: 1rem;
+            margin-top: 0rem;
+        }
+
+        textarea {
+            left: 2rem;
+            width: calc(100% - 3rem);
+        }
+
+        label {
+            transform: scale(1) translateY(-0.255rem);
+            left: 2.225rem;
+        }
+    }
+
+    &.fieldset--icon.fieldset--active {
+        .input-icon {
+            color: $label-focus-color;
+        }
+    }
+
+    &.input-filled.fieldset--icon .input-icon {
+        margin-top: -0.65rem;
+    }
+
+    &.fieldset--textarea.input-filled label {
+        transform: translateY(-0.21rem);
+    }
+
+
+    &.fieldset--textarea.input-filled.fieldset--icon .input-icon,
+    &.input-filled.input-filled.fieldset--textarea.fieldset--icon .input-icon {
+        top: 1rem;
+        margin-top: 0rem;
+    }
+
+    &.fieldset--textarea.input-bordered.fieldset--icon,
+    &.input-bordered.input-filled.fieldset--textarea.fieldset--icon {
+        .input-icon {
+            top: 1.15rem;
+            margin-top: 0rem;
+        }
+
+        textarea {
+            margin-top: 0.85rem;
+        }
+    }
+
+    .function-icon, .input-error-icon, .input-valid-icon, .input-loading-icon {
+        position: absolute;
+        top: 50%;
+        margin-top: -0.6rem;
+        right: 0;
+        color: inherit;
+        transition: color 176ms ease-out;
+    }
+
+    .function-icon {
+        margin-top: -0.75rem;
+    }
+
+    &.fieldset--disabled .function-icon {
+        opacity: 0.38;
+    }
+
+    &.fieldset--function-icon {
+        .input-error-icon, .input-valid-icon, .input-loading-icon {
+            right: 2rem;
+        }
+    }
+
+    .input-error-icon, .input-valid-icon, .input-loading-icon {
+        opacity: 0;
+        pointer-events: none;
+        cursor: default;
+        transition: opacity 0.177s ease-out;
+    }
+
+    .input-error-icon svg {
+        color: $error-color;
+    }
+
+    .input-valid-icon svg {
+        color: $valid-color;
+    }
+
+    .input-error-icon--show, .input-valid-icon--show, .input-loading-icon--show {
+        opacity: 1;
+    }
+
+    .no-touchevents & {
+        &:not(.fieldset--disabled) .function-icon:hover {
+            color: $function-icon-hover-color;
+        }
+    }
+}
+
+
+@keyframes shake {
+    10%, 90% {
+        transform: translateX(-1px) scale(0.65) translateY(-1.5rem);
+    }
+
+    20%, 80% {
+        transform: translateX(2px) scale(0.65) translateY(-1.5rem);
+    }
+
+    30%, 50%, 70% {
+        transform: translateX(-4px) scale(0.65) translateY(-1.5rem);
+    }
+
+    40%, 60% {
+        transform: translateX(4px) scale(0.65) translateY(-1.5rem);
+    }
+}

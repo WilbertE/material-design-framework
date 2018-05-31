@@ -1,0 +1,658 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+
+    <meta charset="utf-8" />
+    <link href="../refference.css" rel="stylesheet" />
+    <link href="../StyleSheet.css" rel="stylesheet" />
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet"
+          href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script src="../../javascript/JavaScript.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+        $(function () {
+            $.mTextfields();
+
+            $("#custom-validation").on("blur", function () {
+                //Get the input
+                var $input = $(this);
+
+                //Get the timestamp
+                var ts = $input.attr("data-ts");
+
+                //Add the loading class
+                $input.data("loading")();
+
+                //Simulate an AJAX request
+                setTimeout(function () {
+
+                    //Check if the timestamp isn't changed which indicates the user might has changed the input
+                    if ($input.attr("data-ts") == ts) {
+
+                        if ($input.val().indexOf("A") > -1) {
+                            $input.data("valid")();
+                        } else {
+                            $input.data("error")("Does not have a capital A");
+                        }
+                    }
+                }, 1500);
+            });
+        });
+
+        $(function () {
+            $("pre").on("click", function (e) {
+                e.preventDefault();
+                if ($(e.target).is("code") == false && $(e.target).closest("code").length == 0) {
+                    $(this).toggleClass("show").find("code").slideToggle();
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <div class="titlebar text-headline shadow-4">
+        Textfields
+        <div class="text-subheading-1">Create communication</div>
+    </div>
+    <content class="m-body">
+
+        <ul class="index">
+            <li class="text-caption">Contents</li>
+            <li><a href="#textfields">Textfields</a></li>
+            <li><a href="#placeholder">Placeholders and labels</a></li>
+            <li><a href="#helpers">Helpers and validation</a></li>
+            <li><a href="#validation">Custom validation</a></li>
+            <li><a href="#disabled">Disabled textfields</a></li>
+            <li><a href="#filled-bordered">Filled and bordered</a></li>
+            <li><a href="#textareas">Textareas</a></li>
+            <li><a href="#prefix-suffix">Prefix and suffix</a></li>
+            <li><a href="#function-icons">Function icons</a></li>
+            <li><a href="#icons">Icons</a></li>
+            <li><a href="#types">Types</a></li>
+        </ul>
+
+
+        <a name="textfields"><h1 class="text-title">Textfields</h1></a>
+        <p class="readability">
+            Text fields typically reside in forms but can appear in other places, like dialog boxes and search.
+        </p>
+
+        <div class="grid grid--gutter-40">
+            <div class="grid__cell">
+                <fieldset>
+                    <input type="text" value="" name="input_long" id="input_long" />
+                </fieldset>
+            </div>
+        </div>
+
+
+        <pre><code class="html text-caption">&lt;fieldset&gt;
+    &lt;input type=&quot;text&quot; value=&quot;&quot; /&gt;
+&lt;/fieldset&gt;</code></pre>
+
+        <a name="placeholder"><h1 class="text-title">Placeholders and labels</h1></a>
+        <p class="readability">
+            Textfields can have placeholders or labels. Do not use them both. A placeholder will dissapear when the user starts typing.
+            The label will sit on top of an textfield and will move above the textfield when the textfields get focus.
+        </p>
+        <div class="grid grid--gutter-40">
+            <div class="grid__cell">
+                <fieldset>
+                    <input placeholder="Placeholder" type="text" value="" name="input_long" id="input_long" />
+                </fieldset>
+            </div>
+            <div class="grid__cell">
+                <fieldset>
+                    <input type="text" value="" id="input-label" />
+                    <label for="input-label">Label</label>
+                </fieldset>
+            </div>
+        </div>
+
+
+        <pre><code class="html text-caption">&lt;fieldset&gt;
+    &lt;input placeholder=&quot;Placeholder&quot; type=&quot;text&quot; /&gt;
+&lt;/fieldset&gt;
+&lt;fieldset&gt;
+    &lt;input type=&quot;text&quot; id=&quot;input-label&quot; /&gt;
+    &lt;label for=&quot;input-label&quot;&gt;Label&lt;/label&gt;
+&lt;/fieldset&gt;</code></pre>
+
+
+        <a name="helpers"><h1 class="text-title">Helpers and validation</h1></a>
+        <p class="readability">
+            Helpers are small pieces of text that appear below a textfield and help users explain what should be filled in.
+            Using the attribute <span class="attr--filled">pattern</span> with a regexpression and the class <span class="class--filled">input--validate</span> will validate the input when it loses focus.
+            This also works for inputs with special types like &lt;input type=&quot;email&quot; /&gt;.
+            If the value doesn't match the regexpression an error from the attribute <span class="attr--filled">data-error</span> will appear below the textfield
+            and the fieldset will change to a red color. When the input is valid a checkmark icon appears.
+        </p>
+        <div class="grid grid--gutter-40">
+            <div class="grid__cell grid__cell--6">
+                <fieldset>
+                    <input type="text" value="" id="input-label" />
+                    <label for="input-label">Label</label>
+                    <div class="input-helper">Helper text</div>
+                </fieldset>
+            </div>
+            <div class="grid__cell grid__cell--6">
+                <fieldset>
+                    <input type="text" value="" class="input--validate" id="input-label" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" data-error="Min. 8 chars, 1 letter and 1 nr." />
+                    <label for="input-label">Label</label>
+                    <div class="input-helper">This will show an error</div>
+                </fieldset>
+            </div>
+            <div class="grid__cell grid__cell--6">
+                <fieldset>
+                    <input type="email" value="" class="input--validate" id="input-label" data-error="This emailaddress is invalid" />
+                    <label for="input-label">E-mailaddress</label>
+                    <div class="input-helper">Fill in a valid emailaddress</div>
+                </fieldset>
+            </div>
+            <div class="grid__cell grid__cell--6">
+                <fieldset>
+                    <input type="password" value="" class="input--validate" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" id="input-label" data-error="Min. 8 chars, 1 letter and 1 nr." />
+                    <div class="button-icon function-icon js-input-view-password" data-ripple="#cf535d">
+                        <i class="fas fa-eye js-password-show-icon"></i>
+                        <i class="fas fa-eye-slash hidden js-password-hidden-icon"></i>
+                    </div>
+                    <label for="input-label">Password</label>
+                    <div class="input-helper">Must contain 1 number, 1 letter and min 8 characters</div>
+                </fieldset>
+            </div>
+        </div>
+
+
+        <pre><code class="html text-caption">&lt;fieldset&gt;
+    &lt;input type=&quot;text&quot; value=&quot;&quot;  id=&quot;input-label&quot; /&gt;
+    &lt;label for=&quot;input-label&quot;&gt;Label&lt;/label&gt;
+    &lt;div class=&quot;input-helper&quot;&gt;Helper text&lt;/div&gt;
+&lt;/fieldset&gt;
+&lt;fieldset&gt;
+    &lt;input type=&quot;text&quot; value=&quot;&quot; class=&quot;input--validate&quot; id=&quot;input-label&quot; pattern=&quot;^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$&quot; data-error=&quot;Min. 8 chars, 1 letter and 1 nr.&quot; /&gt;
+    &lt;label for=&quot;input-label&quot;&gt;Label&lt;/label&gt;
+    &lt;div class=&quot;input-helper&quot;&gt;This will show an error&lt;/div&gt;
+&lt;/fieldset&gt;
+&lt;fieldset&gt;
+    &lt;input type=&quot;email&quot; value=&quot;&quot; class=&quot;input--validate&quot; id=&quot;input-label&quot; data-error=&quot;This emailaddress is invalid&quot; /&gt;
+    &lt;label for=&quot;input-label&quot;&gt;E-mailaddress&lt;/label&gt;
+    &lt;div class=&quot;input-helper&quot;&gt;Fill in a valid emailaddress&lt;/div&gt;
+&lt;/fieldset&gt;</code></pre>
+
+        <a name="validation"><h1 class="text-title">Custom validation</h1></a>
+        <p class="readability">
+            It is possible to validate inputs with custom scripts. Available functions are <span class="js--filled">$(input).data("valid")()</span>,
+            <span class="js--filled">$(input).data("error")("error message")</span> and in case of ajax validation <span class="js--filled">$(input).data("loading")()</span> can be used
+            to show a spinner while validating is in progress.<br />
+            When the user focusses on an input an attribute <span class="attr--filled">data-ts</span> is created with a timestamp. So in case of AJAX validation it is possible to
+            check if the input might have been changed when the AJAX request was loading. In that case the AJAX result can be ignored. See the code for this Javascript example.
+        </p>
+        <div class="grid grid--gutter-40">
+            <div class="grid__cell">
+                <fieldset>
+                    <input type="text" value="" id="custom-validation" />
+                    <label for="input-label">Write a word</label>
+                    <div class="input-helper">The word must contain a capital A</div>
+                </fieldset>
+            </div>
+        </div>
+
+
+        <pre><code class="js text-caption">$("#custom-validation").on("blur", function () {
+    //Get the input
+    var $input = $(this);
+    //Get the timestamp
+    var ts = $input.attr("data-ts");
+    //Add the loading class
+    $input.data("loading")();
+    //Simulate an AJAX request
+    setTimeout(function () {
+        //Check if the timestamp isn't changed which indicates the user might has changed the input
+        if ($input.attr("data-ts") == ts) {
+            if ($input.val().indexOf("A") > -1) {
+                $input.data("valid")();
+            } else {
+                $input.data("error")("Does not have a capital A");
+            }
+        }
+    }, 1500);
+});</code></pre>
+
+
+        <a name="disabled"><h1 class="text-title">Disabled textfields</h1></a>
+        <p class="readability">
+            When textfields are disabled they appear greyed out with a dotted bottom border.
+        </p>
+        <div class="grid grid--gutter-40">
+            <div class="grid__cell">
+                <fieldset>
+                    <input disabled="disabled" type="text" value="" id="input" />
+                    <label for="input">Label</label>
+                    <div class="input-helper">Disabled textfield</div>
+                </fieldset>
+            </div>
+        </div>
+
+
+        <pre><code class="html text-caption">&lt;fieldset&gt;
+    &lt;input disabled=&quot;disabled&quot; type=&quot;text&quot; value=&quot;&quot; id=&quot;input&quot; /&gt;
+    &lt;label for=&quot;input&quot;&gt;Label&lt;/label&gt;
+    &lt;div class=&quot;input-helper&quot;&gt;Disabled textfield&lt;/div&gt;
+&lt;/fieldset&gt;</code></pre>
+
+        <a name="filled-bordered"><h1 class="text-title">Filled and bordered</h1></a>
+        <p class="readability">
+            When wrapping the field and label inside a div with the class <span class="class--filled">input-filled</span> the input uses a different background.
+            Wrapping it inside a div with the class <span class="class--filled">input-bordered</span> it changes to a bordered mode.
+        </p>
+        <div class="grid grid--gutter-40">
+            <div class="grid__cell">
+                <fieldset class="input-filled">
+                    <div class="input-filled__inner">
+                        <input type="text" value="" id="input-label" />
+                        <label for="input-label">Label</label>
+                    </div>
+                </fieldset>
+
+                <fieldset class="input-filled">
+                    <div class="input-filled__inner">
+                        <input type="text" disabled="disabled" value="" id="input-label" />
+                        <label for="input-label">Label (disabled)</label>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="grid__cell">
+                <fieldset class="input-bordered">
+                    <div class="input-bordered__inner">
+                        <input type="text" value="" id="input-label" />
+                        <label for="input-label">Label</label>
+                    </div>
+                </fieldset>
+
+                <fieldset class="input-bordered">
+                    <div class="input-bordered__inner">
+                        <input type="text" disabled="disabled" value="" id="input-label" />
+                        <label for="input-label">Label (disabled)</label>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+        <pre><code class="html text-caption">&lt;fieldset class=&quot;input-filled&quot;&gt;
+    &lt;div class=&quot;input-filled__inner&quot;&gt;
+        &lt;input type=&quot;text&quot; value=&quot;&quot; id=&quot;input-label&quot; /&gt;
+        &lt;label for=&quot;input-label&quot;&gt;Label&lt;/label&gt;
+    &lt;/div&gt;
+&lt;/fieldset&gt;
+&lt;fieldset class=&quot;input-filled&quot;&gt;
+    &lt;div class=&quot;input-filled__inner&quot;&gt;
+        &lt;input type=&quot;text&quot; disabled=&quot;disabled&quot; value=&quot;&quot; id=&quot;input-label&quot; /&gt;
+        &lt;label for=&quot;input-label&quot;&gt;Label (disabled)&lt;/label&gt;
+    &lt;/div&gt;
+&lt;/fieldset&gt;
+            
+&lt;fieldset class=&quot;input-bordered&quot;&gt;
+    &lt;div class=&quot;input-bordered__inner&quot;&gt;
+        &lt;input type=&quot;text&quot; value=&quot;&quot; id=&quot;input-label&quot; /&gt;
+        &lt;label for=&quot;input-label&quot;&gt;Label&lt;/label&gt;
+    &lt;/div&gt;
+&lt;/fieldset&gt;
+&lt;fieldset class=&quot;input-bordered&quot;&gt;
+    &lt;div class=&quot;input-bordered__inner&quot;&gt;
+        &lt;input type=&quot;text&quot; disabled=&quot;disabled&quot; value=&quot;&quot; id=&quot;input-label&quot; /&gt;
+        &lt;label for=&quot;input-label&quot;&gt;Label (disabled)&lt;/label&gt;
+    &lt;/div&gt;
+&lt;/fieldset&gt;</code></pre>
+
+
+        <a name="textareas"><h1 class="text-title">Textareas</h1></a>
+        <p class="readability">
+            Textfields can contain multiple lines of text. They have a fixed height.
+        </p>
+        <div class="grid grid--gutter-40">
+            <div class="grid__cell">
+                <fieldset>
+                    <textarea name="text"></textarea>
+                    <div class="input-helper">Helper text</div>
+                </fieldset>
+
+                <fieldset>
+                    <textarea placeholder="Placeholder" name="text"></textarea>
+                    <div class="input-helper">Helper text</div>
+                </fieldset>
+
+                <fieldset>
+                    <textarea name="text"></textarea>
+                    <label for="input-label">Label</label>
+                    <div class="input-helper">Helper text</div>
+                </fieldset>
+
+                <fieldset class="input-filled">
+                    <div class="input-filled__inner">
+                        <textarea name="text"></textarea>
+                        <label for="input-label">Filled textbox</label>
+                        <div class="input-helper">Helper text</div>
+                    </div>
+                </fieldset>
+
+                <fieldset class="input-bordered">
+                    <div class="input-bordered__inner">
+                        <textarea name="text"></textarea>
+                        <label for="input-label">Bordered textbox</label>
+                        <div class="input-helper">Helper text</div>
+                    </div>
+                </fieldset>
+
+                <fieldset class="input-bordered">
+                    <div class="input-bordered__inner">
+                        <textarea name="text" disabled="disabled"></textarea>
+                        <label for="input-label">Disabled textbox</label>
+                        <div class="input-helper">Helper text</div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+        <pre><code class="html text-caption">&lt;fieldset&gt;
+    &lt;textarea name=&quot;text&quot;&gt;&lt;/textarea&gt;
+    &lt;div class=&quot;input-helper&quot;&gt;Helper text&lt;/div&gt;
+&lt;/fieldset&gt;
+&lt;fieldset&gt;
+    &lt;textarea placeholder=&quot;Placeholder&quot; name=&quot;text&quot;&gt;&lt;/textarea&gt;
+    &lt;div class=&quot;input-helper&quot;&gt;Helper text&lt;/div&gt;
+&lt;/fieldset&gt;
+&lt;fieldset&gt;
+    &lt;textarea name=&quot;text&quot;&gt;&lt;/textarea&gt;
+    &lt;label for=&quot;input-label&quot;&gt;Label&lt;/label&gt;
+    &lt;div class=&quot;input-helper&quot;&gt;Helper text&lt;/div&gt;
+&lt;/fieldset&gt;
+&lt;fieldset class=&quot;input-filled&quot;&gt;
+    &lt;div class=&quot;input-filled__inner&quot;&gt;
+        &lt;textarea name=&quot;text&quot;&gt;&lt;/textarea&gt;
+        &lt;label for=&quot;input-label&quot;&gt;Filled textbox&lt;/label&gt;
+        &lt;div class=&quot;input-helper&quot;&gt;Helper text&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/fieldset&gt;
+&lt;fieldset class=&quot;input-bordered&quot;&gt;
+    &lt;div class=&quot;input-bordered__inner&quot;&gt;
+        &lt;textarea name=&quot;text&quot;&gt;&lt;/textarea&gt;
+        &lt;label for=&quot;input-label&quot;&gt;Bordered textbox&lt;/label&gt;
+        &lt;div class=&quot;input-helper&quot;&gt;Helper text&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/fieldset&gt;
+&lt;fieldset class=&quot;input-bordered&quot;&gt;
+    &lt;div class=&quot;input-bordered__inner&quot;&gt;
+        &lt;textarea name=&quot;text&quot; disabled=&quot;disabled&quot;&gt;&lt;/textarea&gt;
+        &lt;label for=&quot;input-label&quot;&gt;Disabled textbox&lt;/label&gt;
+        &lt;div class=&quot;input-helper&quot;&gt;Helper text&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/fieldset&gt;</code></pre>
+
+
+
+        <a name="prefix-suffix"><h1 class="text-title">Prefixes and suffixes</h1></a>
+        <p class="readability">
+            Prefixes and suffixes can be used to clarify units or to add input in advance
+        </p>
+        <div class="grid grid--gutter-40">
+            <div class="grid__cell">
+                <fieldset>
+                    <span class="prefix">&euro;</span>
+                    <input type="text" value="" id="input-label" />
+                    <label for="input-label">Label</label>
+                </fieldset>
+            </div>
+            <div class="grid__cell">
+                <fieldset>
+                    <span class="suffix">@gmail.com</span>
+                    <input type="text" value="" id="input-label" />
+                    <label for="input-label">Label</label>
+                </fieldset>
+            </div>
+        </div>
+        <div class="grid__cell">
+            <fieldset class="input-filled">
+                <div class="input-filled__inner">
+                    <span class="prefix">&euro;</span>
+                    <input type="text" value="" id="input-label" />
+                    <label for="input-label">Label</label>
+                </div>
+            </fieldset>
+        </div>
+        <div class="grid__cell">
+            <fieldset class="input-bordered">
+                <div class="input-bordered__inner">
+                    <span class="prefix">&euro;</span>
+                    <input type="text" value="" id="input-label" />
+                    <label for="input-label">Label</label>
+                </div>
+            </fieldset>
+        </div>
+        <pre><code class="html text-caption">&lt;fieldset&gt;
+    &lt;span class=&quot;prefix&quot;&gt;&amp;euro;&lt;/span&gt;
+    &lt;input type=&quot;text&quot; value=&quot;&quot; id=&quot;input-label&quot; /&gt;
+    &lt;label for=&quot;input-label&quot;&gt;Label&lt;/label&gt;
+&lt;/fieldset&gt;
+&lt;fieldset&gt;
+    &lt;span class=&quot;suffix&quot;&gt;@gmail.com&lt;/span&gt;
+    &lt;input type=&quot;text&quot; value=&quot;&quot; id=&quot;input-label&quot; /&gt;
+    &lt;label for=&quot;input-label&quot;&gt;Label&lt;/label&gt;
+&lt;/fieldset&gt;</code></pre>
+
+
+        <a name="function-icons"><h1 class="text-title">Function icons</h1></a>
+        <p class="readability">
+            Function icons are functions that appear on the right side of the input and preform an action when the user click on it.
+        </p>
+        <div class="grid grid--gutter-40">
+            <div class="grid__cell">
+                <fieldset>
+                    <input type="text" value="" id="input-label" />
+                    <label for="input-label">Label</label>
+                    <div class="button-icon function-icon js-input-clear" data-ripple="#cf535d">
+                        <i class="fas fa-times"></i>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <input type="text" disabled="disabled" value="" id="input-label" />
+                    <label for="input-label">Label</label>
+                    <div class="button-icon function-icon js-input-clear" data-ripple="#cf535d">
+                        <i class="fas fa-times"></i>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+
+        <pre><code class="html text-caption">&lt;fieldset&gt;
+    &lt;input type=&quot;text&quot; value=&quot;&quot; id=&quot;input-label&quot; /&gt;
+    &lt;label for=&quot;input-label&quot;&gt;Label&lt;/label&gt;
+    &lt;div class=&quot;button-icon function-icon js-input-clear&quot; data-ripple=&quot;#cf535d&quot;&gt;
+        &lt;i class=&quot;fas fa-times&quot;&gt;&lt;/i&gt;
+    &lt;/div&gt;
+&lt;/fieldset&gt;</code></pre>
+
+
+
+        <a name="icons"><h1 class="text-title">Icons</h1></a>
+        <p class="readability">
+            Icons can be added to make clear what input is required.
+        </p>
+        <div class="grid grid--gutter-40">
+            <div class="grid__cell">
+                <fieldset>
+                    <i class="fas fa-user input-icon"></i>
+                    <input type="text" value="" id="input-label" />
+                    <label for="input-label">Label</label>
+                </fieldset>
+
+                <fieldset class="input-filled">
+                    <div class="input-filled__inner">
+                        <i class="fas fa-user input-icon"></i>
+                        <input type="text" value="" id="input-label" />
+                        <label for="input-label">Label</label>
+                    </div>
+                </fieldset>
+
+                <fieldset class="input-bordered">
+                    <div class="input-bordered__inner">
+                        <i class="fas fa-user input-icon"></i>
+                        <input type="text" value="" id="input-label" />
+                        <label for="input-label">Label</label>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <i class="fas fa-user input-icon"></i>
+                    <textarea name="text"></textarea>
+                    <label for="input-label">Label</label>
+                </fieldset>
+
+                <fieldset class="input-filled">
+                    <div class="input-filled__inner">
+                        <i class="fas fa-user input-icon"></i>
+                        <textarea name="text"></textarea>
+                        <label for="input-label">Filled textbox</label>
+                    </div>
+                </fieldset>
+
+                <fieldset class="input-bordered">
+                    <div class="input-bordered__inner">
+                        <i class="fas fa-user input-icon"></i>
+                        <textarea name="text"></textarea>
+                        <label for="input-label">Bordered textbox</label>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <i class="fas fa-user input-icon"></i>
+                    <span class="prefix">&euro;</span>
+                    <input type="text" value="" id="input-label" />
+                    <label for="input-label">With prefix</label>
+                </fieldset>
+
+                <fieldset>
+                    <i class="fas fa-user input-icon"></i>
+                    <span class="suffix">@gmail.com</span>
+                    <input type="text" value="" id="input-label" />
+                    <label for="input-label">With suffix</label>
+                </fieldset>
+            </div>
+        </div>
+
+        <pre><code class="html text-caption">&lt;fieldset&gt;
+    &lt;i class=&quot;material-icons input-icon&quot;&gt;date_range&lt;/i&gt;
+    &lt;input type=&quot;text&quot; value=&quot;&quot; id=&quot;input-label&quot; /&gt;
+    &lt;label for=&quot;input-label&quot;&gt;Label&lt;/label&gt;
+&lt;/fieldset&gt;
+&lt;fieldset class=&quot;input-filled&quot;&gt;
+    &lt;div class=&quot;input-filled__inner&quot;&gt;
+        &lt;i class=&quot;material-icons input-icon&quot;&gt;date_range&lt;/i&gt;
+        &lt;input type=&quot;text&quot; value=&quot;&quot; id=&quot;input-label&quot; /&gt;
+        &lt;label for=&quot;input-label&quot;&gt;Label&lt;/label&gt;
+    &lt;/div&gt;
+&lt;/fieldset&gt;
+&lt;fieldset class=&quot;input-bordered&quot;&gt;
+    &lt;div class=&quot;input-bordered__inner&quot;&gt;
+        &lt;i class=&quot;material-icons input-icon&quot;&gt;date_range&lt;/i&gt;
+        &lt;input type=&quot;text&quot; value=&quot;&quot; id=&quot;input-label&quot; /&gt;
+        &lt;label for=&quot;input-label&quot;&gt;Label&lt;/label&gt;
+    &lt;/div&gt;
+&lt;/fieldset&gt;
+&lt;fieldset&gt;
+    &lt;i class=&quot;material-icons input-icon&quot;&gt;date_range&lt;/i&gt;
+    &lt;textarea name=&quot;text&quot;&gt;&lt;/textarea&gt;
+    &lt;label for=&quot;input-label&quot;&gt;Label&lt;/label&gt;
+&lt;/fieldset&gt;
+&lt;fieldset class=&quot;input-filled&quot;&gt;
+    &lt;div class=&quot;input-filled__inner&quot;&gt;
+        &lt;i class=&quot;material-icons input-icon&quot;&gt;date_range&lt;/i&gt;
+        &lt;textarea name=&quot;text&quot;&gt;&lt;/textarea&gt;
+        &lt;label for=&quot;input-label&quot;&gt;Filled textbox&lt;/label&gt;
+    &lt;/div&gt;
+&lt;/fieldset&gt;
+&lt;fieldset class=&quot;input-bordered&quot;&gt;
+    &lt;div class=&quot;input-bordered__inner&quot;&gt;
+        &lt;i class=&quot;material-icons input-icon&quot;&gt;date_range&lt;/i&gt;
+        &lt;textarea name=&quot;text&quot;&gt;&lt;/textarea&gt;
+        &lt;label for=&quot;input-label&quot;&gt;Bordered textbox&lt;/label&gt;
+    &lt;/div&gt;
+&lt;/fieldset&gt;
+&lt;fieldset&gt;
+    &lt;i class=&quot;material-icons input-icon&quot;&gt;date_range&lt;/i&gt;
+    &lt;span class=&quot;prefix&quot;&gt;&amp;euro;&lt;/span&gt;
+    &lt;input type=&quot;text&quot; value=&quot;&quot; id=&quot;input-label&quot; /&gt;
+    &lt;label for=&quot;input-label&quot;&gt;With prefix&lt;/label&gt;
+&lt;/fieldset&gt;
+&lt;fieldset&gt;
+    &lt;i class=&quot;material-icons input-icon&quot;&gt;date_range&lt;/i&gt;
+    &lt;span class=&quot;suffix&quot;&gt;@gmail.com&lt;/span&gt;
+    &lt;input type=&quot;text&quot; value=&quot;&quot; id=&quot;input-label&quot; /&gt;
+    &lt;label for=&quot;input-label&quot;&gt;With suffix&lt;/label&gt;
+&lt;/fieldset&gt;</code></pre>
+
+
+        <a name="types"><h1 class="text-title">Types</h1></a>
+        <p class="readability">
+            A collection of different types of textfields
+        </p>
+        <div class="grid grid--gutter-40">
+            <div class="grid__cell">
+                <fieldset>
+                    <input type="text" value="" id="input-label" />
+                    <label for="input-label">Normal textfield</label>
+                    <div class="input-helper">Nothing special</div>
+                </fieldset>
+                <fieldset>
+                    <input type="password" value="" id="input-label" />
+                    <label for="input-label">Password field</label>
+                    <div class="button-icon function-icon js-input-view-password" data-ripple="#cf535d">
+                        <i class="fas fa-eye js-password-show-icon"></i>
+                        <i class="fas fa-eye-slash hidden js-password-hidden-icon"></i>
+                    </div>
+                    <div class="input-helper">Create a strong password</div>
+                </fieldset>
+                <fieldset>
+                    <input type="email" class="input--validate" value="" id="input-label" data-error="This emailaddress is invalid" />
+                    <label for="input-label">Email field</label>
+                    <div class="input-helper">How can we contact you</div>
+                </fieldset>
+                <fieldset>
+                    <input type="tel" class="input--validate" pattern="^((((0)[1-9]{2}[0-9][-]?[1-9][0-9]{5})|((\\+31|0|0031)[1-9][0-9][-]?[1-9][0-9]{6}))|(((\\+31|0|0031)6){1}[1-9]{1}[0-9]{7}))$" value="" id="input-label" data-error="This is not a valid phonenumber" />
+                    <label for="input-label">Phonenumber field</label>
+                    <div class="input-helper">Let's make a phonecall</div>
+                </fieldset>
+            </div>
+        </div>
+
+        <pre><code class="html text-caption">&lt;fieldset&gt;
+    &lt;input type=&quot;text&quot; value=&quot;&quot; id=&quot;input-label&quot; /&gt;
+    &lt;label for=&quot;input-label&quot;&gt;Normal textfield&lt;/label&gt;
+    &lt;div class=&quot;input-helper&quot;&gt;Nothing special&lt;/div&gt;
+&lt;/fieldset&gt;
+&lt;fieldset&gt;
+    &lt;input type=&quot;password&quot; value=&quot;&quot; id=&quot;input-label&quot; /&gt;
+    &lt;label for=&quot;input-label&quot;&gt;Password field&lt;/label&gt;
+    &lt;div class=&quot;button-icon function-icon js-input-view-password&quot; data-ripple=&quot;#cf535d&quot;&gt;
+        &lt;i class=&quot;fas fa-eye js-password-show-icon&quot;&gt;&lt;/i&gt;
+        &lt;i class=&quot;fas fa-eye-slash hidden js-password-hidden-icon&quot;&gt;&lt;/i&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;input-helper&quot;&gt;Create a strong password&lt;/div&gt;
+&lt;/fieldset&gt;
+&lt;fieldset&gt;
+    &lt;input type=&quot;email&quot; class=&quot;input--validate&quot; value=&quot;&quot; id=&quot;input-label&quot; data-error=&quot;This emailaddress is invalid&quot; /&gt;
+    &lt;label for=&quot;input-label&quot;&gt;Email field&lt;/label&gt;
+    &lt;div class=&quot;input-helper&quot;&gt;How can we contact you&lt;/div&gt;
+&lt;/fieldset&gt;
+&lt;fieldset&gt;
+    &lt;input type=&quot;tel&quot; class=&quot;input--validate&quot; pattern=&quot;^((((0)[1-9]{2}[0-9][-]?[1-9][0-9]{5})|((\\+31|0|0031)[1-9][0-9][-]?[1-9][0-9]{6}))|(((\\+31|0|0031)6){1}[1-9]{1}[0-9]{7}))$&quot; value=&quot;&quot; id=&quot;input-label&quot; data-error=&quot;This is not a valid phonenumber&quot; /&gt;
+    &lt;label for=&quot;input-label&quot;&gt;Phonenumber field&lt;/label&gt;
+    &lt;div class=&quot;input-helper&quot;&gt;Let&#39;s make a phonecall&lt;/div&gt;
+&lt;/fieldset&gt;</code></pre>
+
+    </content>
+</body>
+</html>

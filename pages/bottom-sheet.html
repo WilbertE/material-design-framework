@@ -1,0 +1,218 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta charset="utf-8" />
+    <link href="../refference.css" rel="stylesheet" />
+    <link href="../material-framework.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script src="../fontawsome/svg-with-js/js/fontawesome-all.js"></script>
+    <script src="../material-framework.js"></script>
+    <script src="../reference.js"></script>
+    <script>
+        $(function () {
+            $(".m-bottom-sheet").mBottomSheet();
+        });
+
+    </script>
+
+
+</head>
+<body>
+
+    <div class="titlebar text-headline shadow-4">
+        Bottom sheet
+        <div class="text-subheading-1">The offscreen content page</div>
+    </div>
+    <content>
+
+        <ul class="index">
+            <li class="text-caption">Contents</li>
+            <li><a href="#bottom-sheet">Bottom sheet</a></li>
+            <li><a href="#sizing">Sizing</a></li>
+            <li><a href="#initializing">Initializing</a></li>
+            <li><a href="#options">Options</a></li>
+            <li><a href="#methods">Methods</a></li>
+        </ul>
+
+        <a name="bottom-sheet"><h1 class="text-title">Bottom sheet</h1></a>
+        <p class="readability">
+            Bottom sheets slide up from the bottom of the screen to reveal more content. Bottom sheets are displayed only as a result of a user-initiated action.
+            An example sits on the bottom of this page.
+        </p>
+
+        <pre><code class="html text-caption">&lt;section class=&quot;m-bottom-sheet m-bottom-sheet--large&quot;&gt;
+    &lt;div class=&quot;m-bottom-sheet__title&quot;&gt;
+        Title
+    &lt;/div&gt;
+    &lt;div class=&quot;m-bottom-sheet__list&quot;&gt;
+        &lt;a href=&quot;#&quot; class=&quot;m-bottom-sheet__list-item&quot;&gt;
+            &lt;i class=&quot;m-bottom-sheet__list-icon material-icons&quot;&gt;image&lt;/i&gt;
+            &lt;span class=&quot;m-bottom-sheet__list-label&quot;&gt;Images&lt;/span&gt;
+        &lt;/a&gt;
+    &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+
+
+        <a name="sizing"><h1 class="text-title">Sizing</h1></a>
+        The width of the bottom sheet can be adjusted using the classes
+        <span class="class--filled">.m-bottom-sheet--small</span>,
+        <span class="class--filled">.m-bottom-sheet--medium</span> and
+        <span class="class--filled">.m-bottom-sheet--large</span>
+
+        <a name="initializing"><h1 class="text-title">Initializing</h1></a>
+        <p class="readability">
+            To initialize the component use the following function with optional options.
+        </p>
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">$(selector).mBottomSheet(options);</div>
+        </div>
+
+        <a name="options"><div class="text-subheading-1">Options</div></a>
+        <p class="readability">
+            The following options are available:<br />
+        </p>
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">titleToggle: true</div>
+            <div class="explainer">
+                If the component has a title this will enable or disable maximizing or minimizing on title click
+            </div>
+        </div>
+
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">overlay: false</div>
+            <div class="explainer">
+                Add an dark overlay which cannot be clicked through
+            </div>
+        </div>
+
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">overlayOnlyOnMaximize: false</div>
+            <div class="explainer">
+                Add an dark overlay which cannot be clicked through and only shows when the bottom sheet get maximized
+            </div>
+        </div>
+
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">followNavigation: false</div>
+            <div class="explainer">
+                Follow the anchor clicks to its location
+            </div>
+        </div>
+
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">closeOnAnchorClick: false</div>
+            <div class="explainer">
+                Close the element when an anchor inside it is clicked
+            </div>
+        </div>
+
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">minimizeOnAnchorClick: true</div>
+            <div class="explainer">
+                Minimizes the element if an anchor inside it is clicked. If no title exists it will close.
+            </div>
+        </div>
+
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">onMinimize: function(){}</div>
+            <div class="explainer">
+                Function which get called on minimizing
+            </div>
+        </div>
+
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">onClose: function(){}</div>
+            <div class="explainer">
+                Function which get called on closing
+            </div>
+        </div>
+
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">onRemove: function(){}</div>
+            <div class="explainer">
+                Function which get called on removing the element from the DOM
+            </div>
+        </div>
+
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">onInit: function(){}</div>
+            <div class="explainer">
+                Function which get called on initialize
+            </div>
+        </div>
+
+
+
+        <a name="methods"><div class="text-subheading-1">Methods</div></a>
+        <p class="readability">
+            Interacting with the component from outside:<br />
+        </p>
+
+
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">$(selector).data("mBottomSheet").show()</div>
+            <div class="explainer">
+                Shows the full body of the bottom sheet.
+            </div>
+        </div>
+
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">$(selector).data("mBottomSheet").hide()</div>
+            <div class="explainer">
+                Hides the full body of the bottom sheet with the header still visible if no header is visible the bottom sheet goes off screen
+            </div>
+        </div>
+
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">$(selector).data("mBottomSheet").close()</div>
+            <div class="explainer">
+                Bottom sheets goes off screen but still exists. Can be showed again by calling hide() or show()
+            </div>
+        </div>
+
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">$(selector).data("mBottomSheet").remove()</div>
+            <div class="explainer">
+                Bottom sheets goes off screen and is removed from the DOM
+            </div>
+        </div>
+
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">$(selector).data("mBottomSheet").bind()</div>
+            <div class="explainer">
+                When the content gets dynamically updated the bind() function will search for anchor tags to hide or close the element on click
+            </div>
+        </div>
+
+
+
+
+        <section class="m-bottom-sheet m-bottom-sheet--small">
+            <div class="m-bottom-sheet__title">
+                Title
+            </div>
+            <div class="m-bottom-sheet__list">
+                <a href="#" class="m-bottom-sheet__list-item">
+                    <i class="m-bottom-sheet__list-icon material-icons">image</i>
+                    <span class="m-bottom-sheet__list-label">Images</span>
+                </a>
+                <a href="#" class="m-bottom-sheet__list-item">
+                    <i class="m-bottom-sheet__list-icon material-icons">settings</i>
+                    <span class="m-bottom-sheet__list-label">Settings</span>
+                </a>
+                <div class="m-bottom-sheet__divider"></div>
+                <a href="#" class="m-bottom-sheet__list-item">
+                    <i class="m-bottom-sheet__list-icon material-icons">person</i>
+                    <span class="m-bottom-sheet__list-label">Account</span>
+                </a>
+            </div>
+        </section>
+
+    </content>
+</body>
+</html>

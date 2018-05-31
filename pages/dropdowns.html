@@ -1,0 +1,308 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta charset="utf-8" />
+    <link href="../refference.css" rel="stylesheet" />
+    <link href="../material-framework.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script src="../fontawsome/svg-with-js/js/fontawesome-all.js"></script>
+    <script src="../material-framework.js"></script>
+    <script src="../reference.js"></script>
+    <script>
+        $(function () {
+            $("select").mDropdown();
+        });
+    </script>
+</head>
+<body>
+
+    <div class="titlebar text-headline shadow-4">
+        Dropdowns
+        <div class="text-subheading-1">Making choices</div>
+    </div>
+    <content class="m-body">
+
+        <ul class="index">
+            <li class="text-caption">Contents</li>
+            <li><a href="#dropdowns">Dropdown buttons</a></li>
+            <li><a href="#dropdowns">Helpers</a></li>
+            <li><a href="#filled-bordered">Filled and bordered</a></li>
+            <li><a href="#icons">Icons</a></li>
+            <li><a href="#initializing">Initializing</a></li>
+            <li><a href="#methods">Methods</a></li>
+        </ul>
+
+
+        <a name="dropdowns"><h1 class="text-title">Dropdowns</h1></a>
+        <p class="readability">
+            Dropdown buttons are converted from standard &lt;select&gt;&lt;/select&gt; and their value is also updated on change.
+        </p>
+
+        <div class="grid">
+            <div class="grid__cell">
+                <div>
+                    <fieldset>
+                        <select name="select1">
+                            <option value="1">Option 1</option>
+                            <option value="2">Option 2</option>
+                            <option value="3">Option 3</option>
+                            <option selected="selected" value="4">Option 4</option>
+                        </select>
+                        <label for="input-label">Label</label>
+                    </fieldset>
+
+                    <fieldset>
+                        <select name="select2">
+                            <option selected="selected" value="1">Option 1</option>
+                            <option value="2">Option 2</option>
+                            <option value="3">Option 3</option>
+                            <option value="4">Option 4</option>
+                            <option value="5">Option 5</option>
+                            <option value="6">Option 6</option>
+                            <option value="7">Option 7</option>
+                            <option value="8">Option 8</option>
+                            <option value="9">Option 9</option>
+                            <option value="10">Option 10</option>
+                            <option value="11">Option 11</option>
+                            <option value="12">Option 12</option>
+                            <option value="13">Option 13</option>
+                            <option value="14">Option 14</option>
+                            <option value="15">Option 15</option>
+                            <option value="16">Option 16</option>
+                        </select>
+                        <label for="input-label">Label</label>
+                    </fieldset>
+
+                    <fieldset>
+                        <select name="select3" disabled="disabled">
+                            <option value="1">Option 1</option>
+                            <option value="2">Option 2</option>
+                            <option value="3">Option 3</option>
+                            <option selected="selected" value="4">Option 4</option>
+                        </select>
+                        <label for="input-label">Label</label>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+
+        <pre><code class="html text-caption">&lt;fieldset&gt;
+    &lt;select name=&quot;select1&quot;&gt;
+        &lt;option value=&quot;1&quot;&gt;Option 1&lt;/option&gt;
+        &lt;option value=&quot;2&quot;&gt;Option 2&lt;/option&gt;
+        &lt;option value=&quot;3&quot;&gt;Option 3&lt;/option&gt;
+        &lt;option selected=&quot;selected&quot; value=&quot;4&quot;&gt;Option 4&lt;/option&gt;
+    &lt;/select&gt;
+&lt;/fieldset&gt;</code></pre>
+
+
+        <a name="helpers"><h1 class="text-title">Helpers</h1></a>
+        <p class="readability">
+            Helpers are small pieces of text that appear below a dropdown and help users explain what should be filled in.
+        </p>
+
+        <div class="grid">
+            <div class="grid__cell">
+                <div>
+                    <fieldset>
+                        <select name="select1">
+                            <option value="1">Option 1</option>
+                            <option value="2">Option 2</option>
+                            <option value="3">Option 3</option>
+                            <option selected="selected" value="4">Option 4</option>
+                        </select>
+                        <label for="input-label">Label</label>
+                        <div class="input-helper">Helper text</div>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+
+        <pre><code class="html text-caption">&lt;fieldset&gt;
+    &lt;select name=&quot;select1&quot;&gt;
+        &lt;option value=&quot;1&quot;&gt;Option 1&lt;/option&gt;
+        &lt;option value=&quot;2&quot;&gt;Option 2&lt;/option&gt;
+        &lt;option value=&quot;3&quot;&gt;Option 3&lt;/option&gt;
+        &lt;option selected=&quot;selected&quot; value=&quot;4&quot;&gt;Option 4&lt;/option&gt;
+    &lt;/select&gt;
+    &lt;div class=&quot;input-helper&quot;&gt;Helper text&lt;/div&gt;
+&lt;/fieldset&gt;</code></pre>
+
+        <a name="filled-bordered"><h1 class="text-title">Filled and Bordered</h1></a>
+        <p class="readability">
+            When wrapping the field and label inside a div with the class <span class="class--filled">input-filled</span> the input uses a different background.
+            Wrapping it inside a div with the class <span class="class--filled">input-bordered</span> it changes to a bordered mode.
+        </p>
+
+        <div class="grid">
+            <div class="grid__cell">
+                <div>
+                    <fieldset class="input-filled">
+                        <div class="input-filled__inner">
+                            <select name="select1">
+                                <option value="1">Option 1</option>
+                                <option value="2">Option 2</option>
+                                <option value="3">Option 3</option>
+                                <option selected="selected" value="4">Option 4</option>
+                            </select>
+                            <label for="input-label">Label</label>
+                            <div class="input-helper">Helper text</div>
+                        </div>
+                    </fieldset>
+                    <fieldset class="input-bordered">
+                        <div class="input-bordered__inner">
+                            <select name="select1">
+                                <option value="1">Option 1</option>
+                                <option value="2">Option 2</option>
+                                <option value="3">Option 3</option>
+                                <option selected="selected" value="4">Option 4</option>
+                            </select>
+                            <label for="input-label">Label</label>
+                            <div class="input-helper">Helper text</div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+
+        <pre><code class="html text-caption">&lt;fieldset class=&quot;input-filled&quot;&gt;
+    &lt;div class=&quot;input-filled__inner&quot;&gt;
+        &lt;select name=&quot;select1&quot;&gt;
+            &lt;option value=&quot;1&quot;&gt;Option 1&lt;/option&gt;
+            &lt;option value=&quot;2&quot;&gt;Option 2&lt;/option&gt;
+            &lt;option value=&quot;3&quot;&gt;Option 3&lt;/option&gt;
+            &lt;option selected=&quot;selected&quot; value=&quot;4&quot;&gt;Option 4&lt;/option&gt;
+        &lt;/select&gt;
+        &lt;label for=&quot;input-label&quot;&gt;Label&lt;/label&gt;
+        &lt;div class=&quot;input-helper&quot;&gt;Helper text&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/fieldset&gt;
+&lt;fieldset class=&quot;input-bordered&quot;&gt;
+    &lt;div class=&quot;input-bordered__inner&quot;&gt;
+        &lt;select name=&quot;select1&quot;&gt;
+            &lt;option value=&quot;1&quot;&gt;Option 1&lt;/option&gt;
+            &lt;option value=&quot;2&quot;&gt;Option 2&lt;/option&gt;
+            &lt;option value=&quot;3&quot;&gt;Option 3&lt;/option&gt;
+            &lt;option selected=&quot;selected&quot; value=&quot;4&quot;&gt;Option 4&lt;/option&gt;
+        &lt;/select&gt;
+        &lt;label for=&quot;input-label&quot;&gt;Label&lt;/label&gt;
+        &lt;div class=&quot;input-helper&quot;&gt;Helper text&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/fieldset&gt;</code></pre>
+
+        <a name="icons"><h1 class="text-title">Icons</h1></a>
+        <p class="readability">
+            Icons can be added to make clear what input is required.
+        </p>
+
+        <div class="grid">
+            <div class="grid__cell">
+                <div>
+                    <fieldset>
+                        <i class="material-icons input-icon">date_range</i>
+                        <select name="select1">
+                            <option value="1">Option 1</option>
+                            <option value="2">Option 2</option>
+                            <option value="3">Option 3</option>
+                            <option selected="selected" value="4">Option 4</option>
+                        </select>
+                        <label for="input-label">Label</label>
+                    </fieldset>
+                    <fieldset class="input-filled">
+                        <div class="input-filled__inner">
+                            <i class="material-icons input-icon">date_range</i>
+                            <select name="select1">
+                                <option value="1">Option 1</option>
+                                <option value="2">Option 2</option>
+                                <option value="3">Option 3</option>
+                                <option selected="selected" value="4">Option 4</option>
+                            </select>
+                            <label for="input-label">Label</label>
+                        </div>
+                    </fieldset>
+                    <fieldset class="input-bordered">
+                        <div class="input-bordered__inner">
+                            <i class="material-icons input-icon">date_range</i>
+                            <select name="select1">
+                                <option value="1">Option 1</option>
+                                <option value="2">Option 2</option>
+                                <option value="3">Option 3</option>
+                                <option selected="selected" value="4">Option 4</option>
+                            </select>
+                            <label for="input-label">Label</label>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+
+        <pre><code class="html text-caption">&lt;fieldset class=&quot;input-filled&quot;&gt;
+    &lt;div class=&quot;input-filled__inner&quot;&gt;
+        &lt;select name=&quot;select1&quot;&gt;
+            &lt;option value=&quot;1&quot;&gt;Option 1&lt;/option&gt;
+            &lt;option value=&quot;2&quot;&gt;Option 2&lt;/option&gt;
+            &lt;option value=&quot;3&quot;&gt;Option 3&lt;/option&gt;
+            &lt;option selected=&quot;selected&quot; value=&quot;4&quot;&gt;Option 4&lt;/option&gt;
+        &lt;/select&gt;
+        &lt;label for=&quot;input-label&quot;&gt;Label&lt;/label&gt;
+        &lt;div class=&quot;input-helper&quot;&gt;Helper text&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/fieldset&gt;
+&lt;fieldset class=&quot;input-bordered&quot;&gt;
+    &lt;div class=&quot;input-bordered__inner&quot;&gt;
+        &lt;select name=&quot;select1&quot;&gt;
+            &lt;option value=&quot;1&quot;&gt;Option 1&lt;/option&gt;
+            &lt;option value=&quot;2&quot;&gt;Option 2&lt;/option&gt;
+            &lt;option value=&quot;3&quot;&gt;Option 3&lt;/option&gt;
+            &lt;option selected=&quot;selected&quot; value=&quot;4&quot;&gt;Option 4&lt;/option&gt;
+        &lt;/select&gt;
+        &lt;label for=&quot;input-label&quot;&gt;Label&lt;/label&gt;
+        &lt;div class=&quot;input-helper&quot;&gt;Helper text&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/fieldset&gt;</code></pre>
+
+        <a name="initializing"><h1 class="text-title">Initializing</h1></a>
+        <p class="readability">
+            To initialize the components use the following function.
+        </p>
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">$("select").mDropdown();</div>
+        </div>
+
+        <a name="methods"><div class="text-subheading-1">Methods</div></a>
+        <p class="readability">
+            Interacting with the component from outside:<br />
+        </p>
+
+
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">$(selector).data("mDropdown").val(value);</div>
+            <div class="explainer">
+                Updates the component (and the original hidden &lt;select&gt;) to the given value
+            </div>
+        </div>
+
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">$(selector).data("mDropdown").disable();</div>
+            <div class="explainer">
+                Disables the component
+            </div>
+        </div>
+
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">$(selector).data("mDropdown").enable();</div>
+            <div class="explainer">
+                Enables the component
+            </div>
+        </div>
+
+
+
+    </content>
+</body>
+</html>

@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+
+    <meta charset="utf-8" />
+    <link href="../refference.css" rel="stylesheet" />
+    <link href="../StyleSheet.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../../fontawsome/svg-with-js/js/fontawesome-all.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script src="../../javascript/JavaScript.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+        $(function () {
+            $.mButtons();
+
+            $(".raised-button .menu, .flat-button .menu, .icon-button .menu").mMenu();
+
+           
+        });
+
+        $(function () {
+            $("pre").on("click", function (e) {
+                e.preventDefault();
+                if ($(e.target).is("code") == false && $(e.target).closest("code").length == 0) {
+                    $(this).toggleClass("show").find("code").slideToggle();
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <div class="titlebar text-headline shadow-4">
+        Menus
+        <div class="text-subheading-1">More options to choose from</div>
+    </div>
+    <content class="m-body">
+
+        <ul class="index">
+            <li class="text-caption">Contents</li>
+            <li><a href="#menus">Menus</a></li>
+            <li><a href="#initializing">Initializing</a></li>
+            <li><a href="#options">Options</a></li>
+            <li><a href="#methods">Methods</a></li>
+        </ul>
+
+        <a name="menus"><h1 class="text-title">Menus</h1></a>
+        <p class="readability">
+            Menus open when the user clicks on a button and provide extra options. Menus are aware of the screensize and will open in the best possible way.
+            They always live inside a button.
+        </p>
+
+        <button class="raised-button">
+            Open menu
+            <nav class="menu">
+                <ul class="menu__options">
+                    <li class="menu__option" data-ripple="#cf5260"><i class="fal fa-edit"></i> Edit</li>
+                    <li class="menu__option" data-ripple="#cf5260"><i class="fal fa-save"></i> Save</li>
+                    <li class="menu__hr"></li>
+                    <li class="menu__option" data-ripple="#cf5260" data-href="menus.html"><i class="fal fa-sign-out-alt"></i> Log out</li>
+                </ul>
+            </nav>
+        </button>
+
+        <p class="readability">
+            To create a link from an option add the attribute <span class="attr--filled">data-href</span> with a destination and it
+            will be automatically followed when an user clicks it.
+        </p>
+
+        <pre><code class="html text-caption">&lt;button class=&quot;raised-button&quot;&gt;
+    Open menu
+    &lt;nav class=&quot;menu&quot;&gt;
+        &lt;ul class=&quot;menu__options&quot;&gt;
+            &lt;li class=&quot;menu__option&quot; data-ripple=&quot;#cf5260&quot;&gt;&lt;i class=&quot;fal fa-edit&quot;&gt;&lt;/i&gt; Edit&lt;/li&gt;
+            &lt;li class=&quot;menu__option&quot; data-ripple=&quot;#cf5260&quot;&gt;&lt;i class=&quot;fal fa-save&quot;&gt;&lt;/i&gt; Save&lt;/li&gt;
+            &lt;li class=&quot;menu__hr&quot;&gt;&lt;/li&gt;
+            &lt;li class=&quot;menu__option&quot; data-ripple=&quot;#cf5260&quot; data-href=&quot;menus.html&quot;&gt;&lt;i class=&quot;fal fa-sign-out-alt&quot;&gt;&lt;/i&gt; Log out&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+&lt;/button&gt;</code></pre>
+
+        <a name="initializing"><h1 class="text-title">Initializing</h1></a>
+        <p class="readability">
+            To initialize the component use the following function, this will add a animation on clicks.
+        </p>
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">$(selector).mMenu();</div>
+        </div>
+
+        <a name="options"><div class="text-subheading-1">Options</div></a>
+        <p class="readability">
+            The following options are available:<br />
+        </p>
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">onSelect: function(item){}</div>
+            <div class="explainer">
+                The callback for when an option is clicked. The item parameter is the selected item.
+            </div>
+        </div>
+
+        <a name="methods"><div class="text-subheading-1">Methods</div></a>
+        <p class="readability">
+            Interacting with the component from outside:<br />
+        </p>
+
+
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">$(selector).data("mMenus").open();</div>
+            <div class="explainer">
+                Opens the menu
+            </div>
+        </div>
+
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">$(selector).data("mMenus").close();</div>
+            <div class="explainer">
+                Closes the menu if visible
+            </div>
+        </div>
+
+    </content>
+</body>
+</html>

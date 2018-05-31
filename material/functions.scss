@@ -1,0 +1,65 @@
+﻿@mixin responsive($screen-size) {
+    $str: $screen-size;
+
+    //Mobile
+    @if $screen-size == "mobile" {
+        $str: '(min-width:'+ map-get($breakpoints, mobile-min) +') and (max-width:'+ map-get($breakpoints, mobile-max) +')';
+    }
+
+
+    //Tablet
+    @if $screen-size == "tablet" {
+        $str: '(min-width:'+ map-get($breakpoints, tablet-min) +') and (max-width:'+ map-get($breakpoints, tablet-max) +')';
+    }
+    @if $screen-size == "tablet-down" {
+        $str: '(max-width:'+ map-get($breakpoints, tablet-max) +')';
+    }
+    @if $screen-size == "tablet-up" {
+        $str: '(min-width:'+ map-get($breakpoints, tablet-min) +')';
+    }
+
+    //Laptop
+    @if $screen-size == "laptop" {
+        $str: '(min-width:'+ map-get($breakpoints, laptop-min) +') and (max-width:'+ map-get($breakpoints, laptop-max) +')';
+    }
+    @if $screen-size == "laptop-down" {
+        $str: '(max-width:'+ map-get($breakpoints, laptop-max) +')';
+    }
+    @if $screen-size == "laptop-up" {
+        $str: '(min-width:'+ map-get($breakpoints, laptop-min) +')';
+    }
+
+    //pc
+    @if $screen-size == "pc" {
+        $str: '(min-width:'+ map-get($breakpoints, pc-min) +')';
+    }
+    @if $screen-size == "pc-up" {
+        $str: '(min-width:'+ map-get($breakpoints, pc-min) +')';
+    }
+    @if $str{
+        @media screen and #{$str} {
+            @content;
+        }
+    }
+}
+
+@mixin fluid-property($property, $min-vw, $max-vw, $min-font-size, $max-font-size) {
+    $u1: unit($min-vw);
+    $u2: unit($max-vw);
+    $u3: unit($min-font-size);
+    $u4: unit($max-font-size);
+
+    @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+        & {
+            #{$property}: $min-font-size;
+
+            @media screen and (min-width: $min-vw) {
+                #{$property}: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+            }
+
+            @media screen and (min-width: $max-vw) {
+                #{$property}: $max-font-size;
+            }
+        }
+    }
+}

@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Framework</title>
+    <meta charset="utf-8" />
+    <link href="refference.css" rel="stylesheet" />
+    <link href="StyleSheet.css" rel="stylesheet" />
+    <script>
+        window.onload = function () {
+
+            var links = document.querySelectorAll(".responsive-buttons a");
+            for (i = 0; i < links.length; ++i) {
+                links[i].addEventListener("click", function (e) {
+                    e.preventDefault();
+                    var size = this.getAttribute("data-size");
+                    if (size == 0) {
+                        document.querySelector(".right-panel iframe").style.width = "";
+                    } else {
+                        document.querySelector(".right-panel iframe").style.width = size + "px";
+                    }
+
+                });
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="panel-wrapper">
+        <div class="left-panel">
+            <br />
+            <b class="text-body-2">Material Design</b>
+            <ul>
+                <li><a href="pages/typography.html" target="preview">Typography</a></li>
+                <li><a href="pages/shadows.html" target="preview">Shadows</a></li>
+                <li><a href="pages/grid.html" target="preview">Grid</a></li>
+                <li><a href="pages/helpers.html" target="preview">Layout helpers</a></li>
+            </ul>
+            <br />
+            <b class="text-body-2">Components</b>
+            <ul>
+                
+                <li><a href="pages/buttons.html" target="preview">Buttons</a></li>
+                <li><a href="pages/dropdowns.html" target="preview">Dropdown</a></li>
+                <li><a href="pages/textfields.html" target="preview">Textfields</a></li>
+                <li><a href="pages/datepicker.html" target="preview">Datepicker</a></li>
+                <li><a href="pages/forms.html" target="preview">Forms</a></li>
+                <li><a href="pages/menus.html" target="preview">Menus</a></li>
+                <li><a href="pages/lists.html" target="preview">Lists</a></li>
+                <li><a href="pages/app-bar.html" target="preview">App bar</a></li>
+                <li><a href="pages/navigation-drawer.html" target="preview">Navigation drawer</a></li>
+                <li><a href="pages/dialog.html" target="preview">Dialogs</a></li>
+                <li><a href="pages/bottom-navigation.html" target="preview">Bottom navigation</a></li>
+                <li><a href="pages/bottom-sheet.html" target="preview">Bottom sheet</a></li>
+                
+            </ul>
+        </div>
+        <div class="right-panel">
+            <div class="responsive-buttons">
+                <a href="#" data-size="320">Mobile S</a>
+                <a href="#" data-size="425">Mobile L</a>
+                <a href="#" data-size="768">Tablet</a>
+                <a href="#" data-size="1024">Laptop S</a>
+                <a href="#" data-size="1440">Laptop L</a>
+                <a href="#" data-size="0">Full</a>
+            </div>
+            <iframe src="pages/dialog.html" name="preview"></iframe>
+
+        </div>
+    </div>
+</body>
+</html>

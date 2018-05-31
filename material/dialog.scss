@@ -1,0 +1,75 @@
+﻿
+
+.m-overlay-dialog {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    z-index: 99999;
+}
+
+.dialog {
+    position: fixed;
+    background: #fff;
+    z-index: 1;
+    margin: 0 auto;
+    max-width: 50%;
+    padding: 1rem 1.5rem 0.5rem 1.5rem;
+    border-radius: 0.15rem;
+    @include shadow(16);
+    transform: translateY(80vh);
+    transition: transform 0.272s cubic-bezier(0.4, 0.0, 1, 1);
+
+    @include responsive(tablet-down) {
+        max-width: 80%;
+    }
+
+    @include responsive(mobile) {
+        max-width: 80%;
+    }
+}
+
+.dialog .dialog__header {
+    margin-top: 0;
+    margin-bottom: 0.25rem;
+}
+
+.dialog__content {
+    color: $dialog-content-color;
+}
+
+.dialog__buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: -1rem;
+    margin-top: 0.5rem;
+
+    .flat-button {
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+}
+
+.dialog__list {
+    margin: 0 -0.7rem;
+}
+
+.dialog__header + .dialog__content > .list {
+    margin-top: 0.75rem;
+}
+
+$sizes: ( ".tiny": 0.75, ".small": 0.85, "": 1, );
+
+@each $name, $value in $sizes {
+    html, body#{$name} {
+        .dialog__header {
+            @include text(subheading-1,$value);
+            font-weight: 400;
+        }
+    }
+}
+
+
+.m-overlay--show .dialog {
+    transform: translateY(0%);
+    transition: transform 0.272s cubic-bezier(0.0, 0.0, 0.2, 1);
+}

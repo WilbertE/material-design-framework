@@ -1,0 +1,182 @@
+﻿//DEFAULT COLORS
+$text-color: #3b3b3b;
+$primary-color: #cf5260;
+$primary-color-light: rgba(207,82,96,0.12);
+$secondary-color: #2b6da9;
+$light-color: #fff;
+$light-background-color: #fff;
+$disabled-color: rgba(0,0,0,0.26);
+$border-color: #e4e4e4;
+$label-color: rgba(0,0,0,0.54);
+$light-hover-color: rgba(255,255,255,0.12);
+$input-filled-background-color: #f4f4f4;
+$input-filled-background-hover-color: #f0efef;
+$input-bordered-border-color: #919191;
+$secondary-line-color: #969696;
+$error-color: #e83838;
+$valid-color: #52cf52;
+
+//FONT SIZES
+$font-default-min-size: 14px;
+$font-default-max-size: 20px;
+$font-default-min-line-height: 24px;
+$font-default-max-line-height: 36px;
+
+$font-display-2-min-size: 45px;
+$font-display-2-max-size: 70px;
+$font-display-2-min-line-height: 48px;
+$font-display-2-max-line-height: 84px;
+
+$font-display-1-min-size: 34px;
+$font-display-1-max-size: 60px;
+$font-display-1-min-line-height: 40px;
+$font-display-1-max-line-height: 70px;
+
+$font-headline-min-size: 34px;
+$font-headline-max-size: 60px;
+$font-headline-min-line-height: 40px;
+$font-headline-max-line-height: 70px;
+
+$font-title-min-size: 20px;
+$font-title-max-size: 40px;
+$font-title-min-line-height: 30px;
+$font-title-max-line-height: 48px;
+
+$font-subheading-2-min-size: 16px;
+$font-subheading-2-max-size: 26px;
+$font-subheading-2-min-line-height: 28px;
+$font-subheading-2-max-line-height: 44px;
+
+$font-body-1-min-size: 14px;
+$font-body-1-max-size: 22px;
+$font-body-1-min-line-height: 24px;
+$font-body-1-max-line-height: 38px;
+
+$font-body-2-min-size: 14px;
+$font-body-2-max-size: 22px;
+$font-body-2-min-line-height: 24px;
+$font-body-2-max-line-height: 38px;
+
+$font-caption-min-size: 12px;
+$font-caption-max-size: 18px;
+$font-caption-min-line-height: 18px;
+$font-caption-max-line-height: 30px;
+
+$font-button-min-size: 12px;
+$font-button-max-size: 18px;
+$font-button-min-line-height: 24px;
+$font-button-max-line-height: 38px;
+
+//SHADOWS
+$shadow-map: ( 0: '0px 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px 0px rgba(0, 0, 0, 0)',
+            1: '0px 0.136rem 0.213rem 0.0136rem rgba(0, 0, 0, 0.24), 0px 0.090rem 0.267rem 0.005rem rgba(0, 0, 0, 0.16)', 
+            2: '0px 0.136rem 0.213rem 0.0136rem rgba(0, 0, 0, 0.24), 0px 0.045rem 0.311rem 0.006rem rgba(0, 0, 0, 0.16)',
+            3: '0px 0.227rem 0.299rem 0.019rem rgba(0, 0, 0, 0.24), 0px 0.090rem 0.445rem 0.009rem rgba(0, 0, 0, 0.16)',
+            4: '0px 0.318rem 0.427rem 0.027rem rgba(0, 0, 0, 0.24), 0px 0.136rem 0.579rem 0.011rem rgba(0, 0, 0, 0.16)',
+            6: '0px 0.454rem 0.640rem 0.040rem rgba(0, 0, 0, 0.24), 0px 0.181rem 0.890rem 0.018rem rgba(0, 0, 0, 0.16)',
+            8: '0px 0.590rem 0.854rem 0.054rem rgba(0, 0, 0, 0.24), 0px 0.227rem 1.20rem 0.024rem rgba(0, 0, 0, 0.16)',
+            9: '0px 0.818rem 1.153rem 0.073rem rgba(0, 0, 0, 0.24), 0px 0.409rem 1.603rem 0.032rem rgba(0, 0, 0, 0.16)',
+            12: '0px 0.909rem 1.281rem 0.081rem rgba(0, 0, 0, 0.24), 0px 0.363rem 1.82rem 0.0372rem rgba(0, 0, 0, 0.16)',
+            16: '0px 1.272rem 1.709rem 0.109rem rgba(0, 0, 0, 0.24), 0px 0.5rem 2.360rem 0.048rem rgba(0, 0, 0, 0.16)',
+            24: '0px 1.772rem 2.563rem 0.163rem rgba(0, 0, 0, 0.24), 0px 0.681rem 3.608rem 0.073rem rgba(0, 0, 0, 0.16)'
+        );
+
+//GRID
+$grid-gutter-sizes: 8 16 24 40;
+
+//BUTTONS
+$raised-button-background-color: $primary-color;
+$raised-button-text-color: $light-color;
+$raised-button-hover-background-color: $light-hover-color;
+$flat-button-text-color: $primary-color;
+$flat-button-hover-background-color: $primary-color-light;
+$button-disabled-background-color: $disabled-color;
+
+//DROPDOWNS
+$dropdown-border-color: $border-color;
+$dropdown-selected-value-color: $primary-color;
+$dropdown-select-hover-background-color: $primary-color-light;
+$dropdown-select-active-border-color: $primary-color;
+$disabled-border-color: $disabled-color;
+$disabled-text-color: $disabled-color;
+
+//INPUT TEXT
+$input-label-color: $label-color;
+$placeholder-color: $label-color;
+$label-focus-color: $primary-color;
+$helper-color: $label-color;
+$error-color: $error-color;
+$valid-color: $valid-color;
+$disabled-border-color: $disabled-border-color;
+$disabled-text-color: $disabled-color;
+$filled-background-color: $input-filled-background-color;
+$filled-background-color-hover: $input-filled-background-hover-color;
+$input-bordered-border-color: $input-bordered-border-color;
+$input-bordered-border-color-disabled: $disabled-border-color;
+$input-bordered-border-color-active: $primary-color;
+$input-bordered-label-active-background-color: #fff;
+$textarea-border-color: $border-color;
+$function-icon-hover-color: $primary-color;
+
+//DATEPICKER
+$datepicker-header-background-color: $secondary-color;
+$datepicker-header-text-color: $light-color;
+$datepicker-icon-hover-color: $primary-color;
+$datepicker-active-date-background-color: $primary-color;
+$datepicker-active-date-color: $light-color;
+$datepicker-background-color: $light-color;
+$datepicker-button-hover-background-color: $primary-color-light;
+$datepicker-button-text-color: $primary-color;
+$datepicker-border-color: $border-color;
+
+//MENUS
+$menu-hr-border-color: $border-color;
+$menu-option-hover-background-color: $primary-color-light;
+
+//LISTS
+$list-hover-background-color: $primary-color-light;
+$list-disabled-text-color: $disabled-color;
+$list-border-color: $border-color;
+$list-secondairy-line-color: $secondary-line-color;
+$list-expendable-header-expanded-color: $primary-color;
+$list-index-background-color: #fff;
+$list-index-inside-color: $primary-color;
+$list-button-hover-color: $primary-color;
+
+//APP BAR
+$app-bar-background-color: $secondary-color;
+$app-bar-border-color: $border-color;
+$app-bar-button-text-color: $light-color;
+$app-bar-button-text-hover-color: $light-color;
+$app-bar-button-hover-background-color: $light-hover-color;
+
+//NAVIGATION DRAWER
+$navigation-drawer-header-background-color: #fff;
+$navigation-drawer-header-color: $text-color;
+$navigation-drawer-border-right-color: true;
+$navigation-drawer-background-color: #fff;
+$navigation-drawer-border-color: $border-color;
+$navigation-drawer-label-color: $label-color;
+$navigation-drawer-button-text-color: $text-color;
+$navigation-drawer-button-hover-background-color: $primary-color-light;
+$navigation-drawer-subtitle-color: $secondary-line-color;
+$navigation-drawer-button-icon-color: $label-color;
+
+//DIALOGS
+$dialog-content-color: $secondary-line-color;
+
+//BOTTOM NAVIGATION
+$bottom-navigation-background-color: #fff;
+$bottom-navigation-border-color: $border-color;
+$bottom-navigation-button-color: $label-color;
+$bottom-navigation-button-active-color: $primary-color;
+
+
+//BOTTOM SHEETS
+$bottom-sheet-background-color: #fff;
+$bottom-sheet-border-color: $border-color;
+$bottom-sheet-button-color: $label-color;
+
+//CUSTOM SCROLLBARS
+$custom-scrollbar-track-background-color: transparent;
+$custom-scrollbar-thumb-background-color: #365a7b;

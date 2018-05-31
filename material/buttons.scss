@@ -1,0 +1,167 @@
+﻿
+$sizes: ( ".tiny": 0.75, ".small": 0.85, "": 1, );
+
+@each $name, $value in $sizes {
+    html, body#{$name} {
+        .raised-button, .flat-button {
+            @include text(button, $value);
+        }
+    }
+}
+
+.raised-button, .flat-button {
+    position: relative;
+    font-family: inherit;
+    background-color: $raised-button-background-color;
+    color: $raised-button-text-color;
+    text-transform: uppercase;
+    border-radius: 0.15rem;
+    padding: 0rem 1.25rem;
+    border: none;
+    display: block;
+    cursor: pointer;
+    outline: none;
+    transition: box-shadow 200ms ease-out;
+    overflow: hidden;
+    line-height: inherit;
+    margin: 8px;
+    white-space: nowrap;
+    -webkit-tap-highlight-color: $light-color;
+    @include shadow(1);
+    user-select: none;
+    padding: 0.35rem 1.25rem;
+
+    .button--icon {
+        line-height: normal;
+        font-size: 1.2em;
+        vertical-align: middle;
+        position: relative;
+        top: -0.1em;
+        margin: -1rem 0;
+    }
+
+    &:before {
+        display: block;
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(0,0,0,0);
+        transition: background 200ms ease-out;
+        z-index: 2;
+    }
+
+    .touchevents & {
+        @include shadow(1);
+    }
+
+    .no-touchevents & {
+        
+
+        &:hover {
+            @include shadow(2);
+
+            &:before {
+                background: $raised-button-hover-background-color;
+            }
+        }
+
+        &.raised-button--pressed {
+            @include shadow(3);
+        }
+    }
+
+    &:after {
+        display: block;
+        content: '';
+        position: absolute;
+        top: -0.45rem;
+        left: 0;
+        bottom: -0.45rem;
+        right: 0;
+    }
+
+    &.raised-button--disabled, &.flat-button--disabled {
+        opacity: 0.26;
+        box-shadow: none !important;
+        background-color: $button-disabled-background-color !important;
+        cursor: default;
+
+        &:before {
+            display: none;
+        }
+    }
+}
+
+
+
+
+.flat-button {
+    background: transparent;
+    color: $flat-button-text-color;
+    box-shadow: none;
+
+    .touchevents & {
+        box-shadow: none;
+    }
+
+    .no-touchevents & {
+
+        &:hover {
+            box-shadow: none;
+
+            &:before {
+                background: $flat-button-hover-background-color;
+            }
+        }
+
+        &.raised-button--pressed {
+            box-shadow: none;
+        }
+    }
+
+    &.flat-button--disabled {
+        box-shadow: none !important;
+        background: none !important;
+    }
+}
+
+
+.button-icon {
+    border-radius: 50%;
+    height: 1rem;
+    width: 1rem;
+    text-align: center;
+    overflow: hidden;
+    padding: 0.5rem;
+    cursor: pointer;
+    line-height: 1rem;
+    position: relative;
+    user-select: none;
+
+    &:after {
+        display: block;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: $flat-button-hover-background-color;
+        opacity: 0;
+        transition: opacity 200ms ease-out;
+    }
+
+    .no-touchevents & {
+
+        &:hover {
+            box-shadow: none;
+
+            &:after {
+                opacity: 1;
+            }
+        }
+    }
+}

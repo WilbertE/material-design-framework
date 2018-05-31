@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta charset="utf-8" />
+    <link href="../refference.css" rel="stylesheet" />
+    <link href="../material-framework.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script src="../fontawsome/svg-with-js/js/fontawesome-all.js"></script>
+    <script src="../material-framework.js"></script>
+    <script src="../reference.js"></script>
+</head>
+<body>
+
+    <div class="titlebar text-headline shadow-4">
+        Layout helpers
+        <div class="text-subheading-1">Bringing the layout to perfection</div>
+    </div>
+    <content class="grid-preview">
+
+        <ul class="index">
+            <li class="text-caption">Contents</li>
+            <li><a href="#sizes">Sizes</a></li>
+            <li><a href="#helpers-container">Container</a></li>
+            <li><a href="#helpers-margins-and-paddings">Margins and paddings</a></li>
+            <li><a href="#helpers-visibility">Visibility</a></li>
+        </ul>
+
+        <a name="sizes"><h2 class="text-title">Sizes</h2></a>
+        <p class="readability">
+            Everything scales based on the body fluid font size. Using the classes <span class="class--filled">.tiny</span> or <span class="class--filled">.small</span> 
+            on the body tag everything will be smaller then normal.
+        </p>
+
+        <a name="helpers-margins-and-paddings"><h2 class="text-title">Container</h2></a>
+        <p class="readability">
+            The container makes sure there is some margin between the page and its content. It never grows larger then 1280 pixels.
+            It is used by wrapping content in a <span class="class--filled">.container</span> element.
+        </p>
+        <a name="helpers-margins-and-paddings"><h2 class="text-title">Margins and paddings</h2></a>
+        <p class="readability">
+            Margins and paddings are default 8px but are also available in 16, 24 and 40 pixels. For margin (or paddings) in a all directions the classes
+            <span class="class--filled">.margins</span>, <span class="class--filled">.margins-16</span>, <span class="class--filled">.margins-24</span>
+            and <span class="class--filled">.margins-40</span> are available. (Same applies to paddings)
+        </p>
+        <p class="readability">
+            For margins and paddings on the horizontal or vertical side the classes <span class="class--filled">.margins-vertical</span> and
+            <span class="class--filled">.margins-horizontal</span> can be used. These can also be extended with  -16, -24 or -40 for
+            making the margins larger.  (Same applies to paddings)
+        </p>
+        <p class="readability">
+            For margins and paddings in a specific direction <span class="class--filled">.margin-top</span>, <span class="class--filled">.margin-right</span>,
+            <span class="class--filled">.margin-bottom</span> and <span class="class--filled">.margin-left</span> can be used.
+            These also work with the -16, -24 or -40 extensions.  (Same applies to paddings)
+        </p>
+
+        <a name="helpers-visibility"><h2 class="text-title">Visibility</h2></a>
+        <p class="readability">
+            Sometimes it is needed that elements hide or become visible on different screen sizes. The classes
+            <span class="class--filled">.hidden</span>, <span class="class--filled">.visible</span> and
+            <span class="class--filled">.visible-inline</span> can be used for it.
+        </p>
+        <p class="readability">
+            These classes work with the breakpoints mobile, tablet, laptop and pc and the appending of up and down.
+            So <span class="class--filled">.hidden-tablet</span> will hide the element on tablets only.
+            <span class="class--filled">.hidden-tablet-up</span> will hide the element on tablet and larger screens.
+            Logically <span class="class--filled">.hidden-tablet-down</span> will hide the element on tablet and smaller screens.
+        </p>
+        <p class="readability">
+            The difference between <span class="class--filled">.visible</span> and <span class="class--filled">.visible-inline</span>
+            is that .visible uses the css 'display: block;' and .visible-inline the css 'display: inline-block;'.
+        </p>
+</content>
+</body>
+</html>

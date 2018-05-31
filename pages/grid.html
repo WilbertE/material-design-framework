@@ -1,0 +1,365 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta charset="utf-8" />
+    <link href="../refference.css" rel="stylesheet" />
+    <link href="../material-framework.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script src="../fontawsome/svg-with-js/js/fontawesome-all.js"></script>
+    <script src="../material-framework.js"></script>
+    <script src="../reference.js"></script>
+</head>
+<body>
+
+    <div class="titlebar text-headline shadow-4">
+        Grid
+        <div class="text-subheading-1">Defining the layout</div>
+    </div>
+    <content class="grid-preview">
+
+        <ul class="index">
+            <li class="text-caption">Contents</li>
+            <li><a href="#grid">Grid</a></li>
+            <li><a href="#grid-gutters">Grid gutters</a></li>
+            <li><a href="#grid-sizing">Sizing the cells</a></li>
+            <li><a href="#grid-order">Changing order</a></li>
+            <li><a href="#grid-aligning">Aligning cell content</a></li>
+            <li><a href="#grid-aligning-the-grid">Aligning the grid</a></li>
+            <li><a href="#grid-push">Pushing cells</a></li>
+            <li><a href="#grid-offset">Offsets</a></li>
+        </ul>
+
+        <a name="grid"><h1 class="text-title">Grid</h1></a>
+        <p class="readability">
+            The grid is based on 12 columns with a default margin and padding of 8px.
+            There are 4 breakpoints: Mobile (425px), Tablet (768px), Laptop (1024px) and pc (1440px).
+        </p>
+
+        <div class="grid">
+            <div class="grid__cell grid__cell--tablet-6 grid__cell--laptop-3">
+                <div class="info text-caption">
+                    <div class="class">.grid__cell--tablet-6<br />.grid__cell--laptop-3</div>
+                </div>
+            </div>
+            <div class="grid__cell grid__cell--tablet-6 grid__cell--laptop-3">
+                <div class="info text-caption">
+                    <div class="class">.grid__cell--tablet-6<br />.grid__cell--laptop-3</div>
+                </div>
+            </div>
+            <div class="grid__cell grid__cell--tablet-6 grid__cell--laptop-3">
+                <div class="info text-caption">
+                    <div class="class">.grid__cell--tablet-6<br />.grid__cell--laptop-3</div>
+                </div>
+            </div>
+            <div class="grid__cell grid__cell--tablet-6 grid__cell--laptop-3">
+                <div class="info text-caption">
+                    <div class="class">.grid__cell--tablet-6<br />.grid__cell--laptop-3</div>
+                </div>
+            </div>
+        </div>
+
+        
+        <pre><code class="html text-caption">&lt;div class=&quot;grid&quot;&gt;
+    &lt;div class=&quot;grid__cell&quot;&gt;
+        Cell
+    &lt;/div&gt;
+    &lt;div class=&quot;grid__cell&quot;&gt;
+        Cell
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+        <a name="grid-gutters"><h1 class="text-title">Gutters</h1></a>
+        <p class="readability">
+            The default grid gutter is 8 but this can be changed to 16, 24 or 40 with the classes
+            <span class="class--filled">.grid--gutter-16</span>, <span class="class--filled">.grid--gutter-24</span> and <span class="class--filled">.grid--gutter-40</span>.
+            The gutters only apply on the horizontal.
+        </p>
+
+        <div class="grid grid--gutter-16">
+            <div class="grid__cell grid__cell--6">
+                <div class="info text-caption">
+                    <div class="explainer">Cell</div>
+                </div>
+            </div>
+            <div class="grid__cell grid__cell--6">
+                <div class="info text-caption">
+                    <div class="explainer">Cell</div>
+                </div>
+            </div>
+        </div>
+        <div class="grid grid--gutter-24">
+            <div class="grid__cell grid__cell--6">
+                <div class="info text-caption">
+                    <div class="explainer">Cell</div>
+                </div>
+            </div>
+            <div class="grid__cell grid__cell--6">
+                <div class="info text-caption">
+                    <div class="explainer">Cell</div>
+                </div>
+            </div>
+        </div>
+        <div class="grid grid--gutter-40">
+            <div class="grid__cell grid__cell--6">
+                <div class="info text-caption">
+                    <div class="explainer">Cell</div>
+                </div>
+            </div>
+            <div class="grid__cell grid__cell--6">
+                <div class="info text-caption">
+                    <div class="explainer">Cell</div>
+                </div>
+            </div>
+        </div>
+
+
+        <a name="grid-sizing"><h2 class="text-title">Sizing the cells</h2></a>
+        <p class="readability">
+            A cell is defined by using the class
+            <span class="class--filled">.grid__cell</span> inside a <span class="class--filled">.grid</span> parent.<br />
+            Sizes are defined by breakpoint names followed by a number for the column width between 1 and 12.
+            Because the grid uses a mobile first method, all sizes without a name are used for mobile and up.
+            For example
+            <span class="class--filled">.grid__cell--6</span> creates a cell with a width of 50% for mobile and up (all sizes).
+            <br />
+            The class
+            <span class="class--filled">.grid__cell--tablet-3</span> creates a cell with a width of 25% for tablet and bigger screen sizes.
+            Combining these classes will create a responsive grid that changes depending on the screen size.
+            If no size is defined then a the cell will be 100% width.
+        </p>
+        
+        <pre><code class="html text-caption">&lt;div class=&quot;grid&quot;&gt;
+    &lt;div class=&quot;grid__cell grid__cell--tablet-6 grid__cell--laptop-3&quot;&gt;
+        Column
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        
+
+        <a name="grid-order"><h2 class="text-title">Changing order</h2></a>
+        <p class="readability">
+            It is possible to change the order of the cells depending on the screen size.
+            To do this the cells need to be wrapped inside a <span class="class--filled">.grid__row</span> after you can change the order with
+            <span class="class--filled">.grid__row--mobile-column-reverse</span> and <span class="class--filled">.grid__row--mobile-row-reverse</span>.
+            The classes can be used for all breakpoints. The order changes only for the specified screen size.
+        </p>
+
+        <div class="grid">
+            <div class="grid__row grid__row--mobile-column-reverse grid__row--laptop-row-reverse">
+                <div class="grid__cell grid__cell--tablet-6">
+                    <div class="info text-caption">
+                        <div class="explainer">Cell 1</div>
+                    </div>
+                </div>
+                <div class="grid__cell grid__cell--tablet-6">
+                    <div class="info text-caption">
+                        <div class="explainer">Cell 2</div>
+                    </div>
+                </div>
+                <div class="grid__cell grid__cell--tablet-6">
+                    <div class="info text-caption">
+                        <div class="explainer">Cell 3</div>
+                    </div>
+                </div>
+                <div class="grid__cell grid__cell--tablet-6">
+                    <div class="info text-caption">
+                        <div class="explainer">Cell 4</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        
+        <pre><code class="html text-caption">&lt;div class=&quot;grid&quot;&gt;
+    &lt;div class=&quot;grid__row grid__row--mobile-column-reverse grid__row--laptop-row-reverse&quot;&gt;
+        &lt;div class=&quot;grid__cell grid__cell--tablet-6&quot;&gt;
+            Cell 1
+        &lt;/div&gt;
+        &lt;div class=&quot;grid__cell grid__cell--tablet-6&quot;&gt;
+           Cell 2
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+        <a name="grid-aligning"><h2 class="text-title">Aligning cell content</h2></a>
+        <p class="readability">
+            Cell content can aligned to all directions
+        </p>
+
+        <div class="grid">
+            <div class="grid__cell grid__cell--no-preview grid__cell--tablet-4">
+                <div class="info text-caption">
+                    <div class="explainer">No aligning set</div>
+                </div>
+            </div>
+            <div class="grid__cell grid__cell--no-preview grid__cell--center grid__cell--tablet-4">
+                <div class="info text-caption">
+                    <div class="class">grid__cell--center</div>
+                </div>
+            </div>
+            <div class="grid__cell grid__cell--no-preview grid__cell--top-right grid__cell--tablet-4">
+                <div class="info text-caption">
+                    <div class="class">grid__cell--top-right</div>
+                </div>
+            </div>
+            <div class="grid__cell grid__cell--no-preview grid__cell--middle grid__cell--tablet-4">
+                <div class="info text-caption">
+                    <div class="class">.grid__cell--middle</div>
+                </div>
+            </div>
+            <div class="grid__cell grid__cell--no-preview grid__cell--middle-center grid__cell--tablet-4">
+                <div class="info text-caption">
+                    <div class="class">.grid__cell--middle-center</div>
+                </div>
+            </div>
+            <div class="grid__cell grid__cell--no-preview grid__cell--middle-right grid__cell--tablet-4">
+                <div class="info text-caption">
+                    <div class="class">.grid__cell--middle-right</div>
+                </div>
+            </div>
+            <div class="grid__cell grid__cell--no-preview grid__cell--bottom grid__cell--tablet-4">
+                <div class="info text-caption">
+                    <div class="class">grid__cell--bottom</div>
+                </div>
+            </div>
+            <div class="grid__cell grid__cell--no-preview grid__cell--bottom-center grid__cell--tablet-4">
+                <div class="info text-caption">
+                    <div class="class">grid__cell--bottom-center</div>
+                </div>
+            </div>
+            <div class="grid__cell grid__cell--no-preview grid__cell--bottom-right grid__cell--tablet-4">
+                <div class="info text-caption">
+                    <div class="class">grid__cell--bottom-right</div>
+                </div>
+            </div>
+        </div>
+        <div class="text-caption">Different classes to align the cell content </div>
+
+        <a name="grid-aligning-the-grid"><h2 class="text-title">Aligning the grid</h2></a>
+        <p class="readability">
+            By using different alignings on the grid it is possible to position cells in the grid when the total cell size is less then 12.
+        </p>
+        <div class="grid grid--preview-colored grid--center">
+            <div class="grid__cell grid__cell--4">
+                <div class="info text-caption">
+                    <div class="explainer">Grid uses .grid--center</div>
+                </div>
+            </div>
+            <div class="grid__cell grid__cell--4">
+                <div class="info text-caption">
+                    <div class="explainer">Grid uses .grid--center</div>
+                </div>
+            </div>
+        </div>
+        <div class="text-caption">With <span class="class--filled">.grid--center</span> the cells are placed in the center</div>
+
+        <div class="grid grid--preview-colored grid--space-around">
+            <div class="grid__cell grid__cell--4">
+                <div class="info text-caption">
+                    <div class="explainer">Grid uses .grid--space-around</div>
+                </div>
+            </div>
+            <div class="grid__cell grid__cell--4">
+                <div class="info text-caption">
+                    <div class="explainer">Grid uses .grid--space-around</div>
+                </div>
+            </div>
+        </div>
+        <div class="text-caption">With <span class="class--filled">.grid--space-around</span> the cells have equal size between and around them</div>
+
+        <div class="grid grid--preview-colored grid--space-between">
+            <div class="grid__cell grid__cell--4">
+                <div class="info text-caption">
+                    <div class="explainer">Grid uses .grid--space-between</div>
+                </div>
+            </div>
+            <div class="grid__cell grid__cell--4">
+                <div class="info text-caption">
+                    <div class="explainer">Grid uses .grid--space-between</div>
+                </div>
+            </div>
+        </div>
+        <div class="text-caption">With <span class="class--filled">.grid--space-between</span> the cells are sperated by the remaining space</div>
+
+        <div class="grid grid--preview-colored grid--align-right">
+            <div class="grid__cell grid__cell--4">
+                <div class="info text-caption">
+                    <div class="explainer">Grid uses .grid--align-right</div>
+                </div>
+            </div>
+            <div class="grid__cell grid__cell--4">
+                <div class="info text-caption">
+                    <div class="explainer">Grid uses .grid--align-right</div>
+                </div>
+            </div>
+        </div>
+        <div class="text-caption">With <span class="class--filled">.grid--align-right</span> the cells are pushed to the right</div>
+
+        <a name="grid-push"><h2 class="text-title">Pushing cells</h2></a>
+        <p class="readability">
+            By using push on the grid cell it is possible to change alignment of inidvidual cells.
+        </p>
+
+        <div class="grid grid--preview-colored">
+            <div class="grid__row">
+                <div class="grid__cell grid__cell--3">
+                    <div class="info text-caption">
+                        <div class="explainer">Cell</div>
+                    </div>
+                </div>
+                <div class="grid__cell grid__cell--3">
+                    <div class="info text-caption">
+                        <div class="explainer">Cell</div>
+                    </div>
+                </div>
+                <div class="grid__cell grid__cell--push grid__cell--3">
+                    <div class="info text-caption">
+                        <div class="class">.grid__cell--push</div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid__row">
+                <div class="grid__cell grid__cell--3">
+                    <div class="info text-caption">
+                        <div class="explainer">Cell</div>
+                    </div>
+                </div>
+                <div class="grid__cell grid__cell--push grid__cell--3">
+                    <div class="info text-caption">
+                        <div class="class">.grid__cell--push</div>
+                    </div>
+                </div>
+                <div class="grid__cell  grid__cell--3">
+                    <div class="info text-caption">
+                        <div class="explainer">Cell</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-caption">With <span class="class--filled">.grid--push</span> the cells are pushed to the right</div>
+
+
+        <a name="grid-offset"><h2 class="text-title">Offsets</h2></a>
+        <p class="readability">
+            Offsets can be created by using the class <span class="class--filled">.grid__cell--offset-4</span> where the number sets the offset on the 12 column based grid.
+            Like with the cell sizes the offset can also made depending on the breakpoint. So <span class="class--filled">.grid__cell--tablet-offset-4</span> will
+            offset the cell by 4 columns on tablet screens and larger.
+        </p>
+
+        <div class="grid grid--preview-colored">
+            <div class="grid__cell grid__cell--3 grid__cell--offset-1 grid__cell--tablet-offset-4 grid__cell--laptop-offset-7">
+                <div class="info text-caption">
+                    <div class="explainer">Cell</div>
+                </div>
+            </div>
+        </div>
+        <div class="text-caption">Above cell uses <span class="class--filled">grid__cell--offset-1 grid__cell--tablet-offset-4 grid__cell--laptop-offset-7</span></div>
+
+    </content>
+</body>
+</html>

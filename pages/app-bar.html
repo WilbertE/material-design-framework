@@ -1,0 +1,219 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta charset="utf-8" />
+    <link href="../refference.css" rel="stylesheet" />
+    <link href="../material-framework.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script src="../fontawsome/svg-with-js/js/fontawesome-all.js"></script>
+    <script src="../material-framework.js"></script>
+    <script src="../reference.js"></script>
+    <script>
+        $(function () {
+            $.mAppBar();
+            $.mHamburger();
+            $.mButtons();
+            $(".raised-button .menu, .flat-button .menu, .button-icon .menu").mMenu();
+        });        
+    </script>
+</head>
+<body>
+
+    <div class="titlebar text-headline shadow-4">
+        App bar
+        <div class="text-subheading-1">Everything within reach</div>
+    </div>
+    <content class="m-body">
+
+        <ul class="index">
+            <li class="text-caption">Contents</li>
+            <li><a href="#appbar">App bar</a></li>
+            <li><a href="#hamburger">Hamburger menu</a></li>
+            <li><a href="#buttons">Buttons</a></li>
+            <li><a href="#hiding">Hiding on scroll down</a></li>
+            <li><a href="#initializing">Initializing</a></li>
+        </ul>
+
+        <a name="appbar"><h1 class="text-title">App bar</h1></a>
+        <p class="readability">
+            The app bar is attached to the top of the screen (except in this example). It contains the main app functions and menus.
+        </p>
+
+
+        <div class="app-bar">
+
+            <!-- hamburger menu -->
+            <div class="hamburger" data-ripple="#fff">
+                <span class="hamburger-bar"></span>
+            </div>
+
+            <!-- Title -->
+            <div class="app-bar__title">Page name</div>
+
+            <!-- Right side -->
+            <div class="app-bar__right">
+
+                <!-- Icon button -->
+                <div class="button-icon" data-ripple="#fff">
+                    <i class="fal fa-clock"></i>
+                </div>
+
+                <!-- Flat button -->
+                <div class="flat-button" data-ripple="#fff">Contact</div>
+
+                <!-- Icon button with menu -->
+                <div class="button-icon" data-ripple="#fff">
+                    <i class="fal fa-ellipsis-v"></i>
+                    <nav class="menu">
+                        <ul class="menu__options">
+                            <li class="menu__option" data-ripple="#fff"><i class="fal fa-edit"></i> Edit</li>
+                            <li class="menu__option" data-ripple="#fff"><i class="fal fa-save"></i> Save</li>
+                            <li class="menu__hr"></li>
+                            <li class="menu__option" data-ripple="#fff" data-href="menus.html"><i class="fal fa-sign-out-alt"></i> Log out</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+        <pre><code class="html text-caption">&lt;div class=&quot;app-bar&quot;&gt;
+    &lt;!-- hamburger menu --&gt;
+    &lt;div class=&quot;hamburger&quot; data-ripple=&quot;#cf5260&quot;&gt;
+        &lt;span class=&quot;hamburger-bar&quot;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;!-- Title --&gt;
+    &lt;div class=&quot;app-bar__title&quot;&gt;Page name&lt;/div&gt;
+    &lt;!-- Right side --&gt;
+    &lt;div class=&quot;app-bar__right&quot;&gt;
+        &lt;!-- Icon button --&gt;
+        &lt;div class=&quot;button-icon&quot; data-ripple=&quot;#cf5260&quot;&gt;
+            &lt;i class=&quot;fal fa-clock&quot;&gt;&lt;/i&gt;
+        &lt;/div&gt;
+        &lt;!-- Flat button --&gt;
+        &lt;div class=&quot;flat-button&quot; data-ripple=&quot;#cf5260&quot;&gt;Contact&lt;/div&gt;
+        &lt;!-- Icon button with menu --&gt;
+        &lt;div class=&quot;button-icon&quot; data-ripple=&quot;#cf5260&quot;&gt;
+            &lt;i class=&quot;fal fa-ellipsis-v&quot;&gt;&lt;/i&gt;
+            &lt;nav class=&quot;menu&quot;&gt;
+                &lt;ul class=&quot;menu__options&quot;&gt;
+                    &lt;li class=&quot;menu__option&quot; data-ripple=&quot;#cf5260&quot;&gt;&lt;i class=&quot;fal fa-edit&quot;&gt;&lt;/i&gt; Edit&lt;/li&gt;
+                    &lt;li class=&quot;menu__option&quot; data-ripple=&quot;#cf5260&quot;&gt;&lt;i class=&quot;fal fa-save&quot;&gt;&lt;/i&gt; Save&lt;/li&gt;
+                    &lt;li class=&quot;menu__hr&quot;&gt;&lt;/li&gt;
+                    &lt;li class=&quot;menu__option&quot; data-ripple=&quot;#cf5260&quot; data-href=&quot;menus.html&quot;&gt;&lt;i class=&quot;fal fa-sign-out-alt&quot;&gt;&lt;/i&gt; Log out&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/nav&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+
+        <a name="hamburger"><h1 class="text-title">Hamburger menu</h1></a>
+        <p class="readability">
+            It is possible to insert a hamburger menu to the bar. It behaves the same as an icon button but should be attached to a sidemenu which it isn't by default.
+            There are some configuration options.
+        </p>
+        <ul>
+            <li>- Place the hamburger menu inside a div with the class <span class="class--filled">app-bar__right</span> to place the hambuger menu on the right side</li>
+            <li>- Add responsive hidden classes (for example the class <span class="class--filled">hidden-tablet-up</span>) to hide the button on some screensizes</li>
+        </ul>
+
+        <div class="app-bar">
+            <!-- hamburger menu -->
+            <div class="hamburger" data-ripple="#fff">
+                <span class="hamburger-bar"></span>
+            </div>
+
+            <!-- hamburger menu on the right side -->
+            <div class="app-bar__right">
+                <div class="hamburger" data-ripple="#fff">
+                    <span class="hamburger-bar"></span>
+                </div>
+            </div>
+        </div>
+
+        <pre><code class="html text-caption">&lt;div class=&quot;app-bar&quot;&gt;
+    &lt;!-- hamburger menu --&gt;
+    &lt;div class=&quot;hamburger&quot; data-ripple=&quot;#cf5260&quot;&gt;
+        &lt;span class=&quot;hamburger-bar&quot;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;!-- hamburger menu on the right side --&gt;
+    &lt;div class=&quot;app-bar__right&quot;&gt;
+        &lt;div class=&quot;hamburger&quot; data-ripple=&quot;#cf5260&quot;&gt;
+            &lt;span class=&quot;hamburger-bar&quot;&gt;&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+
+        <a name="buttons"><h1 class="text-title">Buttons</h1></a>
+        <p class="readability">
+            Buttons behave like normal buttons that live inside the app bar. But with the class <span class="class--filled">app-bar__full-button</span>
+            the button will be the same height as the app bar.
+        </p>
+
+        <div class="app-bar">
+
+            <!-- hamburger menu -->
+            <div class="hamburger app-bar__full-button" data-ripple="#fff">
+                <span class="hamburger-bar"></span>
+            </div>
+
+            <!-- Title -->
+            <div class="app-bar__title">Page name</div>
+
+            <!-- Right side -->
+            <div class="app-bar__right">
+
+                <!-- Flat button -->
+                <div class="flat-button app-bar__full-button" data-ripple="#fff">Dashboard</div>
+
+                <!-- Flat button -->
+                <div class="flat-button app-bar__full-button" data-ripple="#fff">Mailbox</div>
+
+                <!-- Flat button -->
+                <div class="flat-button app-bar__full-button" data-ripple="#fff">Contact</div>
+
+                <!-- Icon button with menu -->
+                <div class="button-icon app-bar__full-button" data-ripple="#fff">
+                    <i class="fal fa-sign-out-alt"></i>
+                </div>
+            </div>
+        </div>
+
+        <pre><code class="html text-caption">&lt;div class=&quot;app-bar&quot;&gt;
+
+    &lt;!-- Right side --&gt;
+    &lt;div class=&quot;app-bar__right&quot;&gt;
+
+        &lt;!-- Flat button --&gt;
+        &lt;div class=&quot;flat-button app-bar__full-button&quot; data-ripple=&quot;#fff&quot;&gt;Dashboard&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+        <a name="hiding"><h1 class="text-title">Hiding on scroll down</h1></a>
+        <p class="readability">
+            Using the class <span class="class--filled">app-bar--hide-scroll</span> will make the app bar dissapear when the user scrolls down and reappear when it scrolls down.
+        </p>
+        <a name="initializing"><h1 class="text-title">Initializing</h1></a>
+        <p class="readability">
+            To initialize the component use the following function.
+        </p>
+        <div class="plugin-option text-caption">
+        <div class="plugin-option__option">$.mAppBar();</div>
+        </div>
+        <p class="readability">
+            The hamburger menu button needs to be initialized on itself.
+        </p>
+        <div class="plugin-option text-caption">
+        <div class="plugin-option__option">$.mHamburger();</div>
+        </div>
+
+    </content>
+</body>
+</html>

@@ -1,0 +1,24 @@
+[
+  {
+    "outputFileName": "material-framework.js",
+    "inputFiles": [
+      "javascript/plugins/moment.js",
+      "javascript/plugins/simplebar.js",
+      "javascript/app_bar.js",
+      "javascript/bottom_navigation.js",
+      "javascript/bottom_sheet.js",
+      "javascript/buttons.js",
+      "javascript/datepicker.js",
+      "javascript/dialog.js",
+      "javascript/dropdown.js",
+      "javascript/hamburger_menu.js",
+      "javascript/lists.js",
+      "javascript/menus.js",
+      "javascript/modernizr.js",
+      "javascript/navigation-drawer.js",
+      "javascript/ripple.js",
+      "javascript/scrolling.js",
+      "javascript/textfields.js"
+    ]
+  }
+]

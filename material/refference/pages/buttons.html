@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+
+    <meta charset="utf-8" />
+    <link href="../refference.css" rel="stylesheet" />
+    <link href="../StyleSheet.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet"
+          href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script src="../../javascript/JavaScript.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+        $(function () {
+            $.mButtons();
+
+            
+        });
+
+        $(function () {
+            $("pre").on("click", function (e) {
+                e.preventDefault();
+                if ($(e.target).is("code") == false && $(e.target).closest("code").length == 0) {
+                    $(this).toggleClass("show").find("code").slideToggle();
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <div class="titlebar text-headline shadow-4">
+        Buttons
+        <div class="text-subheading-1">Making navigation work</div>
+    </div>
+    <content class="m-body">
+
+        <ul class="index">
+            <li class="text-caption">Contents</li>
+            <li><a href="#buttons">Buttons</a></li>
+            <li><a href="#initializing">Initializing</a></li>
+        </ul>
+
+
+        <a name="buttons"><h1 class="text-title">Buttons</h1></a>
+        <p class="readability">
+            The most common used button types are Floating action buttons, raised buttons and flat buttons.
+        </p>
+
+        <div class="grid">
+            <div class="grid__cell grid__cell--6 grid__cell--tablet-4 grid__cell--middle-center">
+                <div>
+                    <button class="raised-button"><i class="material-icons button--icon">send</i> Button</button>
+                    <button class="raised-button raised-button--disabled"><i class="material-icons button--icon">send</i> Button</button>
+                </div>
+            </div>
+            <div class="grid__cell grid__cell--6 grid__cell--tablet-4 grid__cell--middle-center">
+                <div>
+                    <button class="raised-button">Button</button>
+                    <button class="raised-button raised-button--disabled">Button</button>
+                </div>
+            </div>
+            <div class="grid__cell grid__cell--12 grid__cell--tablet-4 grid__cell--middle-center">
+                <div>
+                    <button class="flat-button">Button</button>
+                    <button class="flat-button flat-button--disabled">Button</button>
+                </div>
+            </div>
+        </div>
+
+        <pre><code class="html text-caption">&lt;button class=&quot;raised-button&quot;&gt;Button&lt;/button&gt;
+&lt;button class=&quot;raised-button raised-button--disabled&quot;&gt;Button&lt;/button&gt;
+&lt;button class=&quot;flat-button&quot;&gt;Button&lt;/button&gt;
+&lt;button class=&quot;flat-button flat-button--disabled&quot;&gt;Button&lt;/button&gt;</code></pre>
+
+        <a name="initializing"><h1 class="text-title">Initializing</h1></a>
+        <p class="readability">
+            To initialize the component use the following function, this will add a animation on clicks.
+        </p>
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">$.mButtons();</div>
+        </div>
+        
+    </content>
+</body>
+</html>

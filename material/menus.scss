@@ -1,0 +1,67 @@
+﻿
+
+.menu {
+    display: block;
+    position: absolute;
+    top: -999999px;
+    left: -999999px;
+    pointer-events: none;
+    opacity: 0;
+    min-width: 8rem;
+    max-width: 12.286rem;
+
+
+    &.menu--show {
+        display: inline-block;
+        position: absolute;
+        background: #fff;
+        @include shadow(8);
+        border-radius: 0.15rem;
+        z-index: 999;
+        opacity: 1;
+        left: auto;
+        top: auto;
+        pointer-events: all;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    &.menu--animate {
+        min-width: 0;
+        transition: max-height 195ms 70ms cubic-bezier(.55,0,.1,1), width 195ms cubic-bezier(.55,0,.1,1);
+        overflow-y: hidden;
+        overflow-x: hidden;
+    }
+
+    &.menu--animate--close {
+        transition: max-height 195ms cubic-bezier(.55,0,.1,1), width 195ms 70ms cubic-bezier(.55,0,.1,1);
+    }
+}
+
+
+.menu__option {
+    padding: 0.8rem;
+    cursor: pointer;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+
+    svg {
+        margin-right: 0.75rem;
+    }
+
+    &.menu__option--no-icon {
+        padding-left: 2.7rem;
+    }
+
+    .no-touchevents & {
+        &:hover {
+            background-color: $menu-option-hover-background-color;
+        }
+    }
+}
+
+.menu__hr {
+    border-top: solid 1px $menu-hr-border-color;
+    height: 0;
+}

@@ -1,0 +1,10 @@
+﻿[
+  {
+    "outputFile": "material-framework.css",
+    "inputFile": "material-framework.scss"
+  },
+  {
+    "outputFile": "refference.css",
+    "inputFile": "refference.scss"
+  }
+]

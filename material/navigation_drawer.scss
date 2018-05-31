@@ -1,0 +1,162 @@
+﻿@each $prefix in $prefixes {
+    $directions: '' -up -down;
+
+    @each $direction in $directions {
+        @if(($prefix == 'mobile' and ($direction == '-down' or $direction == '-up')) or ($prefix == 'pc' and ($direction == '-up' or $direction == '-down'))) {
+        }
+        @else {
+            @include responsive(#{$prefix}#{$direction}) {
+
+                .navigation-drawer-wrapper--stick-#{$prefix}#{$direction} {
+                    display: flex;
+                    align-items: stretch;
+                    height: 100%;
+
+                    .m-body {
+                        flex-grow: 1;
+                    }
+
+                    .navigation-drawer-overlay {
+                        position: relative;
+                        top: auto;
+                        left: auto;
+                        right: auto;
+                        bottom: auto;
+                        justify-self: stretch;
+                    }
+
+                    .navigation-drawer {
+                        transform: translateX(0%);
+                        width: 14.215rem;
+                        transition-duration: 0s;
+                        position: static;
+                        box-shadow: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.navigation-drawer-wrapper {
+    height: 100%;
+}
+
+.navigation-drawer {
+    width: 18.215rem;
+    z-index: 10;
+    position: fixed;
+    background: $navigation-drawer-background-color;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    @if $navigation-drawer-border-right-color {
+        border-right: solid 1px $navigation-drawer-border-color;
+    }
+
+    @include shadow(16);
+    transition: transform 0.271s cubic-bezier(0.0, 0.0, 0.2, 1);
+    transform: translateX(-110%);
+    box-sizing: border-box;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+.navigation-drawer__scroll-area {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.navigation-drawer-overlay {
+    z-index: 9999;
+}
+
+$prefixes: mobile tablet laptop pc;
+
+.navigation-drawer--hidden {
+    transform: translateX(-110%);
+    transition: transform 0.271s cubic-bezier(0.4, 0.0, 1, 1);
+}
+
+.navigation-drawer-overlay .navigation-drawer--open {
+    transform: translateX(0%);
+}
+
+
+.navigation-drawer__header {
+    background-color: $navigation-drawer-header-background-color;
+    color: $navigation-drawer-header-color;
+    padding: 1.1rem;
+
+    + .navigation-drawer__list {
+        margin-top: -0.5rem;
+    }
+
+    + .navigation-drawer__hr {
+        margin-top: -1.5rem;
+    }
+}
+
+.navigation-drawer__list .flat-button.list__button svg {
+    color: $navigation-drawer-button-icon-color;
+}
+
+.navigation-drawer__list .flat-button.list__button {
+    color: $navigation-drawer-button-text-color;
+    display: flex;
+    align-items: center;
+}
+
+.navigation-drawer .flat-button .button__icon--right {
+    margin: 0 0 0 auto;
+}
+
+.no-touchevents .navigation-drawer__list .flat-button:hover:before {
+    background: $navigation-drawer-button-hover-background-color;
+}
+
+$sizes: ( ".tiny": 0.75, ".small": 0.85, "": 1, );
+
+@each $name, $value in $sizes {
+    html, body#{$name} {
+
+        .navigation-drawer__header-title {
+            @include text(subheading-1,$value);
+            margin: 0;
+        }
+
+        .navigation-drawer__header-sub-title {
+            @include text(caption,$value);
+            margin: 0;
+            color: $navigation-drawer-subtitle-color;
+        }
+    }
+}
+
+.navigation-drawer__hr {
+    border-top: solid 1px $navigation-drawer-border-color;
+    height: 0;
+}
+
+.navigation-drawer__hr--small {
+    margin-left: 1.1rem;
+    margin-right: 1.1rem;
+}
+
+
+.navigation-drawer__list {
+    margin: 0.3rem 0;
+}
+
+.navigation-drawer__label {
+    margin: 1.1rem 1.1rem 0 1.1rem;
+    font-size: 0.8rem;
+    line-height: 0.8rem;
+    color: $navigation-drawer-label-color;
+}
+
+.navigation-drawer__label + .list navigation-drawer__list {
+    margin-top: 0;
+}

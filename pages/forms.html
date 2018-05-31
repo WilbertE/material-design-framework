@@ -1,0 +1,282 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta charset="utf-8" />
+    <link href="../refference.css" rel="stylesheet" />
+    <link href="../material-framework.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script src="../fontawsome/svg-with-js/js/fontawesome-all.js"></script>
+    <script src="../material-framework.js"></script>
+    <script src="../reference.js"></script>
+    <script>
+        $(function () {
+            $("select").mDropdown();
+            $.mTextfields();
+            $.mButtons();
+        });
+    </script>
+</head>
+<body>
+
+    <div class="titlebar text-headline shadow-4">
+        Forms
+        <div class="text-subheading-1">Getting data</div>
+    </div>
+    <content class="m-body">
+
+        <ul class="index">
+            <li class="text-caption">Contents</li>
+            <li><a href="#example1">Example form</a></li>
+            <li><a href="#example2">Example form filled</a></li>
+            <li><a href="#example3">Example form bordered</a></li>
+            <li><a href="#example4">Example form with icons</a></li>
+        </ul>
+
+
+        <a name="example1"><h1 class="text-title">Example form</h1></a>
+        <p class="readability">
+            A simple form using textfields, dropdowns and buttons
+        </p>
+
+        <div class="grid grid--gutter-40">
+            <div class="grid__cell grid__cell--tablet-6">
+                <fieldset>
+                    <input type="text" value="" name="firstname" id="firstname" />
+                    <label>Firstname</label>
+                </fieldset>
+            </div>
+            <div class="grid__cell grid__cell--tablet-6">
+                <fieldset>
+                    <input type="text" value="" name="lastname" id="lastname" />
+                    <label>Lastname</label>
+                </fieldset>
+            </div>
+            <div class="grid__cell grid__cell--tablet-9">
+                <fieldset>
+                    <input type="text" value="" name="address" id="address" />
+                    <label>Address</label>
+                </fieldset>
+            </div>
+            <div class="grid__cell grid__cell--tablet-3">
+                <fieldset>
+                    <input type="text" value="" name="postalcode" id="postalcode" />
+                    <label>Postalcode</label>
+                </fieldset>
+            </div>
+            <div class="grid__cell grid__cell--tablet-6">
+                <fieldset>
+                    <input type="text" value="" name="place" id="place" />
+                    <label>Place</label>
+                </fieldset>
+            </div>
+            <div class="grid__cell grid__cell--tablet-6">
+                <fieldset>
+                    <select name="nationality">
+                        <option value="nl">Netherlands</option>
+                        <option value="en">English</option>
+                        <option value="fr">Fance</option>
+                        <option value="us">United States</option>
+                    </select>
+                    <label>Nationality</label>
+                </fieldset>
+            </div>
+            <div class="grid__cell grid__cell--tablet-12 grid__cell--middle-right">
+                <button class="raised-button">Register <i class="material-icons button--icon">arrow_forward</i></button>
+            </div>
+        </div>
+
+        <a name="example2"><h1 class="text-title">Example form filled</h1></a>
+        <p class="readability">
+            A simple form using textfields, dropdowns and buttons with filled mode
+        </p>
+
+        <div class="grid grid--gutter-40">
+            <div class="grid__cell grid__cell--tablet-6">
+                <fieldset class="input-filled">
+                    <div class="input-filled__inner">
+                        <input type="text" value="" name="firstname" id="firstname" />
+                        <label>Firstname</label>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="grid__cell grid__cell--tablet-6">
+                <fieldset class="input-filled">
+                    <div class="input-filled__inner">
+                        <input type="text" value="" name="lastname" id="lastname" />
+                        <label>Lastname</label>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="grid__cell grid__cell--tablet-9">
+                <fieldset class="input-filled">
+                    <div class="input-filled__inner">
+                        <input type="text" value="" name="address" id="address" />
+                        <label>Address</label>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="grid__cell grid__cell--tablet-3">
+                <fieldset class="input-filled">
+                    <div class="input-filled__inner">
+                        <input type="text" value="" name="postalcode" id="postalcode" />
+                        <label>Postalcode</label>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="grid__cell grid__cell--tablet-6">
+                <fieldset class="input-filled">
+                    <div class="input-filled__inner">
+                        <input type="text" value="" name="place" id="place" />
+                        <label>Place</label>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="grid__cell grid__cell--tablet-6">
+                <fieldset class="input-filled">
+                    <div class="input-filled__inner">
+                        <select name="nationality">
+                            <option value="nl">Netherlands</option>
+                            <option value="en">English</option>
+                            <option value="fr">Fance</option>
+                            <option value="us">United States</option>
+                        </select>
+                        <label>Nationality</label>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="grid__cell grid__cell--tablet-12 grid__cell--middle-right">
+                <button class="raised-button">Register <i class="material-icons button--icon">arrow_forward</i></button>
+            </div>
+        </div>
+
+        <a name="example2"><h1 class="text-title">Example form bordered</h1></a>
+        <p class="readability">
+            A simple form using textfields, dropdowns and buttons with bordered mode
+        </p>
+
+        <div class="grid grid--gutter-40">
+            <div class="grid__cell grid__cell--tablet-6">
+                <fieldset class="input-bordered">
+                    <div class="input-bordered__inner">
+                        <input type="text" value="" name="firstname" id="firstname" />
+                        <label>Firstname</label>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="grid__cell grid__cell--tablet-6">
+                <fieldset class="input-bordered">
+                    <div class="input-bordered__inner">
+                        <input type="text" value="" name="lastname" id="lastname" />
+                        <label>Lastname</label>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="grid__cell grid__cell--tablet-9">
+                <fieldset class="input-bordered">
+                    <div class="input-bordered__inner">
+                        <input type="text" value="" name="address" id="address" />
+                        <label>Address</label>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="grid__cell grid__cell--tablet-3">
+                <fieldset class="input-bordered">
+                    <div class="input-bordered__inner">
+                        <input type="text" value="" name="postalcode" id="postalcode" />
+                        <label>Postalcode</label>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="grid__cell grid__cell--tablet-6">
+                <fieldset class="input-bordered">
+                    <div class="input-bordered__inner">
+                        <input type="text" value="" name="place" id="place" />
+                        <label>Place</label>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="grid__cell grid__cell--tablet-6">
+                <fieldset class="input-bordered">
+                    <div class="input-bordered__inner">
+                        <select name="nationality">
+                            <option value="nl">Netherlands</option>
+                            <option value="en">English</option>
+                            <option value="fr">Fance</option>
+                            <option value="us">United States</option>
+                        </select>
+                        <label>Nationality</label>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="grid__cell grid__cell--tablet-12 grid__cell--middle-right">
+                <button class="raised-button">Register <i class="material-icons button--icon">arrow_forward</i></button>
+            </div>
+        </div>
+
+
+        <a name="example4"><h1 class="text-title">Example form with icons</h1></a>
+        <p class="readability">
+            A simple form using textfields, dropdowns and buttons with icons
+        </p>
+
+        <div class="grid grid--gutter-40">
+            <div class="grid__cell grid__cell--tablet-6">
+                <fieldset>
+                    <i class="material-icons button--icon input-icon">person</i>
+                    <input type="text" value="" name="firstname" id="firstname" />
+                    <label>Firstname</label>
+                </fieldset>
+            </div>
+            <div class="grid__cell grid__cell--tablet-6">
+                <fieldset>
+                    <i class="material-icons button--icon input-icon">person</i>
+                    <input type="text" value="" name="lastname" id="lastname" />
+                    <label>Lastname</label>
+                </fieldset>
+            </div>
+            <div class="grid__cell grid__cell--tablet-9">
+                <fieldset>
+                    <i class="material-icons button--icon input-icon">home</i>
+                    <input type="text" value="" name="address" id="address" />
+                    <label>Address</label>
+                </fieldset>
+            </div>
+            <div class="grid__cell grid__cell--tablet-3">
+                <fieldset>
+                    <i class="material-icons button--icon input-icon">home</i>
+                    <input type="text" value="" name="postalcode" id="postalcode" />
+                    <label>Postalcode</label>
+                </fieldset>
+            </div>
+            <div class="grid__cell grid__cell--tablet-6">
+                <fieldset>
+                    <i class="material-icons button--icon input-icon">home</i>
+                    <input type="text" value="" name="place" id="place" />
+                    <label>Place</label>
+                </fieldset>
+            </div>
+            <div class="grid__cell grid__cell--tablet-6">
+                <fieldset>
+                    <i class="material-icons button--icon input-icon">flag</i>
+                    <select name="nationality">
+                        <option value="nl">Netherlands</option>
+                        <option value="en">English</option>
+                        <option value="fr">Fance</option>
+                        <option value="us">United States</option>
+                    </select>
+                    <label>Nationality</label>
+                </fieldset>
+            </div>
+            <div class="grid__cell grid__cell--tablet-12 grid__cell--middle-right">
+                <button class="raised-button">Register <i class="material-icons button--icon">arrow_forward</i></button>
+            </div>
+        </div>
+
+    </content>
+</body>
+</html>

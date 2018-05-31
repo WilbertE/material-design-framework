@@ -1,0 +1,19 @@
+﻿@mixin shadow($elevation) {
+    
+
+    @if map-has-key($shadow-map, $elevation) {
+        box-shadow: unquote(map-get($shadow-map, $elevation));
+    }
+    @else {
+        display: none;
+    }
+}
+
+$elevations: 1 2 3 4 6 8 9 12 16 24;
+
+@each $elevation in $elevations {
+    .shadow-#{$elevation} {
+        @include shadow($elevation);
+    }
+}
+

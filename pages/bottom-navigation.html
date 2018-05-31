@@ -1,0 +1,203 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta charset="utf-8" />
+    <link href="../refference.css" rel="stylesheet" />
+    <link href="../material-framework.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script src="../fontawsome/svg-with-js/js/fontawesome-all.js"></script>
+    <script src="../material-framework.js"></script>
+    <script src="../reference.js"></script>
+    <script>
+        $(function () {
+            $(".m-bottom-navigation").mBottomNavigation();
+        });
+
+    </script>
+
+</head>
+<body>
+
+    <div class="titlebar text-headline shadow-4">
+        Bottom navigation
+        <div class="text-subheading-1">Navigation for mobile</div>
+    </div>
+    <content>
+
+        <ul class="index">
+            <li class="text-caption">Contents</li>
+            <li><a href="#bottom-navigation">Bottom Navigation</a></li>
+            <li><a href="#initializing">Initializing</a></li>
+            <li><a href="#options">Options</a></li>
+            <li><a href="#methods">Methods</a></li>
+            <li><a href="#examples">Examples</a></li>
+        </ul>
+
+
+        <a name="bottom-navigation"><h1 class="text-title">Bottom Navigation</h1></a>
+        <p class="readability">
+            A bottom navigation should be used only on mobiles when you have three to five destinations which are equally important.
+            You only want to use them inside webapps. The Safari browser bar at the bottom on iPhones disappears when you scroll down and this
+            flips the position of the bottom navigation.
+        </p>
+        <p class="readability">
+            A bottom navigation with 3 or less tabs will show all labels. Bottom navigation with 4 or more will hide the inactive labels.
+        </p>
+
+        <nav class="m-bottom-navigation">
+            <div class="m-bottom-navigation__tab">
+                <a href="#" class="m-bottom-navigation__button">
+                    <i class="m-bottom-navigation__icon material-icons">place</i>
+                    <span class="m-bottom-navigation__label">Nearby</span>
+                </a>
+            </div>
+            <div class="m-bottom-navigation__tab m-bottom-navigation__tab--active">
+                <a href="#" class="m-bottom-navigation__button ">
+                    <i class="m-bottom-navigation__icon material-icons">account_balance_wallet</i>
+                    <span class="m-bottom-navigation__label">Wallet</span>
+                </a>
+            </div>
+            <div class="m-bottom-navigation__tab">
+                <a href="#" class="m-bottom-navigation__button m-bottom-navigation__button--active">
+                    <i class="m-bottom-navigation__icon material-icons">image</i>
+                    <span class="m-bottom-navigation__label">Photos</span>
+                </a>
+            </div>
+        </nav>
+
+
+<pre class="text-caption"><code class="html">&lt;nav class=&quot;m-bottom-navigation&quot;&gt;
+    &lt;div class=&quot;m-bottom-navigation__tab&quot;&gt;
+        &lt;a href=&quot;#&quot; class=&quot;m-bottom-navigation__button&quot;&gt;
+            &lt;i class=&quot;m-bottom-navigation__icon material-icons&quot;&gt;place&lt;/i&gt;
+            &lt;span class=&quot;m-bottom-navigation__label&quot;&gt;Nearby&lt;/span&gt;
+        &lt;/a&gt;
+    &lt;/div&gt;
+&lt;/nav&gt;</code></pre>
+
+        <a name="initializing"><h1 class="text-title">Initializing</h1></a>
+        <p class="readability">
+            To initialize the component use the following function with optional options.
+        </p>
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">$(selector).mBottomNavigation(options);</div>
+        </div>
+
+        <a name="options"><div class="text-subheading-1">Options</div></a>
+        <p class="readability">
+            The following options are available:<br />
+        </p>
+
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">hideLabels: 4</div>
+            <div class="explainer">
+                The amount of tabs when the plugin should hide labels of inactive tabs. Material Documents say this needs to be 4.
+            </div>
+        </div>
+
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">onButtonClick: function(tab){}</div>
+            <div class="explainer">
+                When a button is clicked the function will be executed and will pass the clicked tab.
+            </div>
+        </div>
+
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">followNavigation: false</div>
+            <div class="explainer">
+                On tab click disable or enable the following of the href tag in the anchor tag
+            </div>
+        </div>
+
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">ripple: true</div>
+            <div class="explainer">
+                Show or hide the ripple effect on click.
+            </div>
+        </div>
+
+        <a name="methods"><h1 class="text-subheading-1">Methods</h1></a>
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">$(selector).data("mBottomNavigation").select(index)</div>
+            <div class="explainer">
+                Select a tab by its index
+            </div>
+        </div>
+
+        <a name="examples"><h1 class="text-title">Examples</h1></a>
+
+        <p class="readability">
+            An example with 4 tabs.
+        </p>
+
+        <nav class="m-bottom-navigation">
+            <div class="m-bottom-navigation__tab">
+                <a href="#" class="m-bottom-navigation__button">
+                    <i class="m-bottom-navigation__icon material-icons">place</i>
+                    <span class="m-bottom-navigation__label">Nearby</span>
+                </a>
+            </div>
+            <div class="m-bottom-navigation__tab m-bottom-navigation__tab--active">
+                <a href="#" class="m-bottom-navigation__button ">
+                    <i class="m-bottom-navigation__icon material-icons">account_balance_wallet</i>
+                    <span class="m-bottom-navigation__label">Wallet</span>
+                </a>
+            </div>
+            <div class="m-bottom-navigation__tab">
+                <a href="#" class="m-bottom-navigation__button m-bottom-navigation__button--active">
+                    <i class="m-bottom-navigation__icon material-icons">image</i>
+                    <span class="m-bottom-navigation__label">Photos</span>
+                </a>
+            </div>
+            <div class="m-bottom-navigation__tab">
+                <a href="#" class="m-bottom-navigation__button m-bottom-navigation__button--active">
+                    <i class="m-bottom-navigation__icon material-icons">settings</i>
+                    <span class="m-bottom-navigation__label">Settings</span>
+                </a>
+            </div>
+        </nav>
+
+
+
+        <pre class="text-caption"><code class="html">&lt;nav class=&quot;m-bottom-navigation&quot;&gt;
+    &lt;div class=&quot;m-bottom-navigation__tab&quot;&gt;
+        &lt;a href=&quot;#&quot; class=&quot;m-bottom-navigation__button&quot;&gt;
+            &lt;i class=&quot;m-bottom-navigation__icon material-icons&quot;&gt;place&lt;/i&gt;
+            &lt;span class=&quot;m-bottom-navigation__label&quot;&gt;Nearby&lt;/span&gt;
+        &lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;m-bottom-navigation__tab m-bottom-navigation__tab--active&quot;&gt;
+        &lt;a href=&quot;#&quot; class=&quot;m-bottom-navigation__button &quot;&gt;
+            &lt;i class=&quot;m-bottom-navigation__icon material-icons&quot;&gt;account_balance_wallet&lt;/i&gt;
+            &lt;span class=&quot;m-bottom-navigation__label&quot;&gt;Wallet&lt;/span&gt;
+        &lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;m-bottom-navigation__tab&quot;&gt;
+        &lt;a href=&quot;#&quot; class=&quot;m-bottom-navigation__button m-bottom-navigation__button--active&quot;&gt;
+            &lt;i class=&quot;m-bottom-navigation__icon material-icons&quot;&gt;image&lt;/i&gt;
+            &lt;span class=&quot;m-bottom-navigation__label&quot;&gt;Photos&lt;/span&gt;
+        &lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;m-bottom-navigation__tab&quot;&gt;
+        &lt;a href=&quot;#&quot; class=&quot;m-bottom-navigation__button m-bottom-navigation__button--active&quot;&gt;
+            &lt;i class=&quot;m-bottom-navigation__icon material-icons&quot;&gt;settings&lt;/i&gt;
+            &lt;span class=&quot;m-bottom-navigation__label&quot;&gt;Settings&lt;/span&gt;
+        &lt;/a&gt;
+    &lt;/div&gt;
+&lt;/nav&gt;</code></pre>
+
+        <p class="readability">And initialisation with JavaScript</p>
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">
+                $(".m-bottom-navigation").mBottomNavigation();                
+            </div>
+        </div>
+
+    </content>
+</body>
+</html>

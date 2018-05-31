@@ -1,0 +1,204 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+
+    <meta charset="utf-8" />
+    <link href="../refference.css" rel="stylesheet" />
+    <link href="../StyleSheet.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet"
+          href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script src="../../javascript/JavaScript.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+        $(function () {
+            $(".js-show-question").on("click", function () {
+               new $.mDialog({
+                    title: "Are you sure?",
+                    content: "Are you sure you want to do something stupid?",
+                    buttons: [{ text: "No, stop!" },
+                              { text: "Ofcourse", onComplete: function () { alert("That was stupid"); } }
+                    ]
+                });
+            });
+
+            $(".js-show-message").on("click", function () {
+
+               new $.mDialog({
+                    content: "You are not authorized to do that"
+                });
+            });
+
+            $(".js-show-list").on("click", function () {
+
+                var list = $("<div />", { "class": "list dialog__list" });
+
+                var emails = ["testmail@hotmail.com", "example@outlook.com", "alig@gmail.com"];
+                for (var i = 0; i < emails.length; i++) {
+                    var listItem = $("<a />", { "class": "list__item list__item--single-line", "data-ripple": "#cf5260", "data-email": emails[i] });
+                    listItem.append($("<img />", { "class": "list__image list__image--round", "src": "avatar.jpg" }));
+                    listItem.append(emails[i]);
+                    list.append(listItem);
+                }
+
+                var dialog = new $.mDialog({
+                    title: "Select a backup account",
+                    content: list,
+                    buttons: [],
+                    onOpen: function () {
+                        list.on("click", ".list__item", function () {
+                            new $.mDialog({
+                                content: "You clicked " + $(this).attr("data-email"),
+                                buttons: [{ "text": "OK", onComplete: dialog.close }]
+                            });
+                        });
+                    }
+                });
+            });
+        });
+
+        $(function () {
+            $("pre").on("click", function (e) {
+                e.preventDefault();
+                if ($(e.target).is("code") == false && $(e.target).closest("code").length == 0) {
+                    $(this).toggleClass("show").find("code").slideToggle();
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <div class="titlebar text-headline shadow-4">
+        Dialog
+        <div class="text-subheading-1">Making choices</div>
+    </div>
+    <content class="m-body">
+
+        <ul class="index">
+            <li class="text-caption">Contents</li>
+            <li><a href="#dialogs">Dialogs</a></li>
+            <li><a href="#create">Creating with JavaScript</a></li>
+        </ul>
+
+
+        <a name="dialogs"><h1 class="text-title">Dialogs</h1></a>
+        <p class="readability">
+            Dialogs are used for messages or questions that are very important. They are created with Javascript
+        </p>
+
+        <button class="raised-button js-show-question">Ask question</button>
+        <pre><code class="js text-caption">$.mDialog.show({
+    title: "Are you sure?",
+    content: "Are you sure you want to do something stupid?",
+    buttons: [{ text: "No, stop!" },
+                { text: "Ofcourse", onComplete: function () { alert("That was stupid"); } }
+    ]
+});</code></pre>
+
+        <button class="raised-button js-show-message">Show Message</button>
+        <pre><code class="js text-caption">$.mDialog.show({
+    content: "You are not authorized to do that"
+});</code></pre>
+
+        <button class="raised-button js-show-list">Show list</button>
+
+
+        <pre><code class="js text-caption">var list = $(&quot;&lt;div /&gt;&quot;, { &quot;class&quot;: &quot;list dialog__list&quot; });
+
+//Create a list
+var emails = [&quot;testmail@hotmail.com&quot;, &quot;example@outlook.com&quot;, &quot;alig@gmail.com&quot;];
+for (var i = 0; i &lt; emails.length; i++) {
+    var listItem = $(&quot;&lt;a /&gt;&quot;, { &quot;class&quot;: &quot;list__item list__item--single-line&quot;, &quot;data-ripple&quot;: &quot;#cf5260&quot;, &quot;data-email&quot;: emails[i] });
+    listItem.append($(&quot;&lt;img /&gt;&quot;, { &quot;class&quot;: &quot;list__image list__image--round&quot;, &quot;src&quot;: &quot;avatar.jpg&quot; }));
+    listItem.append(emails[i]);
+    list.append(listItem);
+}
+
+//Show the list
+var dialog = new $.mDialog({
+    title: &quot;Select a backup account&quot;,
+    content: list,
+    buttons: [],
+    onShow: function () {
+
+        //On list click show what the user selected
+        list.on(&quot;click&quot;, &quot;.list__item&quot;, function () {
+            new $.mDialog({
+                content: &quot;You clicked &quot; + $(this).attr(&quot;data-email&quot;),
+                buttons: [{ &quot;text&quot;: &quot;OK&quot;, onComplete: dialog.close }]
+            });
+        });
+    }
+});</code></pre>
+
+
+        <a name="create"><h1 class="text-title">Creating with JavaScript</h1></a>
+        <p class="readability">
+            Dialogs are created with JavaScript
+        </p>
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">new $.mDialog(options);</div>
+        </div>
+
+        <a name="options"><div class="text-subheading-1">Options</div></a>
+        <p class="readability">
+            The following options are available:<br />
+        </p>
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">title: ""</div>
+            <div class="explainer">
+                The title of the dialog (optional)
+            </div>
+        </div>
+
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">content: ""</div>
+            <div class="explainer">
+                The body of the dialog. Can be a piece of text or some html
+            </div>
+        </div>
+
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">buttons: [{ text: "OK", onComplete: function () { } }]</div>
+            <div class="explainer">
+                An array with buttons with their text and a callback when the user clicks it
+            </div>
+        </div>
+
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">onOpen: function(){}</div>
+            <div class="explainer">
+                Callback that executes when the dialog comes into view
+            </div>
+        </div>
+
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">onClose: function(){}</div>
+            <div class="explainer">
+                Callback that executes when the dialog is beeing closed
+            </div>
+        </div>
+
+        <a name="methods"><div class="text-subheading-1">Methods</div></a>
+        <p class="readability">
+            Interacting with the component:<br />
+        </p>
+
+
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">$.mDialog.close();</div>
+            <div class="explainer">
+                Closes the dialog
+            </div>
+        </div>
+
+
+
+    </content>
+</body>
+</html>

@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+
+    <link href="../refference.css" rel="stylesheet" />
+    <link href="../material-framework.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script src="../fontawsome/svg-with-js/js/fontawesome-all.js"></script>
+    <script src="../material-framework.js"></script>
+    <script src="../reference.js"></script>
+    <script>
+        $(function () {
+            $.mButtons();
+
+            if ($(".no-touchevents").length >= 0) {
+                setTimeout(function () {
+                    var Scrollbar = window.Scrollbar;
+                    Scrollbar.init($(".m-body")[0], { alwaysShowTracks: true });
+                }, 2000);
+            }
+        });
+    </script>
+</head>
+<body>
+
+    <div class="titlebar text-headline shadow-4">
+        Scrollbars
+        <div class="text-subheading-1">Because content never fits</div>
+    </div>
+    <content class="m-body">
+
+        <ul class="index">
+            <li class="text-caption">Contents</li>
+            <li><a href="#scrollbar">Custom scrollbars</a></li>
+            <li><a href="#initializing">Initializing</a></li>
+        </ul>
+
+
+        <a name="scrollbar"><h1 class="text-title">Custom scrollbars</h1></a>
+        <p class="readability">
+            The default scrollbar can be replaced by a custom scrollbar which can be styled. It only has to be initialized.
+            <b>Be aware:</b> The body scrollbar cannot be replaced.<br/>
+        </p>
+
+
+        <a name="initializing"><h1 class="text-title">Initializing</h1></a>
+        <p class="readability">
+            To initialize the component use the following function.
+        </p>
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">
+                new SimpleBar(element);
+            </div>
+        </div>
+        <div class="text-caption">The element cannot be a jQuery object</div>       
+
+
+    </content>
+
+
+
+</body>
+</html>

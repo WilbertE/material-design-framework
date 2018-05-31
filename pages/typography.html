@@ -1,0 +1,219 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta charset="utf-8" />
+    <link href="../refference.css" rel="stylesheet" />
+    <link href="../material-framework.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script src="../fontawsome/svg-with-js/js/fontawesome-all.js"></script>
+    <script src="../material-framework.js"></script>
+    <script src="../reference.js"></script>
+</head>
+<body>
+
+    <div class="titlebar text-headline shadow-4">
+        Typography
+        <div class="text-subheading-1">Readability, sizes and line-heights</div>
+    </div>
+    <content class="typography-preview">
+
+        <ul class="index">
+            <li class="text-caption">Contents</li>
+            <li><a href="#text-responsive">Text is responsive</a></li>
+            <li><a href="#text-readability">Readability</a></li>
+            <li><a href="#text-sizes">Sizes</a></li>
+        </ul>
+
+        <a name="text-responsive"><h1 class="text-title">Text is responsive</h1></a>
+        <p class="readability">
+            Fonts are responsive. They scale fluently between mobile and pc sizes in font size and line height.
+        </p>
+
+        <a name="text-readability"><h1 class="text-title">Readability</h1></a>
+        <p class="readability">
+            The optimal line lenght for readability is around 60 characters. If the line is too long the users eye will have a hard time focussing on the text.
+            This is because the length makes it difficult to get an idea of where the line starts and ends.<br />
+            If a line is too short, the eye will have to travel back too often, breaking the reader’s rhythm. Too short lines also tend to stress people, making
+            them begin on the next line before finishing the current one (hence skipping potentially important words).
+            <div class="text-caption">Source: <a target="_blank" href="http://baymard.com/blog/line-length-readability">http://baymard.com/blog/line-length-readability</a></div>
+        </p>
+        <p class="readability">
+            Use the class <span class="class--filled">.readability</span> to make sure the text is always at an optimal length.
+            If you use Sass you can use <span class="sass--filled">@include readability()</span> to include the needed styles.
+        </p>
+
+        <a name="text-sizes"><h1 class="text-title">Sizes</h1></a>
+        <p class="readability">
+            There are default different font sizes based on the Material Design documents. All classes start with <span class="class--filled">.text-</span> followed
+            by the name of the font-size. If you use Sass you can include the font properties by using <span class="sass--filled">@include text($name)</span>.
+        </p>
+
+        <div class="text-previews">
+            <div class="grid">
+                <div class="grid__cell grid__cell--tablet-4 grid--center-horizontal-vertical">
+                    <div class="info">
+                        Display 2
+                        <div class="text-caption">
+                            <div class="class">.text-display-2</div>
+                            <div class="sass">@include text(display-2)</div>
+                            <div class="explainer">Font-size: 45px - 78px<br />Line-height: 24px - 38px</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid__cell grid__cell--tablet-8 grid--center-vertical">
+                    <div class="text-display-2">Display 2<br /></div>
+                </div>
+            </div>
+
+            <div class="grid">
+                <div class="grid__cell grid__cell--tablet-4 grid--center-horizontal-vertical">
+                    <div class="info">
+                        Display 1
+                        <div class="text-caption">
+                            <div class="class">.text-display-1</div>
+                            <div class="sass">@include text(display-1)</div>
+                            <div class="explainer">Font-size: 34px - 60px<br />Line-height: 40px - 70px</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid__cell grid__cell--tablet-8 grid--center-vertical">
+                    <div class="text-display-1">Display 1<br /></div>
+                </div>
+            </div>
+
+            <div class="grid">
+                <div class="grid__cell grid__cell--tablet-4 grid--center-horizontal-vertical">
+                    <div class="info">
+                        Headline
+                        <div class="text-caption">
+                            <div class="class">.text-headline</div>
+                            <div class="sass">@include text(headline)</div>
+                            <div class="explainer">Font-size: 24px - 32px<br />Line-height: 32px - 66px</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid__cell grid__cell--tablet-8 grid--center-vertical">
+                    <div class="text-headline">Headline<br /></div>
+                </div>
+            </div>
+
+            <div class="grid">
+                <div class="grid__cell grid__cell--tablet-4 grid--center-horizontal-vertical">
+                    <div class="info">
+                        Title
+                        <div class="text-caption">
+                            <div class="class">.text-title</div>
+                            <div class="sass">@include text(title)</div>
+                            <div class="explainer">Font-size: 20px - 30px<br />Line-height: 30px - 50px</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid__cell grid__cell--tablet-8 grid--center-vertical">
+                    <div class="text-title">Title<br /></div>
+                </div>
+            </div>
+
+            <div class="grid">
+                <div class="grid__cell grid__cell--tablet-4 grid--center-horizontal-vertical">
+                    <div class="info">
+                        Subheading-2
+                        <div class="text-caption">
+                            <div class="class">.text-subheading-2</div>
+                            <div class="sass">@include text(subheading-2)</div>
+                            <div class="explainer">Font-size: 16px - 26px<br />Line-height: 28px - 44px</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid__cell grid__cell--tablet-8 grid--center-vertical">
+                    <div class="text-subheading-2">Subheading 2<br /></div>
+                </div>
+            </div>
+
+            <div class="grid">
+                <div class="grid__cell grid__cell--tablet-4 grid--center-horizontal-vertical">
+                    <div class="info">
+                        Subheading-1
+                        <div class="text-caption">
+                            <div class="class">.text-subheading-1</div>
+                            <div class="sass">@include text(subheading-1)</div>
+                            <div class="explainer">Font-size: 16px - 26px<br />Line-height: 24px - 38px</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid__cell grid__cell--tablet-8 grid--center-vertical">
+                    <div class="text-subheading-1">Subheading 1<br /></div>
+                </div>
+            </div>
+
+            <div class="grid">
+                <div class="grid__cell grid__cell--tablet-4 grid--center-horizontal-vertical">
+                    <div class="info">
+                        Body-2
+                        <div class="text-caption">
+                            <div class="class">.text-body-2</div>
+                            <div class="sass">@include text(body-2)</div>
+                            <div class="explainer">Font-size: 14px - 24px<br />Line-height: 22px - 38px</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid__cell grid__cell--tablet-8 grid--center-vertical">
+                    <div class="text-body-2">Body 2<br /></div>
+                </div>
+            </div>
+
+            <div class="grid">
+                <div class="grid__cell grid__cell--tablet-4 grid--center-horizontal-vertical">
+                    <div class="info">
+                        Body-1
+                        <div class="text-caption">
+                            <div class="class">.text-body-1</div>
+                            <div class="sass">@include text(body-1)</div>
+                            <div class="explainer">Font-size: 14px - 24px<br />Line-height: 22px - 38px</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid__cell grid__cell--tablet-8 grid--center-vertical">
+                    <div class="text-body-1">Body 1<br /></div>
+                </div>
+            </div>
+
+            <div class="grid">
+                <div class="grid__cell grid__cell--tablet-4 grid--center-horizontal-vertical">
+                    <div class="info">
+                        Caption
+                        <div class="text-caption">
+                            <div class="class">.text-caption</div>
+                            <div class="sass">@include text(caption)</div>
+                            <div class="explainer">Font-size: 12px - 18px<br />Line-height: 18px - 30px</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid__cell grid__cell--tablet-8 grid--center-vertical">
+                    <div class="text-caption">Caption<br /></div>
+                </div>
+            </div>
+
+            <div class="grid">
+                <div class="grid__cell grid__cell--tablet-4 grid--center-horizontal-vertical">
+                    <div class="info">
+                        Button
+                        <div class="text-caption">
+                            <div class="class">.text-button</div>
+                            <div class="sass">@include text(button)</div>
+                            <div class="explainer">Font-size: 14px - 22px<br />Line-height: 24px - 38px<br />Uppercase</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid__cell grid__cell--tablet-8 grid--center-vertical">
+                    <div class="text-button">Button<br /></div>
+                </div>
+            </div>
+        </div>
+    </content>
+</body>
+</html>

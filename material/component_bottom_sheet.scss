@@ -1,0 +1,97 @@
+﻿
+
+.m-bottom-sheet {
+    position: fixed;
+    bottom: -100%;
+    background: $bottom-sheet-background-color;
+    @include shadow(9);
+    width: 100%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 0 0 0.575rem;
+    transition: transform 225ms cubic-bezier(0.4, 0.0, 0.6, 1), bottom 225ms cubic-bezier(0.0, 0.0, 0.2, 1);
+
+    &.js-initialized {
+        bottom: 0;
+    }
+
+    @include responsive(tablet) {
+        &.m-bottom-sheet--small {
+            width: 35%;
+        }
+
+        &.m-bottom-sheet--medium {
+            width: 60%;
+        }
+
+        &.m-bottom-sheet--large {
+            width: 85%;
+        }
+    }
+
+    @include responsive(laptop) {
+        &.m-bottom-sheet--small {
+            width: 40%;
+        }
+
+        &.m-bottom-sheet--medium {
+            width: 60%;
+        }
+
+        &.m-bottom-sheet--large {
+            width: 80%;
+        }
+    }
+
+    @include responsive(pc) {
+        &.m-bottom-sheet--small {
+            width: 45%;
+        }
+
+        &.m-bottom-sheet--medium {
+            width: 60%;
+        }
+
+        &.m-bottom-sheet--large {
+            width: 75%;
+        }
+    }
+
+    .m-bottom-sheet__title {
+        padding: 0 1.15rem;
+        @include fluid-property(font-size, map-get($breakpoints, mobile-max), map-get($breakpoints, laptop-max), 16px, 26px);
+        @include fluid-property(line-height, map-get($breakpoints, mobile-max), map-get($breakpoints, laptop-max), 56px, 70px);
+        opacity: 0.54;
+        overflow: hidden;
+
+        &[data-ripple] {
+            cursor: pointer;
+        }
+    }
+
+    .m-bottom-sheet__list {
+        margin: 0;
+        padding: 0;
+    }
+
+    .m-bottom-sheet__list-item {
+        padding: 0 1.15rem;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        color: $bottom-sheet-button-color;
+        @include fluid-property(line-height, map-get($breakpoints, mobile-max), map-get($breakpoints, laptop-max), 48px, 58px);
+    }
+
+    .m-bottom-sheet__list-icon {
+        margin-right: 2.3rem;
+    }
+
+    .m-bottom-sheet__divider {
+        border-top: solid 1px $bottom-sheet-border-color;
+        margin: 0.5rem 0 0.58rem;
+    }
+}

@@ -1,0 +1,209 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta charset="utf-8" />
+    <link href="../refference.css" rel="stylesheet" />
+    <link href="../material-framework.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script src="../fontawsome/svg-with-js/js/fontawesome-all.js"></script>
+    <script src="../material-framework.js"></script>
+    <script src="../reference.js"></script>
+    <script>
+        $(function () {
+            $.mButtons();
+
+            $(".navigation-drawer").mNavigationalDrawer();
+            $(".js-show-navigation-drawer").on("click", function () {
+                $(".navigation-drawer").data("mNavigationalDrawer").open();
+            });
+
+        });
+    </script>
+</head>
+<body>
+
+    <div class="titlebar text-headline shadow-4">
+        Side menu
+        <div class="text-subheading-1">More menus</div>
+    </div>
+
+    <div class="navigation-drawer-wrapper navigation-drawer-wrapper--stick-laptop-up">
+
+        <div class="navigation-drawer">
+
+            <div class="navigation-drawer__header">
+                <div class="navigation-drawer__header-title">Title</div>
+                <div class="navigation-drawer__header-sub-title">Subtitle</div>
+            </div>
+            <div class="navigation-drawer__scroll">
+                <div class="navigation-drawer__hr"></div>
+
+                <div class="list navigation-drawer__list">
+                    <div class="list__item list__item--button">
+                        <button class="flat-button list__button" data-ripple="#cf5260">
+                            <i class="fas  fa-envelope list__icon"></i>
+                            Mailbox
+                        </button>
+                    </div>
+                    <div class="list__item list__item--button">
+                        <button class="flat-button list__button" data-ripple="#cf5260">
+                            <i class="fas  fa-cloud-upload list__icon"></i>
+                            Upload
+                        </button>
+                    </div>
+                </div>
+                <div class="navigation-drawer__hr"></div>
+
+                <div class="navigation-drawer__label">Label</div>
+
+                <div class="list navigation-drawer__list">
+                    <div class="list__item list__item--button">
+                        <button class="flat-button list__button" data-ripple="#cf5260">
+                            <i class="fas  fa-heart list__icon"></i>
+                            Health
+                        </button>
+                    </div>
+                    <div class="list__item list__item--button">
+                        <button class="flat-button list__button" data-ripple="#cf5260">
+                            <i class="fas  fa-bookmark list__icon"></i>
+                            Bookmark
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <content class="m-body">
+
+
+
+            <ul class="index">
+                <li class="text-caption">Contents</li>
+                <li><a href="#page">Page structure</a></li>
+                <li><a href="#navigation-drawer">Navigation drawer</a></li>
+                <li><a href="#stick">Stick or slide</a></li>
+                <li><a href="#initializing">Initializing</a></li>
+                <li><a href="#options">Options</a></li>
+                <li><a href="#methods">Methods</a></li>
+                <li><a href="#example">Example</a></li>
+            </ul>
+
+            <a name="page"><h1 class="text-title">Page structure</h1></a>
+            <p class="readability">
+                A navigation drawer is a menu which can slide in or is visible all the time on larger screens.
+                It requires a special setup to make this work properly
+            </p>
+
+            <pre><code class="html text-caption">&lt;!-- App bar or page headers should go first --&gt;
+               
+&lt;!-- Then comes the wrapper and the class to make the drawer stick on specific screen widths --&gt;                 
+&lt;div class=&quot;navigation-drawer-wrapper navigation-drawer-wrapper--stick-laptop-up&quot;&gt;
+    
+    &lt;!-- Then the actual drawer--&gt;
+    &lt;div class=&quot;navigation-drawer&quot;&gt;
+        &lt;!-- Drawer content--&gt;
+    &lt;/div&gt;
+    &lt;!-- Then the content of the page--&gt;
+    &lt;content class=&quot;m-body&quot;&gt;
+        &lt;!-- Page content --&gt;
+    &lt;/content&gt;
+&lt;/div&gt;</code></pre>
+
+            <a name="navigation-drawer"><h1 class="text-title">Navigation drawer</h1></a>
+            <p class="readability">
+                The navigation drawer can have a head, dividers, labels and lists with buttons.
+            </p>
+            <pre><code class="html text-caption">&lt;div class=&quot;navigation-drawer&quot;&gt;
+    &lt;div class=&quot;navigation-drawer__header&quot;&gt;
+        &lt;div class=&quot;navigation-drawer__header-title&quot;&gt;Title&lt;/div&gt;
+        &lt;div class=&quot;navigation-drawer__header-sub-title&quot;&gt;Subtitle&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;navigation-drawer__hr&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;list navigation-drawer__list&quot;&gt;
+        &lt;div class=&quot;list__item list__item--button&quot;&gt;
+            &lt;button class=&quot;flat-button list__button&quot; data-ripple=&quot;#cf5260&quot;&gt;
+                &lt;i class=&quot;fas  fa-envelope list__icon&quot;&gt;&lt;/i&gt;Mailbox
+            &lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;navigation-drawer__label&quot;&gt;Label&lt;/div&gt;
+&lt;/div&gt;
+                </code></pre>
+
+            <a name="stick"><h1 class="text-title">Stick or slide</h1></a>
+            <p class="readability">
+                By default the navigation drawer is hidden off screen waiting for an event to slide it in.
+                But it can be made stickable on specific (or all) screens using the classes
+                <span class="class--filled">navigation-drawer-wrapper--stick-laptop-up</span> on the navigation-drawer-wrapper
+                where 'laptop-up' can be replaced to match the requirements.
+            </p>
+            <a name="initializing"><h1 class="text-title">Initializing</h1></a>
+            <p class="readability">
+                To initialize the component use the following function, this will add a animation on clicks.
+            </p>
+            <div class="plugin-option text-caption">
+                <div class="plugin-option__option">$(".navigation-drawer").mNavigationalDrawer();</div>
+            </div>
+
+            <a name="options"><div class="text-subheading-1">Options</div></a>
+            <p class="readability">
+                The following options are available:<br />
+            </p>
+            <div class="plugin-option text-caption">
+                <div class="plugin-option__option">onOpen: function(){}</div>
+                <div class="explainer">
+                    Callback when the drawer opens
+                </div>
+            </div>
+
+            <div class="plugin-option text-caption">
+                <div class="plugin-option__option">onClose: function(){}</div>
+                <div class="explainer">
+                    Callback when the drawer closes
+                </div>
+            </div>
+
+            <div class="plugin-option text-caption">
+                <div class="plugin-option__option">hamburger: null</div>
+                <div class="explainer">
+                    A hamburger button selector to attach
+                </div>
+            </div>
+
+            <a name="methods"><div class="text-subheading-1">Methods</div></a>
+            <p class="readability">
+                Interacting with the component from outside:<br />
+            </p>
+            
+            <div class="plugin-option text-caption">
+                <div class="plugin-option__option">$(".navigation-drawer").data("mNavigationalDrawer").open();</div>
+                <div class="explainer">
+                    Opens the navigation drawer
+                </div>
+            </div>
+            <div class="plugin-option text-caption">
+                <div class="plugin-option__option">$(".navigation-drawer").data("mNavigationalDrawer").close();</div>
+                <div class="explainer">
+                    Close the navigation drawer
+                </div>
+            </div>
+            <a name="example"><h1 class="text-title">Example</h1></a>
+            <p class="readability">
+                Hide the drawer by resizing to or below tablet size and click this button
+            </p>
+            <button class="raised-button js-show-navigation-drawer">Show navigation drawer</button>
+            <pre><code class="html text-caption">$(&quot;.navigation-drawer&quot;).mNavigationalDrawer();
+$(&quot;.js-show-navigation-drawer&quot;).on(&quot;click&quot;, function () {
+    $(&quot;.navigation-drawer&quot;).data(&quot;mNavigationalDrawer&quot;).open();
+});</code></pre>
+
+
+        </content>
+    </div>
+</body>
+</html>

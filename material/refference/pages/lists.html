@@ -1,0 +1,797 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+
+    <meta charset="utf-8" />
+    <link href="../refference.css" rel="stylesheet" />
+    <link href="../StyleSheet.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../../fontawsome/svg-with-js/js/fontawesome-all.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script src="../../javascript/JavaScript.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+        $(function () {
+            $(".list").mList();
+        });
+
+        $(function () {
+            $("pre").on("click", function (e) {
+                e.preventDefault();
+                if ($(e.target).is("code") == false && $(e.target).closest("code").length == 0) {
+                    $(this).toggleClass("show").find("code").slideToggle();
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <div class="titlebar text-headline shadow-4">
+        Lists
+        <div class="text-subheading-1">Vertical indexes</div>
+    </div>
+    <content class="m-body">
+
+        <ul class="index">
+            <li class="text-caption">Contents</li>
+            <li><a href="#lists">Lists</a></li>
+            <li><a href="#sizes">Sizes</a></li>
+            <li><a href="#images">Avatars and Images</a></li>
+            <li><a href="#dividers">Dividers</a></li>
+            <li><a href="#buttons">Button</a></li>
+            <li><a href="#disabled">Disabled and unclickable items</a></li>
+            <li><a href="#expandable">Expandable</a></li>
+            <li><a href="#floating-headers">Sticky headers</a></li>
+        </ul>
+
+        <a name="menus"><h1 class="text-title">Lists</h1></a>
+        <p class="readability">
+            Lists are continuous, vertical indexes of text or images.
+        </p>
+
+        <div class="grid">
+            <div class="grid__cell grid__cell--tablet-4">
+
+                <div class="list list--bordered" style="max-width: 381px;">
+                    <a class="list__item list__item--single-line" data-ripple="#cf5260">
+                        Single-line item
+                        <i class="far fa-angle-right list__icon list__icon--right"></i>
+                    </a>
+                    <a class="list__item list__item--single-line" data-ripple="#cf5260">
+                        Single-line item
+                        <i class="far fa-angle-right list__icon list__icon--right"></i>
+                    </a>
+                    <a class="list__item list__item--single-line" data-ripple="#cf5260">
+                        Single-line item
+                        <i class="far fa-angle-right list__icon list__icon--right"></i>
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="grid__cell grid__cell--tablet-4">
+
+                <div class="list list--bordered" style="max-width: 381px;">
+                    <a class="list__item list__item--single-line" data-ripple="#cf5260">
+                        <i class="fal fa-info-circle list__icon"></i> Single-line item
+                        <i class="far fa-angle-right list__icon list__icon--right"></i>
+                    </a>
+                    <a class="list__item list__item--single-line" data-ripple="#cf5260">
+                        <i class="fal fa-user-edit list__icon"></i> Single-line item
+                        <i class="far fa-angle-right list__icon list__icon--right"></i>
+                    </a>
+                    <a class="list__item list__item--single-line" data-ripple="#cf5260">
+                        <i class="fal fa-credit-card list__icon"></i> Single-line item
+                        <i class="far fa-angle-right list__icon list__icon--right"></i>
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="grid__cell grid__cell--tablet-4">
+
+                <div class="list list--bordered" style="max-width: 381px;">
+                    <a class="list__item list__item--single-line" data-ripple="#cf5260">
+                        <img src="avatar.jpg" class="list__image list__image--round" />
+                        Round avatar
+                        <i class="far fa-angle-right list__icon--right"></i>
+                    </a>
+                    <div class="list__divider list__divider--image"></div>
+                    <a class="list__item list__item--single-line" data-ripple="#cf5260">
+                        <img src="avatar.jpg" class="list__image list__image--round" />
+                        Round avatar
+                        <i class="far fa-angle-right list__icon--right"></i>
+                    </a>
+                    <div class="list__divider list__divider--image"></div>
+                    <a class="list__item list__item--single-line" data-ripple="#cf5260">
+                        <img src="avatar.jpg" class="list__image list__image--round" />
+                        Round avatar
+                        <i class="far fa-angle-right list__icon--right"></i>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+        <pre><code class="html text-caption">&lt;div class=&quot;list list--bordered&quot;&gt;
+    &lt;a class=&quot;list__item list__item--single-line&quot; data-ripple=&quot;#cf5260&quot;&gt;
+        Single-line item
+        &lt;i class=&quot;far fa-angle-right list__icon list__icon--right&quot;&gt;&lt;/i&gt;
+    &lt;/a&gt;
+&lt;/div&gt;
+&lt;div class=&quot;list list--bordered&quot;&gt;
+    &lt;a class=&quot;list__item list__item--single-line&quot; data-ripple=&quot;#cf5260&quot;&gt;
+        &lt;i class=&quot;fal fa-info-circle list__icon&quot;&gt;&lt;/i&gt; Single-line item
+        &lt;i class=&quot;far fa-angle-right list__icon list__icon--right&quot;&gt;&lt;/i&gt;
+    &lt;/a&gt;
+&lt;/div&gt;
+            
+&lt;div class=&quot;list list--bordered&quot;&gt;
+    &lt;a class=&quot;list__item list__item--single-line&quot; data-ripple=&quot;#cf5260&quot;&gt;
+        &lt;img src=&quot;avatar.jpg&quot; class=&quot;list__image list__image--round&quot; /&gt;
+        Round avatar
+        &lt;i class=&quot;far fa-angle-right list__icon--right&quot;&gt;&lt;/i&gt;
+    &lt;/a&gt;
+    &lt;div class=&quot;list__divider list__divider--image&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+
+
+        <a name="sizes"><h1 class="text-title">Sizes</h1></a>
+        <p class="readability">
+            List styles can appear in multiple sizes to show more or less content in side them.
+        </p>
+
+        <div class="grid">
+            <div class="grid__cell grid__cell--tablet-4">
+
+                <div class="list list--bordered" style="max-width: 381px;">
+                    <a class="list__item" data-ripple="#cf5260">
+                        Single-line item
+                        <i class="far fa-angle-right list__icon list__icon--right"></i>
+                    </a>
+                </div>
+
+            </div>
+            <div class="grid__cell grid__cell--tablet-4">
+
+                <div class="list list--bordered" style="max-width: 381px;">
+                    <a class="list__item list__item--multiple-line" data-ripple="#cf5260">
+                        <img src="avatar.jpg" class="list__image list__image--round" />
+                        <div class="list__list-content">
+                            Multy line item
+                            <div class="list__subline">Secondairy text</div>
+                        </div>
+
+                        <i class="far fa-angle-right list__icon list__icon--right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+            <div class="grid__cell grid__cell--tablet-4">
+
+                <div class="list list--bordered" style="max-width: 381px;">
+                    <a class="list__item list__item--multiple-line" data-ripple="#cf5260">
+                        <img src="avatar.jpg" class="list__image list__image--round" />
+                        <div class="list__list-content">
+                            Multy line item
+                            <div class="list__subline">Secondary text</div>
+                            <div class="list__subline">Tertiary text</div>
+                        </div>
+
+                        <i class="far fa-angle-right list__icon list__icon--right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+
+        <pre><code class="html text-caption">&lt;!-- One line --&gt;
+&lt;div class=&quot;list list--bordered&quot;&gt;
+    &lt;a class=&quot;list__item&quot; data-ripple=&quot;#cf5260&quot;&gt;
+        Single-line item
+        &lt;i class=&quot;far fa-angle-right list__icon list__icon--right&quot;&gt;&lt;/i&gt;
+    &lt;/a&gt;
+&lt;/div&gt;
+&lt;!-- Two lines --&gt;
+&lt;div class=&quot;list list--bordered&quot;&gt;
+    &lt;a class=&quot;list__item list__item--multiple-line&quot; data-ripple=&quot;#cf5260&quot;&gt;
+        &lt;img src=&quot;avatar.jpg&quot; class=&quot;list__image list__image--round&quot; /&gt;
+        &lt;div class=&quot;list__list-content&quot;&gt;
+            Multy line item
+            &lt;div class=&quot;list__subline&quot;&gt;Secondairy text&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;i class=&quot;far fa-angle-right list__icon list__icon--right&quot;&gt;&lt;/i&gt;
+    &lt;/a&gt;
+    &lt;div class=&quot;list__divider list__divider--image&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- Three lines --&gt;
+&lt;div class=&quot;list list--bordered&quot;&gt;
+    &lt;a class=&quot;list__item list__item--multiple-line&quot; data-ripple=&quot;#cf5260&quot;&gt;
+        &lt;img src=&quot;avatar.jpg&quot; class=&quot;list__image list__image--round&quot; /&gt;
+        &lt;div class=&quot;list__list-content&quot;&gt;
+            Multy line item
+            &lt;div class=&quot;list__subline&quot;&gt;Secondary text&lt;/div&gt;
+            &lt;div class=&quot;list__subline&quot;&gt;Tertiary text&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;i class=&quot;far fa-angle-right list__icon list__icon--right&quot;&gt;&lt;/i&gt;
+    &lt;/a&gt;
+    &lt;div class=&quot;list__divider list__divider--image&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+        <a name="images"><h1 class="text-title">Avatars / images</h1></a>
+        <p class="readability">
+            Avatars or images can make things more clearer. They appear in front of the content and can have different sizes.
+            Classes that can be used on the images are <span class="class--filled">list__image--round</span>, <span class="class--filled">list__image--square</span>
+            and <span class="class--filled">list__image--square-large</span>
+        </p>
+
+        <div class="grid">
+            <div class="grid__cell grid__cell--tablet-4">
+
+                <div class="list list--bordered" style="max-width: 381px;">
+                    <a class="list__item list__item--single-line" data-ripple="#cf5260">
+                        <img src="avatar.jpg" class="list__image list__image--round" />
+                        Round avatar
+                        <i class="far fa-angle-right list__icon--right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="grid__cell grid__cell--tablet-4">
+                <div class="list list--bordered" style="max-width: 381px;">
+                    <a class="list__item list__item--single-line" data-ripple="#cf5260">
+                        <img src="avatar.jpg" class="list__image list__image--square" />
+                        Square avatar
+                        <i class="far fa-angle-right list__icon--right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="grid__cell grid__cell--tablet-4">
+                <div class="list list--bordered" style="max-width: 381px;">
+                    <a class="list__item list__item--single-line" data-ripple="#cf5260">
+                        <img src="avatar.jpg" class="list__image list__image--square-large" />
+                        Large Square avatar
+                        <i class="far fa-angle-right list__icon--right"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+<pre><code class="html text-caption">&lt;div class=&quot;list list--bordered&quot;&gt;
+    &lt;a class=&quot;list__item list__item--single-line&quot; data-ripple=&quot;#cf5260&quot;&gt;
+        &lt;img src=&quot;avatar.jpg&quot; class=&quot;list__image list__image--round&quot; /&gt;
+        Round avatar
+        &lt;i class=&quot;far fa-angle-right list__icon--right&quot;&gt;&lt;/i&gt;
+    &lt;/a&gt;
+&lt;/div&gt;
+&lt;div class=&quot;list list--bordered&quot;&gt;
+        &lt;a class=&quot;list__item list__item--single-line&quot; data-ripple=&quot;#cf5260&quot;&gt;
+            &lt;img src=&quot;avatar.jpg&quot; class=&quot;list__image list__image--square&quot; /&gt;
+            Square avatar
+            &lt;i class=&quot;far fa-angle-right list__icon--right&quot;&gt;&lt;/i&gt;
+        &lt;/a&gt;
+&lt;/div&gt;
+&lt;div class=&quot;list list--bordered&quot;&gt;
+    &lt;a class=&quot;list__item list__item--single-line&quot; data-ripple=&quot;#cf5260&quot;&gt;
+        &lt;img src=&quot;avatar.jpg&quot; class=&quot;list__image list__image--square-large&quot; /&gt;
+        Large Square avatar
+        &lt;i class=&quot;far fa-angle-right list__icon--right&quot;&gt;&lt;/i&gt;
+    &lt;/a&gt;
+&lt;/div&gt;</code></pre>
+
+
+        <a name="dividers"><h1 class="text-title">Dividers</h1></a>
+        <p class="readability">
+            Dividers exist in multiple sizes to match avatar or images.
+        </p>
+
+        <div class="grid">
+            <div class="grid__cell grid__cell--tablet-4">
+
+                <div class="list list--bordered" style="max-width: 381px;">
+                    <a class="list__item list__item--single-line" data-ripple="#cf5260">
+                        <img src="avatar.jpg" class="list__image list__image--round" />
+                        List item
+                        <i class="far fa-angle-right list__icon--right"></i>
+                    </a>
+                    <div class="list__divider"></div>
+                    <a class="list__item list__item--single-line" data-ripple="#cf5260">
+                        <img src="avatar.jpg" class="list__image list__image--round" />
+                        List item
+                        <i class="far fa-angle-right list__icon--right"></i>
+                    </a>
+                    <div class="list__divider list__divider--image"></div>
+                    <a class="list__item list__item--single-line" data-ripple="#cf5260">
+                        <img src="avatar.jpg" class="list__image list__image--round" />
+                        List item
+                        <i class="far fa-angle-right list__icon--right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="grid__cell grid__cell--tablet-4">
+                <div class="list list--bordered" style="max-width: 381px;">
+                    <a class="list__item list__item--single-line" data-ripple="#cf5260">
+                        <img src="avatar.jpg" class="list__image list__image--square" />
+                        List item
+                        <i class="far fa-angle-right list__icon--right"></i>
+                    </a>
+                    <div class="list__divider list__divider--image-square"></div>
+                    <a class="list__item list__item--single-line" data-ripple="#cf5260">
+                        <img src="avatar.jpg" class="list__image list__image--square" />
+                        List item
+                        <i class="far fa-angle-right list__icon--right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="grid__cell grid__cell--tablet-4">
+                <div class="list list--bordered" style="max-width: 381px;">
+                    <a class="list__item list__item--single-line" data-ripple="#cf5260">
+                        <img src="avatar.jpg" class="list__image list__image--square-large" />
+                        List item
+                        <i class="far fa-angle-right list__icon--right"></i>
+                    </a>
+                    <div class="list__divider list__divider--image-square-large"></div>
+                    <a class="list__item list__item--single-line" data-ripple="#cf5260">
+                        <img src="avatar.jpg" class="list__image list__image--square-large" />
+                        List item
+                        <i class="far fa-angle-right list__icon--right"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+<pre><code class="html text-caption">&lt;div class=&quot;list__divider&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;list__divider list__divider--image&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;list__divider list__divider--image-square&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;list__divider list__divider--image-square-large&quot;&gt;&lt;/div&gt;</code></pre>
+
+        <a name="buttons"><h1 class="text-title">Buttons</h1></a>
+        <p class="readability">
+            List items can have flat buttons
+        </p>
+
+        <div class="list list--bordered" style="max-width: 381px;">
+            <div class="list__item list__item--button">
+                <button class="flat-button list__button" data-ripple="#cf5260">
+                    <i class="fal fa-envelope list__icon"></i>
+                    Mailbox
+                </button>
+            </div>
+            <div class="list__item list__item--button">
+                <button class="flat-button list__button" data-ripple="#cf5260">
+                    <i class="fal fa-cloud-upload list__icon"></i>
+                    Upload
+                </button>
+            </div>
+        </div>
+
+        <pre><code class="html text-caption">&lt;div class=&quot;list list--bordered&quot;&gt;
+    &lt;div class=&quot;list__item list__item--button&quot;&gt;
+        &lt;button class=&quot;flat-button list__button&quot; data-ripple=&quot;#cf5260&quot;&gt;
+            &lt;i class=&quot;fal fa-envelope list__icon&quot;&gt;&lt;/i&gt;
+            Mailbox
+        &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;list__item list__item--button&quot;&gt;
+        &lt;button class=&quot;flat-button list__button&quot; data-ripple=&quot;#cf5260&quot;&gt;
+            &lt;i class=&quot;fal fa-cloud-upload list__icon&quot;&gt;&lt;/i&gt;
+            Upload
+        &lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+
+        <a name="disabled"><h1 class="text-title">Disabled and unclickable items</h1></a>
+        <p class="readability">
+            Items can be desabled (class <span class="class--filled">list__item--disabled</span> to the list item) or made
+            'unclickable' so they look active but don't preform an action (class <span class="class--filled">list__item--unclickable</span> to the list item).
+        </p>
+        <div class="grid">
+        <div class="grid__cell grid__cell--tablet-4">
+        <div class="list list--bordered" style="max-width: 381px;">
+        <a class="list__item list__item--single-line list__item--unclickable" data-ripple="#cf5260">
+        <img src="avatar.jpg" class="list__image list__image--round" />
+                        Unclickable
+        <i class="far fa-angle-right list__icon--right"></i>
+                    </a>
+        <a class="list__item list__item--single-line list__item--disabled" data-ripple="#cf5260">
+        <img src="avatar.jpg" class="list__image list__image--round" />
+                        Disabled item
+        <i class="far fa-angle-right list__icon--right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+<pre><code class="html text-caption">&lt;div class=&quot;list list--bordered&quot;&gt;
+    &lt;a class=&quot;list__item list__item--single-line list__item--unclickable&quot; data-ripple=&quot;#cf5260&quot;&gt;
+        &lt;img src=&quot;avatar.jpg&quot; class=&quot;list__image list__image--round&quot; /&gt;
+        Unclickable
+        &lt;i class=&quot;far fa-angle-right list__icon--right&quot;&gt;&lt;/i&gt;
+    &lt;/a&gt;
+    &lt;a class=&quot;list__item list__item--single-line list__item--disabled&quot; data-ripple=&quot;#cf5260&quot;&gt;
+        &lt;img src=&quot;avatar.jpg&quot; class=&quot;list__image list__image--round&quot; /&gt;
+        Disabled item
+        &lt;i class=&quot;far fa-angle-right list__icon--right&quot;&gt;&lt;/i&gt;
+    &lt;/a&gt;
+&lt;/div&gt;</code></pre>
+        <a name="expandable"><h1 class="text-title">Expandable lists</h1></a>
+        <p class="readability">
+            List can have expandable bodies which expands when the user clicks the list item.
+            Use the class <span class="class--filled">list--only-one-expandable</span> to have at max only one item expanded.
+            Expandable lists use javascript so they need to be initialized by using <span class="js--filled">$(selector).mList()</span>.
+            Use <span class="js--filled">$(selector).data("mList").toggleExpand([list item])</span> to programmatically toggle an item.
+        </p>
+        <div class="grid">
+        <div class="grid__cell grid__cell--tablet-4">
+        <div class="list list--bordered" style="max-width: 381px;">
+        <div class="list__item list__item--single-line list__item--expandable" data-ripple="#cf5260">
+        <i class="fal fa-info-circle list__icon"></i> Single-line item
+        <i class="far fa-angle-down list__icon list__icon--right list__icon--expendable-indicator"></i>
+                    </div>
+        <div class="list__expand">
+                        This is the expanded content
+                    </div>
+        <div class="list__divider"></div>
+        <div class="list__item list__item--single-line list__item--expandable" data-ripple="#cf5260">
+        <i class="fal fa-user-edit list__icon"></i> Single-line item
+        <i class="far fa-angle-down list__icon list__icon--right list__icon--expendable-indicator"></i>
+                    </div>
+        <div class="list__expand">
+                        This is the expanded content
+                    </div>
+        <div class="list__divider"></div>
+        <div class="list__item list__item--single-line list__item--expandable" data-ripple="#cf5260">
+        <i class="fal fa-credit-card list__icon"></i> Single-line item
+        <i class="far fa-angle-down list__icon list__icon--right list__icon--expendable-indicator"></i>
+                    </div>
+        <div class="list__expand">
+                        This is the expanded content
+                    </div>
+                </div>
+            </div>
+        <div class="grid__cell grid__cell--tablet-4">
+        <div class="list list--bordered" style="max-width: 381px;">
+        <div class="list__item list__item--single-line list__item--expandable" data-ripple="#cf5260">
+        <i class="fal fa-info-circle list__icon"></i> Single-line item
+        <i class="far fa-angle-down list__icon list__icon--right list__icon--expendable-indicator"></i>
+                    </div>
+        <div class="list__expand">
+                        This is the expanded content
+                    </div>
+        <div class="list__item list__item--single-line list__item--expandable" data-ripple="#cf5260">
+        <i class="fal fa-user-edit list__icon"></i> Single-line item
+        <i class="far fa-angle-down list__icon list__icon--right list__icon--expendable-indicator"></i>
+                    </div>
+        <div class="list__expand">
+                        This is the expanded content
+                    </div>
+        <div class="list__item list__item--single-line list__item--expandable" data-ripple="#cf5260">
+        <i class="fal fa-credit-card list__icon"></i> Single-line item
+        <i class="far fa-angle-down list__icon list__icon--right list__icon--expendable-indicator"></i>
+                    </div>
+        <div class="list__expand">
+                        This is the expanded content
+                    </div>
+                </div>
+            </div>
+        <div class="grid__cell grid__cell--tablet-4">
+        <div class="list list--bordered list--only-one-expandable" style="max-width: 381px;">
+        <div class="list__item list__item--single-line list__item--expandable" data-ripple="#cf5260">
+        <i class="fal fa-info-circle list__icon"></i> Single-line item
+        <i class="far fa-angle-down list__icon list__icon--right list__icon--expendable-indicator"></i>
+                    </div>
+        <div class="list__expand">
+                        This is the expanded content
+                    </div>
+        <div class="list__item list__item--single-line list__item--expandable" data-ripple="#cf5260">
+        <i class="fal fa-user-edit list__icon"></i> Single-line item
+        <i class="far fa-angle-down list__icon list__icon--right list__icon--expendable-indicator"></i>
+                    </div>
+        <div class="list__expand">
+                        This is the expanded content
+                    </div>
+        <div class="list__item list__item--single-line list__item--expandable" data-ripple="#cf5260">
+        <i class="fal fa-credit-card list__icon"></i> Single-line item
+        <i class="far fa-angle-down list__icon list__icon--right list__icon--expendable-indicator"></i>
+                    </div>
+        <div class="list__expand">
+                        This is the expanded content
+                    </div>
+                </div>
+            </div>
+        </div>
+        <pre><code class="html text-caption">&lt;div class=&quot;list list--bordered&quot;&gt;
+    &lt;div class=&quot;list__item list__item--single-line list__item--expandable&quot; data-ripple=&quot;#cf5260&quot;&gt;
+        &lt;i class=&quot;fal fa-info-circle list__icon&quot;&gt;&lt;/i&gt; Single-line item
+        &lt;i class=&quot;far fa-angle-down list__icon list__icon--right list__icon--expendable-indicator&quot;&gt;&lt;/i&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;list__expand&quot;&gt;
+        This is the expanded content
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        <a name="floating-headers"><h1 class="text-title">Sticky headers</h1></a>
+        <p class="readability">
+            Sticky headers are headers that categorize a number of items and stay on top unless they are not needed anymore.
+        </p>
+        <div class="grid">
+        <div class="grid__cell grid__cell--tablet-4">
+        <div class="list list--indexed list--bordered" style="max-width: 381px; max-height: 400px; ">
+        <div class="list__index">Today</div>
+        <a class="list__item list__item--single-line" data-ripple="#cf5260">
+        <img src="avatar.jpg" class="list__image list__image--round" />
+                        Agustin
+        <i class="far fa-angle-right list__icon--right"></i>
+                    </a>
+        <a class="list__item list__item--single-line" data-ripple="#cf5260">
+        <img src="avatar.jpg" class="list__image list__image--round" />
+                        Ajay
+        <i class="far fa-angle-right list__icon--right"></i>
+                    </a>
+        <a class="list__item list__item--single-line" data-ripple="#cf5260">
+        <img src="avatar.jpg" class="list__image list__image--round" />
+                        Ali
+        <i class="far fa-angle-right list__icon--right"></i>
+                    </a>
+        <a class="list__item list__item--single-line" data-ripple="#cf5260">
+        <img src="avatar.jpg" class="list__image list__image--round" />
+                        Alvin
+        <i class="far fa-angle-right list__icon--right"></i>
+                    </a>
+        <a class="list__item list__item--single-line" data-ripple="#cf5260">
+        <img src="avatar.jpg" class="list__image list__image--round" />
+                        Anay
+        <i class="far fa-angle-right list__icon--right"></i>
+                    </a>
+        <div class="list__index">Tomorrow</div>
+        <a class="list__item list__item--single-line" data-ripple="#cf5260">
+        <img src="avatar.jpg" class="list__image list__image--round" />
+                        Babette
+        <i class="far fa-angle-right list__icon--right"></i>
+                    </a>
+        <a class="list__item list__item--single-line" data-ripple="#cf5260">
+        <img src="avatar.jpg" class="list__image list__image--round" />
+                        Baez
+        <i class="far fa-angle-right list__icon--right"></i>
+                    </a>
+        <a class="list__item list__item--single-line" data-ripple="#cf5260">
+        <img src="avatar.jpg" class="list__image list__image--round" />
+                        Balin
+        <i class="far fa-angle-right list__icon--right"></i>
+                    </a>
+        <a class="list__item list__item--single-line" data-ripple="#cf5260">
+        <img src="avatar.jpg" class="list__image list__image--round" />
+                        Bambi
+        <i class="far fa-angle-right list__icon--right"></i>
+                    </a>
+        <a class="list__item list__item--single-line" data-ripple="#cf5260">
+        <img src="avatar.jpg" class="list__image list__image--round" />
+                        Bandit
+        <i class="far fa-angle-right list__icon--right"></i>
+                    </a>
+        <a class="list__item list__item--single-line" data-ripple="#cf5260">
+        <img src="avatar.jpg" class="list__image list__image--round" />
+                        Banner
+        <i class="far fa-angle-right list__icon--right"></i>
+                    </a>
+        <a class="list__item list__item--single-line" data-ripple="#cf5260">
+        <img src="avatar.jpg" class="list__image list__image--round" />
+                        Baradine
+        <i class="far fa-angle-right list__icon--right"></i>
+                    </a>
+        <div class="list__index">Monday</div>
+        <a class="list__item list__item--single-line" data-ripple="#cf5260">
+        <img src="avatar.jpg" class="list__image list__image--round" />
+                        Cadwallon
+        <i class="far fa-angle-right list__icon--right"></i>
+                    </a>
+        <a class="list__item list__item--single-line" data-ripple="#cf5260">
+        <img src="avatar.jpg" class="list__image list__image--round" />
+                        Caecilia
+        <i class="far fa-angle-right list__icon--right"></i>
+                    </a>
+        <div class="list__index">Tuesday</div>
+        <a class="list__item list__item--single-line" data-ripple="#cf5260">
+        <img src="avatar.jpg" class="list__image list__image--round" />
+                        Dacia
+        <i class="far fa-angle-right list__icon--right"></i>
+                    </a>
+        <a class="list__item list__item--single-line" data-ripple="#cf5260">
+        <img src="avatar.jpg" class="list__image list__image--round" />
+                        Dagna
+        <i class="far fa-angle-right list__icon--right"></i>
+                    </a>
+        <a class="list__item list__item--single-line" data-ripple="#cf5260">
+        <img src="avatar.jpg" class="list__image list__image--round" />
+                        Daireena
+        <i class="far fa-angle-right list__icon--right"></i>
+                    </a>
+        <a class="list__item list__item--single-line" data-ripple="#cf5260">
+        <img src="avatar.jpg" class="list__image list__image--round" />
+                        Daisy
+        <i class="far fa-angle-right list__icon--right"></i>
+                    </a>
+        <div class="list__index">Wednesday</div>
+        <a class="list__item list__item--single-line" data-ripple="#cf5260">
+        <img src="avatar.jpg" class="list__image list__image--round" />
+                        Eagan
+        <i class="far fa-angle-right list__icon--right"></i>
+                    </a>
+        <a class="list__item list__item--single-line" data-ripple="#cf5260">
+        <img src="avatar.jpg" class="list__image list__image--round" />
+                        Eamhair
+        <i class="far fa-angle-right list__icon--right"></i>
+                    </a>
+        <a class="list__item list__item--single-line" data-ripple="#cf5260">
+        <img src="avatar.jpg" class="list__image list__image--round" />
+                        Earl
+        <i class="far fa-angle-right list__icon--right"></i>
+                    </a>
+        <a class="list__item list__item--single-line" data-ripple="#cf5260">
+        <img src="avatar.jpg" class="list__image list__image--round" />
+                        Easter
+        <i class="far fa-angle-right list__icon--right"></i>
+                    </a>
+                </div>
+            </div>
+        <div class="grid__cell grid__cell--tablet-4">
+        <div class="list list--indexed list--indexed-inside list--bordered" style="max-width: 381px; max-height: 400px; ">
+        <div class="list__index-container">
+        <div class="list__index">A</div>
+        <a class="list__item list__item--single-line" data-ripple="#cf5260">
+        <img src="avatar.jpg" class="list__image list__image--round" />
+                            Agustin
+        <i class="far fa-angle-right list__icon--right"></i>
+                        </a>
+        <a class="list__item list__item--single-line" data-ripple="#cf5260">
+        <img src="avatar.jpg" class="list__image list__image--round" />
+                            Ajay
+        <i class="far fa-angle-right list__icon--right"></i>
+                        </a>
+        <a class="list__item list__item--single-line" data-ripple="#cf5260">
+        <img src="avatar.jpg" class="list__image list__image--round" />
+                            Ali
+        <i class="far fa-angle-right list__icon--right"></i>
+                        </a>
+        <a class="list__item list__item--single-line" data-ripple="#cf5260">
+        <img src="avatar.jpg" class="list__image list__image--round" />
+                            Alvin
+        <i class="far fa-angle-right list__icon--right"></i>
+                        </a>
+        <a class="list__item list__item--single-line" data-ripple="#cf5260">
+        <img src="avatar.jpg" class="list__image list__image--round" />
+                            Anay
+        <i class="far fa-angle-right list__icon--right"></i>
+                        </a>
+                    </div>
+        <div class="list__index-container">
+        <div class="list__index">B</div>
+        <a class="list__item list__item--single-line" data-ripple="#cf5260">
+        <img src="avatar.jpg" class="list__image list__image--round" />
+                            Babette
+        <i class="far fa-angle-right list__icon--right"></i>
+                        </a>
+        <a class="list__item list__item--single-line" data-ripple="#cf5260">
+        <img src="avatar.jpg" class="list__image list__image--round" />
+                            Baez
+        <i class="far fa-angle-right list__icon--right"></i>
+                        </a>
+        <a class="list__item list__item--single-line" data-ripple="#cf5260">
+        <img src="avatar.jpg" class="list__image list__image--round" />
+                            Balin
+        <i class="far fa-angle-right list__icon--right"></i>
+                        </a>
+        <a class="list__item list__item--single-line" data-ripple="#cf5260">
+        <img src="avatar.jpg" class="list__image list__image--round" />
+                            Bambi
+        <i class="far fa-angle-right list__icon--right"></i>
+                        </a>
+        <a class="list__item list__item--single-line" data-ripple="#cf5260">
+        <img src="avatar.jpg" class="list__image list__image--round" />
+                            Bandit
+        <i class="far fa-angle-right list__icon--right"></i>
+                        </a>
+        <a class="list__item list__item--single-line" data-ripple="#cf5260">
+        <img src="avatar.jpg" class="list__image list__image--round" />
+                            Banner
+        <i class="far fa-angle-right list__icon--right"></i>
+                        </a>
+        <a class="list__item list__item--single-line" data-ripple="#cf5260">
+        <img src="avatar.jpg" class="list__image list__image--round" />
+                            Baradine
+        <i class="far fa-angle-right list__icon--right"></i>
+                        </a>
+                    </div>
+        <div class="list__index-container">
+        <div class="list__index">C</div>
+        <a class="list__item list__item--single-line" data-ripple="#cf5260">
+        <img src="avatar.jpg" class="list__image list__image--round" />
+                            Cadwallon
+        <i class="far fa-angle-right list__icon--right"></i>
+                        </a>
+        <a class="list__item list__item--single-line" data-ripple="#cf5260">
+        <img src="avatar.jpg" class="list__image list__image--round" />
+                            Caecilia
+        <i class="far fa-angle-right list__icon--right"></i>
+                        </a>
+                    </div>
+        <div class="list__index-container">
+        <div class="list__index">D</div>
+        <a class="list__item list__item--single-line" data-ripple="#cf5260">
+        <img src="avatar.jpg" class="list__image list__image--round" />
+                            Dacia
+        <i class="far fa-angle-right list__icon--right"></i>
+                        </a>
+        <a class="list__item list__item--single-line" data-ripple="#cf5260">
+        <img src="avatar.jpg" class="list__image list__image--round" />
+                            Dagna
+        <i class="far fa-angle-right list__icon--right"></i>
+                        </a>
+        <a class="list__item list__item--single-line" data-ripple="#cf5260">
+        <img src="avatar.jpg" class="list__image list__image--round" />
+                            Daireena
+        <i class="far fa-angle-right list__icon--right"></i>
+                        </a>
+        <a class="list__item list__item--single-line" data-ripple="#cf5260">
+        <img src="avatar.jpg" class="list__image list__image--round" />
+                            Daisy
+        <i class="far fa-angle-right list__icon--right"></i>
+                        </a>
+                    </div>
+        <div class="list__index-container">
+        <div class="list__index">E</div>
+        <a class="list__item list__item--single-line" data-ripple="#cf5260">
+        <img src="avatar.jpg" class="list__image list__image--round" />
+                            Eagan
+        <i class="far fa-angle-right list__icon--right"></i>
+                        </a>
+        <a class="list__item list__item--single-line" data-ripple="#cf5260">
+        <img src="avatar.jpg" class="list__image list__image--round" />
+                            Eamhair
+        <i class="far fa-angle-right list__icon--right"></i>
+                        </a>
+        <a class="list__item list__item--single-line" data-ripple="#cf5260">
+        <img src="avatar.jpg" class="list__image list__image--round" />
+                            Earl
+        <i class="far fa-angle-right list__icon--right"></i>
+                        </a>
+        <a class="list__item list__item--single-line" data-ripple="#cf5260">
+        <img src="avatar.jpg" class="list__image list__image--round" />
+                            Easter
+        <i class="far fa-angle-right list__icon--right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <pre><code class="html text-caption">&lt;div class=&quot;list list--indexed list--bordered&quot;&gt;
+    &lt;div class=&quot;list__index&quot;&gt;Today&lt;/div&gt;
+    &lt;a class=&quot;list__item list__item--single-line&quot; data-ripple=&quot;#cf5260&quot;&gt;
+        &lt;img src=&quot;avatar.jpg&quot; class=&quot;list__image list__image--round&quot; /&gt;
+        Agustin
+        &lt;i class=&quot;far fa-angle-right list__icon--right&quot;&gt;&lt;/i&gt;
+    &lt;/a&gt;
+&lt;/div&gt;
+&lt;div class=&quot;list list--indexed list--indexed-inside list--bordered&quot;&gt;
+    &lt;div class=&quot;list__index-container&quot;&gt;
+        &lt;div class=&quot;list__index&quot;&gt;A&lt;/div&gt;
+        &lt;a class=&quot;list__item list__item--single-line&quot; data-ripple=&quot;#cf5260&quot;&gt;
+            &lt;img src=&quot;avatar.jpg&quot; class=&quot;list__image list__image--round&quot; /&gt;
+            Agustin
+            &lt;i class=&quot;far fa-angle-right list__icon--right&quot;&gt;&lt;/i&gt;
+        &lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+
+    </content>
+</body>
+</html>

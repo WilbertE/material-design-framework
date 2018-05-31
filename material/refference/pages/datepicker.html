@@ -1,0 +1,197 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+
+    <meta charset="utf-8" />
+    <link href="../refference.css" rel="stylesheet" />
+    <link href="../StyleSheet.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
+    <link rel="stylesheet"
+          href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script src="../../javascript/JavaScript.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+        $(function () {
+            $.mTextfields();
+            $.mButtons();
+            $("input[name='date']").mDatepicker({showMonth: moment("2017-04-24").toDate()});
+        });
+
+        $(function () {
+            $("pre").on("click", function (e) {
+                e.preventDefault();
+                if ($(e.target).is("code") == false && $(e.target).closest("code").length == 0) {
+                    $(this).toggleClass("show").find("code").slideToggle();
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <div class="titlebar text-headline shadow-4">
+        Datepicker
+        <div class="text-subheading-1">Schedule things</div>
+    </div>
+    <content class="m-body">
+
+        <ul class="index">
+            <li class="text-caption">Contents</li>
+            <li><a href="#datepicker">Datepicker</a></li>
+            <li><a href="#initializing">Initializing</a></li>
+            <li><a href="#options">Options</a></li>
+            <li><a href="#methods">Methods</a></li>
+        </ul>
+
+        <a name="datepicker"><h1 class="text-title">Datepicker</h1></a>
+        <p class="readability">
+            Textfield can show a datepicker when a date is required. The datepicker is automatically generated once attached with Javascript.
+        </p>
+
+        <div class="grid grid--gutter-40">
+            <div class="grid__cell">
+                <fieldset>
+                    <input type="text" value="" name="date" id="date" />
+                    <label for="date">Pick a date</label>
+                </fieldset>
+            </div>
+        </div>
+
+        <pre><code class="html text-caption">&lt;fieldset&gt;
+    &lt;input type=&quot;text&quot; value=&quot;&quot; name=&quot;date&quot; id=&quot;date&quot; /&gt;
+    &lt;label for=&quot;date&quot;&gt;Date&lt;/label&gt;
+&lt;/fieldset&gt;
+$(function () {
+    $("input[name='date']").mDatepicker();
+});</code></pre>
+
+        <a name="initializing"><h1 class="text-title">Initializing</h1></a>
+        <p class="readability">
+            To initialize the components use the following function.
+        </p>
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">$(selector).mDatepicker();</div>
+        </div>
+
+
+        <a name="options"><div class="text-subheading-1">Options</div></a>
+        <p class="readability">
+            The following options are available:<br />
+        </p>
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">activeDate: new Date()</div>
+            <div class="explainer">
+                The default date that is active in the datepicker
+            </div>
+        </div>
+
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">showMonth: new Date()</div>
+            <div class="explainer">
+                The month (and year) that is shown at start
+            </div>
+        </div>
+
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">rippleColor: "#cf5260"</div>
+            <div class="explainer">
+                The color of the ripple effects whe the user clicks an element inside the datepicker
+            </div>
+        </div>
+
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">daynamesShort: ["zo", "ma", "di", "wo", "do", "vr", "za"]</div>
+            <div class="explainer">
+                The short names of the days, shown in the header of the datepicker
+            </div>
+        </div>
+
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">daynamesLetter: ["z", "m", "d", "w", "d", "v", "z"]</div>
+            <div class="explainer">
+                The dayletters shown in the picker above the dates
+            </div>
+        </div>
+
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">monthnamesShort: ["jan", "feb", "mrt", "apr", "mei", "jun", "jul", "aug", "sep", "okt", "nov", "dec"]</div>
+            <div class="explainer">
+                The short monthnames shown in the header
+            </div>
+        </div>
+
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">monthnamesLong: ["januari", "februari", "maart", "april", "mei", "juni", "juli", "augustus", "september", "oktober", "november", "december"]</div>
+            <div class="explainer">
+                The monthnames shown in the button to select the months
+            </div>
+        </div>
+
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">minDate: null</div>
+            <div class="explainer">
+                The minimal selectable date in the picker
+            </div>
+        </div>
+
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">maxDate: null</div>
+            <div class="explainer">
+                The maximum selectable date in the picker
+            </div>
+        </div>
+
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">selectOnClick: false</div>
+            <div class="explainer">
+                If true the value will be updated when the user clicks a date in the datepicker and the datepicker will close. 
+                If false the user has to click 'OK' or 'Cancel' after picking a date.
+            </div>
+        </div>
+
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">closeOnClickoutside: true</div>
+            <div class="explainer">
+                Datepicker will close when the user clicks outside the datepicker
+            </div>
+        </div>
+
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">returnFormat: 'D-M-YYYY'</div>
+            <div class="explainer">
+                The format that the datepicker should return in the value of the text input
+            </div>
+        </div>
+
+
+
+        <a name="methods"><div class="text-subheading-1">Methods</div></a>
+        <p class="readability">
+            Interacting with the component from outside:<br />
+        </p>
+
+
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">$(selector).data("mDatepicker").show();</div>
+            <div class="explainer">
+                Shows the datepicker
+            </div>
+        </div>
+
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">$(selector).data("mDatepicker").close();</div>
+            <div class="explainer">
+                Hides the datepicker (if active)
+            </div>
+        </div>
+        
+
+    </content>
+
+</body>
+</html>

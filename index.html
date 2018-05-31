@@ -1,0 +1,271 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Material Design Framework</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <link href="refference.css" rel="stylesheet" />
+    <link href="material-framework.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script src="fontawsome/svg-with-js/js/fontawesome-all.js"></script>
+    <script src="material-framework.js"></script>
+    <script src="reference.js"></script>
+    <script>
+        window.onload = function () {
+
+            $.mAppBar();
+            $.mHamburger();
+            $(".menu").mMenu();
+            $(".navigation-drawer").mNavigationalDrawer({ hamburger: ".app-bar .hamburger" });
+
+            var links = document.querySelectorAll(".app-bar .flat-button");
+            for (i = 0; i < links.length; ++i) {
+                links[i].addEventListener("click", function (e) {
+                    e.preventDefault();
+                    var size = this.getAttribute("data-size");
+                    if (size == 0) {
+                        document.querySelector("iframe").style.width = "";
+                    } else {
+                        document.querySelector("iframe").style.width = size + "px";
+                    }
+                    resizeIframe();
+
+                });
+            }
+
+            new SimpleBar($(".navigation-drawer__scroll-area")[0], { autoHide: false });
+
+            var resizeIframe = function () {
+                var iFrame = $("iframe");
+                var appBarHeight = $(".app-bar").height();
+                var windowHeight = $(document).outerHeight();
+                console.log(appBarHeight);
+                iFrame.css({ "margin-top": appBarHeight, "height": windowHeight - appBarHeight });
+            }
+            resizeIframe();
+            $(window).on("resize", function () {
+                resizeIframe();
+            });
+        }
+    </script>
+    <style>
+        .simplebar-scrollbar:before {
+            opacity: 1 !important;
+            background: #2b6da9;
+        }
+    </style>
+</head>
+<body style="margin-top:0 !important;">
+
+
+    <!-- Page framework for navigation drawer -->
+    <div class="navigation-drawer-wrapper navigation-drawer-wrapper--stick-laptop-up">
+
+
+        <div class="navigation-drawer mainpage">
+            <div class="navigation-drawer__header">
+                <div class="navigation-drawer__titles">
+                    <div class="navigation-drawer__header-title">Material Design</div>
+                    <div class="navigation-drawer__header-sub-title">Framework</div>
+                </div>
+            </div>
+
+            <div class="navigation-drawer__scroll-area">
+                <div class="navigation-drawer__label">Design</div>
+                <div class="list navigation-drawer__list">
+                    <div class="list__item list__item--button">
+                        <a href="pages/typography.html" target="preview" class="flat-button list__button" data-ripple="#dde2e6">
+                            <i class="fas fa-font list__icon"></i>Typography
+                            <i class="far fa-angle-right list__icon button__icon--right"></i>
+                        </a>
+                    </div>
+                    <div class="list__item list__item--button">
+                        <a href="pages/shadows.html" target="preview" class="flat-button list__button" data-ripple="#dde2e6">
+                            <i class="fas fa-square list__icon"></i>Shadows
+                            <i class="far fa-angle-right list__icon button__icon--right"></i>
+                        </a>
+                    </div>
+                    <div class="list__item list__item--button">
+                        <a href="pages/grid.html" target="preview" class="flat-button list__button" data-ripple="#dde2e6">
+                            <i class="fas fa-th list__icon"></i>Grid
+                            <i class="far fa-angle-right list__icon button__icon--right"></i>
+                        </a>
+                    </div>
+                    <div class="list__item list__item--button">
+                        <a href="pages/helpers.html" target="preview" class="flat-button list__button" data-ripple="#dde2e6">
+                            <i class="fas fa-hands-helping list__icon"></i>Helpers
+                            <i class="far fa-angle-right list__icon button__icon--right"></i>
+                        </a>
+                    </div>
+                    <div class="list__item list__item--button">
+                        <a href="pages/custom-scrollbar.html" target="preview" class="flat-button list__button" data-ripple="#dde2e6">
+                            <i class="fas fa-arrows-alt-v list__icon"></i>Custom scrollbars
+                            <i class="far fa-angle-right list__icon button__icon--right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="navigation-drawer__hr navigation-drawer__hr--small"></div>
+                <div class="navigation-drawer__label">Components</div>
+                <div class="list navigation-drawer__list">
+                    <div class="list__item list__item--button">
+                        <a href="pages/buttons.html" target="preview" class="flat-button list__button" data-ripple="#dde2e6">
+                            <i class="fas fa-hand-point-up list__icon"></i>Buttons
+                            <i class="far fa-angle-right list__icon button__icon--right"></i>
+                        </a>
+                    </div>
+                    <div class="list__item list__item--button">
+                        <a href="pages/dropdowns.html" target="preview" class="flat-button list__button" data-ripple="#dde2e6">
+                            <i class="fas fa-caret-down list__icon"></i>Dropdowns
+                            <i class="far fa-angle-right list__icon button__icon--right"></i>
+                        </a>
+                    </div>
+                    <div class="list__item list__item--button">
+                        <a href="pages/textfields.html" target="preview" class="flat-button list__button" data-ripple="#dde2e6">
+                            <i class="fas fa-pen list__icon"></i>Textfields
+                            <i class="far fa-angle-right list__icon button__icon--right"></i>
+                        </a>
+                    </div>
+                    <div class="list__item list__item--button">
+                        <a href="pages/menus.html" target="preview" class="flat-button list__button" data-ripple="#dde2e6">
+                            <i class="fas fa-chevron-circle-down list__icon"></i>Menus
+                            <i class="far fa-angle-right list__icon button__icon--right"></i>
+                        </a>
+                    </div>
+                    <div class="list__item list__item--button">
+                        <a href="pages/lists.html" target="preview" class="flat-button list__button" data-ripple="#dde2e6">
+                            <i class="fas fa-th-list list__icon"></i>Lists
+                            <i class="far fa-angle-right list__icon button__icon--right"></i>
+                        </a>
+                    </div>
+                    <div class="list__item list__item--button">
+                        <a href="pages/app-bar.html" target="preview" class="flat-button list__button" data-ripple="#dde2e6">
+                            <i class="fas fa-browser list__icon"></i>App bar
+                            <i class="far fa-angle-right list__icon button__icon--right"></i>
+                        </a>
+                    </div>
+                    <div class="list__item list__item--button">
+                        <a href="pages/navigation-drawer.html" target="preview" class="flat-button list__button" data-ripple="#dde2e6">
+                            <i class="fas fa-columns list__icon"></i>Navigation drawer
+                            <i class="far fa-angle-right list__icon button__icon--right"></i>
+                        </a>
+                    </div>
+                    <div class="list__item list__item--button">
+                        <a href="pages/datepicker.html" target="preview" class="flat-button list__button" data-ripple="#dde2e6">
+                            <i class="fas fa-calendar-alt list__icon"></i>Datepicker
+                            <i class="far fa-angle-right list__icon button__icon--right"></i>
+                        </a>
+                    </div>
+                    <div class="list__item list__item--button">
+                        <a href="pages/dialog.html" target="preview" class="flat-button list__button" data-ripple="#dde2e6">
+                            <i class="fas fa-comment-alt list__icon"></i>Dialog
+                            <i class="far fa-angle-right list__icon button__icon--right"></i>
+                        </a>
+                    </div>
+                    <div class="list__item list__item--button">
+                        <a href="pages/bottom-navigation.html" target="preview" class="flat-button list__button" data-ripple="#dde2e6">
+                            <i class="fas fa-tablet-android list__icon"></i>Bottom-navigation
+                            <i class="far fa-angle-right list__icon button__icon--right"></i>
+                        </a>
+                    </div>
+                    <div class="list__item list__item--button">
+                        <a href="pages/bottom-sheet.html" target="preview" class="flat-button list__button" data-ripple="#dde2e6">
+                            <i class="fas fa-arrow-alt-from-bottom list__icon"></i>Bottom sheet
+                            <i class="far fa-angle-right list__icon button__icon--right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Then the content of the page-->
+        <div class="m-body" style="height: 100%;     overflow: hidden;">
+
+            <!-- App bar -->
+            <div class="app-bar" style="margin:0;     position: absolute !important;">
+
+                <div class="hamburger hidden-laptop-up" data-ripple="#3b3b3b">
+                    <span class="hamburger-bar"></span>
+                </div>
+
+                <div class="app-bar__title">
+                    Documentation
+                </div>
+
+                <div class="app-bar__right">
+                    <div class="flat-button app-bar__full-button" data-size="425" data-ripple="#fff"><i class="fas fa-mobile-alt button--icon"></i>Mobile</div>
+                    <div class="flat-button app-bar__full-button" data-size="768" data-ripple="#fff"><i class="fas fa-tablet-alt button--icon"></i>Tablet</div>
+                    <div class="flat-button app-bar__full-button" data-size="1024" data-ripple="#fff"><i class="fas fa-laptop button--icon"></i>Laptop</div>
+                    <div class="flat-button app-bar__full-button" data-size="0" data-ripple="#fff"><i class="fas fa-desktop button--icon"></i>Desktop</div>
+                </div>
+            </div>
+
+
+            <iframe src="pages/dialog.html" name="preview"></iframe>
+        </div>
+    </div>
+
+    <!--<div class="panel-wrapper">
+        <div class="left-panel">
+            <div class="navigation-drawer-wrapper--stick-mobile">
+                <div class="navigation-drawer">
+                    <div class="navigation-drawer__header">
+                        <div class="navigation-drawer__header-title">Title</div>
+                        <div class="navigation-drawer__header-sub-title">Subtitle</div>
+                    </div>
+                    <div class="navigation-drawer__hr"></div>
+                    <div class="list navigation-drawer__list">
+                        <div class="list__item list__item--button">
+                            <button class="flat-button list__button" data-ripple="#cf5260">
+                                <i class="fas  fa-envelope list__icon"></i>Mailbox
+                            </button>
+                        </div>
+                    </div>
+                    <div class="navigation-drawer__label">Label</div>
+                </div>
+            </div>
+
+            <br />
+            <b class="text-body-2">Material Design</b>
+            <ul>
+                <li><a href="pages/typography.html" target="preview">Typography</a></li>
+                <li><a href="pages/shadows.html" target="preview">Shadows</a></li>
+                <li><a href="pages/grid.html" target="preview">Grid</a></li>
+                <li><a href="pages/helpers.html" target="preview">Layout helpers</a></li>
+            </ul>
+            <br />
+            <b class="text-body-2">Components</b>
+            <ul>
+
+                <li><a href="pages/buttons.html" target="preview">Buttons</a></li>
+                <li><a href="pages/dropdowns.html" target="preview">Dropdown</a></li>
+                <li><a href="pages/textfields.html" target="preview">Textfields</a></li>
+                <li><a href="pages/datepicker.html" target="preview">Datepicker</a></li>
+                <li><a href="pages/forms.html" target="preview">Forms</a></li>
+                <li><a href="pages/menus.html" target="preview">Menus</a></li>
+                <li><a href="pages/lists.html" target="preview">Lists</a></li>
+                <li><a href="pages/app-bar.html" target="preview">App bar</a></li>
+                <li><a href="pages/navigation-drawer.html" target="preview">Navigation drawer</a></li>
+                <li><a href="pages/dialog.html" target="preview">Dialogs</a></li>
+                <li><a href="pages/bottom-navigation.html" target="preview">Bottom navigation</a></li>
+                <li><a href="pages/bottom-sheet.html" target="preview">Bottom sheet</a></li>
+
+            </ul>
+        </div>
+        <div class="right-panel">
+            <div class="responsive-buttons">
+                <a href="#" data-size="320">Mobile S</a>
+                <a href="#" data-size="425">Mobile L</a>
+                <a href="#" data-size="768">Tablet</a>
+                <a href="#" data-size="1024">Laptop S</a>
+                <a href="#" data-size="1440">Laptop L</a>
+                <a href="#" data-size="0">Full</a>
+            </div>
+            <iframe src="pages/dialog.html" name="preview"></iframe>
+
+        </div>
+    </div>-->
+</body>
+</html>
