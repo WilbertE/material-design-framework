@@ -3691,6 +3691,12 @@ html .date-picker__date-wrapper, body .date-picker__date-wrapper {
 .no-touchevents .navigation-drawer__list .flat-button:hover:before {
   background: rgba(207, 82, 96, 0.12); }
 
+.navigation-drawer__list .navigation-drawer__list-item--inset {
+  margin-left: 2.5em; }
+  .navigation-drawer__list .navigation-drawer__list-item--inset .list__button {
+    font-size: 0.9em;
+    margin: 0.15rem 0; }
+
 html .navigation-drawer__header-title, body.tiny .navigation-drawer__header-title {
   font-weight: 300;
   letter-spacing: -0.5px;

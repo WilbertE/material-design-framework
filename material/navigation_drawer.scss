@@ -117,6 +117,15 @@ $prefixes: mobile tablet laptop pc;
     background: $navigation-drawer-button-hover-background-color;
 }
 
+.navigation-drawer__list .navigation-drawer__list-item--inset {
+    margin-left: 2.5em;
+
+    .list__button {
+        font-size: 0.9em;
+        margin: 0.15rem 0;
+    }
+}
+
 $sizes: ( ".tiny": 0.75, ".small": 0.85, "": 1, );
 
 @each $name, $value in $sizes {
