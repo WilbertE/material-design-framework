@@ -34,7 +34,7 @@
 
     <div class="navigation-drawer-wrapper navigation-drawer-wrapper--stick-laptop-up">
 
-        <div class="navigation-drawer">
+        <div class="navigation-drawer navigation-drawer--shadow">
 
             <div class="navigation-drawer__header">
                 <div class="navigation-drawer__header-title">Title</div>
@@ -92,7 +92,9 @@
                 <li class="text-caption">Contents</li>
                 <li><a href="#page">Page structure</a></li>
                 <li><a href="#navigation-drawer">Navigation drawer</a></li>
-                <li><a href="#stick">Stick or slide</a></li>
+                <li><a href="#head">Headers</a></li>
+                <li><a href="#buttons">Buttons</a></li>
+                <li><a href="#dividers">Dividers</a></li>
                 <li><a href="#initializing">Initializing</a></li>
                 <li><a href="#options">Options</a></li>
                 <li><a href="#methods">Methods</a></li>
@@ -141,6 +143,50 @@
 &lt;/div&gt;
                 </code></pre>
 
+
+            <a name="head"><h1 class="text-title">Navigation drawer header</h1></a>
+            <p class="readability">
+                A drawer can have a header where there could be a brand image or a name.
+            </p>
+            <pre><code class="html text-caption">&lt;div class=&quot;navigation-drawer__header&quot;&gt;
+    &lt;div class=&quot;navigation-drawer__header-title&quot;&gt;Title&lt;/div&gt;
+    &lt;div class=&quot;navigation-drawer__header-sub-title&quot;&gt;Subtitle&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+            <a name="buttons"><h1 class="text-title">Buttons</h1></a>
+            <p class="readability">
+                A navigation drawer has a list with buttons. Buttons can be inset which creates a kind of submenu list.
+            </p>
+            <pre><code class="html">&lt;div class=&quot;list navigation-drawer__list&quot;&gt;
+    &lt;div class=&quot;list__item list__item--button&quot;&gt;
+        &lt;button class=&quot;flat-button list__button&quot; data-ripple=&quot;#cf5260&quot;&gt;
+            &lt;i class=&quot;fas  fa-cloud-upload list__icon&quot;&gt;&lt;/i&gt;
+            Upload
+        &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;list__item list__item--button navigation-drawer__list-item--inset&quot;&gt;
+        &lt;button class=&quot;flat-button list__button&quot; data-ripple=&quot;#cf5260&quot;&gt;
+            &lt;i class=&quot;fas  fa-cloud-upload list__icon&quot;&gt;&lt;/i&gt;
+            Upload explanation
+        &lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+            <a name="divider"><h1 class="text-title">Dividers</h1></a>
+            <p class="readability">
+                There are two kind of dividers, a full width devider and a divider that is as width as buttons are.
+            </p>
+            <pre><code class="html">&lt;div class=&quot;navigation-drawer__hr&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;navigation-drawer__hr navigation-drawer__hr--small&quot;&gt;&lt;/div&gt;</code></pre>
+
+
+            <a name="shadows"><h1 class="text-title">Shadows</h1></a>
+            <p class="readability">
+                To force a shadow the class <span class="class--filled">navigation-drawer--shadow</span> or
+                <span class="class--filled">navigation-drawer--shadow-heavy</span> can be used
+            </p>
+
+
             <a name="stick"><h1 class="text-title">Stick or slide</h1></a>
             <p class="readability">
                 By default the navigation drawer is hidden off screen waiting for an event to slide it in.
@@ -155,7 +201,6 @@
             <div class="plugin-option text-caption">
                 <div class="plugin-option__option">$(".navigation-drawer").mNavigationalDrawer();</div>
             </div>
-
             <a name="options"><div class="text-subheading-1">Options</div></a>
             <p class="readability">
                 The following options are available:<br />
@@ -166,26 +211,23 @@
                     Callback when the drawer opens
                 </div>
             </div>
-
             <div class="plugin-option text-caption">
                 <div class="plugin-option__option">onClose: function(){}</div>
                 <div class="explainer">
                     Callback when the drawer closes
                 </div>
             </div>
-
             <div class="plugin-option text-caption">
                 <div class="plugin-option__option">hamburger: null</div>
                 <div class="explainer">
                     A hamburger button selector to attach
                 </div>
             </div>
-
             <a name="methods"><div class="text-subheading-1">Methods</div></a>
             <p class="readability">
                 Interacting with the component from outside:<br />
             </p>
-            
+
             <div class="plugin-option text-caption">
                 <div class="plugin-option__option">$(".navigation-drawer").data("mNavigationalDrawer").open();</div>
                 <div class="explainer">

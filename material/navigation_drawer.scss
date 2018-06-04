@@ -30,6 +30,9 @@
                         width: 14.215rem;
                         transition-duration: 0s;
                         position: static;
+                    }
+
+                    .navigation-drawer:not(.navigation-drawer--shadow):not(.navigation-drawer--shadow-heavy) {
                         box-shadow: none;
                     }
                 }
@@ -50,6 +53,7 @@
     height: 100%;
     top: 0;
     left: 0;
+    flex-shrink: 0;
 
     @if $navigation-drawer-border-right-color {
         border-right: solid 1px $navigation-drawer-border-color;
@@ -63,6 +67,8 @@
     overflow: hidden;
     flex-direction: column;
 }
+
+
 
 .navigation-drawer__scroll-area {
     overflow-y: auto;
@@ -84,6 +90,13 @@ $prefixes: mobile tablet laptop pc;
     transform: translateX(0%);
 }
 
+.navigation-drawer--shadow {
+    @include shadow(4);
+}
+
+.navigation-drawer--shadow-heavy {
+    @include shadow(16);
+}
 
 .navigation-drawer__header {
     background-color: $navigation-drawer-header-background-color;

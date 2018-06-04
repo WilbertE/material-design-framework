@@ -20,6 +20,9 @@
     transition: transform 0.271s cubic-bezier(0.0, 0.0, 0.2, 1);
     background-color: $app-bar-background-color;
 
+    &.app-bar--sticky {
+        position: sticky;
+    }
 
     .button-icon, .flat-button, .button--icon {
         color: $app-bar-button-text-color;
