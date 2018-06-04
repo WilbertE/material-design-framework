@@ -3282,7 +3282,8 @@ html .date-picker__date-wrapper, body .date-picker__date-wrapper {
     display: none !important; }
 
 .m-body {
-  position: relative; }
+  position: relative;
+  height: 100%; }
   .m-body > .app-bar {
     position: absolute; }
 
@@ -3313,7 +3314,10 @@ html .date-picker__date-wrapper, body .date-picker__date-wrapper {
     margin: 0;
     font-weight: 300;
     margin: 0 1rem;
-    color: #fff; }
+    color: #fff;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; }
     .app-bar .app-bar__title:first-child {
       margin: 0 0.29rem; }
   .app-bar .app-bar__right {

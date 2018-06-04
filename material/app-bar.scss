@@ -1,5 +1,6 @@
 ﻿.m-body {
     position: relative;
+    height: 100%;
 
     > .app-bar {
         position: absolute;
@@ -43,6 +44,9 @@
         font-weight: 300;
         margin: 0 1rem;
         color: $app-bar-button-text-color;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
 
         &:first-child {
             margin: 0 0.29rem;
