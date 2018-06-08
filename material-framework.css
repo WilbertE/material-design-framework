@@ -4482,3 +4482,9 @@ html .dialog__header, body .dialog__header {
     display: none !important;
     opacity: 0 !important; }
 
+.skeleton-hidden {
+  visibility: hidden !important; }
+
+.skeleton-remove {
+  display: none !important; }
+
