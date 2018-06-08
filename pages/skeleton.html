@@ -16,7 +16,8 @@
     <script>
         $(function () {
             $.mButtons();
-            $.mSkeleton.start();
+            $("select").mDropdown();
+            $("body").mSkeleton();
             $.mTextfields();
         });
     </script>
@@ -41,14 +42,16 @@
             To create a div with skeleton lines use the class <span class="class--filled">.skeleton-lines .skeleton-lines--1</span> where the number is the amount of lines.
         </p>
 
+        <div class="skeleton-lines-example">
+            <div class="text-title skeleton-title">Dit is een Titel</div>
 
-        <div class="grid grid--gutter-24 skeleton-lines-example">
-            <div class="grid__cell grid__cell--4 skeleton-lines skeleton-lines--1">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
-            <div class="grid__cell grid__cell--4 skeleton-lines skeleton-lines--3">Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br />Vivamus eu ornare massa, et mollis quam.<br />Proin in elit orci.</div>
-            <div class="grid__cell grid__cell--4 skeleton-lines skeleton-lines--5">Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br />Vivamus eu ornare massa, et mollis quam.<br />Proin in elit orci.<br />Cras luctus, lorem nec egestas interdum. <br />Magna enim vulputate ligula</div>
+            <div class="grid grid--gutter-24">
+                <div class="grid__cell grid__cell--4 skeleton-lines skeleton-lines--1">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                <div class="grid__cell grid__cell--4 skeleton-lines skeleton-lines--3">Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br />Vivamus eu ornare massa, et mollis quam.<br />Proin in elit orci.</div>
+                <div class="grid__cell grid__cell--4 skeleton-lines skeleton-lines--5">Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br />Vivamus eu ornare massa, et mollis quam.<br />Proin in elit orci.<br />Cras luctus, lorem nec egestas interdum. <br />Magna enim vulputate ligula</div>
+            </div>
+            <button class="raised-button" onclick="$('.skeleton-lines-example').mSkeleton('reveal');">Reveal</button>
         </div>
-        <button class="raised-button" onclick="$.mSkeleton.reveal('.skeleton-lines-example');">Reveal</button>
-
 
         <a name="dropdowns"><h1 class="text-title">Skeleton images</h1></a>
         <p class="skeleton-image-example">
@@ -56,19 +59,43 @@
 
             <img class="skeleton-image margin-top-24" src="image.jpg" />
         </p>
-        <button class="raised-button" onclick="$.mSkeleton.reveal('.skeleton-image-example');">Reveal</button>
+        <button class="raised-button" onclick="$('.skeleton-image-example').mSkeleton('reveal');">Reveal</button>
 
-        <a name="dropdowns"><h1 class="text-title">Skeleton components</h1></a>
-        <p class="skeleton-image-example">
-            Every component has a skeleton class. By adding <span class="class--filled">.skeleton</span> the component will come in its skeleton mode.
-        </p>
+        <div class="skeleton-input-example">
+            <a name="dropdowns"><h1 class="text-title">Skeleton components</h1></a>
+            <p>
+                Every component has a skeleton class.
+            </p>
 
-        <fieldset class="skeleton">
-            <input type="text" value="" id="input-label" />
-            <label for="input-label">Label</label>
-            <div class="input-helper">Helper text</div>
-        </fieldset>
-        <button class="raised-button" onclick="$.mSkeleton.reveal('.skeleton-image-example');">Reveal</button>
+            The fieldset for an input or textarea should have the <span class="class--filled">.skeleton-input</span> class.
+            <fieldset class="skeleton-input">
+                <input type="text" value="" id="input-label" />
+                <label for="input-label">Label</label>
+                <div class="input-helper">Helper text</div>
+            </fieldset>
+
+            <p>
+                A button should have the <span class="class--filled">.skeleton-button</span>
+            </p>
+
+            <button class="raised-button skeleton-button">This is a button</button>
+
+            <p>
+                The fieldset for a dropdown should have the <span class="class--filled">.skeleton-dropdown</span> class.
+            </p>
+
+            <fieldset class="skeleton-dropdown">
+                <select name="select1">
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                    <option selected="selected" value="4">Option 4</option>
+                </select>
+                <label for="input-label">Label</label>
+            </fieldset>
+
+        </div>
+        <button class="raised-button margin-top-40" onclick="$('.skeleton-input-example').mSkeleton('reveal');">Reveal</button>
 
 
 

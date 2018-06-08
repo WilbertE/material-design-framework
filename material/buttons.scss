@@ -26,7 +26,7 @@ $sizes: ( ".tiny": 0.75, ".small": 0.85, "": 1, );
     line-height: inherit;
     white-space: nowrap;
     -webkit-tap-highlight-color: $light-color;
-    margin: 0.5rem 0;
+    margin: 0;
     @include shadow(1);
     user-select: none;
     padding: 0.35rem 1.25rem;

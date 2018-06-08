@@ -2414,7 +2414,7 @@ html .raised-button, html .flat-button, body .raised-button, body .flat-button {
   line-height: inherit;
   white-space: nowrap;
   -webkit-tap-highlight-color: #fff;
-  margin: 0.5rem 0;
+  margin: 0;
   box-shadow: 0px 0.136rem 0.213rem 0.0136rem rgba(0, 0, 0, 0.24), 0px 0.090rem 0.267rem 0.005rem rgba(0, 0, 0, 0.16);
   user-select: none;
   padding: 0.35rem 1.25rem; }
@@ -4356,42 +4356,129 @@ html .dialog__header, body .dialog__header {
 .skeleton-lines {
   color: transparent; }
   .skeleton-lines.skeleton-lines--1 {
-    background: linear-gradient(#f4f4f4 20px, transparent 0);
+    background: linear-gradient(#f4f4f4 1em, transparent 0);
     background-position: 0 0.45rem;
-    background-size: 30rem 1rem;
+    background-size: 30rem 1em;
     background-repeat: no-repeat;
     max-height: 1.75rem; }
   .skeleton-lines.skeleton-lines--2 {
-    background: linear-gradient(#f4f4f4 20px, transparent 0);
+    background: linear-gradient(#f4f4f4 1em, transparent 0);
     background-position: 0 0.45rem;
-    background-size: 30rem 1rem;
+    background-size: 30rem 1em;
     background-repeat: no-repeat;
     max-height: 1.75rem; }
   .skeleton-lines.skeleton-lines--2 {
-    background: linear-gradient(#f4f4f4 20px, transparent 0), linear-gradient(#f4f4f4 20px, transparent 0);
+    background: linear-gradient(#f4f4f4 1em, transparent 0), linear-gradient(#f4f4f4 1em, transparent 0);
     background-position: 0 0.45rem, 0 2.25rem;
-    background-size: 30rem 1rem;
+    background-size: 30rem 1em;
     background-repeat: no-repeat;
     max-height: 3.6rem; }
   .skeleton-lines.skeleton-lines--3 {
-    background: linear-gradient(#f4f4f4 20px, transparent 0), linear-gradient(#f4f4f4 20px, transparent 0), linear-gradient(#f4f4f4 20px, transparent 0), linear-gradient(#f4f4f4 20px, transparent 0);
+    background: linear-gradient(#f4f4f4 1em, transparent 0), linear-gradient(#f4f4f4 1em, transparent 0), linear-gradient(#f4f4f4 1em, transparent 0), linear-gradient(#f4f4f4 1em, transparent 0);
     background-position: 0 0.45rem, 0 2.25rem, 0 4.1rem;
-    background-size: 30rem 1rem;
+    background-size: 30rem 1em;
     background-repeat: no-repeat;
     min-height: 5.2rem; }
   .skeleton-lines.skeleton-lines--4 {
-    background: linear-gradient(#f4f4f4 20px, transparent 0), linear-gradient(#f4f4f4 20px, transparent 0), linear-gradient(#f4f4f4 20px, transparent 0), linear-gradient(#f4f4f4 20px, transparent 0);
+    background: linear-gradient(#f4f4f4 1em, transparent 0), linear-gradient(#f4f4f4 1em, transparent 0), linear-gradient(#f4f4f4 1em, transparent 0), linear-gradient(#f4f4f4 1em, transparent 0);
     background-position: 0 0.45rem, 0 2.25rem, 0 4.1rem, 0 5.9rem;
-    background-size: 30rem 1rem;
+    background-size: 30rem 1em;
     background-repeat: no-repeat;
     min-height: 7.1rem; }
   .skeleton-lines.skeleton-lines--5 {
-    background: linear-gradient(#f4f4f4 20px, transparent 0), linear-gradient(#f4f4f4 20px, transparent 0), linear-gradient(#f4f4f4 20px, transparent 0), linear-gradient(#f4f4f4 20px, transparent 0), linear-gradient(#f4f4f4 20px, transparent 0);
+    background: linear-gradient(#f4f4f4 1em, transparent 0), linear-gradient(#f4f4f4 1em, transparent 0), linear-gradient(#f4f4f4 1em, transparent 0), linear-gradient(#f4f4f4 1em, transparent 0), linear-gradient(#f4f4f4 1em, transparent 0);
     background-position: 0 0.45rem, 0 2.25rem, 0 4.1rem, 0 5.9rem, 0 7.7rem;
-    background-size: 30rem 1rem;
+    background-size: 30rem 1em;
     background-repeat: no-repeat;
     min-height: 8.85rem; }
 
 .skeleton-image {
   background: #f4f4f4; }
+
+.skeleton-input {
+  pointer-events: none;
+  background: #f4f4f4;
+  margin-top: 1.75rem; }
+  .skeleton-input:before, .skeleton-input:after, .skeleton-input .input-helper, .skeleton-input label, .skeleton-input svg, .skeleton-input .input-bordered__inner:before, .skeleton-input .input-bordered__inner:after, .skeleton-input .input-filled__inner:before, .skeleton-input .input-filled__inner:after {
+    display: none !important;
+    opacity: 0 !important; }
+  .skeleton-input input {
+    color: transparent;
+    margin-top: 0.3;
+    padding-top: 0; }
+    .skeleton-input input::-webkit-input-placeholder {
+      /* Chrome/Opera/Safari */
+      color: transparent; }
+    .skeleton-input input::-moz-placeholder {
+      /* Firefox 19+ */
+      color: transparent; }
+    .skeleton-input input:-ms-input-placeholder {
+      /* IE 10+ */
+      color: transparent; }
+    .skeleton-input input:-moz-placeholder {
+      /* Firefox 18- */
+      color: transparent; }
+
+.skeleton-textarea {
+  background: #f4f4f4;
+  border: none !important; }
+  .skeleton-textarea:before, .skeleton-textarea:after, .skeleton-textarea .input-helper, .skeleton-textarea label, .skeleton-textarea svg, .skeleton-textarea .input-bordered__inner:before, .skeleton-textarea .input-bordered__inner:after, .skeleton-textarea .input-filled__inner:before, .skeleton-textarea .input-filled__inner:after {
+    display: none !important;
+    opacity: 0 !important; }
+  .skeleton-textarea textarea {
+    resize: none; }
+    .skeleton-textarea textarea::-webkit-input-placeholder {
+      /* Chrome/Opera/Safari */
+      color: transparent; }
+    .skeleton-textarea textarea::-moz-placeholder {
+      /* Firefox 19+ */
+      color: transparent; }
+    .skeleton-textarea textarea:-ms-input-placeholder {
+      /* IE 10+ */
+      color: transparent; }
+    .skeleton-textarea textarea:-moz-placeholder {
+      /* Firefox 18- */
+      color: transparent; }
+
+.skeleton-title {
+  background: linear-gradient(#f4f4f4 1em, transparent 0);
+  background-size: 25rem 1em;
+  background-repeat: no-repeat;
+  color: transparent; }
+
+.skeleton-button {
+  pointer-events: none;
+  box-shadow: none;
+  overflow: hidden;
+  background: transparent; }
+  .skeleton-button:after {
+    background: #f4f4f4 !important;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 0.15rem; }
+
+.skeleton-dropdown {
+  border: none !important;
+  margin-top: 1.75rem;
+  pointer-events: none; }
+  .skeleton-dropdown .dropdown-button {
+    background: #f4f4f4;
+    margin-top: 0.3rem;
+    padding-top: 0.175rem !important;
+    color: transparent; }
+    .skeleton-dropdown .dropdown-button:before, .skeleton-dropdown .dropdown-button:after {
+      display: none !important;
+      opacity: 0 !important; }
+  .skeleton-dropdown .input-filled__inner, .skeleton-dropdown .input-bordered__inner {
+    margin-left: 0 !important;
+    margin-right: 0 !important; }
+  .skeleton-dropdown .dropdown-button__value, .skeleton-dropdown .dropdown-button__arrow {
+    opacity: 0; }
+  .skeleton-dropdown:before, .skeleton-dropdown:after, .skeleton-dropdown .input-helper, .skeleton-dropdown label, .skeleton-dropdown svg, .skeleton-dropdown .input-bordered__inner:before, .skeleton-dropdown .input-bordered__inner:after,
+  .skeleton-dropdown .input-filled__inner:before, .skeleton-dropdown .input-filled__inner:after {
+    display: none !important;
+    opacity: 0 !important; }
 

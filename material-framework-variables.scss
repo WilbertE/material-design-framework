@@ -68,18 +68,7 @@ $font-button-min-line-height: 24px;
 $font-button-max-line-height: 38px;
 
 //SHADOWS
-$shadow-map: ( 0: '0px 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px 0px rgba(0, 0, 0, 0)',
-            1: '0px 0.136rem 0.213rem 0.0136rem rgba(0, 0, 0, 0.24), 0px 0.090rem 0.267rem 0.005rem rgba(0, 0, 0, 0.16)', 
-            2: '0px 0.136rem 0.213rem 0.0136rem rgba(0, 0, 0, 0.24), 0px 0.045rem 0.311rem 0.006rem rgba(0, 0, 0, 0.16)',
-            3: '0px 0.227rem 0.299rem 0.019rem rgba(0, 0, 0, 0.24), 0px 0.090rem 0.445rem 0.009rem rgba(0, 0, 0, 0.16)',
-            4: '0px 0.318rem 0.427rem 0.027rem rgba(0, 0, 0, 0.24), 0px 0.136rem 0.579rem 0.011rem rgba(0, 0, 0, 0.16)',
-            6: '0px 0.454rem 0.640rem 0.040rem rgba(0, 0, 0, 0.24), 0px 0.181rem 0.890rem 0.018rem rgba(0, 0, 0, 0.16)',
-            8: '0px 0.590rem 0.854rem 0.054rem rgba(0, 0, 0, 0.24), 0px 0.227rem 1.20rem 0.024rem rgba(0, 0, 0, 0.16)',
-            9: '0px 0.818rem 1.153rem 0.073rem rgba(0, 0, 0, 0.24), 0px 0.409rem 1.603rem 0.032rem rgba(0, 0, 0, 0.16)',
-            12: '0px 0.909rem 1.281rem 0.081rem rgba(0, 0, 0, 0.24), 0px 0.363rem 1.82rem 0.0372rem rgba(0, 0, 0, 0.16)',
-            16: '0px 1.272rem 1.709rem 0.109rem rgba(0, 0, 0, 0.24), 0px 0.5rem 2.360rem 0.048rem rgba(0, 0, 0, 0.16)',
-            24: '0px 1.772rem 2.563rem 0.163rem rgba(0, 0, 0, 0.24), 0px 0.681rem 3.608rem 0.073rem rgba(0, 0, 0, 0.16)'
-        );
+$shadow-map: ( 0: '0px 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px 0px rgba(0, 0, 0, 0)', 1: '0px 0.136rem 0.213rem 0.0136rem rgba(0, 0, 0, 0.24), 0px 0.090rem 0.267rem 0.005rem rgba(0, 0, 0, 0.16)', 2: '0px 0.136rem 0.213rem 0.0136rem rgba(0, 0, 0, 0.24), 0px 0.045rem 0.311rem 0.006rem rgba(0, 0, 0, 0.16)', 3: '0px 0.227rem 0.299rem 0.019rem rgba(0, 0, 0, 0.24), 0px 0.090rem 0.445rem 0.009rem rgba(0, 0, 0, 0.16)', 4: '0px 0.318rem 0.427rem 0.027rem rgba(0, 0, 0, 0.24), 0px 0.136rem 0.579rem 0.011rem rgba(0, 0, 0, 0.16)', 6: '0px 0.454rem 0.640rem 0.040rem rgba(0, 0, 0, 0.24), 0px 0.181rem 0.890rem 0.018rem rgba(0, 0, 0, 0.16)', 8: '0px 0.590rem 0.854rem 0.054rem rgba(0, 0, 0, 0.24), 0px 0.227rem 1.20rem 0.024rem rgba(0, 0, 0, 0.16)', 9: '0px 0.818rem 1.153rem 0.073rem rgba(0, 0, 0, 0.24), 0px 0.409rem 1.603rem 0.032rem rgba(0, 0, 0, 0.16)', 12: '0px 0.909rem 1.281rem 0.081rem rgba(0, 0, 0, 0.24), 0px 0.363rem 1.82rem 0.0372rem rgba(0, 0, 0, 0.16)', 16: '0px 1.272rem 1.709rem 0.109rem rgba(0, 0, 0, 0.24), 0px 0.5rem 2.360rem 0.048rem rgba(0, 0, 0, 0.16)', 24: '0px 1.772rem 2.563rem 0.163rem rgba(0, 0, 0, 0.24), 0px 0.681rem 3.608rem 0.073rem rgba(0, 0, 0, 0.16)' );
 
 //GRID
 $grid-gutter-sizes: 8 16 24 40;
@@ -184,3 +173,5 @@ $custom-scrollbar-thumb-background-color: #365a7b;
 //Skeleton
 $skeleton-image-background-color: #f4f4f4;
 $skeleton-lines-color: #f4f4f4;
+$skeleton-titles-color: #f4f4f4;
+$skeleton-element-color: #f4f4f4;

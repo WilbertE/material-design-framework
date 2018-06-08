@@ -1,34 +1,106 @@
-﻿$.mSkeleton = {
+﻿
+; (function ($, window, document, undefined) {
 
-    start: function () {
+    var pluginName = "mSkeleton",
+        defaults = {};
+
+    function Plugin(element, options) {
+        this.element = element;
+        this.$element = $(element);
+        this.options = $.extend({}, defaults, options);
+
+        this._defaults = defaults;
+        this._name = pluginName;
+        if (options == null) {
+            this.init();
+        } else if (options == "reveal") {
+            this.reveal();
+        }
+    }
+
+    Plugin.prototype = {
+
+        init: function () {
+            
+            //Transform images
+            this.$element.find(".skeleton-image").each(function () {
+
+                //Still download image
+                $('<img/>')[0].src = $(this).attr("src");
+
+                $(this).attr("data-src", $(this).attr("src"))
+                    .css({ "width": $(this).width(), "height": $(this).height() })
+                    .attr("src", "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=");
+            });
+        },
+
+        reveal: function () {
+
+            
+
+            this.$element.find(".skeleton-image").each(function () {
+
+                //Change image to transparent image
+
+                $(this).attr("src", $(this).attr("data-src"))
+                    .css({ "width": "", "height": "" })
+                    .removeAttr("data-src");
+            });
+
+            this.$element.find(".skeleton-title").removeClass("skeleton-title");
+            this.$element.find(".skeleton-lines").removeClass(function (index, className) {
+                return (className.match(/(^|\s)skeleton-\S+/g) || []).join(' ');
+            });
+            this.$element.find(".skeleton-textarea").removeClass("skeleton-textarea");
+            this.$element.find(".skeleton-input").removeClass("skeleton-input");
+            this.$element.find(".skeleton-button").removeClass("skeleton-button");
+            this.$element.find(".skeleton-dropdown").removeClass("skeleton-dropdown");
+        }
+
+
+    };
+
+    $.fn[pluginName] = function (options) {
+        
+        return this.each(function () {
+            if (!$.data(this, "plugin_" + pluginName)) {
+                $.data(this, "plugin_" + pluginName,
+                new Plugin(this, options));
+            }
+        });
+    };
+
+})(jQuery, window, document);
+
+
+$.mSkeleton = {
+
+    start: function (section) {
+
+        if (section == null) section = "body";
+
         //Transform images
-        $(".skeleton-image").each(function () {
+        $(section + " .skeleton-image").each(function () {
 
             //Change image to transparent image
-
             $(this).attr("data-src", $(this).attr("src"))
                 .css({ "width": $(this).width(), "height": $(this).height() })
                 .attr("src", "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=");
         });
-    },
-    reveal: function (section) {
 
-        if (section == null) section = "body";
+        $(section).addClass("skeleton");
 
-        console.log("OK");
-        $(section + " .skeleton-lines").removeClass(function (index, className) {
-            return (className.match(/(^|\s)skeleton-\S+/g) || []).join(' ');
-        });
+        //Inputs
+        $(section + " fieldset input").closest("fieldset").addClass("skeleton-input");
 
-        $(section +" .skeleton-image").each(function () {
+        //Textarea
+        $(section + " fieldset textarea").closest("fieldset").addClass("skeleton-textarea");
 
-            //Change image to transparent image
+        //Button
+        $(".flat-button, .raised-button").addClass("skeleton-button");
 
-            $(this).attr("src", $(this).attr("data-src"))
-                .css({ "width": "", "height": "" })
-                .removeAttr("data-src");
-        });
-
+        //Dropdown
+        $("fieldset select").closest("fieldset").addClass("skeleton-dropdown");
     }
 
 }
