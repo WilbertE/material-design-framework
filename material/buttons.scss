@@ -24,9 +24,9 @@ $sizes: ( ".tiny": 0.75, ".small": 0.85, "": 1, );
     transition: box-shadow 200ms ease-out;
     overflow: hidden;
     line-height: inherit;
-    margin: 8px;
     white-space: nowrap;
     -webkit-tap-highlight-color: $light-color;
+    margin: 0.5rem 0;
     @include shadow(1);
     user-select: none;
     padding: 0.35rem 1.25rem;
@@ -58,7 +58,7 @@ $sizes: ( ".tiny": 0.75, ".small": 0.85, "": 1, );
     }
 
     .no-touchevents & {
-        
+
 
         &:hover {
             @include shadow(2);

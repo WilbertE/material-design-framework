@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta charset="utf-8" />
+    <link href="../refference.css" rel="stylesheet" />
+    <link href="../material-framework.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script src="../fontawsome/svg-with-js/js/fontawesome-all.js"></script>
+    <script src="../material-framework.js"></script>
+    <script src="../reference.js"></script>
+    <script>
+        $(function () {
+            $.mButtons();
+            $.mSkeleton.start();
+            $.mTextfields();
+        });
+    </script>
+</head>
+<body>
+
+    <div class="titlebar text-headline shadow-4">
+        Skeleton
+        <div class="text-subheading-1">Loading wireframes</div>
+    </div>
+    <content class="m-body">
+
+        <ul class="index">
+            <li class="text-caption">Contents</li>
+            <li><a href="#dropdowns">Dropdown buttons</a></li>
+        </ul>
+
+
+        <a name="dropdowns"><h1 class="text-title">Skeleton lines</h1></a>
+        <p class="readability">
+            Skeletons are wireframes that organise the page when the content is still loading. When the content is loaded, the skeleton will be replaced by it.
+            To create a div with skeleton lines use the class <span class="class--filled">.skeleton-lines .skeleton-lines--1</span> where the number is the amount of lines.
+        </p>
+
+
+        <div class="grid grid--gutter-24 skeleton-lines-example">
+            <div class="grid__cell grid__cell--4 skeleton-lines skeleton-lines--1">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+            <div class="grid__cell grid__cell--4 skeleton-lines skeleton-lines--3">Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br />Vivamus eu ornare massa, et mollis quam.<br />Proin in elit orci.</div>
+            <div class="grid__cell grid__cell--4 skeleton-lines skeleton-lines--5">Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br />Vivamus eu ornare massa, et mollis quam.<br />Proin in elit orci.<br />Cras luctus, lorem nec egestas interdum. <br />Magna enim vulputate ligula</div>
+        </div>
+        <button class="raised-button" onclick="$.mSkeleton.reveal('.skeleton-lines-example');">Reveal</button>
+
+
+        <a name="dropdowns"><h1 class="text-title">Skeleton images</h1></a>
+        <p class="skeleton-image-example">
+            Image skeletons are images with a filled background. The class <span class="class--filled">.skeleton-image</span> will make that happen.
+
+            <img class="skeleton-image margin-top-24" src="image.jpg" />
+        </p>
+        <button class="raised-button" onclick="$.mSkeleton.reveal('.skeleton-image-example');">Reveal</button>
+
+        <a name="dropdowns"><h1 class="text-title">Skeleton components</h1></a>
+        <p class="skeleton-image-example">
+            Every component has a skeleton class. By adding <span class="class--filled">.skeleton</span> the component will come in its skeleton mode.
+        </p>
+
+        <fieldset class="skeleton">
+            <input type="text" value="" id="input-label" />
+            <label for="input-label">Label</label>
+            <div class="input-helper">Helper text</div>
+        </fieldset>
+        <button class="raised-button" onclick="$.mSkeleton.reveal('.skeleton-image-example');">Reveal</button>
+
+
+
+    </content>
+</body>
+</html>

@@ -1828,6 +1828,29 @@ a {
     .container {
       width: 90%; } }
 
+.no-margin {
+  margin: 0 !important; }
+
+.margin-horizontal {
+  margin-left: 0 !important;
+  margin-right: 0 !important; }
+
+.no-margin-vertical {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important; }
+
+.no-margin-top {
+  margin-top: 0 !important; }
+
+.no-margin-left {
+  margin-left: 0 !important; }
+
+.no-margin-right {
+  margin-right: 0 !important; }
+
+.no-margin-bottom {
+  margin-bottom: 0 !important; }
+
 .margins {
   margin: 8px !important; }
 
@@ -2389,9 +2412,9 @@ html .raised-button, html .flat-button, body .raised-button, body .flat-button {
   transition: box-shadow 200ms ease-out;
   overflow: hidden;
   line-height: inherit;
-  margin: 8px;
   white-space: nowrap;
   -webkit-tap-highlight-color: #fff;
+  margin: 0.5rem 0;
   box-shadow: 0px 0.136rem 0.213rem 0.0136rem rgba(0, 0, 0, 0.24), 0px 0.090rem 0.267rem 0.005rem rgba(0, 0, 0, 0.16);
   user-select: none;
   padding: 0.35rem 1.25rem; }
@@ -3703,6 +3726,7 @@ html .date-picker__date-wrapper, body .date-picker__date-wrapper {
 
 .navigation-drawer__list .flat-button.list__button {
   color: #3b3b3b;
+  margin: 8px;
   display: flex;
   align-items: center; }
 
@@ -4328,4 +4352,46 @@ html .dialog__header, body .dialog__header {
 .m-overlay--show .dialog {
   transform: translateY(0%);
   transition: transform 0.272s cubic-bezier(0, 0, 0.2, 1); }
+
+.skeleton-lines {
+  color: transparent; }
+  .skeleton-lines.skeleton-lines--1 {
+    background: linear-gradient(#f4f4f4 20px, transparent 0);
+    background-position: 0 0.45rem;
+    background-size: 30rem 1rem;
+    background-repeat: no-repeat;
+    max-height: 1.75rem; }
+  .skeleton-lines.skeleton-lines--2 {
+    background: linear-gradient(#f4f4f4 20px, transparent 0);
+    background-position: 0 0.45rem;
+    background-size: 30rem 1rem;
+    background-repeat: no-repeat;
+    max-height: 1.75rem; }
+  .skeleton-lines.skeleton-lines--2 {
+    background: linear-gradient(#f4f4f4 20px, transparent 0), linear-gradient(#f4f4f4 20px, transparent 0);
+    background-position: 0 0.45rem, 0 2.25rem;
+    background-size: 30rem 1rem;
+    background-repeat: no-repeat;
+    max-height: 3.6rem; }
+  .skeleton-lines.skeleton-lines--3 {
+    background: linear-gradient(#f4f4f4 20px, transparent 0), linear-gradient(#f4f4f4 20px, transparent 0), linear-gradient(#f4f4f4 20px, transparent 0), linear-gradient(#f4f4f4 20px, transparent 0);
+    background-position: 0 0.45rem, 0 2.25rem, 0 4.1rem;
+    background-size: 30rem 1rem;
+    background-repeat: no-repeat;
+    min-height: 5.2rem; }
+  .skeleton-lines.skeleton-lines--4 {
+    background: linear-gradient(#f4f4f4 20px, transparent 0), linear-gradient(#f4f4f4 20px, transparent 0), linear-gradient(#f4f4f4 20px, transparent 0), linear-gradient(#f4f4f4 20px, transparent 0);
+    background-position: 0 0.45rem, 0 2.25rem, 0 4.1rem, 0 5.9rem;
+    background-size: 30rem 1rem;
+    background-repeat: no-repeat;
+    min-height: 7.1rem; }
+  .skeleton-lines.skeleton-lines--5 {
+    background: linear-gradient(#f4f4f4 20px, transparent 0), linear-gradient(#f4f4f4 20px, transparent 0), linear-gradient(#f4f4f4 20px, transparent 0), linear-gradient(#f4f4f4 20px, transparent 0), linear-gradient(#f4f4f4 20px, transparent 0);
+    background-position: 0 0.45rem, 0 2.25rem, 0 4.1rem, 0 5.9rem, 0 7.7rem;
+    background-size: 30rem 1rem;
+    background-repeat: no-repeat;
+    min-height: 8.85rem; }
+
+.skeleton-image {
+  background: #f4f4f4; }
 

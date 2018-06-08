@@ -1,0 +1,55 @@
+﻿.skeleton-lines {
+    color: transparent;
+
+    &.skeleton-lines--1 {
+        background: linear-gradient( $skeleton-lines-color 20px, transparent 0);
+        background-position: 0 0.45rem;
+        background-size: 30rem 1rem;
+        background-repeat: no-repeat;
+        max-height: 1.75rem;
+    }
+
+    &.skeleton-lines--2 {
+        background: linear-gradient( $skeleton-lines-color 20px, transparent 0);
+        background-position: 0 0.45rem;
+        background-size: 30rem 1rem;
+        background-repeat: no-repeat;
+        max-height: 1.75rem;
+    }
+
+    &.skeleton-lines--2 {
+        background: linear-gradient( $skeleton-lines-color 20px, transparent 0), linear-gradient( $skeleton-lines-color 20px, transparent 0);
+        background-position: 0 0.45rem, 0 2.25rem;
+        background-size: 30rem 1rem;
+        background-repeat: no-repeat;
+        max-height: 3.6rem;
+    }
+
+    &.skeleton-lines--3 {
+        background: linear-gradient( $skeleton-lines-color 20px, transparent 0), linear-gradient( $skeleton-lines-color 20px, transparent 0), linear-gradient( $skeleton-lines-color 20px, transparent 0), linear-gradient( $skeleton-lines-color 20px, transparent 0);
+        background-position: 0 0.45rem, 0 2.25rem, 0 4.1rem;
+        background-size: 30rem 1rem;
+        background-repeat: no-repeat;
+        min-height: 5.2rem;
+    }
+
+    &.skeleton-lines--4 {
+        background: linear-gradient( $skeleton-lines-color 20px, transparent 0), linear-gradient( $skeleton-lines-color 20px, transparent 0), linear-gradient( $skeleton-lines-color 20px, transparent 0), linear-gradient( $skeleton-lines-color 20px, transparent 0);
+        background-position: 0 0.45rem, 0 2.25rem, 0 4.1rem, 0 5.9rem;
+        background-size: 30rem 1rem;
+        background-repeat: no-repeat;
+        min-height: 7.1rem;
+    }
+
+    &.skeleton-lines--5 {
+        background: linear-gradient( $skeleton-lines-color 20px, transparent 0), linear-gradient( $skeleton-lines-color 20px, transparent 0), linear-gradient( $skeleton-lines-color 20px, transparent 0), linear-gradient( $skeleton-lines-color 20px, transparent 0), linear-gradient( $skeleton-lines-color 20px, transparent 0);
+        background-position: 0 0.45rem, 0 2.25rem, 0 4.1rem, 0 5.9rem, 0 7.7rem;
+        background-size: 30rem 1rem;
+        background-repeat: no-repeat;
+        min-height: 8.85rem;
+    }
+}
+
+.skeleton-image {
+    background: $skeleton-image-background-color;
+}

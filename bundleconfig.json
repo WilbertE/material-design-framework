@@ -18,7 +18,8 @@
       "javascript/navigation-drawer.js",
       "javascript/ripple.js",
       "javascript/scrolling.js",
-      "javascript/textfields.js"
+      "javascript/textfields.js",
+      "javascript/skeleton.js"
     ]
   }
 ]

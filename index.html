@@ -41,8 +41,7 @@
             var resizeIframe = function () {
                 var iFrame = $("iframe");
                 var appBarHeight = $(".app-bar").height();
-                var windowHeight = $(document).outerHeight();
-                console.log(appBarHeight);
+                var windowHeight = $(document).outerHeight();                
                 iFrame.css({ "margin-top": appBarHeight, "height": windowHeight - appBarHeight });
             }
             resizeIframe();
@@ -177,6 +176,12 @@
                             <i class="far fa-angle-right list__icon button__icon--right"></i>
                         </a>
                     </div>
+                    <div class="list__item list__item--button">
+                        <a href="pages/skeleton.html" target="preview" class="flat-button list__button" data-ripple="#dde2e6">
+                            <i class="fas fa-align-left list__icon"></i>Skeleton
+                            <i class="far fa-angle-right list__icon button__icon--right"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -203,7 +208,7 @@
             </div>
 
 
-            <iframe src="pages/typography.html" name="preview"></iframe>
+            <iframe src="pages/skeleton.html" name="preview"></iframe>
         </div>
     </div>
 

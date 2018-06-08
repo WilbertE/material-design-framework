@@ -118,6 +118,7 @@ $prefixes: mobile tablet laptop pc;
 
 .navigation-drawer__list .flat-button.list__button {
     color: $navigation-drawer-button-text-color;
+    margin: 8px;
     display: flex;
     align-items: center;
 }
