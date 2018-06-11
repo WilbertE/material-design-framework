@@ -4353,105 +4353,105 @@ html .dialog__header, body .dialog__header {
   transform: translateY(0%);
   transition: transform 0.272s cubic-bezier(0, 0, 0.2, 1); }
 
-.skeleton-lines {
+.skeleton .skeleton-lines {
   color: transparent; }
-  .skeleton-lines.skeleton-lines--1 {
+  .skeleton .skeleton-lines.skeleton-lines--1 {
     background: linear-gradient(#f4f4f4 1em, transparent 0);
     background-position: 0 0.45rem;
     background-size: 30rem 1em;
     background-repeat: no-repeat;
     max-height: 1.75rem; }
-  .skeleton-lines.skeleton-lines--2 {
+  .skeleton .skeleton-lines.skeleton-lines--2 {
     background: linear-gradient(#f4f4f4 1em, transparent 0);
     background-position: 0 0.45rem;
     background-size: 30rem 1em;
     background-repeat: no-repeat;
     max-height: 1.75rem; }
-  .skeleton-lines.skeleton-lines--2 {
+  .skeleton .skeleton-lines.skeleton-lines--2 {
     background: linear-gradient(#f4f4f4 1em, transparent 0), linear-gradient(#f4f4f4 1em, transparent 0);
     background-position: 0 0.45rem, 0 2.25rem;
     background-size: 30rem 1em;
     background-repeat: no-repeat;
     max-height: 3.6rem; }
-  .skeleton-lines.skeleton-lines--3 {
+  .skeleton .skeleton-lines.skeleton-lines--3 {
     background: linear-gradient(#f4f4f4 1em, transparent 0), linear-gradient(#f4f4f4 1em, transparent 0), linear-gradient(#f4f4f4 1em, transparent 0), linear-gradient(#f4f4f4 1em, transparent 0);
     background-position: 0 0.45rem, 0 2.25rem, 0 4.1rem;
     background-size: 30rem 1em;
     background-repeat: no-repeat;
     min-height: 5.2rem; }
-  .skeleton-lines.skeleton-lines--4 {
+  .skeleton .skeleton-lines.skeleton-lines--4 {
     background: linear-gradient(#f4f4f4 1em, transparent 0), linear-gradient(#f4f4f4 1em, transparent 0), linear-gradient(#f4f4f4 1em, transparent 0), linear-gradient(#f4f4f4 1em, transparent 0);
     background-position: 0 0.45rem, 0 2.25rem, 0 4.1rem, 0 5.9rem;
     background-size: 30rem 1em;
     background-repeat: no-repeat;
     min-height: 7.1rem; }
-  .skeleton-lines.skeleton-lines--5 {
+  .skeleton .skeleton-lines.skeleton-lines--5 {
     background: linear-gradient(#f4f4f4 1em, transparent 0), linear-gradient(#f4f4f4 1em, transparent 0), linear-gradient(#f4f4f4 1em, transparent 0), linear-gradient(#f4f4f4 1em, transparent 0), linear-gradient(#f4f4f4 1em, transparent 0);
     background-position: 0 0.45rem, 0 2.25rem, 0 4.1rem, 0 5.9rem, 0 7.7rem;
     background-size: 30rem 1em;
     background-repeat: no-repeat;
     min-height: 8.85rem; }
 
-.skeleton-image {
+.skeleton .skeleton-image {
   background: #f4f4f4; }
 
-.skeleton-input {
+.skeleton .skeleton-input {
   pointer-events: none;
   background: #f4f4f4;
   margin-top: 1.75rem; }
-  .skeleton-input:before, .skeleton-input:after, .skeleton-input .input-helper, .skeleton-input label, .skeleton-input svg, .skeleton-input .input-bordered__inner:before, .skeleton-input .input-bordered__inner:after, .skeleton-input .input-filled__inner:before, .skeleton-input .input-filled__inner:after {
+  .skeleton .skeleton-input:before, .skeleton .skeleton-input:after, .skeleton .skeleton-input .input-helper, .skeleton .skeleton-input label, .skeleton .skeleton-input svg, .skeleton .skeleton-input .input-bordered__inner:before, .skeleton .skeleton-input .input-bordered__inner:after, .skeleton .skeleton-input .input-filled__inner:before, .skeleton .skeleton-input .input-filled__inner:after {
     display: none !important;
     opacity: 0 !important; }
-  .skeleton-input input {
-    color: transparent;
+  .skeleton .skeleton-input input {
+    color: transparent !important;
     margin-top: 0.3;
     padding-top: 0; }
-    .skeleton-input input::-webkit-input-placeholder {
+    .skeleton .skeleton-input input::-webkit-input-placeholder {
       /* Chrome/Opera/Safari */
-      color: transparent; }
-    .skeleton-input input::-moz-placeholder {
+      color: transparent !important; }
+    .skeleton .skeleton-input input::-moz-placeholder {
       /* Firefox 19+ */
-      color: transparent; }
-    .skeleton-input input:-ms-input-placeholder {
+      color: transparent !important; }
+    .skeleton .skeleton-input input:-ms-input-placeholder {
       /* IE 10+ */
-      color: transparent; }
-    .skeleton-input input:-moz-placeholder {
+      color: transparent !important; }
+    .skeleton .skeleton-input input:-moz-placeholder {
       /* Firefox 18- */
-      color: transparent; }
+      color: transparent !important; }
 
-.skeleton-textarea {
+.skeleton .skeleton-textarea {
   background: #f4f4f4;
   border: none !important; }
-  .skeleton-textarea:before, .skeleton-textarea:after, .skeleton-textarea .input-helper, .skeleton-textarea label, .skeleton-textarea svg, .skeleton-textarea .input-bordered__inner:before, .skeleton-textarea .input-bordered__inner:after, .skeleton-textarea .input-filled__inner:before, .skeleton-textarea .input-filled__inner:after {
+  .skeleton .skeleton-textarea:before, .skeleton .skeleton-textarea:after, .skeleton .skeleton-textarea .input-helper, .skeleton .skeleton-textarea label, .skeleton .skeleton-textarea svg, .skeleton .skeleton-textarea .input-bordered__inner:before, .skeleton .skeleton-textarea .input-bordered__inner:after, .skeleton .skeleton-textarea .input-filled__inner:before, .skeleton .skeleton-textarea .input-filled__inner:after {
     display: none !important;
     opacity: 0 !important; }
-  .skeleton-textarea textarea {
+  .skeleton .skeleton-textarea textarea {
     resize: none; }
-    .skeleton-textarea textarea::-webkit-input-placeholder {
+    .skeleton .skeleton-textarea textarea::-webkit-input-placeholder {
       /* Chrome/Opera/Safari */
-      color: transparent; }
-    .skeleton-textarea textarea::-moz-placeholder {
+      color: transparent !important; }
+    .skeleton .skeleton-textarea textarea::-moz-placeholder {
       /* Firefox 19+ */
-      color: transparent; }
-    .skeleton-textarea textarea:-ms-input-placeholder {
+      color: transparent !important; }
+    .skeleton .skeleton-textarea textarea:-ms-input-placeholder {
       /* IE 10+ */
-      color: transparent; }
-    .skeleton-textarea textarea:-moz-placeholder {
+      color: transparent !important; }
+    .skeleton .skeleton-textarea textarea:-moz-placeholder {
       /* Firefox 18- */
-      color: transparent; }
+      color: transparent !important; }
 
-.skeleton-title {
-  background: linear-gradient(#f4f4f4 1em, transparent 0);
+.skeleton .skeleton-title {
+  background: linear-gradient(#f4f4f4 1em, transparent 0) !important;
   background-size: 25rem 1em;
   background-repeat: no-repeat;
-  color: transparent; }
+  color: transparent !important; }
 
-.skeleton-button {
-  pointer-events: none;
+.skeleton .skeleton-button {
+  pointer-events: none !important;
   box-shadow: none;
   overflow: hidden;
-  background: transparent; }
-  .skeleton-button:after {
+  background: transparent !important; }
+  .skeleton .skeleton-button:after {
     background: #f4f4f4 !important;
     position: absolute;
     top: 0;
@@ -4460,31 +4460,31 @@ html .dialog__header, body .dialog__header {
     left: 0;
     border-radius: 0.15rem; }
 
-.skeleton-dropdown {
+.skeleton .skeleton-dropdown {
   border: none !important;
   margin-top: 1.75rem;
-  pointer-events: none; }
-  .skeleton-dropdown .dropdown-button {
+  pointer-events: none !important; }
+  .skeleton .skeleton-dropdown .dropdown-button {
     background: #f4f4f4;
     margin-top: 0.3rem;
     padding-top: 0.175rem !important;
     color: transparent; }
-    .skeleton-dropdown .dropdown-button:before, .skeleton-dropdown .dropdown-button:after {
+    .skeleton .skeleton-dropdown .dropdown-button:before, .skeleton .skeleton-dropdown .dropdown-button:after {
       display: none !important;
       opacity: 0 !important; }
-  .skeleton-dropdown .input-filled__inner, .skeleton-dropdown .input-bordered__inner {
+  .skeleton .skeleton-dropdown .input-filled__inner, .skeleton .skeleton-dropdown .input-bordered__inner {
     margin-left: 0 !important;
     margin-right: 0 !important; }
-  .skeleton-dropdown .dropdown-button__value, .skeleton-dropdown .dropdown-button__arrow {
+  .skeleton .skeleton-dropdown .dropdown-button__value, .skeleton .skeleton-dropdown .dropdown-button__arrow {
     opacity: 0; }
-  .skeleton-dropdown:before, .skeleton-dropdown:after, .skeleton-dropdown .input-helper, .skeleton-dropdown label, .skeleton-dropdown svg, .skeleton-dropdown .input-bordered__inner:before, .skeleton-dropdown .input-bordered__inner:after,
-  .skeleton-dropdown .input-filled__inner:before, .skeleton-dropdown .input-filled__inner:after {
+  .skeleton .skeleton-dropdown:before, .skeleton .skeleton-dropdown:after, .skeleton .skeleton-dropdown .input-helper, .skeleton .skeleton-dropdown label, .skeleton .skeleton-dropdown svg, .skeleton .skeleton-dropdown .input-bordered__inner:before, .skeleton .skeleton-dropdown .input-bordered__inner:after,
+  .skeleton .skeleton-dropdown .input-filled__inner:before, .skeleton .skeleton-dropdown .input-filled__inner:after {
     display: none !important;
     opacity: 0 !important; }
 
-.skeleton-hidden {
+.skeleton .skeleton-hidden {
   visibility: hidden !important; }
 
-.skeleton-remove {
+.skeleton .skeleton-remove {
   display: none !important; }
 

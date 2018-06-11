@@ -21,12 +21,19 @@
     Plugin.prototype = {
 
         init: function () {
-            
+
             //Transform images
             this.$element.find(".skeleton-image").each(function () {
 
                 //Still download image
-                $('<img/>')[0].src = $(this).attr("src");
+                var preloader = $("<div />", { "class": "preloader", "style": "height:0; width:0; visibility:hidden; overflow-hidden; position:absolute; top: -99999px; left: -9999px;" });
+                $("body").append(preloader);
+                var image = $("<img />");
+                image[0].onload = function () { $(this).parent().remove(); }
+                image.attr("src", $(this).attr("src"));
+                preloader.append(image);
+
+
 
                 $(this).attr("data-src", $(this).attr("src"))
                     .css({ "width": $(this).width(), "height": $(this).height() })
@@ -36,12 +43,11 @@
 
         reveal: function () {
 
-            
+
 
             this.$element.find(".skeleton-image").each(function () {
 
                 //Change image to transparent image
-
                 $(this).attr("src", $(this).attr("data-src"))
                     .css({ "width": "", "height": "" })
                     .removeAttr("data-src");
@@ -55,13 +61,15 @@
             this.$element.find(".skeleton-input").removeClass("skeleton-input");
             this.$element.find(".skeleton-button").removeClass("skeleton-button");
             this.$element.find(".skeleton-dropdown").removeClass("skeleton-dropdown");
+            this.$element.removeClass("skeleton");
+            this.$element.find("skeleton").removeClass("skeleton");
         }
 
 
     };
 
     $.fn[pluginName] = function (options) {
-        
+
         return this.each(function () {
             if (!$.data(this, "plugin_" + pluginName)) {
                 $.data(this, "plugin_" + pluginName,

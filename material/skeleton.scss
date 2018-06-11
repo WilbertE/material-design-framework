@@ -1,183 +1,185 @@
-﻿.skeleton-lines {
-    color: transparent;
-
-    &.skeleton-lines--1 {
-        background: linear-gradient( $skeleton-lines-color 1em, transparent 0);
-        background-position: 0 0.45rem;
-        background-size: 30rem 1em;
-        background-repeat: no-repeat;
-        max-height: 1.75rem;
-    }
-
-    &.skeleton-lines--2 {
-        background: linear-gradient( $skeleton-lines-color 1em, transparent 0);
-        background-position: 0 0.45rem;
-        background-size: 30rem 1em;
-        background-repeat: no-repeat;
-        max-height: 1.75rem;
-    }
-
-    &.skeleton-lines--2 {
-        background: linear-gradient( $skeleton-lines-color 1em, transparent 0), linear-gradient( $skeleton-lines-color 1em, transparent 0);
-        background-position: 0 0.45rem, 0 2.25rem;
-        background-size: 30rem 1em;
-        background-repeat: no-repeat;
-        max-height: 3.6rem;
-    }
-
-    &.skeleton-lines--3 {
-        background: linear-gradient( $skeleton-lines-color 1em, transparent 0), linear-gradient( $skeleton-lines-color 1em, transparent 0), linear-gradient( $skeleton-lines-color 1em, transparent 0), linear-gradient( $skeleton-lines-color 1em, transparent 0);
-        background-position: 0 0.45rem, 0 2.25rem, 0 4.1rem;
-        background-size: 30rem 1em;
-        background-repeat: no-repeat;
-        min-height: 5.2rem;
-    }
-
-    &.skeleton-lines--4 {
-        background: linear-gradient( $skeleton-lines-color 1em, transparent 0), linear-gradient( $skeleton-lines-color 1em, transparent 0), linear-gradient( $skeleton-lines-color 1em, transparent 0), linear-gradient( $skeleton-lines-color 1em, transparent 0);
-        background-position: 0 0.45rem, 0 2.25rem, 0 4.1rem, 0 5.9rem;
-        background-size: 30rem 1em;
-        background-repeat: no-repeat;
-        min-height: 7.1rem;
-    }
-
-    &.skeleton-lines--5 {
-        background: linear-gradient( $skeleton-lines-color 1em, transparent 0), linear-gradient( $skeleton-lines-color 1em, transparent 0), linear-gradient( $skeleton-lines-color 1em, transparent 0), linear-gradient( $skeleton-lines-color 1em, transparent 0), linear-gradient( $skeleton-lines-color 1em, transparent 0);
-        background-position: 0 0.45rem, 0 2.25rem, 0 4.1rem, 0 5.9rem, 0 7.7rem;
-        background-size: 30rem 1em;
-        background-repeat: no-repeat;
-        min-height: 8.85rem;
-    }
-}
-
-.skeleton-image {
-    background: $skeleton-image-background-color;
-}
-
-.skeleton-input {
-    pointer-events: none;
-    background: $skeleton-element-color;
-    margin-top: 1.75rem;
-
-    &:before, &:after, .input-helper, label, svg, .input-bordered__inner:before, .input-bordered__inner:after, .input-filled__inner:before, .input-filled__inner:after {
-        display: none !important;
-        opacity: 0 !important;
-    }
-
-    input {
+﻿.skeleton {
+    .skeleton-lines {
         color: transparent;
-        margin-top: 0.3;
-        padding-top: 0;
 
-        &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-            color: transparent;
+        &.skeleton-lines--1 {
+            background: linear-gradient( $skeleton-lines-color 1em, transparent 0);
+            background-position: 0 0.45rem;
+            background-size: 30rem 1em;
+            background-repeat: no-repeat;
+            max-height: 1.75rem;
         }
 
-        &::-moz-placeholder { /* Firefox 19+ */
-            color: transparent;
+        &.skeleton-lines--2 {
+            background: linear-gradient( $skeleton-lines-color 1em, transparent 0);
+            background-position: 0 0.45rem;
+            background-size: 30rem 1em;
+            background-repeat: no-repeat;
+            max-height: 1.75rem;
         }
 
-        &:-ms-input-placeholder { /* IE 10+ */
-            color: transparent;
+        &.skeleton-lines--2 {
+            background: linear-gradient( $skeleton-lines-color 1em, transparent 0), linear-gradient( $skeleton-lines-color 1em, transparent 0);
+            background-position: 0 0.45rem, 0 2.25rem;
+            background-size: 30rem 1em;
+            background-repeat: no-repeat;
+            max-height: 3.6rem;
         }
 
-        &:-moz-placeholder { /* Firefox 18- */
-            color: transparent;
+        &.skeleton-lines--3 {
+            background: linear-gradient( $skeleton-lines-color 1em, transparent 0), linear-gradient( $skeleton-lines-color 1em, transparent 0), linear-gradient( $skeleton-lines-color 1em, transparent 0), linear-gradient( $skeleton-lines-color 1em, transparent 0);
+            background-position: 0 0.45rem, 0 2.25rem, 0 4.1rem;
+            background-size: 30rem 1em;
+            background-repeat: no-repeat;
+            min-height: 5.2rem;
+        }
+
+        &.skeleton-lines--4 {
+            background: linear-gradient( $skeleton-lines-color 1em, transparent 0), linear-gradient( $skeleton-lines-color 1em, transparent 0), linear-gradient( $skeleton-lines-color 1em, transparent 0), linear-gradient( $skeleton-lines-color 1em, transparent 0);
+            background-position: 0 0.45rem, 0 2.25rem, 0 4.1rem, 0 5.9rem;
+            background-size: 30rem 1em;
+            background-repeat: no-repeat;
+            min-height: 7.1rem;
+        }
+
+        &.skeleton-lines--5 {
+            background: linear-gradient( $skeleton-lines-color 1em, transparent 0), linear-gradient( $skeleton-lines-color 1em, transparent 0), linear-gradient( $skeleton-lines-color 1em, transparent 0), linear-gradient( $skeleton-lines-color 1em, transparent 0), linear-gradient( $skeleton-lines-color 1em, transparent 0) ;
+            background-position: 0 0.45rem, 0 2.25rem, 0 4.1rem, 0 5.9rem, 0 7.7rem;
+            background-size: 30rem 1em;
+            background-repeat: no-repeat;
+            min-height: 8.85rem;
         }
     }
-}
 
-.skeleton-textarea {
-    background: $skeleton-element-color;
-    border: none !important;
-
-    &:before, &:after, .input-helper, label, svg, .input-bordered__inner:before, .input-bordered__inner:after, .input-filled__inner:before, .input-filled__inner:after {
-        display: none !important;
-        opacity: 0 !important;
+    .skeleton-image {
+        background: $skeleton-image-background-color;
     }
 
-    textarea {
-        resize: none;
-
-        &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-            color: transparent;
-        }
-
-        &::-moz-placeholder { /* Firefox 19+ */
-            color: transparent;
-        }
-
-        &:-ms-input-placeholder { /* IE 10+ */
-            color: transparent;
-        }
-
-        &:-moz-placeholder { /* Firefox 18- */
-            color: transparent;
-        }
-    }
-}
-
-.skeleton-title {
-    background: linear-gradient($skeleton-titles-color 1em, transparent 0);
-    background-size: 25rem 1em;
-    background-repeat: no-repeat;
-    color: transparent;
-}
-
-.skeleton-button {
-    pointer-events: none;
-    box-shadow: none;
-    overflow: hidden;
-    background: transparent;
-
-    &:after {
-        background: $skeleton-element-color !important;
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        border-radius: 0.15rem;
-    }
-}
-
-.skeleton-dropdown {
-    border: none !important;
-    margin-top: 1.75rem;
-    pointer-events: none;
-
-    .dropdown-button {
+    .skeleton-input {
+        pointer-events: none;
         background: $skeleton-element-color;
-        margin-top: 0.3rem;
-        padding-top: 0.175rem !important;
-        color: transparent;
+        margin-top: 1.75rem;
 
-        &:before, &:after {
+        &:before, &:after, .input-helper, label, svg, .input-bordered__inner:before, .input-bordered__inner:after, .input-filled__inner:before, .input-filled__inner:after {
+            display: none !important;
+            opacity: 0 !important;
+        }
+
+        input {
+            color: transparent !important;
+            margin-top: 0.3;
+            padding-top: 0;
+
+            &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+                color: transparent !important;
+            }
+
+            &::-moz-placeholder { /* Firefox 19+ */
+                color: transparent !important;
+            }
+
+            &:-ms-input-placeholder { /* IE 10+ */
+                color: transparent !important;
+            }
+
+            &:-moz-placeholder { /* Firefox 18- */
+                color: transparent !important;
+            }
+        }
+    }
+
+    .skeleton-textarea {
+        background: $skeleton-element-color;
+        border: none !important;
+
+        &:before, &:after, .input-helper, label, svg, .input-bordered__inner:before, .input-bordered__inner:after, .input-filled__inner:before, .input-filled__inner:after {
+            display: none !important;
+            opacity: 0 !important;
+        }
+
+        textarea {
+            resize: none;
+
+            &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+                color: transparent !important;
+            }
+
+            &::-moz-placeholder { /* Firefox 19+ */
+                color: transparent !important;
+            }
+
+            &:-ms-input-placeholder { /* IE 10+ */
+                color: transparent !important;
+            }
+
+            &:-moz-placeholder { /* Firefox 18- */
+                color: transparent !important;
+            }
+        }
+    }
+
+    .skeleton-title {
+        background: linear-gradient($skeleton-titles-color 1em, transparent 0) !important;
+        background-size: 25rem 1em;
+        background-repeat: no-repeat;
+        color: transparent !important;
+    }
+
+    .skeleton-button {
+        pointer-events: none !important;
+        box-shadow: none;
+        overflow: hidden;
+        background: transparent !important;
+
+        &:after {
+            background: $skeleton-element-color !important;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            border-radius: 0.15rem;
+        }
+    }
+
+    .skeleton-dropdown {
+        border: none !important;
+        margin-top: 1.75rem;
+        pointer-events: none !important;
+
+        .dropdown-button {
+            background: $skeleton-element-color;
+            margin-top: 0.3rem;
+            padding-top: 0.175rem !important;
+            color: transparent;
+
+            &:before, &:after {
+                display: none !important;
+                opacity: 0 !important;
+            }
+        }
+
+        .input-filled__inner, .input-bordered__inner {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+        }
+
+        .dropdown-button__value, .dropdown-button__arrow {
+            opacity: 0;
+        }
+
+        &:before, &:after, .input-helper, label, svg, .input-bordered__inner:before, .input-bordered__inner:after,
+        .input-filled__inner:before, .input-filled__inner:after {
             display: none !important;
             opacity: 0 !important;
         }
     }
 
-    .input-filled__inner, .input-bordered__inner{
-        margin-left:0 !important;
-        margin-right:0 !important;
+    .skeleton-hidden {
+        visibility: hidden !important;
     }
 
-    .dropdown-button__value, .dropdown-button__arrow {
-        opacity: 0;
-    }
-
-    &:before, &:after, .input-helper, label, svg, .input-bordered__inner:before, .input-bordered__inner:after,
-    .input-filled__inner:before, .input-filled__inner:after {
+    .skeleton-remove {
         display: none !important;
-        opacity: 0 !important;
     }
-}
-
-.skeleton-hidden{
-    visibility:hidden !important; 
-}
-
-.skeleton-remove{
-    display:none !important; 
 }
