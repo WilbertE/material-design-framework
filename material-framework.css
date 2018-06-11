@@ -3737,9 +3737,21 @@ html .date-picker__date-wrapper, body .date-picker__date-wrapper {
   background: rgba(207, 82, 96, 0.12); }
 
 .navigation-drawer__list .navigation-drawer__list-item--inset {
-  margin-left: 2.5em; }
+  margin-left: 1em; }
   .navigation-drawer__list .navigation-drawer__list-item--inset .list__button {
+    font-size: 0.95em;
+    margin: 8px; }
+
+.navigation-drawer__list .navigation-drawer__list-item--inset-2 {
+  margin-left: 2em; }
+  .navigation-drawer__list .navigation-drawer__list-item--inset-2 .list__button {
     font-size: 0.9em;
+    margin: 8px; }
+
+.navigation-drawer__list .navigation-drawer__list-item--inset-3 {
+  margin-left: 3em; }
+  .navigation-drawer__list .navigation-drawer__list-item--inset-3 .list__button {
+    font-size: 0.85em;
     margin: 8px; }
 
 html .navigation-drawer__header-title, body.tiny .navigation-drawer__header-title {
@@ -4354,58 +4366,52 @@ html .dialog__header, body .dialog__header {
   transition: transform 0.272s cubic-bezier(0, 0, 0.2, 1); }
 
 .skeleton .skeleton-lines {
-  color: transparent; }
+  color: transparent !important; }
   .skeleton .skeleton-lines.skeleton-lines--1 {
-    background: linear-gradient(#f4f4f4 1em, transparent 0);
-    background-position: 0 0.45rem;
-    background-size: 30rem 1em;
-    background-repeat: no-repeat;
-    max-height: 1.75rem; }
+    background: linear-gradient(#f4f4f4 1em, transparent 0) !important;
+    background-position: 0 0.45rem !important;
+    background-size: 30rem 1em !important;
+    background-repeat: no-repeat !important;
+    max-height: 1.75rem !important; }
   .skeleton .skeleton-lines.skeleton-lines--2 {
-    background: linear-gradient(#f4f4f4 1em, transparent 0);
-    background-position: 0 0.45rem;
-    background-size: 30rem 1em;
-    background-repeat: no-repeat;
-    max-height: 1.75rem; }
-  .skeleton .skeleton-lines.skeleton-lines--2 {
-    background: linear-gradient(#f4f4f4 1em, transparent 0), linear-gradient(#f4f4f4 1em, transparent 0);
-    background-position: 0 0.45rem, 0 2.25rem;
-    background-size: 30rem 1em;
-    background-repeat: no-repeat;
-    max-height: 3.6rem; }
+    background: linear-gradient(#f4f4f4 1em, transparent 0), linear-gradient(#f4f4f4 1em, transparent 0) !important;
+    background-position: 0 0.45rem, 0 2.25rem !important;
+    background-size: 30rem 1em !important;
+    background-repeat: no-repeat !important;
+    max-height: 3.6rem !important; }
   .skeleton .skeleton-lines.skeleton-lines--3 {
-    background: linear-gradient(#f4f4f4 1em, transparent 0), linear-gradient(#f4f4f4 1em, transparent 0), linear-gradient(#f4f4f4 1em, transparent 0), linear-gradient(#f4f4f4 1em, transparent 0);
-    background-position: 0 0.45rem, 0 2.25rem, 0 4.1rem;
-    background-size: 30rem 1em;
-    background-repeat: no-repeat;
-    min-height: 5.2rem; }
+    background: linear-gradient(#f4f4f4 1em, transparent 0), linear-gradient(#f4f4f4 1em, transparent 0), linear-gradient(#f4f4f4 1em, transparent 0), linear-gradient(#f4f4f4 1em, transparent 0) !important;
+    background-position: 0 0.45rem, 0 2.25rem, 0 4.1rem !important;
+    background-size: 30rem 1em !important;
+    background-repeat: no-repeat !important;
+    min-height: 5.2rem !important; }
   .skeleton .skeleton-lines.skeleton-lines--4 {
-    background: linear-gradient(#f4f4f4 1em, transparent 0), linear-gradient(#f4f4f4 1em, transparent 0), linear-gradient(#f4f4f4 1em, transparent 0), linear-gradient(#f4f4f4 1em, transparent 0);
-    background-position: 0 0.45rem, 0 2.25rem, 0 4.1rem, 0 5.9rem;
-    background-size: 30rem 1em;
-    background-repeat: no-repeat;
-    min-height: 7.1rem; }
+    background: linear-gradient(#f4f4f4 1em, transparent 0), linear-gradient(#f4f4f4 1em, transparent 0), linear-gradient(#f4f4f4 1em, transparent 0), linear-gradient(#f4f4f4 1em, transparent 0) !important;
+    background-position: 0 0.45rem, 0 2.25rem, 0 4.1rem, 0 5.9rem !important;
+    background-size: 30rem 1em !important;
+    background-repeat: no-repeat !important;
+    min-height: 7.1rem !important; }
   .skeleton .skeleton-lines.skeleton-lines--5 {
-    background: linear-gradient(#f4f4f4 1em, transparent 0), linear-gradient(#f4f4f4 1em, transparent 0), linear-gradient(#f4f4f4 1em, transparent 0), linear-gradient(#f4f4f4 1em, transparent 0), linear-gradient(#f4f4f4 1em, transparent 0);
-    background-position: 0 0.45rem, 0 2.25rem, 0 4.1rem, 0 5.9rem, 0 7.7rem;
-    background-size: 30rem 1em;
-    background-repeat: no-repeat;
-    min-height: 8.85rem; }
+    background: linear-gradient(#f4f4f4 1em, transparent 0), linear-gradient(#f4f4f4 1em, transparent 0), linear-gradient(#f4f4f4 1em, transparent 0), linear-gradient(#f4f4f4 1em, transparent 0), linear-gradient(#f4f4f4 1em, transparent 0) !important;
+    background-position: 0 0.45rem, 0 2.25rem, 0 4.1rem, 0 5.9rem, 0 7.7rem !important;
+    background-size: 30rem 1em !important;
+    background-repeat: no-repeat !important;
+    min-height: 8.85rem !important; }
 
 .skeleton .skeleton-image {
-  background: #f4f4f4; }
+  background: #f4f4f4 !important; }
 
 .skeleton .skeleton-input {
-  pointer-events: none;
-  background: #f4f4f4;
-  margin-top: 1.75rem; }
+  pointer-events: none !important;
+  background: #f4f4f4 !important;
+  margin-top: 1.75rem !important; }
   .skeleton .skeleton-input:before, .skeleton .skeleton-input:after, .skeleton .skeleton-input .input-helper, .skeleton .skeleton-input label, .skeleton .skeleton-input svg, .skeleton .skeleton-input .input-bordered__inner:before, .skeleton .skeleton-input .input-bordered__inner:after, .skeleton .skeleton-input .input-filled__inner:before, .skeleton .skeleton-input .input-filled__inner:after {
     display: none !important;
     opacity: 0 !important; }
   .skeleton .skeleton-input input {
     color: transparent !important;
-    margin-top: 0.3;
-    padding-top: 0; }
+    margin-top: 0.3 !important;
+    padding-top: 0 !important; }
     .skeleton .skeleton-input input::-webkit-input-placeholder {
       /* Chrome/Opera/Safari */
       color: transparent !important; }
@@ -4442,33 +4448,33 @@ html .dialog__header, body .dialog__header {
 
 .skeleton .skeleton-title {
   background: linear-gradient(#f4f4f4 1em, transparent 0) !important;
-  background-size: 25rem 1em;
-  background-repeat: no-repeat;
+  background-size: 25rem 1em !important;
+  background-repeat: no-repeat !important;
   color: transparent !important; }
 
 .skeleton .skeleton-button {
   pointer-events: none !important;
-  box-shadow: none;
-  overflow: hidden;
+  box-shadow: none !important;
+  overflow: hidden !important;
   background: transparent !important; }
   .skeleton .skeleton-button:after {
     background: #f4f4f4 !important;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    border-radius: 0.15rem; }
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    border-radius: 0.15rem !important; }
 
 .skeleton .skeleton-dropdown {
   border: none !important;
-  margin-top: 1.75rem;
+  margin-top: 1.75rem !important;
   pointer-events: none !important; }
   .skeleton .skeleton-dropdown .dropdown-button {
-    background: #f4f4f4;
-    margin-top: 0.3rem;
+    background: #f4f4f4 !important;
+    margin-top: 0.3rem !important;
     padding-top: 0.175rem !important;
-    color: transparent; }
+    color: transparent !important; }
     .skeleton .skeleton-dropdown .dropdown-button:before, .skeleton .skeleton-dropdown .dropdown-button:after {
       display: none !important;
       opacity: 0 !important; }

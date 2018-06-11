@@ -132,10 +132,28 @@ $prefixes: mobile tablet laptop pc;
 }
 
 .navigation-drawer__list .navigation-drawer__list-item--inset {
-    margin-left: 2.5em;
+    margin-left: 1em;
+
+    .list__button {
+        font-size: 0.95em;
+        margin: 8px;
+    }
+}
+
+.navigation-drawer__list .navigation-drawer__list-item--inset-2 {
+    margin-left: 2em;
 
     .list__button {
         font-size: 0.9em;
+        margin: 8px;
+    }
+}
+
+.navigation-drawer__list .navigation-drawer__list-item--inset-3 {
+    margin-left: 3em;
+
+    .list__button {
+        font-size: 0.85em;
         margin: 8px;
     }
 }
