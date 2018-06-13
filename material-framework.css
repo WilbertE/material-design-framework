@@ -3721,6 +3721,14 @@ html .date-picker__date-wrapper, body .date-picker__date-wrapper {
   .navigation-drawer__header + .navigation-drawer__hr {
     margin-top: -1.5rem; }
 
+.navigation-drawer__list .list__item--expandable.list__item--expanded,
+.navigation-drawer__list .list__item--expandable.list__item--expanded + .list__expand {
+  border-top: 0;
+  border-bottom: 0; }
+
+.navigation-drawer__list .list__expand {
+  padding: 0; }
+
 .navigation-drawer__list .flat-button.list__button svg {
   color: rgba(0, 0, 0, 0.54); }
 

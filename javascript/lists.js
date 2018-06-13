@@ -34,6 +34,7 @@
             }
 
             target.toggleClass("list__item--expanded");
+            target.next().find(".ripple").remove();
             if (target.hasClass("list__item--expanded")) {
                 target.next().slideDown(200);
                 if (prevDivider) prevDivider.css("display", "none");

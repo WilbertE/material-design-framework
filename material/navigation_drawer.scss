@@ -112,6 +112,16 @@ $prefixes: mobile tablet laptop pc;
     }
 }
 
+.navigation-drawer__list .list__item--expandable.list__item--expanded,
+.navigation-drawer__list .list__item--expandable.list__item--expanded + .list__expand {
+    border-top: 0;
+    border-bottom: 0;
+}
+
+.navigation-drawer__list .list__expand {
+    padding: 0;
+}
+
 .navigation-drawer__list .flat-button.list__button svg {
     color: $navigation-drawer-button-icon-color;
 }
