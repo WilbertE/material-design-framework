@@ -64,7 +64,7 @@
     }
 
     @if ($name == 'body-2') {
-        font-weight: 600;
+        font-weight: 400;
         @include fluid-property(font-size, map-get($breakpoints, mobile-max), map-get($breakpoints, laptop-max), $font-body-2-min-size, $font-body-2-max-size * $sizeScale);
         @include fluid-property(line-height, map-get($breakpoints, mobile-max), map-get($breakpoints, laptop-max),$font-body-2-min-line-height, $font-body-2-max-line-height * $sizeScale);
     }
@@ -160,4 +160,16 @@ p {
 
 a {
     text-decoration: none;
+}
+
+.align-left {
+    text-align: left;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.align-right {
+    text-align: right;
 }

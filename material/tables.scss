@@ -1,0 +1,139 @@
+﻿.table {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    font-size: 0.8em;
+    width: 100%;
+    margin-bottom: 0.8rem;
+}
+
+.table--bordered {
+    border: 1px solid $table-border-color;
+    border-radius: 0.25rem;
+    overflow: hidden;
+
+    .table__row:last-child {
+        border-bottom: none;
+    }
+}
+
+.table--fully-bordered {
+    border: 1px solid $table-border-color;
+
+    .table__row:last-child {
+        border-bottom: none;
+    }
+
+    .table__column {
+        border-right: 1px solid $table-border-color;
+
+        &:last-child {
+            border-right: none;
+        }
+    }
+}
+
+.table__head {
+    color: $table-head-text-color;
+    font-weight: 400;
+}
+
+.table__row {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    border-bottom: solid 1px $table-border-color;
+}
+
+.table__column {
+    display: flex;
+    flex-flow: row nowrap;
+    flex-grow: 1;
+    flex-basis: 0;
+    padding: 0.6rem 0.8rem;
+    word-break: break-word;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &.align-right {
+        justify-content: flex-end;
+    }
+
+    &.table__column--wrappable {
+        white-space: normal;
+    }
+}
+
+@for $i from 1 through 10 {
+    .table__column--size-#{$i} {
+        flex-grow: #{$i};
+    }
+}
+
+.table__column--border-right {
+    border-right: solid 1px $table-border-color;
+}
+
+.table__column--border-left {
+    border-left: solid 1px $table-border-color;
+}
+
+.table-footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -0.4rem;
+    align-items: center;
+    color: $table-footer-text-color;
+
+    > div:not(.button-icon):not(:last-child) {
+        margin-right: 1.5rem;
+    }
+
+    > div:not(.button-icon) {
+        font-size: 0.75em;
+    }
+
+    fieldset {
+        margin: 0;
+
+        .dropdown-button {
+            padding: 0;
+            margin-top: -0.15rem;
+            min-width: 0 !important;
+
+            .dropdown-button__value {
+                margin-right: 0.25rem;
+            }
+
+            &:after, &:before {
+                display: none;
+            }
+        }
+    }
+
+    .button-icon {
+        font-size: 1rem;
+    }
+}
+
+.table-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.4rem;
+}
+
+$sizes: ( ".tiny": 0.75, ".small": 0.85, "": 1 );
+
+@each $name, $value in $sizes {
+    html, body#{$name} {
+        .table-header__title {
+            @include text(body-2, $value);
+            color: $table-title-color;
+        }
+    }
+}
+
+.table-header__right {
+    margin-left: auto;
+}

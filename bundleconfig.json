@@ -19,7 +19,8 @@
       "javascript/ripple.js",
       "javascript/scrolling.js",
       "javascript/textfields.js",
-      "javascript/skeleton.js"
+      "javascript/skeleton.js",
+      "javascript/search_toggle.js"
     ]
   }
 ]

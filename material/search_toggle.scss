@@ -1,0 +1,57 @@
+﻿.search-toggle {
+    position: relative;
+    overflow: hidden;
+
+    .search-toggle__field {
+        margin: 0 0 0.1rem 0;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.171s ease-out;
+
+        input {
+            padding: .35rem 0 .25rem 0;
+        }
+    }
+
+    &.search-toggle--active .search-toggle__field {
+        transform: scaleX(1);
+    }
+
+    .search-toggle__trigger {
+        opacity: 1;
+        transition: opacity 0s 0.171s ease-out;
+    }
+
+    &.search-toggle--active .search-toggle__trigger {
+        opacity: 0;
+        transition: opacity 0s ease-out;
+        pointer-events: none;
+    }
+
+    fieldset {
+        margin-left: 2.5rem;
+    }
+
+    .search-toggle__close {
+        position: absolute;
+        left: 0rem;
+    }
+
+    .search-toggle__trigger, .search-toggle__loading {
+        position: absolute;
+        top: 0.5rem;
+        right: 0;
+        opacity: 1;
+    }
+
+    .search-toggle__loading {
+        right: 0.75rem;
+        top: 1.25rem;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    &.search-toggle--loading .search-toggle__loading {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,311 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta charset="utf-8" />
+    <link href="../refference.css" rel="stylesheet" />
+    <link href="../material-framework.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script src="../fontawsome/svg-with-js/js/fontawesome-all.js"></script>
+    <script src="../material-framework.js"></script>
+    <script src="../reference.js"></script>
+    <script>
+        $(function () {
+            $.mButtons();
+            $.mTextfields();
+            $(".search-toggle").mSearchToggle({
+                onKeyUp: function (toggle, data) {
+                    $(toggle).data("mSearchToggle").loading();
+                    setTimeout(function () {
+                        $(toggle).data("mSearchToggle").complete();
+                    }, 1000)
+                }
+            });
+            $("select").mDropdown();
+        });
+    </script>
+</head>
+<body>
+
+    <div class="titlebar text-headline shadow-4">
+        Tables
+        <div class="text-subheading-1">Making datasets organised</div>
+    </div>
+    <content class="m-body">
+
+        <ul class="index">
+            <li class="text-caption">Contents</li>
+            <li><a href="#table">Tables</a></li>
+            <li><a href="#bordered">Bordered</a></li>
+            <li><a href="#full-bordered">Fully bordered</a></li>
+            <li><a href="#table-tools">Table tools</a></li>
+        </ul>
+
+        <a name="table"><h1 class="text-title">Tables</h1></a>
+        <p class="readability">
+            Data tables display information in a way that’s easy to scan, so that users can look for patterns and insights.
+        </p>
+
+        <div class="table">
+            <div class="table__row table__header">
+                <div class="table__column table__column--size-1">#</div>
+                <div class="table__column table__column--size-4">Name</div>
+                <div class="table__column table__column--size-2 align-right">Wingspan</div>
+                <div class="table__column table__column--size-2 align-right">Weight</div>
+                <div class="table__column table__column--size-2">Flighted</div>
+            </div>
+            <div class="table__row">
+                <div class="table__column table__column--size-1">1.</div>
+                <div class="table__column table__column--size-4">Ostrich</div>
+                <div class="table__column table__column--size-2 align-right">104 kg</div>
+                <div class="table__column table__column--size-2 align-right">210 cm</div>
+                <div class="table__column table__column--size-2">No</div>
+            </div>
+            <div class="table__row">
+                <div class="table__column table__column--size-1">2.</div>
+                <div class="table__column table__column--size-4">Cassowary</div>
+                <div class="table__column table__column--size-2 align-right">90 kg</div>
+                <div class="table__column table__column--size-2 align-right">130 cm</div>
+                <div class="table__column table__column--size-2">No</div>
+            </div>
+            <div class="table__row">
+                <div class="table__column table__column--size-1">3.</div>
+                <div class="table__column table__column--size-4">Emu</div>
+                <div class="table__column table__column--size-2 align-right">33 kg</div>
+                <div class="table__column table__column--size-2 align-right">70 cm</div>
+                <div class="table__column table__column--size-2">No</div>
+            </div>
+            <div class="table__row">
+                <div class="table__column table__column--size-1">4.</div>
+                <div class="table__column table__column--size-4">Emperor Pinguinss</div>
+                <div class="table__column table__column--size-2 align-right">31.5 kg</div>
+                <div class="table__column table__column--size-2 align-right">46 cm</div>
+                <div class="table__column table__column--size-2">No</div>
+            </div>
+        </div>
+
+<pre><code class="html text-caption">&lt;div class=&quot;table&quot;&gt;
+    &lt;div class=&quot;table__row table__header&quot;&gt;
+        &lt;div class=&quot;table__column table__column--size-1&quot;&gt;#&lt;/div&gt;
+        &lt;div class=&quot;table__column table__column--size-4&quot;&gt;Name&lt;/div&gt;
+        &lt;div class=&quot;table__column table__column--size-2 align-right&quot;&gt;Wingspan&lt;/div&gt;
+        &lt;div class=&quot;table__column table__column--size-2 align-right&quot;&gt;Weight&lt;/div&gt;
+        &lt;div class=&quot;table__column table__column--size-2&quot;&gt;Flighted&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;table__row&quot;&gt;
+        &lt;div class=&quot;table__column table__column--size-1&quot;&gt;1.&lt;/div&gt;
+        &lt;div class=&quot;table__column table__column--size-4&quot;&gt;Ostrich&lt;/div&gt;
+        &lt;div class=&quot;table__column table__column--size-2 align-right&quot;&gt;104 kg&lt;/div&gt;
+        &lt;div class=&quot;table__column table__column--size-2 align-right&quot;&gt;210 cm&lt;/div&gt;
+        &lt;div class=&quot;table__column table__column--size-2&quot;&gt;No&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        <a name="bordered"><h1 class="text-title">Bordered</h1></a>
+        <p class="readability">
+            A bordered table
+        </p>
+        <div class="table table--bordered">
+            <div class="table__row table__header">
+                <div class="table__column table__column--size-1">#</div>
+                <div class="table__column table__column--size-4">Name</div>
+                <div class="table__column table__column--size-2 align-right">Wingspan</div>
+                <div class="table__column table__column--size-2 align-right">Weight</div>
+                <div class="table__column table__column--size-2">Flighted</div>
+            </div>
+            <div class="table__row">
+                <div class="table__column table__column--size-1">1.</div>
+                <div class="table__column table__column--size-4">Ostrich</div>
+                <div class="table__column table__column--size-2 align-right">104 kg</div>
+                <div class="table__column table__column--size-2 align-right">210 cm</div>
+                <div class="table__column table__column--size-2">No</div>
+            </div>
+            <div class="table__row">
+                <div class="table__column table__column--size-1">2.</div>
+                <div class="table__column table__column--size-4">Cassowary</div>
+                <div class="table__column table__column--size-2 align-right">90 kg</div>
+                <div class="table__column table__column--size-2 align-right">130 cm</div>
+                <div class="table__column table__column--size-2">No</div>
+            </div>
+            <div class="table__row">
+                <div class="table__column table__column--size-1">3.</div>
+                <div class="table__column table__column--size-4">Emu</div>
+                <div class="table__column table__column--size-2 align-right">33 kg</div>
+                <div class="table__column table__column--size-2 align-right">70 cm</div>
+                <div class="table__column table__column--size-2">No</div>
+            </div>
+            <div class="table__row">
+                <div class="table__column table__column--size-1">4.</div>
+                <div class="table__column table__column--size-4">Emperor Pinguinss</div>
+                <div class="table__column table__column--size-2 align-right">31.5 kg</div>
+                <div class="table__column table__column--size-2 align-right">46 cm</div>
+                <div class="table__column table__column--size-2">No</div>
+            </div>
+        </div>
+        <pre><code class="html text-caption">&lt;div class=&quot;table table--bordered&quot;&gt;
+    &lt;div class=&quot;table__row table__header&quot;&gt;
+        &lt;div class=&quot;table__column table__column--size-1&quot;&gt;#&lt;/div&gt;
+        &lt;div class=&quot;table__column table__column--size-4&quot;&gt;Name&lt;/div&gt;
+        &lt;div class=&quot;table__column table__column--size-2 align-right&quot;&gt;Wingspan&lt;/div&gt;
+        &lt;div class=&quot;table__column table__column--size-2 align-right&quot;&gt;Weight&lt;/div&gt;
+        &lt;div class=&quot;table__column table__column--size-2&quot;&gt;Flighted&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;table__row&quot;&gt;
+        &lt;div class=&quot;table__column table__column--size-1&quot;&gt;1.&lt;/div&gt;
+        &lt;div class=&quot;table__column table__column--size-4&quot;&gt;Ostrich&lt;/div&gt;
+        &lt;div class=&quot;table__column table__column--size-2 align-right&quot;&gt;104 kg&lt;/div&gt;
+        &lt;div class=&quot;table__column table__column--size-2 align-right&quot;&gt;210 cm&lt;/div&gt;
+        &lt;div class=&quot;table__column table__column--size-2&quot;&gt;No&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+
+        <a name="full-bordered"><h1 class="text-title">Fully bordered</h1></a>
+        <p class="readability">
+            A full bordered table has also borders on the column side.
+            Adding the class <span class="class--filled">.table__column--border-left</span> or <span class="class--filled">.table__column--border-right</span>
+            to a single cell will give only that cell a border.
+        </p>
+        <div class="table table--fully-bordered">
+            <div class="table__row table__header">
+                <div class="table__column table__column--size-1">#</div>
+                <div class="table__column table__column--size-4">Name</div>
+                <div class="table__column table__column--size-2 align-right">Wingspan</div>
+                <div class="table__column table__column--size-2 align-right">Weight</div>
+                <div class="table__column table__column--size-2">Flighted</div>
+            </div>
+            <div class="table__row">
+                <div class="table__column table__column--size-1">1.</div>
+                <div class="table__column table__column--size-4">Ostrich</div>
+                <div class="table__column table__column--size-2 align-right">104 kg</div>
+                <div class="table__column table__column--size-2 align-right">210 cm</div>
+                <div class="table__column table__column--size-2">No</div>
+            </div>
+            <div class="table__row">
+                <div class="table__column table__column--size-1">2.</div>
+                <div class="table__column table__column--size-4">Cassowary</div>
+                <div class="table__column table__column--size-2 align-right">90 kg</div>
+                <div class="table__column table__column--size-2 align-right">130 cm</div>
+                <div class="table__column table__column--size-2">No</div>
+            </div>
+            <div class="table__row">
+                <div class="table__column table__column--size-1">3.</div>
+                <div class="table__column table__column--size-4">Emu</div>
+                <div class="table__column table__column--size-2 align-right">33 kg</div>
+                <div class="table__column table__column--size-2 align-right">70 cm</div>
+                <div class="table__column table__column--size-2">No</div>
+            </div>
+            <div class="table__row">
+                <div class="table__column table__column--size-1">4.</div>
+                <div class="table__column table__column--size-4">Emperor Pinguinss</div>
+                <div class="table__column table__column--size-2 align-right">31.5 kg</div>
+                <div class="table__column table__column--size-2 align-right">46 cm</div>
+                <div class="table__column table__column--size-2">No</div>
+            </div>
+        </div>
+
+<pre><code class="html text-caption">&lt;div class=&quot;table table--fully-bordered&quot;&gt;
+    &lt;div class=&quot;table__row table__header&quot;&gt;
+        &lt;div class=&quot;table__column table__column--size-1&quot;&gt;#&lt;/div&gt;
+        &lt;div class=&quot;table__column table__column--size-4&quot;&gt;Name&lt;/div&gt;
+        &lt;div class=&quot;table__column table__column--size-2 align-right&quot;&gt;Wingspan&lt;/div&gt;
+        &lt;div class=&quot;table__column table__column--size-2 align-right&quot;&gt;Weight&lt;/div&gt;
+        &lt;div class=&quot;table__column table__column--size-2&quot;&gt;Flighted&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;table__row&quot;&gt;
+        &lt;div class=&quot;table__column table__column--size-1&quot;&gt;1.&lt;/div&gt;
+        &lt;div class=&quot;table__column table__column--size-4&quot;&gt;Ostrich&lt;/div&gt;
+        &lt;div class=&quot;table__column table__column--size-2 align-right&quot;&gt;104 kg&lt;/div&gt;
+        &lt;div class=&quot;table__column table__column--size-2 align-right&quot;&gt;210 cm&lt;/div&gt;
+        &lt;div class=&quot;table__column table__column--size-2&quot;&gt;No&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+
+        <a name="table-tools"><h1 class="text-title">Table tools</h1></a>
+        <p class="readability">
+            Tables can have tools for navigation and search.
+        </p>
+        <div class="table-header">
+            <div class="table-header__title">Biggest bird species</div>
+            <div class="table-header__right">
+                <div class="search-toggle">
+                    <div class="search-toggle__field">
+                        <div class="button-icon search-toggle__close" data-ripple="#cf5260">
+                            <i class="far fa-times"></i>
+                        </div>
+                        <fieldset>
+                            <input type="text" value="" />
+                        </fieldset>
+                    </div>
+                    <i class="far fa-spinner fa-pulse search-toggle__loading"></i>
+                    <div class="button-icon search-toggle__trigger" data-ripple="#cf5260">
+                        <i class="far fa-search"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="table table--bordered">
+            <div class="table__row table__head">
+                <div class="table__column table__column--size-1">#</div>
+                <div class="table__column table__column--size-4">Name</div>
+                <div class="table__column table__column--size-2 align-right">Wingspan</div>
+                <div class="table__column table__column--size-2 align-right">Weight</div>
+                <div class="table__column table__column--size-2">Flighted</div>
+            </div>
+            <div class="table__row">
+                <div class="table__column table__column--size-1">1.</div>
+                <div class="table__column table__column--size-4">Ostrich</div>
+                <div class="table__column table__column--size-2 align-right">104 kg</div>
+                <div class="table__column table__column--size-2 align-right">210 cm</div>
+                <div class="table__column table__column--size-2">No</div>
+            </div>
+            <div class="table__row">
+                <div class="table__column table__column--size-1">2.</div>
+                <div class="table__column table__column--size-4">Cassowary</div>
+                <div class="table__column table__column--size-2 align-right">90 kg</div>
+                <div class="table__column table__column--size-2 align-right">130 cm</div>
+                <div class="table__column table__column--size-2">No</div>
+            </div>
+            <div class="table__row">
+                <div class="table__column table__column--size-1">3.</div>
+                <div class="table__column table__column--size-4">Emu</div>
+                <div class="table__column table__column--size-2 align-right">33 kg</div>
+                <div class="table__column table__column--size-2 align-right">70 cm</div>
+                <div class="table__column table__column--size-2">No</div>
+            </div>
+            <div class="table__row">
+                <div class="table__column table__column--size-1">4.</div>
+                <div class="table__column table__column--size-4">Emperor Pinguinss</div>
+                <div class="table__column table__column--size-2 align-right">31.5 kg</div>
+                <div class="table__column table__column--size-2 align-right">46 cm</div>
+                <div class="table__column table__column--size-2">No</div>
+            </div>
+        </div>
+        <div class="table-footer">
+            <div class="amount-of-rows-prefix">Rows per page:</div>
+            <div class="amount-of-rows">
+                <fieldset>
+                    <select name="rows-per-page">
+                        <option value="10" selected="selected">10</option>
+                        <option value="20">20</option>
+                        <option value="30">30</option>
+                        <option value="40">50</option>
+                    </select>
+                </fieldset>
+            </div>
+            <div class="row-info">1-10 of 100</div>
+            <div class="button-icon" data-ripple="#cf5260">
+                <i class="far fa-angle-left"></i>
+            </div>
+            <div class="button-icon" data-ripple="#cf5260">
+                <i class="far fa-angle-right"></i>
+            </div>
+        </div>
+
+    </content>
+</body>
+</html>
