@@ -1,0 +1,152 @@
+﻿.card {
+    border-radius: 0.25rem;
+    padding: 0.8rem;
+    overflow: hidden;
+}
+
+.card--flat {
+    border: solid 1px $card-flat-border-color;
+    background-color: $card-flat-background-color;
+}
+
+.card__image {
+    display: block;
+    margin: 0 -0.8rem 0 -0.8rem;
+    max-width: calc(100% + 1.6rem);
+    width: calc(100% + 1.6rem);
+    object-fit: cover;
+}
+
+.card > .card__image:first-child {
+    margin-top: -0.8rem;
+    margin-bottom: 0.8rem;
+}
+
+$sizes: ( ".tiny": 0.75, ".small": 0.85, "": 1 );
+
+@each $name, $value in $sizes {
+    html, body#{$name} {
+        .card .card__title {
+            @include text(body-2, $value);
+            color: $card-title-color;
+            margin: 0 0 0.8rem 0;
+        }
+
+        .card .card__subtitle {
+
+            @include text(caption, $value);
+            margin: 0 0 0.8rem 0;
+            color: $card-subtitle-color;
+        }
+
+        .card__head .card__subtitle {
+            margin-bottom: 0;
+        }
+
+        .card__title + .card__subtitle {
+            margin-top: -0.8rem;
+        }
+    }
+}
+
+.card__buttons {
+    margin-left: -0.4rem;
+    margin-right: -0.4rem;
+    display: flex;
+
+    .button-icon {
+        color: $card-button-text-color;
+    }
+
+    .flat-button {
+        padding-left: 0.4rem;
+        padding-right: 0.4rem;
+    }
+
+    .flat-button, .button-icon {
+        margin-right: 0.4rem;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    .card__buttons__right {
+        margin-left: auto;
+        display: flex;
+    }
+
+    .no-touchevents & {
+        .flat-button, .button-icon {
+            &:hover {
+                background-color: $card-button-hover-background-color;
+            }
+        }
+    }
+}
+
+.card__divider {
+    border-top: solid 1px $menu-hr-border-color;
+    height: 0;
+    margin-bottom: 0.8rem;
+}
+
+.card__divider--full-width {
+    margin-left: -0.8rem;
+    margin-right: -0.8rem;
+}
+
+.card__head {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.8rem;
+
+
+    .card__head__image {
+        margin-right: 1rem;
+        align-self: start;
+        height: 1rem;
+        align-self: center;
+    }
+
+    .card__head__image--round {
+        height: 2.4rem;
+        width: 2.4rem;
+        border-radius: 0.15rem;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .card__head__right {
+        margin-left: auto;
+        display: flex;
+    }
+
+    .button-icon {
+        color: $card-button-head-text-color;
+    }
+
+    .no-touchevents & {
+        .flat-button, .button-icon {
+            &:hover {
+                background-color: $card-button-head-hover-background-color;
+            }
+        }
+    }
+}
+
+.card .list {
+    margin-left: -0.8rem;
+    margin-right: -0.8rem;
+    margin-bottom: 0rem;
+    
+
+    .list__item {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}

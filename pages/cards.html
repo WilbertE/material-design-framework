@@ -1,0 +1,336 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta charset="utf-8" />
+    <link href="../refference.css" rel="stylesheet" />
+    <link href="../material-framework.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script src="../fontawsome/svg-with-js/js/fontawesome-all.js"></script>
+    <script src="../material-framework.js"></script>
+    <script src="../reference.js"></script>
+    <script>
+        $(function () {
+            $.mButtons();
+        });
+    </script>
+</head>
+<body>
+
+    <div class="titlebar text-headline shadow-4">
+        Cards
+        <div class="text-subheading-1">Grouped content</div>
+    </div>
+    <content class="m-body">
+
+        <ul class="index">
+            <li class="text-caption">Contents</li>
+            <li><a href="#cards">Cards</a></li>
+            <li><a href="#flat-cards">Flat cards</a></li>
+            <li><a href="#different-content">Different content</a></li>
+        </ul>
+
+        <a name="cards"><h1 class="text-title">Cards</h1></a>
+        <p class="readability">
+            Cards contain content and actions about a single subject.
+        </p>
+
+        <div class="grid grid--gutter-40">
+            <div class="grid__cell grid__cell--6">
+
+                <div class="card shadow-1">
+                    <img class="card__image" src="landscape.jpeg" />
+                    <div class="card__title">This is a title</div>
+                    <div class="card__subtitle">This is a subtitle </div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam iaculis dolor a
+                        tellus cursus fermentum.
+                    </p>
+
+                    <div class="card__divider card__divider--full-width"></div>
+
+                    <div class="card__buttons">
+                        <button class="flat-button">Expand</button>
+                        <button class="flat-button">Cancel</button>
+                        <div class="card__buttons__right">
+                            <div class="button-icon" data-ripple="#cf5260">
+                                <i class="fab fa-facebook-f"></i>
+                            </div>
+                            <div class="button-icon" data-ripple="#cf5260">
+                                <i class="fa fa-share-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid__cell grid__cell--6">
+
+                <div class="card shadow-1">
+                    <div class="card__head">
+                        <img src="avatar.jpg" class="card__head__image card__head__image--round">
+                        <div class="card__head__content">
+                            <div class="card__title">This is a title</div>
+                            <div class="card__subtitle">This is a subtitle </div>
+                        </div>
+                        <div class="card__head__right">
+                            <div class="button-icon" data-ripple="#cf5260">
+                                <i class="fa fa-share-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <img class="card__image" src="landscape.jpeg" />
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam iaculis dolor a
+                        tellus cursus fermentum.
+                    </p>
+                    <div class="card__divider "></div>
+                    <div class="card__buttons">
+                        <div class="card__buttons__right">
+                            <button class="flat-button">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <pre><code class="html text-caption">&lt;div class=&quot;card shadow-1&quot;&gt;
+    &lt;img class=&quot;card__image&quot; src=&quot;landscape.jpeg&quot; /&gt;
+    &lt;div class=&quot;card__title&quot;&gt;This is a title&lt;/div&gt;
+    &lt;div class=&quot;card__subtitle&quot;&gt;This is a subtitle &lt;/div&gt;
+    &lt;p&gt;
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam iaculis dolor a
+        tellus cursus fermentum.
+    &lt;/p&gt;
+    &lt;div class=&quot;card__divider card__divider--full-width&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;card__buttons&quot;&gt;
+        &lt;button class=&quot;flat-button&quot;&gt;Expand&lt;/button&gt;
+        &lt;button class=&quot;flat-button&quot;&gt;Cancel&lt;/button&gt;
+        &lt;div class=&quot;card__buttons__right&quot;&gt;
+            &lt;div class=&quot;button-icon&quot; data-ripple=&quot;#cf5260&quot;&gt;
+                &lt;i class=&quot;fab fa-facebook-f&quot;&gt;&lt;/i&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;button-icon&quot; data-ripple=&quot;#cf5260&quot;&gt;
+                &lt;i class=&quot;fa fa-share-alt&quot;&gt;&lt;/i&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;card shadow-1&quot;&gt;
+    &lt;div class=&quot;card__head&quot;&gt;
+        &lt;img src=&quot;avatar.jpg&quot; class=&quot;card__head__image card__head__image--round&quot;&gt;
+        &lt;div class=&quot;card__head__content&quot;&gt;
+            &lt;div class=&quot;card__title&quot;&gt;This is a title&lt;/div&gt;
+            &lt;div class=&quot;card__subtitle&quot;&gt;This is a subtitle &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;card__head__right&quot;&gt;
+            &lt;div class=&quot;button-icon&quot; data-ripple=&quot;#cf5260&quot;&gt;
+                &lt;i class=&quot;fa fa-share-alt&quot;&gt;&lt;/i&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;img class=&quot;card__image&quot; src=&quot;landscape.jpeg&quot; /&gt;
+    &lt;p&gt;
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam iaculis dolor a
+        tellus cursus fermentum.
+    &lt;/p&gt;
+    &lt;div class=&quot;card__divider &quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;card__buttons&quot;&gt;
+        &lt;div class=&quot;card__buttons__right&quot;&gt;
+            &lt;button class=&quot;flat-button&quot;&gt;Close&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+
+        <a name="flat-cards"><h1 class="text-title">Flat cards</h1></a>
+        <p class="readability">
+            Flat cards don't have elevation but a border and sharp corners
+        </p>
+
+        <div class="grid grid--gutter-40" style="background: #f7f7f7; padding-top: 1rem;padding-bottom: 1rem;">
+            <div class="grid__cell grid__cell--6">
+
+                <div class="card card--flat">
+                    <div class="card__title">Latest actions</div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam iaculis dolor a
+                        tellus cursus fermentum.
+                    </p>
+
+                    <div class="card__divider"></div>
+
+                    <div class="card__buttons">
+                        <button class="flat-button">Expand</button>
+                        <button class="flat-button">Cancel</button>
+                        <div class="card__buttons__right">
+                            <div class="button-icon" data-ripple="#cf5260">
+                                <i class="fab fa-facebook-f"></i>
+                            </div>
+                            <div class="button-icon" data-ripple="#cf5260">
+                                <i class="fa fa-share-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid__cell grid__cell--6">
+
+                <div class="card card--flat">
+                    <div class="card__head">
+                        <img src="avatar.jpg" class="card__head__image card__head__image--round">
+                        <div class="card__head__content">
+                            <div class="card__title">This is a title</div>
+                            <div class="card__subtitle">This is a subtitle </div>
+                        </div>
+                        <div class="card__head__right">
+                            <div class="button-icon" data-ripple="#cf5260">
+                                <i class="fa fa-share-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam iaculis dolor a
+                        tellus cursus fermentum.
+                    </p>
+
+                    <div class="card__divider"></div>
+
+                    <div class="card__buttons">
+                        <button class="flat-button">Expand</button>
+                        <button class="flat-button">Cancel</button>
+                        <div class="card__buttons__right">
+                            <div class="button-icon" data-ripple="#cf5260">
+                                <i class="fab fa-facebook-f"></i>
+                            </div>
+                            <div class="button-icon" data-ripple="#cf5260">
+                                <i class="fa fa-share-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <pre><code class="html text-caption">&lt;div class=&quot;card card--flat&quot;&gt;
+    &lt;div class=&quot;card__title&quot;&gt;Latest actions&lt;/div&gt;
+    &lt;p&gt;
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam iaculis dolor a
+        tellus cursus fermentum.
+    &lt;/p&gt;
+    &lt;div class=&quot;card__divider&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;card__buttons&quot;&gt;
+        &lt;button class=&quot;flat-button&quot;&gt;Expand&lt;/button&gt;
+        &lt;button class=&quot;flat-button&quot;&gt;Cancel&lt;/button&gt;
+        &lt;div class=&quot;card__buttons__right&quot;&gt;
+            &lt;div class=&quot;button-icon&quot; data-ripple=&quot;#cf5260&quot;&gt;
+                &lt;i class=&quot;fab fa-facebook-f&quot;&gt;&lt;/i&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;button-icon&quot; data-ripple=&quot;#cf5260&quot;&gt;
+                &lt;i class=&quot;fa fa-share-alt&quot;&gt;&lt;/i&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;card card--flat&quot;&gt;
+    &lt;div class=&quot;card__head&quot;&gt;
+        &lt;img src=&quot;avatar.jpg&quot; class=&quot;card__head__image card__head__image--round&quot;&gt;
+        &lt;div class=&quot;card__head__content&quot;&gt;
+            &lt;div class=&quot;card__title&quot;&gt;This is a title&lt;/div&gt;
+            &lt;div class=&quot;card__subtitle&quot;&gt;This is a subtitle &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;card__head__right&quot;&gt;
+            &lt;div class=&quot;button-icon&quot; data-ripple=&quot;#cf5260&quot;&gt;
+                &lt;i class=&quot;fa fa-share-alt&quot;&gt;&lt;/i&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;p&gt;
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam iaculis dolor a
+        tellus cursus fermentum.
+    &lt;/p&gt;
+    &lt;div class=&quot;card__divider&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;card__buttons&quot;&gt;
+        &lt;button class=&quot;flat-button&quot;&gt;Expand&lt;/button&gt;
+        &lt;button class=&quot;flat-button&quot;&gt;Cancel&lt;/button&gt;
+        &lt;div class=&quot;card__buttons__right&quot;&gt;
+            &lt;div class=&quot;button-icon&quot; data-ripple=&quot;#cf5260&quot;&gt;
+                &lt;i class=&quot;fab fa-facebook-f&quot;&gt;&lt;/i&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;button-icon&quot; data-ripple=&quot;#cf5260&quot;&gt;
+                &lt;i class=&quot;fa fa-share-alt&quot;&gt;&lt;/i&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+
+        <a name="cards"><h1 class="text-title">Different content</h1></a>
+        <p class="readability">
+            Cards can have all kind of information
+        </p>
+
+        <div class="grid grid--gutter-40">
+            <div class="grid__cell grid__cell--6">
+
+                <div class="card shadow-1">
+                    <div class="card__title">Card with list items</div>
+                    <div class="card__divider"></div>
+
+                    <div class="list">
+                        <a class="list__item list__item--single-line" data-ripple="#cf5260">
+                            Single-line item
+                            <i class="far fa-angle-right list__icon list__icon--right"></i>
+                        </a>
+                        <a class="list__item list__item--single-line" data-ripple="#cf5260">
+                            Single-line item
+                            <i class="far fa-angle-right list__icon list__icon--right"></i>
+                        </a>
+                        <a class="list__item list__item--single-line" data-ripple="#cf5260">
+                            Single-line item
+                            <i class="far fa-angle-right list__icon list__icon--right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid__cell grid__cell--6">
+
+                <div class="card shadow-1">
+                    <div class="card__head">
+                        <img src="avatar.jpg" class="card__head__image card__head__image--round">
+                        <div class="card__head__content">
+                            <div class="card__title">This is a title</div>
+                            <div class="card__subtitle">This is a subtitle </div>
+                        </div>
+                        <div class="card__head__right">
+                            <div class="button-icon" data-ripple="#cf5260">
+                                <i class="fa fa-share-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <img class="card__image" src="landscape.jpeg" />
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam iaculis dolor a
+                        tellus cursus fermentum.
+                    </p>
+                    <div class="card__divider "></div>
+                    <div class="card__buttons">
+                        <div class="card__buttons__right">
+                            <button class="flat-button">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </content>
+</body>
+</html>

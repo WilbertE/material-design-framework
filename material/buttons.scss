@@ -21,7 +21,7 @@ $sizes: ( ".tiny": 0.75, ".small": 0.85, "": 1, );
     display: block;
     cursor: pointer;
     outline: none;
-    transition: box-shadow 200ms ease-out;
+    transition: box-shadow 200ms ease-out, opacity 367ms ease-out;
     overflow: hidden;
     line-height: inherit;
     white-space: nowrap;
@@ -38,6 +38,7 @@ $sizes: ( ".tiny": 0.75, ".small": 0.85, "": 1, );
         position: relative;
         top: -0.1em;
         margin: -1rem 0;
+        
     }
 
     &:before {
@@ -96,7 +97,10 @@ $sizes: ( ".tiny": 0.75, ".small": 0.85, "": 1, );
 }
 
 
-
+.raised-button--full-width, .flat-button--full-width {
+    display: block;
+    width: 100%;
+}
 
 .flat-button {
     background: transparent;
@@ -135,7 +139,7 @@ $sizes: ( ".tiny": 0.75, ".small": 0.85, "": 1, );
     width: 1rem;
     text-align: center;
     overflow: hidden;
-    padding: 0.5rem;
+    padding: 0.727rem 0.727rem;
     cursor: pointer;
     line-height: 1rem;
     position: relative;
