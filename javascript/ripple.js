@@ -28,7 +28,7 @@
         var width = $self.width() * 3;
         var maxTiming = 2000;
         var timing = Math.round(maxTiming - width);
-        if (timing < 500) timing = 500;
+        if (timing < 800) timing = 800;
 
         $('<div/>', {
             class: "rippleWave",

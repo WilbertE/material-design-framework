@@ -14,21 +14,25 @@
             $width: 100% / (12 / $i);
 
             @if($prefix == "") {
-                .grid__cell--#{$i} {
+                > .grid__cell--#{$i},
+                > .grid__row > .grid__cell--#{$i} {
                     width: calc(#{$width} - #{$padding}px * 2);
                 }
 
-                .grid__cell--offset-#{$i} {
+                > .grid__cell--offset-#{$i},
+                > .grid__row > .grid__cell--offset-#{$i} {
                     margin-left: calc(#{$width} - #{$padding}px * 2);
                 }
             }
             @else {
                 @include responsive(#{$prefix}up) {
-                    .grid__cell--#{$prefix}#{$i} {
+                    > .grid__cell--#{$prefix}#{$i},
+                    > .grid__row > .grid__cell--#{$prefix}#{$i} {
                         width: calc(#{$width} - #{$padding}px * 2);
                     }
 
-                    .grid__cell--#{$prefix}offset-#{$i} {
+                    > .grid__cell--#{$prefix}offset-#{$i},
+                    > .grid__row > .grid__cell--#{$prefix}offset-#{$i} {
                         margin-left: calc(#{$width} - #{$padding}px * 2);
                     }
                 }
@@ -52,7 +56,9 @@
     margin-right: 4px;
 }
 
-@include grid-sizes(4);
+.grid {
+    @include grid-sizes(4);
+}
 
 $paddings: 8 12 20;
 
@@ -63,7 +69,7 @@ $paddings: 8 12 20;
         margin-left: -#{$padding}px;
         margin-right: -#{$padding}px;
 
-        .grid__cell {
+        > .grid__cell, > .grid__row > .grid__cell {
             margin-left: #{$padding}px;
             margin-right: #{$padding}px;
             width: calc(100% - #{$padding}px * 2);
@@ -161,7 +167,7 @@ $prefixes: mobile tablet laptop pc;
 
 @each $prefix in $prefixes {
     @include responsive($prefix) {
-        .grid__row--#{$prefix}-column-reverse {
+        .grid > .grid__row--#{$prefix}-column-reverse {
             flex-direction: column-reverse;
         }
 

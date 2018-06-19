@@ -1,4 +1,4 @@
-﻿@import url('https://fonts.googleapis.com/css?family=Roboto:300,600');
+﻿@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,600');
 
 @function strip-unit($value) {
     @return $value / ($value * 0 + 1);
