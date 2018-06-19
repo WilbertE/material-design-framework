@@ -139,7 +139,7 @@ $sizes: ( ".tiny": 0.75, ".small": 0.85, "": 1 );
     margin-left: -0.8rem;
     margin-right: -0.8rem;
     margin-bottom: 0rem;
-    
+
 
     .list__item {
         padding-left: 0.5rem;
@@ -149,4 +149,8 @@ $sizes: ( ".tiny": 0.75, ".small": 0.85, "": 1 );
     &:last-child {
         margin-bottom: 0;
     }
+}
+
+.card .table-header {
+    margin-top: -0.8rem;
 }

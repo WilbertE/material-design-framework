@@ -4749,6 +4749,9 @@ html .card__title + .card__subtitle, body .card__title + .card__subtitle {
   .card .list:last-child {
     margin-bottom: 0; }
 
+.card .table-header {
+  margin-top: -0.8rem; }
+
 .table {
   display: flex;
   flex-flow: column nowrap;
@@ -4859,8 +4862,7 @@ html .card__title + .card__subtitle, body .card__title + .card__subtitle {
 
 .table-header {
   display: flex;
-  align-items: center;
-  margin-bottom: 0.4rem; }
+  align-items: center; }
 
 html .table-header__title, body.tiny .table-header__title {
   font-weight: 400;

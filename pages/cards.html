@@ -16,6 +16,16 @@
     <script>
         $(function () {
             $.mButtons();
+
+            $(".search-toggle").mSearchToggle({
+                onKeyUp: function (toggle, data) {
+                    $(toggle).data("mSearchToggle").loading();
+                    setTimeout(function () {
+                        $(toggle).data("mSearchToggle").complete();
+                    }, 1000)
+                }
+            });
+            $("select").mDropdown();
         });
     </script>
 </head>
@@ -303,29 +313,84 @@
             <div class="grid__cell grid__cell--6">
 
                 <div class="card shadow-1">
-                    <div class="card__head">
-                        <img src="avatar.jpg" class="card__head__image card__head__image--round">
-                        <div class="card__head__content">
-                            <div class="card__title">This is a title</div>
-                            <div class="card__subtitle">This is a subtitle </div>
-                        </div>
-                        <div class="card__head__right">
-                            <div class="button-icon" data-ripple="#cf5260">
-                                <i class="fa fa-share-alt"></i>
+
+                    <div class="table-header">
+                        <div class="table-header__title">Biggest bird species</div>
+                        <div class="table-header__right">
+                            <div class="search-toggle">
+                                <div class="search-toggle__field">
+                                    <div class="button-icon search-toggle__close" data-ripple="#cf5260">
+                                        <i class="far fa-times"></i>
+                                    </div>
+                                    <fieldset>
+                                        <input type="text" value="" />
+                                    </fieldset>
+                                </div>
+                                <i class="far fa-spinner fa-pulse search-toggle__loading"></i>
+                                <div class="button-icon search-toggle__trigger" data-ripple="#cf5260">
+                                    <i class="far fa-search"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <img class="card__image" src="landscape.jpeg" />
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam iaculis dolor a
-                        tellus cursus fermentum.
-                    </p>
-                    <div class="card__divider "></div>
-                    <div class="card__buttons">
-                        <div class="card__buttons__right">
-                            <button class="flat-button">Close</button>
+                    <div class="table">
+                        <div class="table__row table__head">
+                            <div class="table__column table__column--size-1">#</div>
+                            <div class="table__column table__column--size-4">Name</div>
+                            <div class="table__column table__column--size-2 align-right">Wingspan</div>
+                            <div class="table__column table__column--size-2 align-right">Weight</div>
+                            <div class="table__column table__column--size-2">Flighted</div>
+                        </div>
+                        <div class="table__row">
+                            <div class="table__column table__column--size-1">1.</div>
+                            <div class="table__column table__column--size-4">Ostrich</div>
+                            <div class="table__column table__column--size-2 align-right">104 kg</div>
+                            <div class="table__column table__column--size-2 align-right">210 cm</div>
+                            <div class="table__column table__column--size-2">No</div>
+                        </div>
+                        <div class="table__row">
+                            <div class="table__column table__column--size-1">2.</div>
+                            <div class="table__column table__column--size-4">Cassowary</div>
+                            <div class="table__column table__column--size-2 align-right">90 kg</div>
+                            <div class="table__column table__column--size-2 align-right">130 cm</div>
+                            <div class="table__column table__column--size-2">No</div>
+                        </div>
+                        <div class="table__row">
+                            <div class="table__column table__column--size-1">3.</div>
+                            <div class="table__column table__column--size-4">Emu</div>
+                            <div class="table__column table__column--size-2 align-right">33 kg</div>
+                            <div class="table__column table__column--size-2 align-right">70 cm</div>
+                            <div class="table__column table__column--size-2">No</div>
+                        </div>
+                        <div class="table__row">
+                            <div class="table__column table__column--size-1">4.</div>
+                            <div class="table__column table__column--size-4">Emperor Pinguinss</div>
+                            <div class="table__column table__column--size-2 align-right">31.5 kg</div>
+                            <div class="table__column table__column--size-2 align-right">46 cm</div>
+                            <div class="table__column table__column--size-2">No</div>
                         </div>
                     </div>
+                    <div class="table-footer">
+                        <div class="amount-of-rows-prefix">Rows per page:</div>
+                        <div class="amount-of-rows">
+                            <fieldset>
+                                <select name="rows-per-page">
+                                    <option value="10" selected="selected">10</option>
+                                    <option value="20">20</option>
+                                    <option value="30">30</option>
+                                    <option value="40">50</option>
+                                </select>
+                            </fieldset>
+                        </div>
+                        <div class="row-info">1-10 of 100</div>
+                        <div class="button-icon" data-ripple="#cf5260">
+                            <i class="far fa-angle-left"></i>
+                        </div>
+                        <div class="button-icon" data-ripple="#cf5260">
+                            <i class="far fa-angle-right"></i>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
