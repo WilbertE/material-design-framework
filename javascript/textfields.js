@@ -73,7 +73,6 @@
             $fieldset.on("animationend", function () { $fieldset.removeClass("fieldset--shake"); })
             $helper.text(errorMessage);
             addIcon("error", "fas fa-exclamation-circle");
-            console.log("ADDERR", $fieldset);
 
         });
 

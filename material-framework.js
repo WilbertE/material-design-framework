@@ -7418,7 +7418,6 @@ $.mTextfields = function () {
             $fieldset.on("animationend", function () { $fieldset.removeClass("fieldset--shake"); })
             $helper.text(errorMessage);
             addIcon("error", "fas fa-exclamation-circle");
-            console.log("ADDERR", $fieldset);
 
         });
 
@@ -7554,7 +7553,7 @@ $.mTextfields = function () {
         init: function () {
 
             //Transform images
-            this.$element.find(".skeleton-image").each(function () {
+            this.$element.find(".skeleton-image, .sub-skeleton-image").each(function () {
 
                 //Still download image
                 var preloader = $("<div />", { "class": "preloader", "style": "height:0; width:0; visibility:hidden; overflow-hidden; position:absolute; top: -99999px; left: -9999px;" });
@@ -7573,9 +7572,6 @@ $.mTextfields = function () {
         },
 
         reveal: function () {
-
-
-
             this.$element.find(".skeleton-image").each(function () {
 
                 //Change image to transparent image
@@ -7593,7 +7589,28 @@ $.mTextfields = function () {
             this.$element.find(".skeleton-button").removeClass("skeleton-button");
             this.$element.find(".skeleton-dropdown").removeClass("skeleton-dropdown");
             this.$element.removeClass("skeleton");
-            this.$element.find("skeleton").removeClass("skeleton");
+            this.$element.find(".skeleton").removeClass("skeleton");
+        },
+
+        revealsub: function () {
+            this.$element.find(".sub-skeleton-image").each(function () {
+
+                //Change image to transparent image
+                $(this).attr("src", $(this).attr("data-src"))
+                    .css({ "width": "", "height": "" })
+                    .removeAttr("data-src");
+            });
+
+            this.$element.find(".sub-skeleton-title").removeClass("skeleton-title");
+            this.$element.find(".sub-skeleton-lines").removeClass(function (index, className) {
+                return (className.match(/(^|\s)skeleton-\S+/g) || []).join(' ');
+            });
+            this.$element.find(".sub-skeleton-textarea").removeClass("skeleton-textarea");
+            this.$element.find(".sub-skeleton-input").removeClass("skeleton-input");
+            this.$element.find(".sub-skeleton-button").removeClass("skeleton-button");
+            this.$element.find(".sub-skeleton-dropdown").removeClass("skeleton-dropdown");
+            this.$element.removeClass("sub-skeleton");
+            this.$element.find(".sub-skeleton").removeClass("sub-skeleton");
         }
 
 

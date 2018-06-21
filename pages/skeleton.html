@@ -32,11 +32,14 @@
 
         <ul class="index">
             <li class="text-caption">Contents</li>
-            <li><a href="#dropdowns">Dropdown buttons</a></li>
+            <li><a href="#skeleton-lines">Skeleton lines</a></li>
+            <li><a href="#skeleton-images">Skeleton images</a></li>
+            <li><a href="#skeleton-components">Skeleton components</a></li>
+            <li><a href="#subskeleton">Subskeleton</a></li>
         </ul>
 
 
-        <a name="dropdowns"><h1 class="text-title">Skeleton lines</h1></a>
+        <a name="skeleton-lines"><h1 class="text-title">Skeleton lines</h1></a>
         <p class="readability">
             Skeletons are wireframes that organise the page when the content is still loading. When the content is loaded, the skeleton will be replaced by it.
             To create a div with skeleton lines use the class <span class="class--filled">.skeleton-lines .skeleton-lines--1</span> where the number is the amount of lines.<br />
@@ -57,7 +60,7 @@
             <button class="raised-button" onclick="$('.skeleton-lines-example').mSkeleton('reveal');">Reveal</button>
         </div>
 
-        <a name="dropdowns"><h1 class="text-title">Skeleton images</h1></a>
+        <a name="skeleton-images"><h1 class="text-title">Skeleton images</h1></a>
         <p class="skeleton-image-example skeleton">
             Image skeletons are images with a filled background. The class <span class="class--filled">.skeleton-image</span> will make that happen.
 
@@ -66,7 +69,7 @@
         <button class="raised-button" onclick="$('.skeleton-image-example').mSkeleton('reveal');">Reveal</button>
 
         <div class="skeleton-input-example skeleton">
-            <a name="dropdowns"><h1 class="text-title">Skeleton components</h1></a>
+            <a name="skeleton-components"><h1 class="text-title">Skeleton components</h1></a>
             <p>
                 Every component has a skeleton class.
             </p>
@@ -98,10 +101,33 @@
                 <label for="input-label">Label</label>
             </fieldset>
 
+            <div class="grid">
+                <div class="grid__cell grid__cell--tablet-4">
+
+                    <div class="list skeleton-list list--bordered" style="max-width: 381px;">
+                        <a class="list__item list__item--single-line" data-ripple="#cf5260">
+                            Single-line item
+                            <i class="far fa-angle-right list__icon list__icon--right"></i>
+                        </a>
+                        <a class="list__item list__item--single-line" data-ripple="#cf5260">
+                            Single-line item
+                            <i class="far fa-angle-right list__icon list__icon--right"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+
         </div>
         <button class="raised-button margin-top-40" onclick="$('.skeleton-input-example').mSkeleton('reveal');">Reveal</button>
 
-
+        <a name="sub-skeleton"><h1 class="text-title">Subskeletons</h1></a>
+        <p>
+            Subskeletons can be nested in skeletons. When the main skeleton is revealed the subskeleton keeps its state.
+            All classes in a subskeleton have to be prefixed by 'sub-'. So .skeleton will be <span class="class--filled">sub-skeleton</span>.
+            To reveal the subskeleton the method <span class="js--filled">$(selector).mSkeleton('subreveal');</span> should be called
+        </p>
 
     </content>
 </body>

@@ -1,8 +1,9 @@
-﻿.skeleton {
-    .skeleton-lines {
+﻿.skeleton, .sub-skeleton {
+    .skeleton-lines, .sub-skeleton-lines {
         color: transparent !important;
 
-        &.skeleton-lines--1 {
+        &.skeleton-lines--1,
+        &.sub-skeleton-lines--1 {
             background: linear-gradient( $skeleton-lines-color 1em, transparent 0) !important;
             background-position: 0 0.45rem !important;
             background-size: 30rem 1em !important;
@@ -10,7 +11,8 @@
             max-height: 1.75rem !important;
         }
 
-        &.skeleton-lines--2 {
+        &.skeleton-lines--2,
+        &.sub-skeleton-lines--2 {
             background: linear-gradient( $skeleton-lines-color 1em, transparent 0), linear-gradient( $skeleton-lines-color 1em, transparent 0) !important;
             background-position: 0 0.45rem, 0 2.25rem !important;
             background-size: 30rem 1em !important;
@@ -18,7 +20,8 @@
             max-height: 3.6rem !important;
         }
 
-        &.skeleton-lines--3 {
+        &.skeleton-lines--3,
+        &.sub-skeleton-lines--3 {
             background: linear-gradient( $skeleton-lines-color 1em, transparent 0), linear-gradient( $skeleton-lines-color 1em, transparent 0), linear-gradient( $skeleton-lines-color 1em, transparent 0), linear-gradient( $skeleton-lines-color 1em, transparent 0) !important;
             background-position: 0 0.45rem, 0 2.25rem, 0 4.1rem !important;
             background-size: 30rem 1em !important;
@@ -26,7 +29,8 @@
             min-height: 5.2rem !important;
         }
 
-        &.skeleton-lines--4 {
+        &.skeleton-lines--4,
+        &.sub-skeleton-lines--4 {
             background: linear-gradient( $skeleton-lines-color 1em, transparent 0), linear-gradient( $skeleton-lines-color 1em, transparent 0), linear-gradient( $skeleton-lines-color 1em, transparent 0), linear-gradient( $skeleton-lines-color 1em, transparent 0) !important;
             background-position: 0 0.45rem, 0 2.25rem, 0 4.1rem, 0 5.9rem !important;
             background-size: 30rem 1em !important;
@@ -34,8 +38,9 @@
             min-height: 7.1rem !important;
         }
 
-        &.skeleton-lines--5 {
-            background: linear-gradient( $skeleton-lines-color 1em, transparent 0), linear-gradient( $skeleton-lines-color 1em, transparent 0), linear-gradient( $skeleton-lines-color 1em, transparent 0), linear-gradient( $skeleton-lines-color 1em, transparent 0), linear-gradient( $skeleton-lines-color 1em, transparent 0) !important ;
+        &.skeleton-lines--5,
+        &.sub-skeleton-lines--5 {
+            background: linear-gradient( $skeleton-lines-color 1em, transparent 0), linear-gradient( $skeleton-lines-color 1em, transparent 0), linear-gradient( $skeleton-lines-color 1em, transparent 0), linear-gradient( $skeleton-lines-color 1em, transparent 0), linear-gradient( $skeleton-lines-color 1em, transparent 0) !important;
             background-position: 0 0.45rem, 0 2.25rem, 0 4.1rem, 0 5.9rem, 0 7.7rem !important;
             background-size: 30rem 1em !important;
             background-repeat: no-repeat !important;
@@ -43,11 +48,13 @@
         }
     }
 
-    .skeleton-image {
+    .skeleton-image,
+    .sub-skeleton-image {
         background: $skeleton-image-background-color !important;
     }
 
-    .skeleton-input {
+    .skeleton-input,
+    .sub-skeleton-input {
         pointer-events: none !important;
         background: $skeleton-element-color !important;
         margin-top: 1.75rem !important;
@@ -80,7 +87,8 @@
         }
     }
 
-    .skeleton-textarea {
+    .skeleton-textarea,
+    .sub-skeleton-textarea {
         background: $skeleton-element-color;
         border: none !important;
 
@@ -110,14 +118,16 @@
         }
     }
 
-    .skeleton-title {
+    .skeleton-title,
+    .sub-skeleton-title {
         background: linear-gradient($skeleton-titles-color 1em, transparent 0) !important;
         background-size: 25rem 1em !important;
         background-repeat: no-repeat !important;
         color: transparent !important;
     }
 
-    .skeleton-button {
+    .skeleton-button,
+    .sub-skeleton-button {
         pointer-events: none !important;
         box-shadow: none !important;
         overflow: hidden !important;
@@ -134,7 +144,8 @@
         }
     }
 
-    .skeleton-dropdown {
+    .skeleton-dropdown,
+    .sub-skeleton-dropdown {
         border: none !important;
         margin-top: 1.75rem !important;
         pointer-events: none !important;
@@ -167,11 +178,30 @@
         }
     }
 
-    .skeleton-hidden {
+    .skeleton-list {
+        pointer-events: none;
+
+        .list__item {
+            color: transparent !important;
+            background: linear-gradient($skeleton-element-color 1em, transparent 0) !important;
+            background-position: 0.75rem 1.25rem !important;
+            background-size: 10rem 1em !important;
+            background-repeat: no-repeat !important;
+            max-height: 1.75rem !important;
+
+            .fa-angle-right {
+                color: $skeleton-element-color !important;
+            }
+        }
+    }
+
+    .skeleton-hidden,
+    .sub-skeleton-hidden {
         visibility: hidden !important;
     }
 
-    .skeleton-remove {
+    .skeleton-remove,
+    .sub-skeleton-remove {
         display: none !important;
     }
 }
