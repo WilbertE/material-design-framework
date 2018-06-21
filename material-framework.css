@@ -3255,7 +3255,7 @@ fieldset {
     color: inherit;
     transition: color 176ms ease-out; }
   fieldset .function-icon {
-    margin-top: -0.75rem; }
+    margin-top: -1rem; }
   fieldset.fieldset--disabled .function-icon {
     opacity: 0.38; }
   fieldset.fieldset--function-icon .input-error-icon, fieldset.fieldset--function-icon .input-valid-icon, fieldset.fieldset--function-icon .input-loading-icon {
