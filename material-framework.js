@@ -7456,10 +7456,10 @@ $.mTextfields = function () {
                     $input.data("error")();
                     return false;
                 }
-            } else if ($input.is(":invalid")) {
+            } else if ($input.is(":invalid") || ($input.val() == "" && forced == true)) {
                 $input.data("error")();
                 return false;
-            } else if ($input.is(":valid")) {
+            } else if ($input.is(":valid") && $input.val() != "") {
                 $input.data("valid")();
                 return true;
             }
