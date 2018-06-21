@@ -60,6 +60,9 @@
             this.$element.find(".skeleton-dropdown").removeClass("skeleton-dropdown");
             this.$element.removeClass("skeleton");
             this.$element.find(".skeleton").removeClass("skeleton");
+            this.$element.find(".skeleton-list").removeClass("skeleton-list");
+            this.$element.find(".skeleton-loader").removeClass("skeleton-loader");
+            this.$element.removeClass("skeleton-loader");
         },
 
         revealsub: function () {
@@ -81,6 +84,9 @@
             this.$element.find(".sub-skeleton-dropdown").removeClass("skeleton-dropdown");
             this.$element.removeClass("sub-skeleton");
             this.$element.find(".sub-skeleton").removeClass("sub-skeleton");
+            this.$element.find(".sub-skeleton-list").removeClass("sub-skeleton");
+            this.$element.find(".sub-skeleton-loader").removeClass("skeleton-loader");
+            this.$element.removeClass("sub-skeleton-loader");
         }
 
 
