@@ -15,6 +15,8 @@
             this.init();
         } else if (options == "reveal") {
             this.reveal();
+        } else if (options == "revealsub") {
+            this.revealsub();
         }
     }
 
@@ -58,11 +60,11 @@
             this.$element.find(".skeleton-input").removeClass("skeleton-input");
             this.$element.find(".skeleton-button").removeClass("skeleton-button");
             this.$element.find(".skeleton-dropdown").removeClass("skeleton-dropdown");
-            this.$element.removeClass("skeleton");
             this.$element.find(".skeleton").removeClass("skeleton");
             this.$element.find(".skeleton-list").removeClass("skeleton-list");
             this.$element.find(".skeleton-loader").removeClass("skeleton-loader");
-            this.$element.removeClass("skeleton-loader");
+            this.$element.removeClass("skeleton-loader skeleton-title skeleton-lines skeleton-textarea skeleton-input skeleton-button skeleton-dropdown "+
+                " skeleton skeleton-list skeleton-loader");
         },
 
         revealsub: function () {
@@ -82,11 +84,11 @@
             this.$element.find(".sub-skeleton-input").removeClass("skeleton-input");
             this.$element.find(".sub-skeleton-button").removeClass("skeleton-button");
             this.$element.find(".sub-skeleton-dropdown").removeClass("skeleton-dropdown");
-            this.$element.removeClass("sub-skeleton");
             this.$element.find(".sub-skeleton").removeClass("sub-skeleton");
             this.$element.find(".sub-skeleton-list").removeClass("sub-skeleton");
             this.$element.find(".sub-skeleton-loader").removeClass("skeleton-loader");
-            this.$element.removeClass("sub-skeleton-loader");
+            this.$element.removeClass("sub-skeleton-loader sub-skeleton-title sub-skeleton-lines sub-skeleton-textarea sub-skeleton-input sub-skeleton-button sub-skeleton-dropdown " +
+                " sub-skeleton sub-skeleton-list sub-skeleton-loader");
         }
 
 
@@ -103,36 +105,3 @@
     };
 
 })(jQuery, window, document);
-
-
-$.mSkeleton = {
-
-    start: function (section) {
-
-        if (section == null) section = "body";
-
-        //Transform images
-        $(section + " .skeleton-image").each(function () {
-
-            //Change image to transparent image
-            $(this).attr("data-src", $(this).attr("src"))
-                .css({ "width": $(this).width(), "height": $(this).height() })
-                .attr("src", "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=");
-        });
-
-        $(section).addClass("skeleton");
-
-        //Inputs
-        $(section + " fieldset input").closest("fieldset").addClass("skeleton-input");
-
-        //Textarea
-        $(section + " fieldset textarea").closest("fieldset").addClass("skeleton-textarea");
-
-        //Button
-        $(".flat-button, .raised-button").addClass("skeleton-button");
-
-        //Dropdown
-        $("fieldset select").closest("fieldset").addClass("skeleton-dropdown");
-    }
-
-}
