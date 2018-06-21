@@ -5409,6 +5409,9 @@ html .table-header__title, body .table-header__title {
     transition: opacity 0.15s ease-out; }
   .checkbox input[type='checkbox']:checked + .checkbox-selector:after {
     opacity: 1; }
+  .checkbox input[type='checkbox']:focus + .checkbox-selector:before {
+    border-color: #6200ee;
+    box-shadow: inset 0 0 0.1rem #6200ee; }
 
 .radio {
   position: relative;
@@ -5456,4 +5459,7 @@ html .table-header__title, body .table-header__title {
     border-radius: 50%; }
   .radio input[type='radio']:checked + .radio-selector:after {
     opacity: 1; }
+  .radio input[type='radio']:focus + .radio-selector:before {
+    border-color: #6200ee;
+    box-shadow: inset 0 0 0.1rem #6200ee; }
 
