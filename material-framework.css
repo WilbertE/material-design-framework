@@ -5051,7 +5051,8 @@ html .dialog__header, body .dialog__header {
 .card {
   border-radius: 0.25rem;
   padding: 0.8rem 1.2rem;
-  overflow: hidden; }
+  overflow: hidden;
+  margin-bottom: 1.2rem; }
 
 .card--flat {
   border: solid 1px #e4e4e4;
