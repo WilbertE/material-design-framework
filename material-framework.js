@@ -7418,6 +7418,8 @@ $.mTextfields = function () {
             $fieldset.on("animationend", function () { $fieldset.removeClass("fieldset--shake"); })
             $helper.text(errorMessage);
             addIcon("error", "fas fa-exclamation-circle");
+            console.log("ADDERR", $fieldset);
+
         });
 
         $input.data("valid", function () {
@@ -7440,6 +7442,28 @@ $.mTextfields = function () {
 
         });
 
+        $input.data("validate", function (forced) {
+            var pattern = $input.attr("pattern");
+
+            if (pattern != null) {
+                var regex = new RegExp(pattern);
+                var valid = regex.test($input.val());
+
+                if (valid) {
+                    $input.data("valid")();
+                    return true;
+                } else if ($input.val() != "" || forced == true) {
+                    $input.data("error")();
+                    return false;
+                }
+            } else if ($input.is(":invalid")) {
+                $input.data("error")();
+                return false;
+            } else if ($input.is(":valid")) {
+                $input.data("valid")();
+                return true;
+            }
+        })
 
         $input.on("focus", function () {
             $input.attr("data-ts", Date.now());
@@ -7455,21 +7479,7 @@ $.mTextfields = function () {
             }
 
             if ($input.hasClass("input--validate")) {
-                var pattern = $input.attr("pattern");
-
-                if (pattern != null) {
-                    var regex = new RegExp(pattern);
-                    var valid = regex.test($input.val());
-                    if (valid) {
-                        $input.data("valid")();
-                    } else if ($input.val() != "") {
-                        $input.data("error")();
-                    }
-                } else if ($input.is(":invalid")) {
-                    $input.data("error")();
-                } else if ($input.is(":valid")) {
-                    $input.data("valid")();
-                }
+                $input.data("validate")();
             }
         });
 
@@ -7492,6 +7502,7 @@ $.mTextfields = function () {
         observer.observe($input.get(0), {
             attributes: true
         });
+
 
 
         $fieldset.on("click", function (e) {

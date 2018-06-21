@@ -41,6 +41,11 @@
                     }
                 }, 1500);
             });
+
+            $("#validate-programmatically").on("click", function () {
+                var valid = $("#input-validate-programmatically").data("validate")(true);
+                console.log(valid);
+            });
         });
     </script>
 </head>
@@ -55,6 +60,7 @@
         <ul class="index">
             <li class="text-caption">Contents</li>
             <li><a href="#textfields">Textfields</a></li>
+            <li><a href="#initialize">Initialize</a></li>
             <li><a href="#placeholder">Placeholders and labels</a></li>
             <li><a href="#helpers">Helpers and validation</a></li>
             <li><a href="#validation">Custom validation</a></li>
@@ -85,6 +91,16 @@
         <pre><code class="html text-caption">&lt;fieldset&gt;
     &lt;input type=&quot;text&quot; value=&quot;&quot; /&gt;
 &lt;/fieldset&gt;</code></pre>
+
+
+        <a name="initializing"><h1 class="text-title">Initializing</h1></a>
+        <p class="readability">
+            To initialize the component use the following function, this will add a animation on clicks.
+        </p>
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">$.mTextfields();</div>
+        </div>
+
 
         <a name="placeholder"><h1 class="text-title">Placeholders and labels</h1></a>
         <p class="readability">
@@ -158,7 +174,6 @@
             </div>
         </div>
 
-
         <pre><code class="html text-caption">&lt;fieldset&gt;
     &lt;input type=&quot;text&quot; value=&quot;&quot;  id=&quot;input-label&quot; /&gt;
     &lt;label for=&quot;input-label&quot;&gt;Label&lt;/label&gt;
@@ -174,6 +189,29 @@
     &lt;label for=&quot;input-label&quot;&gt;E-mailaddress&lt;/label&gt;
     &lt;div class=&quot;input-helper&quot;&gt;Fill in a valid emailaddress&lt;/div&gt;
 &lt;/fieldset&gt;</code></pre>
+
+        <a name="validation"><h1 class="text-title">Programmatic validation</h1></a>
+        <p class="readability">
+            It is possible to force validation programmatically for example when the user submits a form
+            and all fields need to be checked. The function returns true if an input is valid. The <span class="attr--filled">data-pattern</span> is required.
+        </p>
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">var valid = $(input).data("validate")(true)</div>
+        </div>
+
+        <div class="grid grid--gutter-40">
+            <div class="grid__cell grid__cell--6">
+                <fieldset>
+                    <input type="text" value="" class="input--validate" id="input-validate-programmatically" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" data-error="Min. 8 chars, 1 letter and 1 nr." />
+                    <label for="input-label">Label</label>
+                    <div class="input-helper">This will show an error</div>
+                </fieldset>
+            </div>
+            <div class="grid__cell grid__cell--6">
+                <button class="raised-button" id="validate-programmatically">Validate</button>
+            </div>
+        </div>
+
 
         <a name="validation"><h1 class="text-title">Custom validation</h1></a>
         <p class="readability">
