@@ -6699,7 +6699,7 @@ $.mDialog = function (options) {
     _this.dialog = $("<div />", { "class": "dialog dialog--alert" });
 
     if (_this.settings.title != '') _this.dialog.append($("<div />", { "class": "dialog__header" }).html(_this.settings.title));
-    _this.dialog.append($("<div />", { "class": "dialog__content" }).html(_this.settings.content.content.replace(/\n/g, "<br />")));
+    _this.dialog.append($("<div />", { "class": "dialog__content" }).html(_this.settings.content.replace(/\n/g, "<br />")));
 
     _this.buttons = $("<div />", { "class": "dialog__buttons" });
     for (i = 0; i < _this.settings.buttons.length; i++) {
@@ -6877,9 +6877,10 @@ $.mDialog = function (options) {
             }
 
             //Get selected option and update value
-            var selectedOption = this.$element.find("option:selected");
+            var selectedValue = this.$element.val();
+            var selectedOption = this.$element.find("option[value='" + selectedValue + "']");
             if (selectedOption.attr("selected")) {
-                this.val(selectedOption.val(), selectedOption.text());
+                this.val(selectedValue, selectedOption.text());
             }
 
             var measure = function () {

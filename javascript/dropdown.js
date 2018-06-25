@@ -154,9 +154,8 @@
 
             //Get selected option and update value
             var selectedValue = this.$element.val();
-            var selectedOption = this.$element.find("option[value='" + selectedValue + "']");
-            if (selectedOption.attr("selected")) {
-                this.val(selectedValue, selectedOption.text());
+            if (selectedValue != "") {
+                this.val(selectedValue);
             }
 
             var measure = function () {
