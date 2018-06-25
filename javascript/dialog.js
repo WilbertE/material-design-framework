@@ -11,7 +11,7 @@
     defaults = {
         title: "",
         content: "",
-        buttons: [{ text: "OK", onClick: function () { } }],
+        buttons: [{ text: "OK", onClick: function () { }, "class": "" }],
         onOpen: function () { },
         onClose: function () { }
     }
@@ -22,11 +22,11 @@
     _this.dialog = $("<div />", { "class": "dialog dialog--alert" });
 
     if (_this.settings.title != '') _this.dialog.append($("<div />", { "class": "dialog__header" }).html(_this.settings.title));
-    _this.dialog.append($("<div />", { "class": "dialog__content" }).html(_this.settings.content));
+    _this.dialog.append($("<div />", { "class": "dialog__content" }).html(_this.settings.content.content.replace(/\n/g, "<br />")));
 
     _this.buttons = $("<div />", { "class": "dialog__buttons" });
     for (i = 0; i < _this.settings.buttons.length; i++) {
-        var button = $("<button />", { "class": "flat-button" }).text(_this.settings.buttons[i].text);
+        var button = $("<button />", { "class": "flat-button "+ _this.settings.buttons[i].class }).text(_this.settings.buttons[i].text);
         if (_this.settings.buttons[i].onClick) button.on("click", _this.settings.buttons[i].onClick);
         button.on("click", function () {
             _this.close();

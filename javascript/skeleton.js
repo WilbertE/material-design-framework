@@ -64,7 +64,7 @@
             this.$element.find(".skeleton-list").removeClass("skeleton-list");
             this.$element.find(".skeleton-loader").removeClass("skeleton-loader");
             this.$element.removeClass("skeleton-loader skeleton-title skeleton-lines skeleton-textarea skeleton-input skeleton-button skeleton-dropdown "+
-                " skeleton skeleton-list skeleton-loader");
+                " skeleton skeleton-list skeleton-loader skeleton-table-column-short skeleton-table-column");
         },
 
         revealsub: function () {
@@ -88,7 +88,7 @@
             this.$element.find(".sub-skeleton-list").removeClass("sub-skeleton");
             this.$element.find(".sub-skeleton-loader").removeClass("skeleton-loader");
             this.$element.removeClass("sub-skeleton-loader sub-skeleton-title sub-skeleton-lines sub-skeleton-textarea sub-skeleton-input sub-skeleton-button sub-skeleton-dropdown " +
-                " sub-skeleton sub-skeleton-list sub-skeleton-loader");
+                " sub-skeleton sub-skeleton-list sub-skeleton-loader sub-skeleton-table-column-short sub-skeleton-table-column");
         }
 
 

@@ -65,6 +65,12 @@
     }
 }
 
+.table__ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 @for $i from 1 through 10 {
     .table__column--size-#{$i} {
         flex-grow: #{$i};

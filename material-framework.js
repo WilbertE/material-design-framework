@@ -6688,7 +6688,7 @@ $.mDialog = function (options) {
     defaults = {
         title: "",
         content: "",
-        buttons: [{ text: "OK", onClick: function () { } }],
+        buttons: [{ text: "OK", onClick: function () { }, "class": "" }],
         onOpen: function () { },
         onClose: function () { }
     }
@@ -6699,11 +6699,11 @@ $.mDialog = function (options) {
     _this.dialog = $("<div />", { "class": "dialog dialog--alert" });
 
     if (_this.settings.title != '') _this.dialog.append($("<div />", { "class": "dialog__header" }).html(_this.settings.title));
-    _this.dialog.append($("<div />", { "class": "dialog__content" }).html(_this.settings.content));
+    _this.dialog.append($("<div />", { "class": "dialog__content" }).html(_this.settings.content.content.replace(/\n/g, "<br />")));
 
     _this.buttons = $("<div />", { "class": "dialog__buttons" });
     for (i = 0; i < _this.settings.buttons.length; i++) {
-        var button = $("<button />", { "class": "flat-button" }).text(_this.settings.buttons[i].text);
+        var button = $("<button />", { "class": "flat-button "+ _this.settings.buttons[i].class }).text(_this.settings.buttons[i].text);
         if (_this.settings.buttons[i].onClick) button.on("click", _this.settings.buttons[i].onClick);
         button.on("click", function () {
             _this.close();
@@ -7594,7 +7594,7 @@ $.mTextfields = function () {
             this.$element.find(".skeleton-list").removeClass("skeleton-list");
             this.$element.find(".skeleton-loader").removeClass("skeleton-loader");
             this.$element.removeClass("skeleton-loader skeleton-title skeleton-lines skeleton-textarea skeleton-input skeleton-button skeleton-dropdown "+
-                " skeleton skeleton-list skeleton-loader");
+                " skeleton skeleton-list skeleton-loader skeleton-table-column-short skeleton-table-column");
         },
 
         revealsub: function () {
@@ -7618,7 +7618,7 @@ $.mTextfields = function () {
             this.$element.find(".sub-skeleton-list").removeClass("sub-skeleton");
             this.$element.find(".sub-skeleton-loader").removeClass("skeleton-loader");
             this.$element.removeClass("sub-skeleton-loader sub-skeleton-title sub-skeleton-lines sub-skeleton-textarea sub-skeleton-input sub-skeleton-button sub-skeleton-dropdown " +
-                " sub-skeleton sub-skeleton-list sub-skeleton-loader");
+                " sub-skeleton sub-skeleton-list sub-skeleton-loader sub-skeleton-table-column-short sub-skeleton-table-column");
         }
 
 

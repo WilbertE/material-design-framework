@@ -5048,6 +5048,35 @@ html .dialog__header, body .dialog__header {
     background-repeat: no-repeat;
     background-size: 2rem; }
 
+.skeleton .sub-skeleton-table-column-short,
+.skeleton .skeleton-table-column-short, .sub-skeleton .sub-skeleton-table-column-short,
+.sub-skeleton .skeleton-table-column-short {
+  background: linear-gradient(#f4f4f4 1.5em, transparent 0) !important;
+  background-position: 0.75rem 0.85rem !important;
+  background-size: 30% 1.5em !important;
+  background-repeat: no-repeat !important;
+  color: transparent !important;
+  pointer-events: none; }
+
+.skeleton .sub-skeleton-table-column,
+.skeleton .skeleton-table-column,
+.skeleton .sub-skeleton-table-column-short,
+.skeleton .skeleton-table-column-short, .sub-skeleton .sub-skeleton-table-column,
+.sub-skeleton .skeleton-table-column,
+.sub-skeleton .sub-skeleton-table-column-short,
+.sub-skeleton .skeleton-table-column-short {
+  background: linear-gradient(#f4f4f4 1.5em, transparent 0) !important;
+  background-position: 0.75rem 0.85rem !important;
+  background-size: 30% 1.5em !important;
+  background-repeat: no-repeat !important;
+  color: transparent !important;
+  pointer-events: none; }
+
+.skeleton .sub-skeleton-table-column,
+.skeleton .skeleton-table-column, .sub-skeleton .sub-skeleton-table-column,
+.sub-skeleton .skeleton-table-column {
+  background-size: 65% 1.5em !important; }
+
 .card {
   border-radius: 0.25rem;
   padding: 0.8rem 1.2rem;
@@ -5346,6 +5375,11 @@ html .card__title + .card__subtitle, body .card__title + .card__subtitle {
     justify-content: flex-end; }
   .table__column.table__column--wrappable {
     white-space: normal; }
+
+.table__ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
 
 .table__column--size-1 {
   flex-grow: 1; }
