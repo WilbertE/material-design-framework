@@ -2899,6 +2899,10 @@ html .raised-button, html .flat-button, body .raised-button, body .flat-button {
     box-shadow: none; }
     .no-touchevents .button-icon:hover:after {
       opacity: 1; }
+  .button-icon.button-icon--disabled {
+    opacity: .26;
+    cursor: default;
+    pointer-events: none; }
 
 .dropdown-wrapper {
   position: relative;
