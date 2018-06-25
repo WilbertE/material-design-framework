@@ -88,7 +88,7 @@
             this.$element.find(".sub-skeleton-list").removeClass("sub-skeleton");
             this.$element.find(".sub-skeleton-loader").removeClass("skeleton-loader");
             this.$element.removeClass("sub-skeleton-loader sub-skeleton-title sub-skeleton-lines sub-skeleton-textarea sub-skeleton-input sub-skeleton-button sub-skeleton-dropdown " +
-                " sub-skeleton sub-skeleton-list sub-skeleton-loader sub-skeleton-table-column-short sub-skeleton-table-column");
+                " sub-skeleton sub-skeleton-list sub-skeleton-loader sub-skeleton-table-column-short sub-skeleton-table-column ");
         }
 
 

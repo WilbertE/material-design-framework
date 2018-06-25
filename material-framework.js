@@ -6863,7 +6863,7 @@ $.mDialog = function (options) {
             var wrapper = this.$element.closest(".dropdown-wrapper");
             var dropdown = $("<div />", { "class": "dropdown-button", "id": id });
             dropdown.append($("<div />", { "class": "dropdown-button__value" }));
-            dropdown.append($("<i />", { "class": "dropdown-button__arrow material-icons", "html": "&#xE5C5;" }));
+            dropdown.append($("<i />", { "class": "dropdown-button__arrow fas fa-caret-down", "html": "" }));
             wrapper.append(dropdown);
 
             $fieldset.addClass("fieldset--dropdown");
@@ -7618,7 +7618,7 @@ $.mTextfields = function () {
             this.$element.find(".sub-skeleton-list").removeClass("sub-skeleton");
             this.$element.find(".sub-skeleton-loader").removeClass("skeleton-loader");
             this.$element.removeClass("sub-skeleton-loader sub-skeleton-title sub-skeleton-lines sub-skeleton-textarea sub-skeleton-input sub-skeleton-button sub-skeleton-dropdown " +
-                " sub-skeleton sub-skeleton-list sub-skeleton-loader sub-skeleton-table-column-short sub-skeleton-table-column");
+                " sub-skeleton sub-skeleton-list sub-skeleton-loader sub-skeleton-table-column-short sub-skeleton-table-column ");
         }
 
 

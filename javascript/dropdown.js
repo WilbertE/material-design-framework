@@ -139,7 +139,7 @@
             var wrapper = this.$element.closest(".dropdown-wrapper");
             var dropdown = $("<div />", { "class": "dropdown-button", "id": id });
             dropdown.append($("<div />", { "class": "dropdown-button__value" }));
-            dropdown.append($("<i />", { "class": "dropdown-button__arrow material-icons", "html": "&#xE5C5;" }));
+            dropdown.append($("<i />", { "class": "dropdown-button__arrow fas fa-caret-down", "html": "" }));
             wrapper.append(dropdown);
 
             $fieldset.addClass("fieldset--dropdown");
