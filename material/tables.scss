@@ -112,6 +112,11 @@
                 margin-right: 0.25rem;
             }
 
+            .dropdown-button__arrow {
+                width: 1rem;
+                height: 1rem;
+            }
+
             &:after, &:before {
                 display: none;
             }

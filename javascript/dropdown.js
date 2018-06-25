@@ -106,6 +106,7 @@
                     $fieldset.addClass("fieldset--filled");
                 }
             }
+            this.$element.trigger("change");
         },
 
         disable: function () {
@@ -152,9 +153,10 @@
             }
 
             //Get selected option and update value
-            var selectedOption = this.$element.find("option:selected");
+            var selectedValue = this.$element.val();
+            var selectedOption = this.$element.find("option[value='" + selectedValue + "']");
             if (selectedOption.attr("selected")) {
-                this.val(selectedOption.val(), selectedOption.text());
+                this.val(selectedValue, selectedOption.text());
             }
 
             var measure = function () {

@@ -6830,6 +6830,7 @@ $.mDialog = function (options) {
                     $fieldset.addClass("fieldset--filled");
                 }
             }
+            this.$element.trigger("change");
         },
 
         disable: function () {

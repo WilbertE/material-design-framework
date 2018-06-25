@@ -5439,6 +5439,9 @@ html .card__title + .card__subtitle, body .card__title + .card__subtitle {
       min-width: 0 !important; }
       .table-footer fieldset .dropdown-button .dropdown-button__value {
         margin-right: 0.25rem; }
+      .table-footer fieldset .dropdown-button .dropdown-button__arrow {
+        width: 1rem;
+        height: 1rem; }
       .table-footer fieldset .dropdown-button:after, .table-footer fieldset .dropdown-button:before {
         display: none; }
   .table-footer .button-icon {
