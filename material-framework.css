@@ -2813,11 +2813,11 @@ html .raised-button, html .flat-button, body .raised-button, body .flat-button {
   padding: 0.35rem 1.25rem; }
   .raised-button .button--icon, .flat-button .button--icon {
     line-height: normal;
-    font-size: 1.2em;
+    font-size: 1em;
     vertical-align: middle;
     position: relative;
     top: -0.1em;
-    margin: -1rem 0; }
+    margin: -1rem 0.5rem; }
   .raised-button:before, .flat-button:before {
     display: block;
     content: '';

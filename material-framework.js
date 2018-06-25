@@ -6688,7 +6688,7 @@ $.mDialog = function (options) {
     defaults = {
         title: "",
         content: "",
-        buttons: [{ text: "OK", onComplete: function () { } }],
+        buttons: [{ text: "OK", onClick: function () { } }],
         onOpen: function () { },
         onClose: function () { }
     }
@@ -6704,7 +6704,7 @@ $.mDialog = function (options) {
     _this.buttons = $("<div />", { "class": "dialog__buttons" });
     for (i = 0; i < _this.settings.buttons.length; i++) {
         var button = $("<button />", { "class": "flat-button" }).text(_this.settings.buttons[i].text);
-        if (_this.settings.buttons[i].onComplete) button.on("click", _this.settings.buttons[i].onComplete);
+        if (_this.settings.buttons[i].onClick) button.on("click", _this.settings.buttons[i].onClick);
         button.on("click", function () {
             _this.close();
         });

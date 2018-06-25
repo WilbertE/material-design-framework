@@ -20,7 +20,7 @@
                     title: "Are you sure?",
                     content: "Are you sure you want to do something stupid?",
                     buttons: [{ text: "No, stop!" },
-                              { text: "Ofcourse", onComplete: function () { alert("That was stupid"); } }
+                              { text: "Ofcourse", onClick: function () { alert("That was stupid"); } }
                     ]
                 });
             });
@@ -52,7 +52,7 @@
                         list.on("click", ".list__item", function () {
                             new $.mDialog({
                                 content: "You clicked " + $(this).attr("data-email"),
-                                buttons: [{ "text": "OK", onComplete: dialog.close }]
+                                buttons: [{ "text": "OK", onClick: dialog.close }]
                             });
                         });
                     }
@@ -87,16 +87,16 @@
         </p>
 
         <button class="raised-button js-show-question">Ask question</button>
-        <pre><code class="js text-caption">$.mDialog.show({
+        <pre><code class="js text-caption">new $.mDialog.show({
     title: "Are you sure?",
     content: "Are you sure you want to do something stupid?",
     buttons: [{ text: "No, stop!" },
-                { text: "Ofcourse", onComplete: function () { alert("That was stupid"); } }
+                { text: "Ofcourse", onClick: function () { alert("That was stupid"); } }
     ]
 });</code></pre>
 
         <button class="raised-button js-show-message">Show Message</button>
-        <pre><code class="js text-caption">$.mDialog.show({
+        <pre><code class="js text-caption">new $.mDialog.show({
     content: "You are not authorized to do that"
 });</code></pre>
 
@@ -125,7 +125,7 @@ var dialog = new $.mDialog({
         list.on(&quot;click&quot;, &quot;.list__item&quot;, function () {
             new $.mDialog({
                 content: &quot;You clicked &quot; + $(this).attr(&quot;data-email&quot;),
-                buttons: [{ &quot;text&quot;: &quot;OK&quot;, onComplete: dialog.close }]
+                buttons: [{ &quot;text&quot;: &quot;OK&quot;, onClick: dialog.close }]
             });
         });
     }
