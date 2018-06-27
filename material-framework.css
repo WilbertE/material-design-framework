@@ -48,10 +48,10 @@ html, body.tiny {
   font-weight: 300;
   letter-spacing: 0px; }
   html, body.tiny {
-    font-size: 14px; }
+    font-size: 16px; }
     @media screen and (min-width: 425px) {
       html, body.tiny {
-        font-size: calc(14px + 1 * ((100vw - 425px) / 1015)); } }
+        font-size: calc(16px + -1 * ((100vw - 425px) / 1015)); } }
     @media screen and (min-width: 1440px) {
       html, body.tiny {
         font-size: 15px; } }
@@ -241,10 +241,10 @@ html, body.tiny {
     text-transform: uppercase;
     font-weight: 300; }
     html .text-button, body.tiny .text-button {
-      font-size: 12px; }
+      font-size: 15px; }
       @media screen and (min-width: 425px) {
         html .text-button, body.tiny .text-button {
-          font-size: calc(12px + 1.5 * ((100vw - 425px) / 1015)); } }
+          font-size: calc(15px + -1.5 * ((100vw - 425px) / 1015)); } }
       @media screen and (min-width: 1440px) {
         html .text-button, body.tiny .text-button {
           font-size: 13.5px; } }
@@ -262,10 +262,10 @@ html, body.small {
   font-weight: 300;
   letter-spacing: 0px; }
   html, body.small {
-    font-size: 14px; }
+    font-size: 16px; }
     @media screen and (min-width: 425px) {
       html, body.small {
-        font-size: calc(14px + 3 * ((100vw - 425px) / 1015)); } }
+        font-size: calc(16px + 1 * ((100vw - 425px) / 1015)); } }
     @media screen and (min-width: 1440px) {
       html, body.small {
         font-size: 17px; } }
@@ -455,10 +455,10 @@ html, body.small {
     text-transform: uppercase;
     font-weight: 300; }
     html .text-button, body.small .text-button {
-      font-size: 12px; }
+      font-size: 15px; }
       @media screen and (min-width: 425px) {
         html .text-button, body.small .text-button {
-          font-size: calc(12px + 3.3 * ((100vw - 425px) / 1015)); } }
+          font-size: calc(15px + 0.3 * ((100vw - 425px) / 1015)); } }
       @media screen and (min-width: 1440px) {
         html .text-button, body.small .text-button {
           font-size: 15.3px; } }
@@ -476,10 +476,10 @@ html, body {
   font-weight: 300;
   letter-spacing: 0px; }
   html, body {
-    font-size: 14px; }
+    font-size: 16px; }
     @media screen and (min-width: 425px) {
       html, body {
-        font-size: calc(14px + 6 * ((100vw - 425px) / 1015)); } }
+        font-size: calc(16px + 4 * ((100vw - 425px) / 1015)); } }
     @media screen and (min-width: 1440px) {
       html, body {
         font-size: 20px; } }
@@ -669,10 +669,10 @@ html, body {
     text-transform: uppercase;
     font-weight: 300; }
     html .text-button, body .text-button {
-      font-size: 12px; }
+      font-size: 15px; }
       @media screen and (min-width: 425px) {
         html .text-button, body .text-button {
-          font-size: calc(12px + 6 * ((100vw - 425px) / 1015)); } }
+          font-size: calc(15px + 3 * ((100vw - 425px) / 1015)); } }
       @media screen and (min-width: 1440px) {
         html .text-button, body .text-button {
           font-size: 18px; } }
@@ -2734,10 +2734,10 @@ html .raised-button, html .flat-button, body.tiny .raised-button, body.tiny .fla
   text-transform: uppercase;
   font-weight: 300; }
   html .raised-button, html .flat-button, body.tiny .raised-button, body.tiny .flat-button {
-    font-size: 12px; }
+    font-size: 15px; }
     @media screen and (min-width: 425px) {
       html .raised-button, html .flat-button, body.tiny .raised-button, body.tiny .flat-button {
-        font-size: calc(12px + 1.5 * ((100vw - 425px) / 1015)); } }
+        font-size: calc(15px + -1.5 * ((100vw - 425px) / 1015)); } }
     @media screen and (min-width: 1440px) {
       html .raised-button, html .flat-button, body.tiny .raised-button, body.tiny .flat-button {
         font-size: 13.5px; } }
@@ -2754,10 +2754,10 @@ html .raised-button, html .flat-button, body.small .raised-button, body.small .f
   text-transform: uppercase;
   font-weight: 300; }
   html .raised-button, html .flat-button, body.small .raised-button, body.small .flat-button {
-    font-size: 12px; }
+    font-size: 15px; }
     @media screen and (min-width: 425px) {
       html .raised-button, html .flat-button, body.small .raised-button, body.small .flat-button {
-        font-size: calc(12px + 3.3 * ((100vw - 425px) / 1015)); } }
+        font-size: calc(15px + 0.3 * ((100vw - 425px) / 1015)); } }
     @media screen and (min-width: 1440px) {
       html .raised-button, html .flat-button, body.small .raised-button, body.small .flat-button {
         font-size: 15.3px; } }
@@ -2774,10 +2774,10 @@ html .raised-button, html .flat-button, body .raised-button, body .flat-button {
   text-transform: uppercase;
   font-weight: 300; }
   html .raised-button, html .flat-button, body .raised-button, body .flat-button {
-    font-size: 12px; }
+    font-size: 15px; }
     @media screen and (min-width: 425px) {
       html .raised-button, html .flat-button, body .raised-button, body .flat-button {
-        font-size: calc(12px + 6 * ((100vw - 425px) / 1015)); } }
+        font-size: calc(15px + 3 * ((100vw - 425px) / 1015)); } }
     @media screen and (min-width: 1440px) {
       html .raised-button, html .flat-button, body .raised-button, body .flat-button {
         font-size: 18px; } }
@@ -2797,7 +2797,6 @@ html .raised-button, html .flat-button, body .raised-button, body .flat-button {
   color: #fff;
   text-transform: uppercase;
   border-radius: 0.15rem;
-  padding: 0rem 1.25rem;
   border: none;
   display: block;
   cursor: pointer;
@@ -2810,7 +2809,7 @@ html .raised-button, html .flat-button, body .raised-button, body .flat-button {
   margin: 0;
   box-shadow: 0px 0.136rem 0.213rem 0.0136rem rgba(0, 0, 0, 0.24), 0px 0.090rem 0.267rem 0.005rem rgba(0, 0, 0, 0.16);
   user-select: none;
-  padding: 0.35rem 1.25rem; }
+  padding: 0.6rem 1.25rem; }
   .raised-button .button--icon, .flat-button .button--icon {
     line-height: normal;
     font-size: 1em;
@@ -2875,11 +2874,14 @@ html .raised-button, html .flat-button, body .raised-button, body .flat-button {
 
 .button-icon {
   border-radius: 50%;
-  height: 1rem;
-  width: 1rem;
+  height: 3rem;
+  width: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   overflow: hidden;
-  padding: 0.727rem 0.727rem;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
   cursor: pointer;
   line-height: 1rem;
   position: relative;
@@ -3005,7 +3007,7 @@ fieldset.fieldset--dropdown.fieldset--icon .dropdown-wrapper .dropdown-button {
 
 fieldset {
   position: relative;
-  margin-bottom: 0.6rem;
+  margin-bottom: 1.2rem;
   margin-top: 0.6rem; }
   fieldset.fieldset--helper {
     margin-bottom: 1.75rem; }
@@ -3076,6 +3078,7 @@ fieldset {
     color: rgba(0, 0, 0, 0.54);
     position: absolute;
     top: 0.78rem;
+    left: 0;
     transition: transform 178ms ease-out, color 100ms ease-out;
     pointer-events: none;
     transform-origin: top left; }
@@ -3259,7 +3262,7 @@ fieldset {
     color: inherit;
     transition: color 176ms ease-out; }
   fieldset .function-icon {
-    margin-top: -1rem; }
+    margin-top: -1.5rem; }
   fieldset.fieldset--disabled .function-icon {
     opacity: 0.38; }
   fieldset.fieldset--function-icon .input-error-icon, fieldset.fieldset--function-icon .input-valid-icon, fieldset.fieldset--function-icon .input-loading-icon {
@@ -3723,9 +3726,14 @@ html .date-picker__date-wrapper, body .date-picker__date-wrapper {
   display: flex;
   align-items: center;
   transition: transform 0.271s cubic-bezier(0, 0, 0.2, 1);
-  background-color: #2b6da9; }
+  background-color: #2b6da9;
+  z-index: 40; }
   .app-bar.app-bar--sticky {
-    position: sticky; }
+    position: sticky;
+    position: -webkit-sticky;
+    position: -moz-sticky;
+    position: -ms-sticky;
+    position: -o-sticky; }
   .app-bar .button-icon, .app-bar .flat-button, .app-bar .button--icon {
     color: #fff; }
   .app-bar .button--icon {
@@ -3752,10 +3760,11 @@ html .date-picker__date-wrapper, body .date-picker__date-wrapper {
   .app-bar .button-icon {
     height: auto;
     width: auto;
-    padding: 0.727rem 0.6rem;
+    padding: 0.727rem 0.727rem;
     margin: 0 0.5rem;
     box-sizing: border-box;
-    min-width: 2.68rem; }
+    min-width: 2.68rem;
+    min-height: 2.68rem; }
     .app-bar .button-icon svg {
       height: 1.2rem;
       width: auto;
@@ -4461,10 +4470,10 @@ html .list__button, body.tiny .list__button {
   font-weight: 300;
   letter-spacing: 0px; }
   html .list__button, body.tiny .list__button {
-    font-size: 14px; }
+    font-size: 16px; }
     @media screen and (min-width: 425px) {
       html .list__button, body.tiny .list__button {
-        font-size: calc(14px + 1 * ((100vw - 425px) / 1015)); } }
+        font-size: calc(16px + -1 * ((100vw - 425px) / 1015)); } }
     @media screen and (min-width: 1440px) {
       html .list__button, body.tiny .list__button {
         font-size: 15px; } }
@@ -4481,10 +4490,10 @@ html .list__button, body.small .list__button {
   font-weight: 300;
   letter-spacing: 0px; }
   html .list__button, body.small .list__button {
-    font-size: 14px; }
+    font-size: 16px; }
     @media screen and (min-width: 425px) {
       html .list__button, body.small .list__button {
-        font-size: calc(14px + 3 * ((100vw - 425px) / 1015)); } }
+        font-size: calc(16px + 1 * ((100vw - 425px) / 1015)); } }
     @media screen and (min-width: 1440px) {
       html .list__button, body.small .list__button {
         font-size: 17px; } }
@@ -4501,10 +4510,10 @@ html .list__button, body .list__button {
   font-weight: 300;
   letter-spacing: 0px; }
   html .list__button, body .list__button {
-    font-size: 14px; }
+    font-size: 16px; }
     @media screen and (min-width: 425px) {
       html .list__button, body .list__button {
-        font-size: calc(14px + 6 * ((100vw - 425px) / 1015)); } }
+        font-size: calc(16px + 4 * ((100vw - 425px) / 1015)); } }
     @media screen and (min-width: 1440px) {
       html .list__button, body .list__button {
         font-size: 20px; } }

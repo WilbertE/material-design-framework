@@ -90,7 +90,7 @@
             this.$button.append(this.$element);
             this.$element.attr("style", "");
             this.$element.find(".ripple").remove();
-            $(document).off("mousedown.menuclick resize.menuresize");
+            $(document).off("mousedown.menuclick resize.menuresize touchstart.menutouch");
         },
 
         close: function (instant) {
@@ -132,7 +132,7 @@
                     $(window).one("resize.menuresize", function () { _this.close(true) });
 
                     //On click outside close
-                    $(document).on("mousedown.menuclick", function (e) {
+                    $(document).on("mousedown.menuclick touchstart.menutouch", function (e) {
                         var target = $(e.target);
                         if (target.hasClass("menu__options") || target.hasClass("menu__hr")) {
                             return;

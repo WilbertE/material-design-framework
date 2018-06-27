@@ -3,7 +3,7 @@
 
 fieldset {
     position: relative;
-    margin-bottom: 0.6rem;
+    margin-bottom: 1.2rem;
     margin-top: 0.6rem;
 
     &.fieldset--helper {
@@ -112,6 +112,7 @@ fieldset {
         color: $input-label-color;
         position: absolute;
         top: 0.78rem;
+        left: 0;
         transition: transform 178ms ease-out, color 100ms ease-out;
         pointer-events: none;
         transform-origin: top left;
@@ -426,7 +427,7 @@ fieldset {
     }
 
     .function-icon {
-        margin-top: -1rem;
+        margin-top: -1.5rem;
     }
 
     &.fieldset--disabled .function-icon {

@@ -20,9 +20,14 @@
     align-items: center;
     transition: transform 0.271s cubic-bezier(0.0, 0.0, 0.2, 1);
     background-color: $app-bar-background-color;
+    z-index:40;
 
     &.app-bar--sticky {
         position: sticky;
+        position: -webkit-sticky;
+        position: -moz-sticky;
+        position: -ms-sticky;
+        position: -o-sticky;
     }
 
     .button-icon, .flat-button, .button--icon {
@@ -63,10 +68,11 @@
     .button-icon {
         height: auto;
         width: auto;
-        padding: 0.727rem 0.6rem;
+        padding: 0.727rem 0.727rem;
         margin: 0 0.5rem;
         box-sizing: border-box;
         min-width: 2.68rem;
+        min-height: 2.68rem;
 
         svg {
             height: 1.2rem;

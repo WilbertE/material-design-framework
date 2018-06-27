@@ -16,7 +16,6 @@ $sizes: ( ".tiny": 0.75, ".small": 0.85, "": 1, );
     color: $raised-button-text-color;
     text-transform: uppercase;
     border-radius: 0.15rem;
-    padding: 0rem 1.25rem;
     border: none;
     display: block;
     cursor: pointer;
@@ -29,7 +28,7 @@ $sizes: ( ".tiny": 0.75, ".small": 0.85, "": 1, );
     margin: 0;
     @include shadow(1);
     user-select: none;
-    padding: 0.35rem 1.25rem;
+    padding: 0.6rem 1.25rem;
 
     .button--icon {
         line-height: normal;
@@ -134,11 +133,14 @@ $sizes: ( ".tiny": 0.75, ".small": 0.85, "": 1, );
 
 .button-icon {
     border-radius: 50%;
-    height: 1rem;
-    width: 1rem;
+    height: 3rem;
+    width: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     overflow: hidden;
-    padding: 0.727rem 0.727rem;
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
     cursor: pointer;
     line-height: 1rem;
     position: relative;
