@@ -4139,7 +4139,8 @@ html .date-picker__date-wrapper, body .date-picker__date-wrapper {
   padding: 0; }
 
 .navigation-drawer__list .flat-button.list__button svg {
-  color: rgba(0, 0, 0, 0.54); }
+  color: rgba(0, 0, 0, 0.54);
+  width: 1.25rem; }
 
 .navigation-drawer__list .flat-button.list__button {
   color: #3b3b3b;
