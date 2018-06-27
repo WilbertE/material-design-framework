@@ -3,12 +3,9 @@
 $.mHamburger = function () {
 
     $(".hamburger").each(function () {
-        var _this = this;
-        if (!$(this).hasClass("js-initialized")) {
-            setTimeout(function () {
-                $(_this).addClass("js-initialized");
-            }, 500);
 
+        if ($(this).data("initialized") == null) {
+            $(this).data("initialized", true);
             $(this).off("click").on("click", function (e) {
                 $(this).toggleClass("hamburger--open");
             });
