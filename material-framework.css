@@ -2805,7 +2805,6 @@ html .raised-button, html .flat-button, body .raised-button, body .flat-button {
   overflow: hidden;
   line-height: inherit;
   white-space: nowrap;
-  -webkit-tap-highlight-color: #fff;
   margin: 0;
   box-shadow: 0px 0.136rem 0.213rem 0.0136rem rgba(0, 0, 0, 0.24), 0px 0.090rem 0.267rem 0.005rem rgba(0, 0, 0, 0.16);
   user-select: none;
