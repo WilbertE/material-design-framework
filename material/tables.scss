@@ -45,6 +45,7 @@
     border-bottom: solid 1px $table-border-color;
 }
 
+
 .table__column {
     display: flex;
     flex-flow: row nowrap;
@@ -71,11 +72,57 @@
     text-overflow: ellipsis;
 }
 
-@for $i from 1 through 10 {
-    .table__column--size-#{$i} {
-        flex-grow: #{$i};
+
+$prefixes: '' tablet- laptop- pc-;
+
+@each $prefix in $prefixes {
+
+    @if($prefix != "pc-") {
+        @if($prefix == "") {
+            @include responsive(mobile) {
+                .table__row--mobile-wrap {
+                    flex-flow: wrap;
+
+                    .table__column {
+                        flex-basis: auto;
+                        padding-left: 0;
+                        padding-right: 0;
+                    }
+                }
+            }
+        }
+
+        @else {
+            @include responsive(#{$prefix}down) {
+                .table__row--#{$prefix}-wrap {
+                    flex-flow: wrap;
+
+                    .table__column {
+                        flex-basis: auto;
+                        padding-left: 0;
+                        padding-right: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    @for $i from 1 through 10 {
+        @if($prefix == "") {
+            .table__column--#{$i} {
+                flex-grow: #{$i};
+            }
+        }
+        @else {
+            @include responsive(#{$prefix}up) {
+                .table__column--#{$prefix}#{$i} {
+                    flex-grow: #{$i};
+                }
+            }
+        }
     }
 }
+
 
 .table__column--border-right {
     border-right: solid 1px $table-border-color;

@@ -5398,35 +5398,179 @@ html .card__title + .card__subtitle, body .card__title + .card__subtitle {
   overflow: hidden;
   text-overflow: ellipsis; }
 
-.table__column--size-1 {
+@media screen and (min-width: 0px) and (max-width: 425px) {
+  .table__row--mobile-wrap {
+    flex-flow: wrap; }
+    .table__row--mobile-wrap .table__column {
+      flex-basis: auto;
+      padding-left: 0;
+      padding-right: 0; } }
+
+.table__column--1 {
   flex-grow: 1; }
 
-.table__column--size-2 {
+.table__column--2 {
   flex-grow: 2; }
 
-.table__column--size-3 {
+.table__column--3 {
   flex-grow: 3; }
 
-.table__column--size-4 {
+.table__column--4 {
   flex-grow: 4; }
 
-.table__column--size-5 {
+.table__column--5 {
   flex-grow: 5; }
 
-.table__column--size-6 {
+.table__column--6 {
   flex-grow: 6; }
 
-.table__column--size-7 {
+.table__column--7 {
   flex-grow: 7; }
 
-.table__column--size-8 {
+.table__column--8 {
   flex-grow: 8; }
 
-.table__column--size-9 {
+.table__column--9 {
   flex-grow: 9; }
 
-.table__column--size-10 {
+.table__column--10 {
   flex-grow: 10; }
+
+@media screen and (max-width: 768px) {
+  .table__row--tablet--wrap {
+    flex-flow: wrap; }
+    .table__row--tablet--wrap .table__column {
+      flex-basis: auto;
+      padding-left: 0;
+      padding-right: 0; } }
+
+@media screen and (min-width: 426px) {
+  .table__column--tablet-1 {
+    flex-grow: 1; } }
+
+@media screen and (min-width: 426px) {
+  .table__column--tablet-2 {
+    flex-grow: 2; } }
+
+@media screen and (min-width: 426px) {
+  .table__column--tablet-3 {
+    flex-grow: 3; } }
+
+@media screen and (min-width: 426px) {
+  .table__column--tablet-4 {
+    flex-grow: 4; } }
+
+@media screen and (min-width: 426px) {
+  .table__column--tablet-5 {
+    flex-grow: 5; } }
+
+@media screen and (min-width: 426px) {
+  .table__column--tablet-6 {
+    flex-grow: 6; } }
+
+@media screen and (min-width: 426px) {
+  .table__column--tablet-7 {
+    flex-grow: 7; } }
+
+@media screen and (min-width: 426px) {
+  .table__column--tablet-8 {
+    flex-grow: 8; } }
+
+@media screen and (min-width: 426px) {
+  .table__column--tablet-9 {
+    flex-grow: 9; } }
+
+@media screen and (min-width: 426px) {
+  .table__column--tablet-10 {
+    flex-grow: 10; } }
+
+@media screen and (max-width: 1440px) {
+  .table__row--laptop--wrap {
+    flex-flow: wrap; }
+    .table__row--laptop--wrap .table__column {
+      flex-basis: auto;
+      padding-left: 0;
+      padding-right: 0; } }
+
+@media screen and (min-width: 769px) {
+  .table__column--laptop-1 {
+    flex-grow: 1; } }
+
+@media screen and (min-width: 769px) {
+  .table__column--laptop-2 {
+    flex-grow: 2; } }
+
+@media screen and (min-width: 769px) {
+  .table__column--laptop-3 {
+    flex-grow: 3; } }
+
+@media screen and (min-width: 769px) {
+  .table__column--laptop-4 {
+    flex-grow: 4; } }
+
+@media screen and (min-width: 769px) {
+  .table__column--laptop-5 {
+    flex-grow: 5; } }
+
+@media screen and (min-width: 769px) {
+  .table__column--laptop-6 {
+    flex-grow: 6; } }
+
+@media screen and (min-width: 769px) {
+  .table__column--laptop-7 {
+    flex-grow: 7; } }
+
+@media screen and (min-width: 769px) {
+  .table__column--laptop-8 {
+    flex-grow: 8; } }
+
+@media screen and (min-width: 769px) {
+  .table__column--laptop-9 {
+    flex-grow: 9; } }
+
+@media screen and (min-width: 769px) {
+  .table__column--laptop-10 {
+    flex-grow: 10; } }
+
+@media screen and (min-width: 1441px) {
+  .table__column--pc-1 {
+    flex-grow: 1; } }
+
+@media screen and (min-width: 1441px) {
+  .table__column--pc-2 {
+    flex-grow: 2; } }
+
+@media screen and (min-width: 1441px) {
+  .table__column--pc-3 {
+    flex-grow: 3; } }
+
+@media screen and (min-width: 1441px) {
+  .table__column--pc-4 {
+    flex-grow: 4; } }
+
+@media screen and (min-width: 1441px) {
+  .table__column--pc-5 {
+    flex-grow: 5; } }
+
+@media screen and (min-width: 1441px) {
+  .table__column--pc-6 {
+    flex-grow: 6; } }
+
+@media screen and (min-width: 1441px) {
+  .table__column--pc-7 {
+    flex-grow: 7; } }
+
+@media screen and (min-width: 1441px) {
+  .table__column--pc-8 {
+    flex-grow: 8; } }
+
+@media screen and (min-width: 1441px) {
+  .table__column--pc-9 {
+    flex-grow: 9; } }
+
+@media screen and (min-width: 1441px) {
+  .table__column--pc-10 {
+    flex-grow: 10; } }
 
 .table__column--border-right {
   border-right: solid 1px #e4e4e4; }
