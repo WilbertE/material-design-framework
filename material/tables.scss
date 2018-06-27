@@ -161,16 +161,24 @@ $prefixes: '' tablet- laptop- pc-;
 
         .dropdown-button {
             padding: 0;
-            margin-top: -0.15rem;
-            min-width: 0 !important;
+            height: 3rem;
+            min-width: 3rem !important;
+            align-items: center;
+            justify-content: center;
 
             .dropdown-button__value {
+                height: auto;
+                line-height: 1em;
+                position: relative;
                 margin-right: 0.25rem;
             }
 
             .dropdown-button__arrow {
                 width: 1rem;
                 height: 1rem;
+                margin: 0;
+                top: -0.075rem;
+                position: relative;
             }
 
             &:after, &:before {

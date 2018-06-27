@@ -5599,13 +5599,21 @@ html .card__title + .card__subtitle, body .card__title + .card__subtitle {
     margin: 0; }
     .table-footer fieldset .dropdown-button {
       padding: 0;
-      margin-top: -0.15rem;
-      min-width: 0 !important; }
+      height: 3rem;
+      min-width: 3rem !important;
+      align-items: center;
+      justify-content: center; }
       .table-footer fieldset .dropdown-button .dropdown-button__value {
+        height: auto;
+        line-height: 1em;
+        position: relative;
         margin-right: 0.25rem; }
       .table-footer fieldset .dropdown-button .dropdown-button__arrow {
         width: 1rem;
-        height: 1rem; }
+        height: 1rem;
+        margin: 0;
+        top: -0.075rem;
+        position: relative; }
       .table-footer fieldset .dropdown-button:after, .table-footer fieldset .dropdown-button:before {
         display: none; }
   .table-footer .button-icon {
