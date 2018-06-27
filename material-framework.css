@@ -3780,8 +3780,8 @@ html .date-picker__date-wrapper, body .date-picker__date-wrapper {
     height: auto; }
 
 .hamburger {
-  width: 2rem;
-  height: 2rem;
+  width: 2.1rem;
+  height: 2.1rem;
   cursor: pointer;
   position: relative;
   top: -1px;
