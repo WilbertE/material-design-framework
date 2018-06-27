@@ -3742,7 +3742,7 @@ html .date-picker__date-wrapper, body .date-picker__date-wrapper {
     transform: translateY(-100%);
     transition: transform 0.271s cubic-bezier(0.4, 0, 1, 1); }
   .app-bar .app-bar__title {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     margin: 0;
     font-weight: 300;
     margin: 0 1rem;
