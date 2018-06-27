@@ -96,6 +96,13 @@
             }
         },
 
+        destroy: function () {
+            if (this.$element.parent().hasClass("dropdown-wrapper")) {
+                this.$element.next().remove();
+                this.$element.unwrap();
+            }
+        },
+
         val: function (value) {
             this.$element.val(value);
             var text = this.$element.find("option[value='" + value + "']").text();
@@ -124,7 +131,7 @@
 
         init: function () {
             var _this = this;
-
+            this.destroy();
             //Create guid
             var guid = function () {
                 function s4() { return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1); }
@@ -204,6 +211,8 @@
                     });
                 }
             });
+
+
         }
     });
 

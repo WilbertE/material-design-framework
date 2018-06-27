@@ -3751,6 +3751,13 @@ html .date-picker__date-wrapper, body .date-picker__date-wrapper {
     white-space: nowrap; }
     .app-bar .app-bar__title:first-child {
       margin: 0 0.29rem; }
+  .app-bar .app-bar__divider {
+    width: 0;
+    border-left: solid 1px #e4e4e4;
+    align-self: stretch;
+    margin: 0.5rem; }
+  .app-bar .app-bar__divider-full {
+    margin: 0 0.5rem; }
   .app-bar .app-bar__right {
     margin: 0 0 0 auto;
     display: flex;
