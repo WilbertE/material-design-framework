@@ -3351,9 +3351,9 @@ fieldset {
     transform: translateX(4px) scale(0.65) translateY(-1.5rem); } }
 
 .date-picker {
-  z-index: 9999;
+  z-index: 999999;
   box-shadow: 0px 1.772rem 2.563rem 0.163rem rgba(0, 0, 0, 0.24), 0px 0.681rem 3.608rem 0.073rem rgba(0, 0, 0, 0.16);
-  width: 18.3rem;
+  width: 22rem;
   margin: 0 auto;
   border-radius: 0.25rem;
   overflow: hidden;
@@ -3580,9 +3580,7 @@ html .date-picker__date-wrapper, body .date-picker__date-wrapper {
 .date-picker__month .flat-button {
   width: auto;
   display: inline-block;
-  padding: 0 0.5rem;
   margin: 0;
-  top: 0.25rem;
   position: relative;
   color: #cf5260;
   text-transform: none; }
@@ -3594,16 +3592,14 @@ html .date-picker__date-wrapper, body .date-picker__date-wrapper {
   flex-grow: 1; }
 
 .date-picker__month-arrow {
-  width: 2.47rem;
+  width: 3rem;
   opacity: 1;
   transition: opacity 0.114s ease-out; }
 
 .date-picker__month-arrow .button-icon {
   border-radius: 0;
   margin: 0 auto;
-  border-radius: 50%;
-  height: 0.99rem;
-  width: 0.99rem; }
+  border-radius: 50%; }
 
 .date-picker__month-arrow--disabled {
   opacity: 0.2;
@@ -3652,21 +3648,21 @@ html .date-picker__date-wrapper, body .date-picker__date-wrapper {
     transform: translateX(0%); }
 
 .date-picker-table {
-  width: 100%;
-  height: 16.75rem; }
+  width: 100%; }
 
 .date-picker__calendar-cell {
   text-align: center;
   line-height: 2rem; }
 
 .date-picker__calendar-date {
-  margin: 0.25rem;
   border-radius: 50%;
   overflow: hidden;
   box-shadow: none;
   user-select: none;
   cursor: pointer;
   font-size: 0.9rem;
+  height: 3rem;
+  line-height: 3rem;
   position: relative;
   transition: color 0.270s ease-out, background-color 0.144s ease-out; }
   .date-picker__calendar-date.date-picker__calendar-date--selected {
@@ -3706,7 +3702,7 @@ html .date-picker__date-wrapper, body .date-picker__date-wrapper {
     font-size: 0.9rem;
     margin: 0.25rem;
     text-align: center;
-    line-height: 2rem;
+    line-height: 3rem;
     cursor: pointer;
     overflow: hidden;
     border-radius: 0.25rem; }
@@ -3744,7 +3740,8 @@ html .date-picker__date-wrapper, body .date-picker__date-wrapper {
   background: #fff;
   border-top: solid 1px #e4e4e4;
   justify-content: space-between;
-  flex-direction: row-reverse; }
+  flex-direction: row-reverse;
+  padding: 0.5rem; }
 
 .date-picker-years-table--new-table.date-picker-years-table--slide-left {
   transform: translateX(-100%); }

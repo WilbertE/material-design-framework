@@ -446,8 +446,10 @@
                     $dateReel.offset();
                     $dateReel.addClass("date-picker__reel--slide-active");
 
+
                     $dateReel.one("transitionend", function () {
-                        $dateReelWrapper.attr("height", "");
+                        $dateReelWrapper.css("height", "");
+                        $yearReelWrapper.css("height", "");
                         var slides = $dateReel.find(".date-picker__date");
                         if (_this.settings.activeDate < date.toDate()) {
                             slides.first().remove();
