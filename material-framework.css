@@ -3063,6 +3063,8 @@ fieldset {
   margin-top: 0.6rem; }
   fieldset.fieldset--helper {
     margin-bottom: 1.75rem; }
+  fieldset:not(.fieldset--active):not(.fieldset--filled) {
+    color: transparent; }
   fieldset input, fieldset textarea {
     position: relative;
     border: none;

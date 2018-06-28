@@ -10,6 +10,10 @@ fieldset {
         margin-bottom: 1.75rem;
     }
 
+    &:not(.fieldset--active):not(.fieldset--filled) {
+        color: transparent;
+    }
+
     input, textarea {
         position: relative;
         border: none;
@@ -21,6 +25,7 @@ fieldset {
         outline: none;
         width: 100%;
         padding: 0.775rem 0 0.30rem 0;
+
 
         &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
             color: $placeholder-color;
@@ -125,6 +130,7 @@ fieldset {
     }
 
     &.fieldset--active, &.fieldset--filled {
+
         label {
             transform: scale(0.65) translateY(-1.5rem) !important;
         }
