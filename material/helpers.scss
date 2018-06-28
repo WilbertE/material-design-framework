@@ -159,14 +159,17 @@ $prefixes: mobile tablet laptop pc;
 
 .align-left {
     text-align: left !important;
+    justify-content:flex-start;
 }
 
 .align-center {
     text-align: center !important;
+    justify-content:center;
 }
 
 .align-right {
     text-align: right !important;
+    justify-content:flex-end;
 }
 
 .push-left {
