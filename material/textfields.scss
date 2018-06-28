@@ -51,7 +51,8 @@ fieldset {
         width: calc(100% - 0.5rem);
         box-sizing: border-box;
         padding: 0;
-        margin: 0.775rem 0.25rem 0.30rem 0.25rem;
+        margin: 1.15rem 0.25rem 0.30rem 0.25rem;
+        resize: vertical;
     }
 
     &.fieldset--no-label textarea {
@@ -127,6 +128,8 @@ fieldset {
         label {
             transform: scale(0.65) translateY(-1.5rem) !important;
         }
+
+
 
         .prefix, .suffix {
             opacity: 1;

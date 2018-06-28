@@ -3043,7 +3043,8 @@ fieldset {
     width: calc(100% - 0.5rem);
     box-sizing: border-box;
     padding: 0;
-    margin: 0.775rem 0.25rem 0.30rem 0.25rem; }
+    margin: 1.15rem 0.25rem 0.30rem 0.25rem;
+    resize: vertical; }
   fieldset.fieldset--no-label textarea {
     margin-top: 0.3rem; }
   fieldset.fieldset--no-label input {
