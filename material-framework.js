@@ -6097,7 +6097,8 @@ $(function () {
         maxDate: moment("3000-12-31").toDate(),
         selectOnClick: false,
         closeOnClickoutside: true,
-        returnFormat: 'D-M-YYYY'
+        returnFormat: 'D-M-YYYY',
+        onSelect: function () { }
     };
 
     // The actual plugin constructor
@@ -6548,6 +6549,7 @@ $(function () {
                         _this.$input.val(date.format(_this.settings.returnFormat));
                         _this.$input.closest("fieldset").addClass("fieldset--filled");
                         _this.close();
+                        if (_this.settings.onSelect) _this.settings.onSelect();
                     }
                 });
 
@@ -6608,6 +6610,7 @@ $(function () {
 
                     if ($target.hasClass("flat-button--agree")) {
                         _this.$input.val(moment(_this.settings.activeDate).format(_this.settings.returnFormat));
+                        if (_this.settings.onSelect) _this.settings.onSelect(moment(_this.settings.activeDate).toDate());
                         _this.$input.closest("fieldset").addClass("fieldset--filled");
                         _this.close();
                     }
@@ -6659,10 +6662,13 @@ $(function () {
         init: function () {
             var _this = this;
 
-            this.$element.on("click focus", function () {
-                $(this).blur();
-                _this.show();
-            })
+            if (this.$element.data("datepickerInitialized") == null) {
+                this.$element.data("datepickerInitialized", true);
+                this.$element.on("click focus", function () {
+                    $(this).blur();
+                    _this.show();
+                });
+            }
 
         }
     });

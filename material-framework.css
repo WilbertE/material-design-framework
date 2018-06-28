@@ -3351,7 +3351,7 @@ fieldset {
     transform: translateX(4px) scale(0.65) translateY(-1.5rem); } }
 
 .date-picker {
-  z-index: 999999;
+  z-index: 9999;
   box-shadow: 0px 1.772rem 2.563rem 0.163rem rgba(0, 0, 0, 0.24), 0px 0.681rem 3.608rem 0.073rem rgba(0, 0, 0, 0.16);
   width: 22rem;
   margin: 0 auto;
@@ -3613,7 +3613,7 @@ html .date-picker__date-wrapper, body .date-picker__date-wrapper {
   color: #cf5260; }
 
 .m-overlay-datepicker {
-  z-index: 9998;
+  z-index: 999991;
   display: flex;
   align-items: center; }
   .m-overlay-datepicker:before {
