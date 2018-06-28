@@ -2235,6 +2235,29 @@ a {
 .no-margin-bottom {
   margin-bottom: 0 !important; }
 
+.no-padding {
+  padding: 0 !important; }
+
+.padding-horizontal {
+  padding-left: 0 !important;
+  padding-right: 0 !important; }
+
+.no-padding-vertical {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important; }
+
+.no-padding-top {
+  padding-top: 0 !important; }
+
+.no-padding-left {
+  padding-left: 0 !important; }
+
+.no-padding-right {
+  padding-right: 0 !important; }
+
+.no-padding-bottom {
+  padding-bottom: 0 !important; }
+
 .margins {
   margin: 8px !important; }
 
@@ -2923,6 +2946,9 @@ html .raised-button, html .flat-button, body .raised-button, body .flat-button {
     background-color: rgba(207, 82, 96, 0.12);
     opacity: 0;
     transition: opacity 200ms ease-out; }
+  .button-icon > svg {
+    width: 1rem;
+    height: 1rem; }
   .no-touchevents .button-icon:hover {
     box-shadow: none; }
     .no-touchevents .button-icon:hover:after {

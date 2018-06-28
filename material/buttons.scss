@@ -194,6 +194,11 @@ $sizes: ( ".tiny": 0.75, ".small": 0.85, "": 1, );
         transition: opacity 200ms ease-out;
     }
 
+    > svg {
+        width: 1rem;
+        height: 1rem;
+    }
+
     .no-touchevents & {
 
         &:hover {
