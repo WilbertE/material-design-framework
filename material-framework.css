@@ -3032,7 +3032,7 @@ fieldset.fieldset--dropdown.fieldset--icon .dropdown-wrapper .dropdown-button {
 
 .dropdown-button__options {
   position: absolute;
-  z-index: 999;
+  z-index: 99999;
   background: #fff;
   max-height: 80vh;
   overflow-y: auto;
