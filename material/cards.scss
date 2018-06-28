@@ -163,7 +163,7 @@ $sizes: ( ".tiny": 0.75, ".small": 0.85, "": 1 );
     margin-right: 0.4rem;
 }
 
-.card .table-header {
+.card > .table-header:first-child {
     margin-top: -0.8rem;
 }
 

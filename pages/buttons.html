@@ -6,7 +6,6 @@
 
     <link href="../refference.css" rel="stylesheet" />
     <link href="../material-framework.min.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
@@ -15,7 +14,7 @@
     <script src="../reference.js"></script>
     <script>
         $(function () {
-            $.mButtons();            
+            $.mButtons();
         });
     </script>
 </head>
@@ -30,6 +29,7 @@
         <ul class="index">
             <li class="text-caption">Contents</li>
             <li><a href="#buttons">Buttons</a></li>
+            <li><a href="#narrow">Narrow buttons</a></li>
             <li><a href="#initializing">Initializing</a></li>
         </ul>
 
@@ -42,8 +42,8 @@
         <div class="grid">
             <div class="grid__cell grid__cell--6 grid__cell--tablet-4 grid__cell--middle-center">
                 <div>
-                    <button class="raised-button"><i class="material-icons button--icon">send</i> Button</button>
-                    <button class="raised-button raised-button--disabled"><i class="material-icons button--icon">send</i> Button</button>
+                    <button class="raised-button"><i class="fal fa-envelope raised-button__icon" "></i> Button</button>
+                    <button class="raised-button raised-button--disabled"><i class="fal fa-envelope raised-button__icon" "></i> Button</button>
                 </div>
             </div>
             <div class="grid__cell grid__cell--6 grid__cell--tablet-4 grid__cell--middle-center">
@@ -65,6 +65,32 @@
 &lt;button class=&quot;flat-button&quot;&gt;Button&lt;/button&gt;
 &lt;button class=&quot;flat-button flat-button--disabled&quot;&gt;Button&lt;/button&gt;</code></pre>
 
+        <a name="buttons"><h1 class="text-title">Narrow buttons</h1></a>
+        <p class="readability">
+            Adding the class<span class="class--filled">.flat-button--narrow</span> or <span class="class--filled">.raised-button--narrow</span>
+            creates a narrow button which gives buttons a very small side padding making it possible to push them more to the sides.
+
+        </p>
+
+        <div class="grid">
+            <div class="grid__cell grid__cell--6 grid__cell--tablet-4 grid__cell--middle-center">
+                <div>
+                    <button class="raised-button raised-button--narrow"><i class="fal fa-envelope raised-button__icon"></i> Button</button>
+                </div>
+            </div>
+            <div class="grid__cell grid__cell--6 grid__cell--tablet-4 grid__cell--middle-center">
+                <div>
+                    <button class="raised-button raised-button--narrow">Button</button>
+                </div>
+            </div>
+            <div class="grid__cell grid__cell--12 grid__cell--tablet-4 grid__cell--middle-center">
+                <div>
+                    <button class="flat-button flat-button--narrow">Button</button>
+                </div>
+            </div>
+        </div>
+
+
         <a name="initializing"><h1 class="text-title">Initializing</h1></a>
         <p class="readability">
             To initialize the component use the following function, this will add a animation on clicks.
@@ -72,7 +98,7 @@
         <div class="plugin-option text-caption">
             <div class="plugin-option__option">$.mButtons();</div>
         </div>
-        
+
     </content>
 </body>
 </html>

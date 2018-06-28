@@ -2808,14 +2808,23 @@ html .raised-button, html .flat-button, body .raised-button, body .flat-button {
   margin: 0;
   box-shadow: 0px 0.136rem 0.213rem 0.0136rem rgba(0, 0, 0, 0.24), 0px 0.090rem 0.267rem 0.005rem rgba(0, 0, 0, 0.16);
   user-select: none;
-  padding: 0.6rem 1.25rem; }
-  .raised-button .button--icon, .flat-button .button--icon {
+  padding: 0.85rem 1.25rem; }
+  @media screen and (min-width: 769px) {
+    .raised-button, .flat-button {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem; } }
+  .raised-button .flat-button__icon, .raised-button .raised-button__icon, .flat-button .flat-button__icon, .flat-button .raised-button__icon {
     line-height: normal;
     font-size: 1em;
     vertical-align: middle;
     position: relative;
     top: -0.1em;
     margin: -1rem 0.5rem; }
+  .raised-button.flat-button--narrow, .raised-button.raised-button--narrow, .flat-button.flat-button--narrow, .flat-button.raised-button--narrow {
+    padding-left: 0.4rem;
+    padding-right: 0.4rem; }
+    .raised-button.flat-button--narrow .flat-button__icon, .raised-button.flat-button--narrow .raised-button__icon, .raised-button.raised-button--narrow .flat-button__icon, .raised-button.raised-button--narrow .raised-button__icon, .flat-button.flat-button--narrow .flat-button__icon, .flat-button.flat-button--narrow .raised-button__icon, .flat-button.raised-button--narrow .flat-button__icon, .flat-button.raised-button--narrow .raised-button__icon {
+      margin-left: 0; }
   .raised-button:before, .flat-button:before {
     display: block;
     content: '';
@@ -3262,7 +3271,8 @@ fieldset {
     color: inherit;
     transition: color 176ms ease-out; }
   fieldset .function-icon {
-    margin-top: -1.5rem; }
+    margin-top: -1.2rem;
+    margin-right: -0.5rem; }
   fieldset.fieldset--disabled .function-icon {
     opacity: 0.38; }
   fieldset.fieldset--function-icon .input-error-icon, fieldset.fieldset--function-icon .input-valid-icon, fieldset.fieldset--function-icon .input-loading-icon {
@@ -5348,7 +5358,7 @@ html .card__title + .card__subtitle, body .card__title + .card__subtitle {
   margin-left: 0.4rem;
   margin-right: 0.4rem; }
 
-.card .table-header {
+.card > .table-header:first-child {
   margin-top: -0.8rem; }
 
 .card__divider + .table {
