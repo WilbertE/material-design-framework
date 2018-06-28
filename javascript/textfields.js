@@ -63,7 +63,9 @@
 
             //Adds a validation icon
             var addIcon = function (icon, iconName) {
-                $fieldset.append("<div class=\"input-" + icon + "-icon\"><i class=\"" + iconName + "\"></i></div>");
+                var offset = 0;
+                if ($fieldset.find(".suffix").length > 0) offset = $fieldset.find(".suffix").outerWidth() + 10;
+                $fieldset.append("<div class=\"input-" + icon + "-icon\" style='margin-right:" + offset + "px'><i class=\"" + iconName + "\"></i></div>");
                 $fieldset.offset();
                 $fieldset.find(".input-" + icon + "-icon").addClass("input-" + icon + "-icon--show");
             }
