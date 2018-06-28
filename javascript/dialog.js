@@ -11,9 +11,10 @@
     defaults = {
         title: "",
         content: "",
-        buttons: [{ text: "OK", onClick: function () { }, "class": "" }],
+        buttons: [{ text: "OK", onClick: function () { }, "class": "", preventClose: false }],
         onOpen: function () { },
-        onClose: function () { }
+        onClose: function () {
+        }
     }
     _this.settings = $.extend({}, defaults, options);
 
@@ -32,9 +33,11 @@
     for (i = 0; i < _this.settings.buttons.length; i++) {
         var button = $("<button />", { "class": "flat-button " + _this.settings.buttons[i].class }).text(_this.settings.buttons[i].text);
         if (_this.settings.buttons[i].onClick) button.on("click", _this.settings.buttons[i].onClick);
-        button.on("click", function () {
-            _this.close();
-        });
+        if (_this.settings.buttons[i].preventClose == null || _this.settings.buttons[i].preventClose == false) {
+            button.on("click", function () {
+                _this.close();
+            });
+        }
         _this.buttons.append(button);
     }
     _this.dialog.append(_this.buttons);
