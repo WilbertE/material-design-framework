@@ -30,6 +30,7 @@
             <li class="text-caption">Contents</li>
             <li><a href="#buttons">Buttons</a></li>
             <li><a href="#narrow">Narrow buttons</a></li>
+            <li><a href="#overflow">Overflowing buttons</a></li>
             <li><a href="#initializing">Initializing</a></li>
         </ul>
 
@@ -65,7 +66,7 @@
 &lt;button class=&quot;flat-button&quot;&gt;Button&lt;/button&gt;
 &lt;button class=&quot;flat-button flat-button--disabled&quot;&gt;Button&lt;/button&gt;</code></pre>
 
-        <a name="buttons"><h1 class="text-title">Narrow buttons</h1></a>
+        <a name="narrow"><h1 class="text-title">Narrow buttons</h1></a>
         <p class="readability">
             Adding the class<span class="class--filled">.flat-button--narrow</span> or <span class="class--filled">.raised-button--narrow</span>
             creates a narrow button which gives buttons a very small side padding making it possible to push them more to the sides.
@@ -89,6 +90,15 @@
                 </div>
             </div>
         </div>
+
+        <a name="overflow"><h1 class="text-title">Overflowing buttons</h1></a>
+        <p class="readability">
+            Adding the class<span class="class--filled">.flat-button--overflow-right</span> or <span class="class--filled">.flat-button--overflow-left</span> 
+            (and the same for raised buttons) creates an overflow to the direction specified. It can be used to align the text
+            of the button with other components. Be aware that this can introduce a horizontal scrollbar if not used right.
+        </p>
+        <button class="flat-button flat-button--overflow-left">Normal button</button><br/>
+        <button class="flat-button flat-button--narrow flat-button--overflow-left">Narrow button</button>
 
 
         <a name="initializing"><h1 class="text-title">Initializing</h1></a>

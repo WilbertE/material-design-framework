@@ -43,13 +43,33 @@ $sizes: ( ".tiny": 0.75, ".small": 0.85, "": 1, );
         margin: -1rem 0.5rem;
     }
 
-    &.flat-button--narrow, 
+    &.flat-button--narrow,
     &.raised-button--narrow {
         padding-left: 0.4rem;
         padding-right: 0.4rem;
 
         .flat-button__icon, .raised-button__icon {
             margin-left: 0;
+        }
+    }
+
+    &.flat-button--overflow-left,
+    &.raised-button--overflow-left {
+        margin-left: -1.25rem;
+
+        &.flat-button--narrow,
+        &.raised-button--narrow {
+            margin-left: -0.4rem;
+        }
+    }
+
+    &.flat-button--overflow-right,
+    &.raised-button--overflow-right {
+        margin-right: -1.25rem;
+
+        &.flat-button--narrow,
+        &.raised-button--narrow {
+            margin-right: -0.4rem;
         }
     }
 

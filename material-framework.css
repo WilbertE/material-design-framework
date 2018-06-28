@@ -2825,6 +2825,14 @@ html .raised-button, html .flat-button, body .raised-button, body .flat-button {
     padding-right: 0.4rem; }
     .raised-button.flat-button--narrow .flat-button__icon, .raised-button.flat-button--narrow .raised-button__icon, .raised-button.raised-button--narrow .flat-button__icon, .raised-button.raised-button--narrow .raised-button__icon, .flat-button.flat-button--narrow .flat-button__icon, .flat-button.flat-button--narrow .raised-button__icon, .flat-button.raised-button--narrow .flat-button__icon, .flat-button.raised-button--narrow .raised-button__icon {
       margin-left: 0; }
+  .raised-button.flat-button--overflow-left, .raised-button.raised-button--overflow-left, .flat-button.flat-button--overflow-left, .flat-button.raised-button--overflow-left {
+    margin-left: -1.25rem; }
+    .raised-button.flat-button--overflow-left.flat-button--narrow, .raised-button.flat-button--overflow-left.raised-button--narrow, .raised-button.raised-button--overflow-left.flat-button--narrow, .raised-button.raised-button--overflow-left.raised-button--narrow, .flat-button.flat-button--overflow-left.flat-button--narrow, .flat-button.flat-button--overflow-left.raised-button--narrow, .flat-button.raised-button--overflow-left.flat-button--narrow, .flat-button.raised-button--overflow-left.raised-button--narrow {
+      margin-left: -0.4rem; }
+  .raised-button.flat-button--overflow-right, .raised-button.raised-button--overflow-right, .flat-button.flat-button--overflow-right, .flat-button.raised-button--overflow-right {
+    margin-right: -1.25rem; }
+    .raised-button.flat-button--overflow-right.flat-button--narrow, .raised-button.flat-button--overflow-right.raised-button--narrow, .raised-button.raised-button--overflow-right.flat-button--narrow, .raised-button.raised-button--overflow-right.raised-button--narrow, .flat-button.flat-button--overflow-right.flat-button--narrow, .flat-button.flat-button--overflow-right.raised-button--narrow, .flat-button.raised-button--overflow-right.flat-button--narrow, .flat-button.raised-button--overflow-right.raised-button--narrow {
+      margin-right: -0.4rem; }
   .raised-button:before, .flat-button:before {
     display: block;
     content: '';
