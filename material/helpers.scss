@@ -126,3 +126,28 @@ $prefixes: mobile tablet laptop pc;
         }
     }
 }
+
+.align-left {
+    text-align: left !important;
+}
+
+.align-center {
+    text-align: center !important;
+}
+
+.align-right {
+    text-align: right !important;
+}
+
+.push-left {
+    margin-right: auto !important;
+}
+
+.push-right {
+    margin-left: auto !important;
+}
+
+.push-center {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}

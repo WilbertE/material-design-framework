@@ -710,15 +710,6 @@ p {
 a {
   text-decoration: none; }
 
-.align-left {
-  text-align: left; }
-
-.align-center {
-  text-align: center; }
-
-.align-right {
-  text-align: right; }
-
 .container {
   overflow-x: hidden;
   max-width: 1200px;
@@ -2500,6 +2491,25 @@ a {
     display: block !important; }
   .visible-inline-pc {
     display: inline-block !important; } }
+
+.align-left {
+  text-align: left !important; }
+
+.align-center {
+  text-align: center !important; }
+
+.align-right {
+  text-align: right !important; }
+
+.push-left {
+  margin-right: auto !important; }
+
+.push-right {
+  margin-left: auto !important; }
+
+.push-center {
+  margin-left: auto !important;
+  margin-right: auto !important; }
 
 .shadow-1 {
   box-shadow: 0px 0.136rem 0.213rem 0.0136rem rgba(0, 0, 0, 0.24), 0px 0.090rem 0.267rem 0.005rem rgba(0, 0, 0, 0.16); }
