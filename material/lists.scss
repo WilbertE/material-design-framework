@@ -210,16 +210,16 @@ $sizes: ( ".tiny": 0.75, ".small": 0.85, "": 1, );
 
 .list--indexed-inside {
     .list__index {
-        margin-bottom: -3rem;
+            margin-bottom: -2.6rem;
         width: 1.5rem;
         background: $list-index-background-color;
         padding-right: 0;
         color: $list-index-inside-color;
         font-size: 1.1rem;
-
-        &:first-child {
+        transform: translateY(0.4rem);
+        /*&:first-child {
             margin-top: 0.5rem;
-        }
+        }*/
     }
 
     .list__item {

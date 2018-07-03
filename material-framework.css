@@ -4599,14 +4599,16 @@ html .list__button, body .list__button {
   position: relative; }
 
 .list--indexed-inside .list__index {
-  margin-bottom: -3rem;
+  margin-bottom: -2.6rem;
   width: 1.5rem;
   background: #fff;
   padding-right: 0;
   color: #cf5260;
-  font-size: 1.1rem; }
-  .list--indexed-inside .list__index:first-child {
-    margin-top: 0.5rem; }
+  font-size: 1.1rem;
+  transform: translateY(0.4rem);
+  /*&:first-child {
+            margin-top: 0.5rem;
+        }*/ }
 
 .list--indexed-inside .list__item {
   margin-left: 2.5rem;
