@@ -139,7 +139,7 @@ $sizes: ( ".tiny": 0.75, ".small": 0.85, "": 1 );
     }
 }
 
-.card .list {
+.card .list:not(.list--bordered) {
     margin-left: -0.8rem;
     margin-right: -0.8rem;
     margin-bottom: 0rem;

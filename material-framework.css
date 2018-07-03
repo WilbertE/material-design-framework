@@ -5388,16 +5388,16 @@ html .card__title + .card__subtitle, body .card__title + .card__subtitle {
   .no-touchevents .card__head .flat-button:hover, .no-touchevents .card__head .button-icon:hover {
     background-color: rgba(207, 82, 96, 0.12); }
 
-.card .list {
+.card .list:not(.list--bordered) {
   margin-left: -0.8rem;
   margin-right: -0.8rem;
   margin-bottom: 0rem; }
-  .card .list + .card__divider, .card .list + .card__buttons {
+  .card .list:not(.list--bordered) + .card__divider, .card .list:not(.list--bordered) + .card__buttons {
     margin-top: 0.8rem; }
-  .card .list .list__item {
+  .card .list:not(.list--bordered) .list__item {
     padding-left: 0.5rem;
     padding-right: 0.5rem; }
-  .card .list:last-child {
+  .card .list:not(.list--bordered):last-child {
     margin-bottom: 0; }
 
 .card .list__expand {
