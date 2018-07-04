@@ -1,6 +1,5 @@
 ﻿.search-toggle {
     position: relative;
-    overflow: hidden;
 
     .search-toggle__field {
         margin: 0 0 0.1rem 0;
@@ -28,17 +27,36 @@
         pointer-events: none;
     }
 
-    fieldset {
-        margin-left: 2.5rem;
+    .search-toggle__field {
+        display: flex;
+        align-items: center;
+        margin: 0;
+    }
+
+    .search-toggle__fieldset {
+        width: 100%;
     }
 
     .search-toggle__close {
-        position: absolute;
-        left: 0rem;
+        z-index: 9;
+        width: 2rem;
+        height: 2rem;
+        position: relative;
+        left: auto;
+        align-self: center;
+        transform: translateY(-0.2rem);
+        margin-right: -1.5rem;
+        margin-left: -0.5rem;
+    }
+
+    .search-toggle__field .search-toggle__input {
+        padding-left: 1.5rem;
+        width: calc(100% - 1.5rem);
     }
 
     .search-toggle__trigger, .search-toggle__loading {
         position: absolute;
+        margin-right: -0.75rem;
         top: 0.5rem;
         right: 0;
         opacity: 1;
