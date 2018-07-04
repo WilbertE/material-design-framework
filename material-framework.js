@@ -7430,7 +7430,9 @@ $.mTextfields = function () {
 
             //Adds a validation icon
             var addIcon = function (icon, iconName) {
-                $fieldset.append("<div class=\"input-" + icon + "-icon\"><i class=\"" + iconName + "\"></i></div>");
+                var offset = 0;
+                if ($fieldset.find(".suffix").length > 0) offset = $fieldset.find(".suffix").outerWidth() + 10;
+                $fieldset.append("<div class=\"input-" + icon + "-icon\" style='margin-right:" + offset + "px'><i class=\"" + iconName + "\"></i></div>");
                 $fieldset.offset();
                 $fieldset.find(".input-" + icon + "-icon").addClass("input-" + icon + "-icon--show");
             }
@@ -7673,7 +7675,8 @@ $.mSearchToggle = function () {
     "use strict";
     var pluginName = "mSearchToggle",
         defaults = {
-            onKeyUp: function () { }
+            onKeyUp: function () { },
+            onClose: function () { }
         };
 
     // The actual plugin constructor
@@ -7702,6 +7705,8 @@ $.mSearchToggle = function () {
 
                 this.$element.find(".search-toggle__close").on("click", function (e) {
                     e.preventDefault();
+                    _this.$element.find("input").val("");
+                    _this.settings.onClose();
                     _this.$element.removeClass("search-toggle--active");
                 });
 

@@ -12,7 +12,8 @@
     "use strict";
     var pluginName = "mSearchToggle",
         defaults = {
-            onKeyUp: function () { }
+            onKeyUp: function () { },
+            onClose: function () { }
         };
 
     // The actual plugin constructor
@@ -41,6 +42,8 @@
 
                 this.$element.find(".search-toggle__close").on("click", function (e) {
                     e.preventDefault();
+                    _this.$element.find("input").val("");
+                    _this.settings.onClose();
                     _this.$element.removeClass("search-toggle--active");
                 });
 
