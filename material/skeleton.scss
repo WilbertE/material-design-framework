@@ -190,9 +190,34 @@
             background-repeat: no-repeat !important;
             max-height: 1.75rem !important;
 
+            * {
+                color: transparent !important;
+            }
+
+            img, svg {
+                display: none;
+            }
+
             .fa-angle-right {
                 color: darken($skeleton-element-color,10) !important;
             }
+        }
+
+        .list__index {
+            color: transparent !important;
+            background: linear-gradient($skeleton-element-color 1em, transparent 0) !important;
+            background-position: 0.75rem 1.25rem !important;
+            background-size: 5rem 1em !important;
+            background-repeat: no-repeat !important;
+        }
+
+        .list__item.list__item--multiple-line {
+            color: transparent !important;
+            max-height: 3.05rem !important;
+            background: linear-gradient(#f4f4f4 1em,transparent 0), linear-gradient(#f4f4f4 1em,transparent 0) !important;
+            background-position: .75rem .85rem, .75rem 2.25rem !important;
+            background-size: 70% 1em, 40% 1rem !important;
+            background-repeat: no-repeat !important;
         }
     }
 
@@ -262,5 +287,13 @@
     .sub-skeleton-table-column,
     .skeleton-table-column {
         background-size: 65% 1.5em !important;
+    }
+
+    .sub-skeleton--fill, .skeleton--fill {
+        background: #f4f4f4;
+
+        > * {
+            opacity: 0;
+        }
     }
 }

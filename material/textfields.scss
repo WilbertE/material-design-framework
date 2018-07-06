@@ -10,7 +10,7 @@ fieldset {
         margin-bottom: 1.75rem;
     }
 
-    &:not(.fieldset--active):not(.fieldset--filled) {
+    &:not(.fieldset--active):not(.fieldset--filled):not(.search-toggle__fieldset) {
         color: transparent;
     }
 
@@ -25,7 +25,7 @@ fieldset {
         outline: none;
         width: 100%;
         padding: 0.775rem 0 0.30rem 0;
-
+        
 
         &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
             color: $placeholder-color;
@@ -47,6 +47,7 @@ fieldset {
     &:not(.input-filled):not(.input-bordered).fieldset--textarea {
         border: solid 1px $textarea-border-color;
         border-bottom: none;
+        padding-top: 0.5rem;
     }
 
     textarea {
@@ -56,7 +57,7 @@ fieldset {
         width: calc(100% - 0.5rem);
         box-sizing: border-box;
         padding: 0;
-        margin: 1.15rem 0.25rem 0.30rem 0.25rem;
+        margin: 1.55rem 0.25rem 0.30rem 0.25rem;
         resize: vertical;
     }
 
@@ -119,6 +120,7 @@ fieldset {
         position: absolute;
         top: 0.78rem;
         left: 0;
+        white-space: nowrap;
         transition: transform 178ms ease-out, color 100ms ease-out;
         pointer-events: none;
         transform-origin: top left;
@@ -129,13 +131,19 @@ fieldset {
         top: 1rem;
     }
 
+    &.fieldset--textarea.fieldset--active, &.fieldset--textarea.fieldset--filled {
+        label {
+            transform: scale(0.8) translateY(-.5rem) !important;
+        }
+    }
+
+
+
     &.fieldset--active, &.fieldset--filled {
 
         label {
-            transform: scale(0.65) translateY(-1.5rem) !important;
+            transform: scale(0.8) translateY(-1.6rem) !important;
         }
-
-
 
         .prefix, .suffix {
             opacity: 1;
@@ -188,7 +196,7 @@ fieldset {
 
     .prefix {
         position: absolute;
-        top: 0.78rem;
+        top: 0.82rem;
         opacity: 0;
         transition: opacity 0.172s ease-out;
         z-index: 2;

@@ -3066,7 +3066,7 @@ fieldset {
   margin-top: 0.6rem; }
   fieldset.fieldset--helper {
     margin-bottom: 1.75rem; }
-  fieldset:not(.fieldset--active):not(.fieldset--filled) {
+  fieldset:not(.fieldset--active):not(.fieldset--filled):not(.search-toggle__fieldset) {
     color: transparent; }
   fieldset input, fieldset textarea {
     position: relative;
@@ -3093,7 +3093,8 @@ fieldset {
       color: rgba(0, 0, 0, 0.54); }
   fieldset:not(.input-filled):not(.input-bordered).fieldset--textarea {
     border: solid 1px #e4e4e4;
-    border-bottom: none; }
+    border-bottom: none;
+    padding-top: 0.5rem; }
   fieldset textarea {
     z-index: 2;
     position: relative;
@@ -3101,7 +3102,7 @@ fieldset {
     width: calc(100% - 0.5rem);
     box-sizing: border-box;
     padding: 0;
-    margin: 1.15rem 0.25rem 0.30rem 0.25rem;
+    margin: 1.55rem 0.25rem 0.30rem 0.25rem;
     resize: vertical; }
   fieldset.fieldset--no-label textarea {
     margin-top: 0.3rem; }
@@ -3137,14 +3138,17 @@ fieldset {
     position: absolute;
     top: 0.78rem;
     left: 0;
+    white-space: nowrap;
     transition: transform 178ms ease-out, color 100ms ease-out;
     pointer-events: none;
     transform-origin: top left; }
   fieldset.fieldset--textarea label {
     left: 0.25rem;
     top: 1rem; }
+  fieldset.fieldset--textarea.fieldset--active label, fieldset.fieldset--textarea.fieldset--filled label {
+    transform: scale(0.8) translateY(-0.5rem) !important; }
   fieldset.fieldset--active label, fieldset.fieldset--filled label {
-    transform: scale(0.65) translateY(-1.5rem) !important; }
+    transform: scale(0.8) translateY(-1.6rem) !important; }
   fieldset.fieldset--active .prefix, fieldset.fieldset--active .suffix, fieldset.fieldset--filled .prefix, fieldset.fieldset--filled .suffix {
     opacity: 1; }
   fieldset.fieldset--error label {
@@ -3175,7 +3179,7 @@ fieldset {
     color: rgba(0, 0, 0, 0.26); }
   fieldset .prefix {
     position: absolute;
-    top: 0.78rem;
+    top: 0.82rem;
     opacity: 0;
     transition: opacity 0.172s ease-out;
     z-index: 2; }
@@ -3626,7 +3630,7 @@ html .date-picker__date-wrapper, body .date-picker__date-wrapper {
 .date-picker__reel__slide {
   overflow: hidden;
   padding: 0 0.5rem 0.5rem 0.5rem;
-  height: 16.75rem;
+  height: 19.3rem;
   position: relative; }
 
 .date-picker__reel.date-picker__reel--slide-next,
@@ -3648,7 +3652,8 @@ html .date-picker__date-wrapper, body .date-picker__date-wrapper {
     transform: translateX(0%); }
 
 .date-picker-table {
-  width: 100%; }
+  width: 100%;
+  height: 100%; }
 
 .date-picker__calendar-cell {
   text-align: center;
@@ -5090,10 +5095,37 @@ html .dialog__header, body .dialog__header {
     background-size: 10rem 1em !important;
     background-repeat: no-repeat !important;
     max-height: 1.75rem !important; }
+    .skeleton .skeleton-list .list__item *,
+    .skeleton .sub-skeleton-list .list__item *, .sub-skeleton .skeleton-list .list__item *,
+    .sub-skeleton .sub-skeleton-list .list__item * {
+      color: transparent !important; }
+    .skeleton .skeleton-list .list__item img, .skeleton .skeleton-list .list__item svg,
+    .skeleton .sub-skeleton-list .list__item img,
+    .skeleton .sub-skeleton-list .list__item svg, .sub-skeleton .skeleton-list .list__item img, .sub-skeleton .skeleton-list .list__item svg,
+    .sub-skeleton .sub-skeleton-list .list__item img,
+    .sub-skeleton .sub-skeleton-list .list__item svg {
+      display: none; }
     .skeleton .skeleton-list .list__item .fa-angle-right,
     .skeleton .sub-skeleton-list .list__item .fa-angle-right, .sub-skeleton .skeleton-list .list__item .fa-angle-right,
     .sub-skeleton .sub-skeleton-list .list__item .fa-angle-right {
       color: #dbdbdb !important; }
+  .skeleton .skeleton-list .list__index,
+  .skeleton .sub-skeleton-list .list__index, .sub-skeleton .skeleton-list .list__index,
+  .sub-skeleton .sub-skeleton-list .list__index {
+    color: transparent !important;
+    background: linear-gradient(#f4f4f4 1em, transparent 0) !important;
+    background-position: 0.75rem 1.25rem !important;
+    background-size: 5rem 1em !important;
+    background-repeat: no-repeat !important; }
+  .skeleton .skeleton-list .list__item.list__item--multiple-line,
+  .skeleton .sub-skeleton-list .list__item.list__item--multiple-line, .sub-skeleton .skeleton-list .list__item.list__item--multiple-line,
+  .sub-skeleton .sub-skeleton-list .list__item.list__item--multiple-line {
+    color: transparent !important;
+    max-height: 3.05rem !important;
+    background: linear-gradient(#f4f4f4 1em, transparent 0), linear-gradient(#f4f4f4 1em, transparent 0) !important;
+    background-position: .75rem .85rem, .75rem 2.25rem !important;
+    background-size: 70% 1em, 40% 1rem !important;
+    background-repeat: no-repeat !important; }
 
 .skeleton .skeleton-hidden,
 .skeleton .sub-skeleton-hidden, .sub-skeleton .skeleton-hidden,
@@ -5162,6 +5194,11 @@ html .dialog__header, body .dialog__header {
 .skeleton .skeleton-table-column, .sub-skeleton .sub-skeleton-table-column,
 .sub-skeleton .skeleton-table-column {
   background-size: 65% 1.5em !important; }
+
+.skeleton .sub-skeleton--fill, .skeleton .skeleton--fill, .sub-skeleton .sub-skeleton--fill, .sub-skeleton .skeleton--fill {
+  background: #f4f4f4; }
+  .skeleton .sub-skeleton--fill > *, .skeleton .skeleton--fill > *, .sub-skeleton .sub-skeleton--fill > *, .sub-skeleton .skeleton--fill > * {
+    opacity: 0; }
 
 .card {
   border-radius: 0.25rem;

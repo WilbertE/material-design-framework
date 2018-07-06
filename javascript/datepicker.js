@@ -583,7 +583,7 @@
 
             if (this.$element.data("datepickerInitialized") == null) {
                 this.$element.data("datepickerInitialized", true);
-                this.$element.on("click focus", function () {
+                this.$element.on("focus", function () {
                     $(this).blur();
                     _this.show();
                 });
