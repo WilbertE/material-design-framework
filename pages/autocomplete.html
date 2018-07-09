@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+
+    <link href="../refference.css" rel="stylesheet" />
+    <link href="../material-framework.min.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script src="../fontawsome/svg-with-js/js/fontawesome-all.js"></script>
+    <script src="../material-framework.js"></script>
+    <script src="../reference.js"></script>
+    <script>
+        $(function () {
+            $(".autocomplete").mAutocomplete();
+            $.mTextfields();
+        });
+    </script>
+</head>
+<body>
+
+    <div class="titlebar text-headline shadow-4">
+        Autocomplete
+        <div class="text-subheading-1">Predicting the future</div>
+    </div>
+    <content class="m-body">
+
+        <ul class="index">
+            <li class="text-caption">Contents</li>
+            <li><a href="#autocomplete">Autocomplete</a></li>
+        </ul>
+
+
+        <a name="autocomplete"><h1 class="text-title">Autocomplete</h1></a>
+        <p class="readability">
+            An autocomplete will give the user suggestions about what it is trying to write. (examples start with Z)
+        </p>
+        <div class="grid grid--gutter-40">
+            <div class="grid__cell grid__cell--6">
+                <fieldset>
+                    <input class="autocomplete" autocomplete="off" type="text" value="" id="input-label" />
+                    <label for="input-label">Label</label>
+                </fieldset>
+            </div>
+        </div>
+
+        <pre><code class="html text-caption">&lt;fieldset&gt;
+    &lt;input class=&quot;autocomplete&quot; autocomplete=&quot;off&quot; type=&quot;text&quot; value=&quot;&quot; id=&quot;input-label&quot; /&gt;
+    &lt;label for=&quot;input-label&quot;&gt;Label&lt;/label&gt;
+&lt;/fieldset&gt;</code></pre>
+
+
+        <a name="initializing"><h1 class="text-title">Initializing</h1></a>
+        <p class="readability">
+            To initialize the component use the following function, this will add a animation on clicks.
+        </p>
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option"> $(".autocomplete").mAutocomplete(options);</div>
+        </div>
+
+        <a name="options"><div class="text-subheading-1">Options</div></a>
+        <p class="readability">
+            The following options are available:<br />
+        </p>
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">array: []</div>
+            <div class="explainer">
+                A list of (static) items that fill the autocomplete (leave empty when using ajax requests in search option).
+            </div>
+        </div>
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">search: function (element, onSearchComplete){};</div>
+            <div class="explainer">
+                A method to create ajax calls to get suggestions.
+                element holds the input element where <span class="js--filled">element.val()</span> will get the input value.
+                When finished loading the reults the function should call <span class="js--filled">onSearchComplete(element,array)</span>.
+                Where 'array' is the array of search results.
+            </div>
+        </div>
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">minInputLength: 1</div>
+            <div class="explainer">
+                The minimum amount of characters to trigger a suggestion
+            </div>
+        </div>
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">maxItems: 3</div>
+            <div class="explainer">
+                The maximum amount of suggestions in the autocomplete list
+            </div>
+        </div>
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">searchDelay: 0</div>
+            <div class="explainer">
+                The delay a search gets started. If a user is typing fast it won't trigger a search for every character but
+                waits for the user to stop typing.
+            </div>
+        </div>
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">onSelect: function(){}</div>
+            <div class="explainer">
+                Function that gets called when a user selects an item (clicks)
+            </div>
+        </div>
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">onBlur: function(itemExists){}</div>
+            <div class="explainer">
+                Function that gets called when the input loses focus. ItemExist will be true if the input matches a suggest item.
+            </div>
+        </div>
+
+
+
+    </content>
+</body>
+</html>

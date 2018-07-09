@@ -1,0 +1,44 @@
+﻿.autocomplete__options {
+    top: 50px;
+    left: 50px;
+    width: 200px;
+    position: absolute;
+    z-index: 99999;
+    background: #fff;
+    overflow-y: auto;
+    @include shadow(1);
+    border-radius: 0.15rem;
+    opacity: 0;
+    overflow: hidden;
+    transition: height 149ms cubic-bezier(0.4, 0, 0.2, 1), opacity 0ms 278ms ease-in;
+}
+
+.autocomplete__options--show {
+    opacity: 1;
+    transition: height 149ms cubic-bezier(0.4, 0, 0.2, 1), opacity 0ms 0ms ease-in;
+}
+
+.autocomplete__options--top {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.autocomplete__options--bottom {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.autocomplete__option {
+    padding: 0.8rem;
+    cursor: pointer;
+
+    .no-touchevents & {
+        &:hover {
+            background-color: $dropdown-select-hover-background-color;
+        }
+    }
+}
+
+.autocomplete-highlight {
+    color: $autocomplete-match-highlight-color;
+}

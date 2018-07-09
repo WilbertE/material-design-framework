@@ -63,11 +63,13 @@
 
             //Adds a validation icon
             var addIcon = function (icon, iconName) {
-                var offset = 0;
-                if ($fieldset.find(".suffix").length > 0) offset = $fieldset.find(".suffix").outerWidth() + 10;
-                $fieldset.append("<div class=\"input-" + icon + "-icon\" style='margin-right:" + offset + "px'><i class=\"" + iconName + "\"></i></div>");
-                $fieldset.offset();
-                $fieldset.find(".input-" + icon + "-icon").addClass("input-" + icon + "-icon--show");
+                if ($fieldset.find(".input-" + icon + "-icon").length == 0) {
+                    var offset = 0;
+                    if ($fieldset.find(".suffix").length > 0) offset = $fieldset.find(".suffix").outerWidth() + 10;
+                    $fieldset.append("<div class=\"input-" + icon + "-icon\" style='margin-right:" + offset + "px'><i class=\"" + iconName + "\"></i></div>");
+                    $fieldset.offset();
+                    $fieldset.find(".input-" + icon + "-icon").addClass("input-" + icon + "-icon--show");
+                }
             }
 
             $input.data("error", function (errorMessage) {
@@ -87,6 +89,10 @@
 
             $input.data("loading", function () {
                 addIcon("loading", "fas fa-spinner fa-pulse");
+            });
+
+            $input.data("stopLoading", function () {
+                removeIcon("loading");
             });
 
             $input.data("removeValidation", function () {

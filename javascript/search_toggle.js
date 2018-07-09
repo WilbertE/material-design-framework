@@ -1,13 +1,4 @@
-﻿$.mSearchToggle = function () {
-
-
-
-}
-
-
-
-
-; (function ($, window, document, undefined) {
+﻿; (function ($, window, document, undefined) {
 
     "use strict";
     var pluginName = "mSearchToggle",
