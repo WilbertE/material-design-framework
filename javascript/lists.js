@@ -52,13 +52,12 @@
             var prevDivider = (listItem.prev().hasClass("list__divider")) ? listItem.prev() : null;
             if (prevDivider) prevDivider.css("display", "none");
 
-            if (this.$element.find(".list__item--expandable").length > 0) {
-                this.$element.on("click", function (e) {
-                    var $target = $(e.target).closest(".list__item--expandable");
-                    if ($target.length == 0 && $(e.target).hasClass("list__item--expandable")) $target = $(e.target);
-                    _this.toggleExpand($target);
-                })
-            }
+
+            this.$element.on("click", ".list__item--expandable", function (e) {
+                e.preventDefault();
+                _this.toggleExpand($(this));
+            })
+
 
             if (this.$element.hasClass("list--indexed") == true && this.$element.hasClass("list--indexed-inside") == false) {
                 this.$element.on("scroll", function () {

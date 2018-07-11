@@ -14,7 +14,9 @@
     <script src="../reference.js"></script>
     <script>
         $(function () {
-            $(".autocomplete").mAutocomplete();
+            $(".autocomplete").mAutocomplete({
+                array: ["Zwolle", "Zeeland", "Zaandam", "Zuidrecht", "Zwijndrecht", "Zwallingerdam", "Eerbeek", "Eersel"]
+            });
             $.mTextfields();
         });
     </script>
@@ -105,7 +107,13 @@
             </div>
         </div>
         <div class="plugin-option text-caption">
-            <div class="plugin-option__option">onBlur: function(itemExists){}</div>
+            <div class="plugin-option__option">onFocus: function(element){}</div>
+            <div class="explainer">
+                Function that gets called when the input gets focus.
+            </div>
+        </div>
+        <div class="plugin-option text-caption">
+            <div class="plugin-option__option">onBlur: function(element, itemExists){}</div>
             <div class="explainer">
                 Function that gets called when the input loses focus. ItemExist will be true if the input matches a suggest item.
             </div>

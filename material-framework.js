@@ -7034,13 +7034,12 @@ $.mHamburger = function () {
             var prevDivider = (listItem.prev().hasClass("list__divider")) ? listItem.prev() : null;
             if (prevDivider) prevDivider.css("display", "none");
 
-            if (this.$element.find(".list__item--expandable").length > 0) {
-                this.$element.on("click", function (e) {
-                    var $target = $(e.target).closest(".list__item--expandable");
-                    if ($target.length == 0 && $(e.target).hasClass("list__item--expandable")) $target = $(e.target);
-                    _this.toggleExpand($target);
-                })
-            }
+
+            this.$element.on("click", ".list__item--expandable", function (e) {
+                e.preventDefault();
+                _this.toggleExpand($(this));
+            })
+
 
             if (this.$element.hasClass("list--indexed") == true && this.$element.hasClass("list--indexed-inside") == false) {
                 this.$element.on("scroll", function () {
@@ -7740,10 +7739,11 @@ $.mTextfields = function () {
 
     var pluginName = "mAutocomplete",
         defaults = {
-            array: ["Zwolle", "Zeeland", "Zaandam", "Zuidrecht", "Zwijndrecht", "Zwallingerdam", "Eerbeek", "Eersel"],
+            array: [],
             searchDelay: 0,
             onSelect: function () { },
-            onBlur: function () { },
+            onFocus: function () { },
+            onBlur: function (itemExists) { },
             search: function (element, onSearchComplete) {
                 //Search the array for matches
                 var _this = element.data("mAutocomplete");
@@ -7794,7 +7794,7 @@ $.mTextfields = function () {
                 }
 
                 _this.$element.on("focus", function () {
-
+                    if (_this.settings.onFocus) _this.settings.onFocus(_this.$element);
                     $(window).one("blur.autocomplete", function () {
                         _this.$element.blur();
                     });
@@ -7841,7 +7841,7 @@ $.mTextfields = function () {
                     setTimeout(function () {
                         _this.$element.data("stopLoading")();
                         _this.close();
-                        if (_this.settings.onBlur) _this.settings.onBlur();
+                        if (_this.settings.onBlur) _this.settings.onBlur(_this.$element, _this.$element.attr("data-item-exist") == 'true');
                     }, 50);
                 });
 
@@ -7866,7 +7866,7 @@ $.mTextfields = function () {
         },
 
         close: function (instant) {
-            var autocompleteOptions = $(".autocomplete__options");
+            var autocompleteOptions = $(".autocomplete__options[id='options-" + this.$element.attr("id") + "']");
             $(window).off("resize.autocomplete");
             $(window).off("blur.autocomplete");
             var body = ($(".m-body").length > 0) ? $(".m-body") : $("body");

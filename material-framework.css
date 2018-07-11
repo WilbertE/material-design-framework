@@ -2215,7 +2215,7 @@ a {
 .no-margin {
   margin: 0 !important; }
 
-.margin-horizontal {
+.no-margin-horizontal {
   margin-left: 0 !important;
   margin-right: 0 !important; }
 

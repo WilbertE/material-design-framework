@@ -4,9 +4,10 @@
 
     var pluginName = "mAutocomplete",
         defaults = {
-            array: ["Zwolle", "Zeeland", "Zaandam", "Zuidrecht", "Zwijndrecht", "Zwallingerdam", "Eerbeek", "Eersel"],
+            array: [],
             searchDelay: 0,
             onSelect: function () { },
+            onFocus: function () { },
             onBlur: function (itemExists) { },
             search: function (element, onSearchComplete) {
                 //Search the array for matches
@@ -58,7 +59,7 @@
                 }
 
                 _this.$element.on("focus", function () {
-
+                    if (_this.settings.onFocus) _this.settings.onFocus(_this.$element);
                     $(window).one("blur.autocomplete", function () {
                         _this.$element.blur();
                     });
@@ -105,7 +106,7 @@
                     setTimeout(function () {
                         _this.$element.data("stopLoading")();
                         _this.close();
-                        if (_this.settings.onBlur) _this.settings.onBlur(_this.$element.attr("data-item-exist"));
+                        if (_this.settings.onBlur) _this.settings.onBlur(_this.$element, _this.$element.attr("data-item-exist") == 'true');
                     }, 50);
                 });
 
@@ -130,7 +131,7 @@
         },
 
         close: function (instant) {
-            var autocompleteOptions = $(".autocomplete__options");
+            var autocompleteOptions = $(".autocomplete__options[id='options-" + this.$element.attr("id") + "']");
             $(window).off("resize.autocomplete");
             $(window).off("blur.autocomplete");
             var body = ($(".m-body").length > 0) ? $(".m-body") : $("body");
