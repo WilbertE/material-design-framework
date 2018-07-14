@@ -7514,7 +7514,7 @@ $.mTextfields = function () {
             });
 
             var checkDisabled = function () {
-                if ($input.prop("disabled")) {
+                if ($input.prop("disabled") || $input.prop("readonly")) {
                     $fieldset.addClass("fieldset--disabled");
                 } else {
                     $fieldset.removeClass("fieldset--disabled");
@@ -7539,7 +7539,7 @@ $.mTextfields = function () {
                 e.preventDefault();
                 if ($fieldset.hasClass("fieldset--disabled") == false) {
                     if ($(e.target).hasClass("js-input-clear") || $(e.target).closest(".js-input-clear").length > 0) {
-                        if ($input.prop("disabled") == false) $input.val("");
+                        if ($input.prop("disabled") == false && $input.prop("readonly") == false) $input.val("");
                         $fieldset.removeClass("fieldset--active fieldset--filled");
                     } else if ($(e.target).hasClass("js-input-view-password") || $(e.target).closest(".js-input-view-password").length > 0) {
                         if ($input.attr("type") == "text") {

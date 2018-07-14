@@ -14,6 +14,10 @@ fieldset {
         color: transparent;
     }
 
+    input[type='time'] {
+        height: 1.8rem;
+    }
+
     input, textarea {
         position: relative;
         border: none;
@@ -25,7 +29,7 @@ fieldset {
         outline: none;
         width: 100%;
         padding: 0.775rem 0 0.30rem 0;
-        
+
 
         &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
             color: $placeholder-color;
@@ -180,6 +184,8 @@ fieldset {
     }
 
     &.fieldset--disabled {
+        pointer-events: none;
+
         &:after {
             display: none;
         }

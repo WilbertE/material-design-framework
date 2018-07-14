@@ -3103,6 +3103,8 @@ fieldset {
     margin-bottom: 1.75rem; }
   fieldset:not(.fieldset--active):not(.fieldset--filled):not(.search-toggle__fieldset) {
     color: transparent; }
+  fieldset input[type='time'] {
+    height: 1.8rem; }
   fieldset input, fieldset textarea {
     position: relative;
     border: none;
@@ -3205,13 +3207,15 @@ fieldset {
     transition: color 100ms ease-out; }
   fieldset.fieldset--error:not(.fieldset--active) .input-helper {
     color: #e83838; }
-  fieldset.fieldset--disabled:after {
-    display: none; }
-  fieldset.fieldset--disabled:before {
-    background-color: transparent;
-    border-bottom: dotted 1px rgba(0, 0, 0, 0.26); }
-  fieldset.fieldset--disabled label, fieldset.fieldset--disabled input {
-    color: rgba(0, 0, 0, 0.26); }
+  fieldset.fieldset--disabled {
+    pointer-events: none; }
+    fieldset.fieldset--disabled:after {
+      display: none; }
+    fieldset.fieldset--disabled:before {
+      background-color: transparent;
+      border-bottom: dotted 1px rgba(0, 0, 0, 0.26); }
+    fieldset.fieldset--disabled label, fieldset.fieldset--disabled input {
+      color: rgba(0, 0, 0, 0.26); }
   fieldset .prefix {
     position: absolute;
     top: 0.82rem;
