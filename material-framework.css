@@ -2965,11 +2965,10 @@ html .raised-button, html .flat-button, body .raised-button, body .flat-button {
   position: relative;
   z-index: 2; }
   fieldset .dropdown-wrapper .dropdown-button {
-    padding: 0.775rem 0 0.325rem 0; }
+    padding: 0.775rem 0 0.5rem 0; }
   .dropdown-wrapper select {
     position: absolute;
     left: -9999px;
-    top: -9999px;
     pointer-events: none;
     opacity: 0; }
   .dropdown-wrapper .dropdown-button {

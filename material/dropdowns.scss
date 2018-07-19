@@ -6,14 +6,13 @@
 
     fieldset & {
         .dropdown-button {
-            padding: 0.775rem 0 0.325rem 0;
+                padding: 0.775rem 0 0.5rem 0;
         }
     }
 
     select {
         position: absolute;
         left: -9999px;
-        top: -9999px;
         pointer-events: none;
         opacity: 0;
     }
