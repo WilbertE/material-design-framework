@@ -196,7 +196,15 @@ $table-footer-text-color: $text-color;
 
 //Checkboxes
 $checkbox-border-color: #8f8f8f;
-$checkbox-fill-color: #6200ee;
+$checkbox-fill-color: $secondary-color;
+
+//Checkbox switch
+$checkbox-switch-active-fill-color: #59ba4c;
+$checkbox-switch-track-active-fill-color: #9ecf97;
+$checkbox-switch-inactive-fill-color: #d73a3a;
+$checkbox-switch-track-inactive-fill-color: #db8686;
+
+
 
 //Autocomplete
 $autocomplete-match-highlight-color: #cf5260;
